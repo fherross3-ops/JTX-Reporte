@@ -2,76 +2,329 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard de Reportes</title>
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5/papaparse.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard — Reportes de Planta</title>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <style>
-    body { font-family: sans-serif; padding: 20px; background: #0f141a; color: #e8eef4; }
-    canvas { max-height: 400px; margin-bottom: 30px; }
-    .card { background: #1a222c; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+    :root{
+      --bg:#0f141a; --card:#1a222c; --line:#2a3644;
+      --ink:#e8eef4; --muted:#8b9aad; --accent:#5bc8e8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; padding:20px;
+      font-family:"Segoe UI",Roboto,system-ui,sans-serif;
+      background:var(--bg); color:var(--ink);
+    }
+    header{margin-bottom:20px}
+    header h1{margin:0 0 4px; font-size:22px; color:var(--accent)}
+    header p{margin:0; color:var(--muted); font-size:13px}
+    .toolbar{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      margin-bottom:16px;
+    }
+    .toolbar input{
+      background:#131a22; color:var(--ink);
+      border:1px solid var(--line); border-radius:7px;
+      padding:7px 10px; font-size:13px;
+    }
+    .toolbar button{
+      background:#26343f; color:#cfe3f0;
+      border:1px solid #35485a; border-radius:7px;
+      padding:7px 14px; font-size:13px; cursor:pointer;
+    }
+    .toolbar button:hover{background:#2e4052}
+    .kpis{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:12px; margin-bottom:20px;
+    }
+    .kpi{
+      background:var(--card); border:1px solid var(--line);
+      border-radius:10px; padding:14px 16px;
+    }
+    .kpi span{
+      display:block; font-size:11px; text-transform:uppercase;
+      letter-spacing:.5px; color:var(--muted); margin-bottom:4px;
+    }
+    .kpi b{font-size:22px; color:var(--accent); font-variant-numeric:tabular-nums}
+    .charts{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+      gap:16px; margin-bottom:20px;
+    }
+    .chart-card{
+      background:var(--card); border:1px solid var(--line);
+      border-radius:10px; padding:16px;
+    }
+    .chart-card h3{
+      margin:0 0 12px; font-size:13px; text-transform:uppercase;
+      letter-spacing:.7px; color:var(--accent); font-weight:700;
+    }
+    .chart-box{position:relative; height:280px}
+    .table-card{
+      background:var(--card); border:1px solid var(--line);
+      border-radius:10px; padding:16px; overflow-x:auto;
+    }
+    table{width:100%; border-collapse:collapse; font-size:13px}
+    th{
+      text-align:left; padding:8px 10px; color:var(--muted);
+      text-transform:uppercase; font-size:11px; letter-spacing:.5px;
+      border-bottom:1px solid var(--line);
+    }
+    td{padding:8px 10px; border-bottom:1px solid #232f3c}
+    td.num{text-align:right; font-variant-numeric:tabular-nums}
+    .empty{color:var(--muted); text-align:center; padding:40px; font-style:italic}
+    .error{color:#fca5a5; background:#3d1a1a; border:1px solid #5b2323;
+           padding:12px 16px; border-radius:8px; margin-bottom:16px}
   </style>
 </head>
 <body>
-  <h1>Dashboard de Planta</h1>
-  <div class="card"><canvas id="chartMetros"></canvas></div>
-  <div class="card"><canvas id="chartCalidad"></canvas></div>
 
-  <script>
-    // URL RAW del CSV en tu repositorio.
-    // Si guardas varios, necesitarás una lista o leer un índice.
-    // Para este ejemplo, asumimos que hay un archivo consolidado.
-    const CSV_URL = 'https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/reportes/consolidado.csv';
+<header>
+  <h1>Dashboard — Reportes de Planta</h1>
+  <p>Fuente: <code>reportes/consolidado.csv</code> en GitHub</p>
+</header>
 
-    Papa.parse(CSV_URL, {
-      download: true,
-      header: true,
-      skipEmptyLines: true,
-      complete: function(results) {
-        const data = results.data;
-        
-        // Filtrar filas que tengan fecha y metros tejidos
-        const validData = data.filter(row => row['Fecha'] && row['Metros Tejidos']);
-        
-        const labels = validData.map(row => row['Fecha']);
-        const metros = validData.map(row => parseFloat(row['Metros Tejidos']) || 0);
-        const calidad = validData.map(row => parseFloat(row['Primera Calidad %']) || 0);
+<div class="toolbar">
+  <label>Desde: <input type="date" id="filterFrom"></label>
+  <label>Hasta: <input type="date" id="filterTo"></label>
+  <button id="btnReload">Recargar datos</button>
+</div>
 
-        // Gráfico de Metros Tejidos
-        new Chart(document.getElementById('chartMetros'), {
-          type: 'line',
-          data: {
-            labels: labels,
-            datasets: [{
-              label: 'Metros Tejidos',
-              data: metros,
-              borderColor: '#5bc8e8',
-              backgroundColor: 'rgba(91, 200, 232, 0.2)',
-              fill: true,
-              tension: 0.3
-            }]
-          },
-          options: { responsive: true, maintainAspectRatio: false }
-        });
+<div id="errorBox"></div>
+<div class="kpis" id="kpis"></div>
 
-        // Gráfico de Primera Calidad
-        new Chart(document.getElementById('chartCalidad'), {
-          type: 'bar',
-          data: {
-            labels: labels,
-            datasets: [{
-              label: 'Primera Calidad (%)',
-              data: calidad,
-              backgroundColor: '#34d399'
-            }]
-          },
-          options: { responsive: true, maintainAspectRatio: false }
-        });
-      },
-      error: function(err) {
-        console.error('Error al cargar CSV:', err);
-        alert('No se pudo cargar el CSV. Verifica la URL y que el repo sea público.');
-      }
+<div class="charts">
+  <div class="chart-card">
+    <h3>Metros tejidos por día</h3>
+    <div class="chart-box"><canvas id="chartMetros"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <h3>Primera calidad (%)</h3>
+    <div class="chart-box"><canvas id="chartCalidad"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <h3>Telares parados por día</h3>
+    <div class="chart-box"><canvas id="chartParados"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <h3>Kgs Open-End por día</h3>
+    <div class="chart-box"><canvas id="chartKgs"></canvas></div>
+  </div>
+</div>
+
+<div class="table-card">
+  <h3 style="margin:0 0 12px;font-size:13px;text-transform:uppercase;letter-spacing:.7px;color:#5bc8e8">Detalle por fecha</h3>
+  <div id="tableBox"></div>
+</div>
+
+<script>
+const CSV_URL = 'https://raw.githubusercontent.com/fherross3-ops/JTX-Reporte/main/reportes/consolidado.csv';
+
+let allRows = [];
+let charts = {};
+
+function fmtNum(v, dec = 0) {
+  if (v === '' || v == null) return '—';
+  const n = Number(v);
+  if (isNaN(n)) return v;
+  return n.toLocaleString('es-MX', { maximumFractionDigits: dec });
+}
+
+function renderError(msg) {
+  document.getElementById('errorBox').innerHTML =
+    `<div class="error">${msg}</div>`;
+}
+
+function clearCharts() {
+  Object.values(charts).forEach(c => c && c.destroy());
+  charts = {};
+}
+
+function applyFilters(rows) {
+  const from = document.getElementById('filterFrom').value;
+  const to   = document.getElementById('filterTo').value;
+  return rows.filter(r => {
+    if (from && r.Fecha < from) return false;
+    if (to   && r.Fecha > to)   return false;
+    return true;
+  });
+}
+
+function renderKPIs(rows) {
+  const box = document.getElementById('kpis');
+  if (!rows.length) {
+    box.innerHTML = '<div class="empty" style="grid-column:1/-1">Sin datos en el rango seleccionado.</div>';
+    return;
+  }
+  const last = rows[rows.length - 1];
+  const totalMetros = rows.reduce((s, r) => s + (Number(r.Metros_Tejidos) || 0), 0);
+  const promCalidad = rows.reduce((s, r) => s + (Number(r.Primera_Calidad) || 0), 0) / rows.length;
+
+  box.innerHTML = `
+    <div class="kpi"><span>Reportes</span><b>${rows.length}</b></div>
+    <div class="kpi"><span>Último registro</span><b style="font-size:16px">${last.Fecha || '—'}</b></div>
+    <div class="kpi"><span>Metros tejidos (total)</span><b>${fmtNum(totalMetros)}</b></div>
+    <div class="kpi"><span>Primera calidad (prom.)</span><b>${promCalidad.toFixed(2)}%</b></div>
+    <div class="kpi"><span>Telares parados (último)</span><b>${fmtNum(last.Telares_Parados)}</b></div>
+  `;
+}
+
+function renderCharts(rows) {
+  clearCharts();
+  if (!rows.length) return;
+
+  const labels    = rows.map(r => r.Fecha);
+  const metros    = rows.map(r => Number(r.Metros_Tejidos) || 0);
+  const calidad   = rows.map(r => Number(r.Primera_Calidad) || 0);
+  const parados   = rows.map(r => Number(r.Telares_Parados) || 0);
+  const kgsOE     = rows.map(r => Number(r.Kgs_OE) || 0);
+
+  const commonOpts = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { labels: { color: '#8b9aad' } } },
+    scales: {
+      x: { ticks: { color: '#8b9aad' }, grid: { color: '#232f3c' } },
+      y: { ticks: { color: '#8b9aad' }, grid: { color: '#232f3c' } }
+    }
+  };
+
+  charts.metros = new Chart(document.getElementById('chartMetros'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Metros tejidos',
+        data: metros,
+        borderColor: '#5bc8e8',
+        backgroundColor: 'rgba(91,200,232,0.18)',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4,
+      }]
+    },
+    options: commonOpts,
+  });
+
+  charts.calidad = new Chart(document.getElementById('chartCalidad'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Primera calidad (%)',
+        data: calidad,
+        borderColor: '#34d399',
+        backgroundColor: 'rgba(52,211,153,0.18)',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4,
+      }]
+    },
+    options: { ...commonOpts, scales: { ...commonOpts.scales,
+      y: { ...commonOpts.scales.y, min: 0, max: 100 } } },
+  });
+
+  charts.parados = new Chart(document.getElementById('chartParados'), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Telares parados',
+        data: parados,
+        backgroundColor: '#f87171',
+        borderRadius: 4,
+      }]
+    },
+    options: commonOpts,
+  });
+
+  charts.kgs = new Chart(document.getElementById('chartKgs'), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Kgs Open-End',
+        data: kgsOE,
+        backgroundColor: '#f59e0b',
+        borderRadius: 4,
+      }]
+    },
+    options: commonOpts,
+  });
+}
+
+function renderTable(rows) {
+  const box = document.getElementById('tableBox');
+  if (!rows.length) {
+    box.innerHTML = '<p class="empty">Sin registros.</p>';
+    return;
+  }
+  const cols = [
+    ['Fecha','Fecha'],
+    ['Responsable','Responsable'],
+    ['Kgs_OE','Kgs OE'],
+    ['Metros_Tejidos','Metros tejidos'],
+    ['Rot_Hora','Rot/h'],
+    ['Telares_Cargados','Cargados'],
+    ['Telares_Operativos','Operativos'],
+    ['Telares_Parados','Parados'],
+    ['Metros_Engomados','Engomados'],
+    ['Sanforizado','Sanforizado'],
+    ['Revision','Revisión'],
+    ['Corte','Corte'],
+    ['Primera_Calidad','1ª calidad %'],
+    ['Inventario_Tela_Cruda','Inv. cruda'],
+  ];
+  let h = '<table><thead><tr>';
+  cols.forEach(([, label]) => h += `<th>${label}</th>`);
+  h += '</tr></thead><tbody>';
+  rows.forEach(r => {
+    h += '<tr>';
+    cols.forEach(([key]) => {
+      const isNum = key !== 'Fecha' && key !== 'Responsable';
+      h += `<td class="${isNum ? 'num' : ''}">${isNum ? fmtNum(r[key], 2) : (r[key] || '—')}</td>`;
     });
-  </script>
+    h += '</tr>';
+  });
+  h += '</tbody></table>';
+  box.innerHTML = h;
+}
+
+function renderAll() {
+  const rows = applyFilters(allRows);
+  renderKPIs(rows);
+  renderCharts(rows);
+  renderTable(rows);
+}
+
+function loadData() {
+  document.getElementById('errorBox').innerHTML = '';
+  Papa.parse(CSV_URL + '?t=' + Date.now(), {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    complete: (results) => {
+      if (results.errors && results.errors.length) {
+        console.warn('Errores de parseo:', results.errors);
+      }
+      allRows = results.data
+        .filter(r => r.Fecha)
+        .sort((a, b) => String(a.Fecha).localeCompare(String(b.Fecha)));
+      renderAll();
+    },
+    error: (err) => {
+      renderError('No se pudo cargar el consolidado. Verifica que el repo sea público y la URL sea correcta. ' + err.message);
+    },
+  });
+}
+
+document.getElementById('btnReload').addEventListener('click', loadData);
+document.getElementById('filterFrom').addEventListener('change', renderAll);
+document.getElementById('filterTo').addEventListener('change', renderAll);
+
+loadData();
+</script>
+
 </body>
 </html>
