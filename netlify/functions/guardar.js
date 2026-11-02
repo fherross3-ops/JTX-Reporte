@@ -11,8 +11,8 @@ exports.handler = async (event) => {
     const token = process.env.GITHUB_TOKEN;
     
     // ⚠️ CAMBIA ESTOS VALORES POR LOS TUYOS
-    const owner = 'TU_USUARIO_GITHUB';
-    const repo = 'TU_REPOSITORIO';
+    const owner = 'fherross3-ops';
+    const repo = 'JTX-Reporte';
     const path = `reportes/${filename}`; // Carpeta donde se guardarán los CSV
 
     if (!token) {
