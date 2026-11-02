@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard de Reportes</title>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #0f141a; color: #e8eef4; }
+    canvas { max-height: 400px; margin-bottom: 30px; }
+    .card { background: #1a222c; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Dashboard de Planta</h1>
+  <div class="card"><canvas id="chartMetros"></canvas></div>
+  <div class="card"><canvas id="chartCalidad"></canvas></div>
+
+  <script>
+    // URL RAW del CSV en tu repositorio.
+    // Si guardas varios, necesitarás una lista o leer un índice.
+    // Para este ejemplo, asumimos que hay un archivo consolidado.
+    const CSV_URL = 'https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/reportes/consolidado.csv';
+
+    Papa.parse(CSV_URL, {
+      download: true,
+      header: true,
+      skipEmptyLines: true,
+      complete: function(results) {
+        const data = results.data;
+        
+        // Filtrar filas que tengan fecha y metros tejidos
+        const validData = data.filter(row => row['Fecha'] && row['Metros Tejidos']);
+        
+        const labels = validData.map(row => row['Fecha']);
+        const metros = validData.map(row => parseFloat(row['Metros Tejidos']) || 0);
+        const calidad = validData.map(row => parseFloat(row['Primera Calidad %']) || 0);
+
+        // Gráfico de Metros Tejidos
+        new Chart(document.getElementById('chartMetros'), {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Metros Tejidos',
+              data: metros,
+              borderColor: '#5bc8e8',
+              backgroundColor: 'rgba(91, 200, 232, 0.2)',
+              fill: true,
+              tension: 0.3
+            }]
+          },
+          options: { responsive: true, maintainAspectRatio: false }
+        });
+
+        // Gráfico de Primera Calidad
+        new Chart(document.getElementById('chartCalidad'), {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Primera Calidad (%)',
+              data: calidad,
+              backgroundColor: '#34d399'
+            }]
+          },
+          options: { responsive: true, maintainAspectRatio: false }
+        });
+      },
+      error: function(err) {
+        console.error('Error al cargar CSV:', err);
+        alert('No se pudo cargar el CSV. Verifica la URL y que el repo sea público.');
+      }
+    });
+  </script>
+</body>
+</html>
