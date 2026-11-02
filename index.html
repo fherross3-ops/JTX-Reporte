@@ -1774,7 +1774,9 @@ async function guardar() {
   document.querySelector('.tab[data-view="panel"]').classList.add('active');
   $('view-panel').classList.add('active');
 }
-
+$('btn-guardar').addEventListener('click', guardar);
+$('btn-guardar-2').addEventListener('click', guardar);
+  
 function limpiar(){
   if (!confirm('¿Vaciar todos los campos del formulario?')) return;
   $('report-form').reset();
