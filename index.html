@@ -1727,7 +1727,43 @@ document.querySelectorAll('.tab').forEach(tab => {
   });
 });
 
-// Reemplaza tu función guardar() existente con esta versión
+function buildSummaryRow(r) {
+  const h  = r.hilanderia || {};
+  const hu = r.humedos    || {};
+  const t  = r.tejeduria  || {};
+  const a  = r.acabado    || {};
+
+  const inactTotal = (h.inactivos?.m || []).reduce((s, v) => s + (Number(v) || 0), 0);
+  const pctInact   = ((inactTotal / 1440) * 100).toFixed(1);
+
+  return [
+    r.fecha || '',
+    r.responsable || '',
+    nz(h.kgsOE),
+    nz(h.kgsCarda),
+    inactTotal,
+    pctInact,
+    nz(t.metros),
+    nz(t.rot),
+    nz(t.cargados),
+    nz(t.operativos),
+    nz(t.parados),
+    nz(t.cadenas),
+    nz(hu.engomado?.metros),
+    nz(a.sanforizado),
+    nz(a.revision),
+    nz(a.corte),
+    nz(a.calidad),
+    nz(a.inventario),
+    (r.novedadesPlanta || []).join(' | ')
+  ];
+}
+  
+  
+  
+  
+  
+  // Reemplaza tu función guardar() existente con esta versión
 async function guardar() {
   const r = collect();
   if (!r.fecha) { toast('Debes indicar la fecha del informe', true); return; }
@@ -1748,14 +1784,15 @@ async function guardar() {
   refreshPanelSelect();
 
   // 2. Enviar el CSV a Netlify Function → GitHub
-  const filename = fileBaseName(r) + '.csv';
-  const csvContent = detailedCSV(r); // Tu función que ya genera el CSV
+    const filename = fileBaseName(r) + '.csv';
+  const csvContent = detailedCSV(r);
+  const summaryRow = buildSummaryRow(r);
 
   try {
     const response = await fetch('/.netlify/functions/guardar', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ filename, csvContent }),
+      body: JSON.stringify({ filename, csvContent, summaryRow }),
     });
 
     if (!response.ok) {
@@ -1763,7 +1800,9 @@ async function guardar() {
       throw new Error(err.error || 'Error al guardar en GitHub');
     }
 
-    toast('Informe guardado localmente y subido a GitHub');
+    const result = await response.json();
+    const accion = result.replaced ? 'actualizado' : 'añadido';
+    toast(`Informe guardado y ${accion} en el consolidado`);
   } catch (error) {
     toast('Guardado local OK, pero falló la subida a GitHub: ' + error.message, true);
   }
