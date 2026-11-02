@@ -1,0 +1,134 @@
+Tipo,Informe Planta - Reporte Diario
+Fecha del informe,2026-09-04
+Responsable,
+Creado,2026-11-02T13:47:38.911Z
+Exportado,2026-11-02T13:47:41.031Z
+Archivo,reporte_planta_2026-09-04.csv
+
+== HILANDERIA ==
+Concepto,Valor
+Kgs producidos en Open-End,
+Kgs producidos en Carda,
+
+Titulos Open-End
+Open-End,Titulo,Uso
+01,Ne 10,Urdido
+02,Ne 20,Ventas
+02,Ne 5.6,Trama
+02,Ne 8,Trama
+03,Ne 8,Urdido
+04,Ne 10,Urdido
+05,Ne 16,Ventas
+
+Puestos Inactivos Open-End
+Open-End,Puestos
+01,0
+02,64
+03,79
+04,52
+05,0
+Total,195
+Porcentaje de 1440,13.5%
+Causa,Fuentes de poder — 195 puestos
+
+Puestos Parados por Causa
+Causa,01,02,03,04,05,Total
+Inactivos,11,11,11,11,6,50
+Ajustes,8,8,5,21,3,45
+F.A.,0,64,79,52,0,195
+Total,19,83,95,84,9,290
+
+Puestos Corregidos por Causa
+Causa,01,02,03,04,05,Total
+Ajuste-Fuga,,7,,,,7
+Fuentes,,9,,,,9
+Fugas,,,,30,,30
+Amortig/Fuga,8,,,,,8
+Total,8,16,0,30,0,54
+
+== NOVEDADES DE PLANTA ==
+N,Detalle
+1,Parada la Recuperadora de Cinta (Abridora BO-R) y regletas de púas. Sigue la novedad.
+2,CL-R de sala de recuperación (máquina trabajando) en espera de repuestos.
+3,"Se para Carda Nr.3; se presume que la guarnición del tambor principal se despega, provocando daños graves en la estructura de la carda."
+4,"Se para motor de prefiltro de 75 HP y se va a montar uno de 100 HP para poder arrancar el área de cardado. Se paró todo el 3er turno, línea 2."
+
+== PROCESOS HUMEDOS ==
+Inventario de Unipacks en Urdido
+Titulo,Unipacks,Open-End
+Ne 10,14,01
+Ne 10,06,04
+Ne 8,13,05
+Ne 8,02,03
+Ne 10 slub,2.5,???
+
+Urdido
+Urdidora,Estilo,Lote,Mh,Mph
+01,Victoria 250.,1054,12,16
+02,Arandano Dark,2079,11,14
+03,Arandano Negro,3058,01,14
+04,Indigo Soft,4070,01,12
+
+Tenido
+Tren,Estilo,Lote,Mh,Mph,Observacion
+Belloit 1,Arandano Negro,301189,14,14,Arrancó a las 6:40 AM
+Belloit 2,Victoria 250.,1054,11,16,
+Belloit 2,Arandano Dark,2079,10,16,En el Creel
+
+Reurdido
+Estilo,Lote,Mh,Mph
+Fashion,102187,10,14
+Cepe Dark,202188,12,12
+
+Engomado
+Metros engomados del dia anterior,29016
+Engomadora,Estilo,Lote,Mh,Mph,Observacion
+01,,,,,Sin material
+02,Mulberry,301184,14,14,En proceso cadena Nro. 3
+02,Fashion,412186,,,En el Creel cargado — Stand By
+
+Pendientes por Engomar
+Estilo,Lote,Mh,Mph
+Amazonas XIII,1039,18,18
+Fashion Oscuro,4022186,12,12
+
+Novedades de Engomado
+1,No hay existencia de PVA en planta. Sigue la novedad.
+
+== TEJEDURIA ==
+Concepto,Valor
+Metros tejidos del dia anterior,20208
+Promedio Rot/hora,1.09
+Telares cargados,91
+Telares operativos,66
+Telares parados,46
+Cadenas inventario,56
+
+Causas de telares parados
+Causa,Cantidad,Detalle
+Mecanica,8,
+Electronica,4,
+Electrica,0,
+Montaje,1,
+Repuesto,6,"5, 47, 73, 33, 108, 43"
+
+Otros paros
+Causa,Cantidad,Detalle
+Presion de aire,0,
+Orden superior,15,
+Falta de urdimbre,5,"Amazonas (4), Indigo Oscuro (1)"
+Calidad,0,
+E.C.U.,2,
+Falta de trama,0,
+
+== PLANTA ACABADO ==
+Seccion,Metros
+Sanforizado,29768
+Revision,20824
+Corte,19501
+General valor primera calidad (%),71.23
+Inventario Tela Cruda (Noria),55858
+
+Novedades de Acabado
+1,Cibitex: 1 hora de paro por cambio de título / cambio de estilo / ensarte.
+2,Corte: 7 horas de paro por falta de tela revisada.
