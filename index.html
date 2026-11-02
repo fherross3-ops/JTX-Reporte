@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Reporte Diario de Planta — Formulario</title>
+<script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
 <style>
   /* ============ TEMA OSCURO — LECTURA CÓMODA ============ */
   :root{
@@ -379,6 +379,42 @@
   #toast.show{opacity:1;transform:translateY(0)}
   #toast.err{background:#3d1a1a;border-color:#5b2323;color:#fca5a5}
 
+  /* ============ MODAL POST-GUARDADO ============ */
+  #modal-share{
+    position:fixed; inset:0; z-index:200;
+    background:rgba(0,0,0,.65);
+    display:none; align-items:center; justify-content:center;
+    padding:20px;
+  }
+  #modal-share.show{display:flex}
+  .modal-card{
+    background:var(--card); border:1px solid var(--line-2);
+    border-radius:14px; padding:26px 24px;
+    max-width:420px; width:100%;
+    box-shadow:0 20px 60px rgba(0,0,0,.6);
+    text-align:center;
+  }
+  .modal-card h3{
+    font-size:18px; color:var(--accent-2);
+    margin-bottom:8px;
+  }
+  .modal-card p{
+    color:var(--muted); font-size:14px;
+    margin:0 0 22px; line-height:1.5;
+  }
+  .modal-card .modal-actions{
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .modal-card .btn{
+    padding:14px 18px; font-size:15px; width:100%;
+  }
+  .modal-card .btn.ghost{background:#26343f;color:#cfe3f0;border-color:#35485a}
+  .modal-card .btn.ghost:hover{background:#2e4052}
+  @media (max-width:480px){
+    .modal-card{padding:22px 18px}
+    .modal-card h3{font-size:16px}
+  }
+
   /* ============ RESPONSIVE (MÓVIL) ============ */
   @media (max-width:760px){
     body{font-size:14.5px}
@@ -435,7 +471,7 @@
     @page{ size:A4 portrait; margin:10mm; }
     html{ color-scheme: light; }
     body{ background:#fff !important; color:#111 !important; font-size:11px; }
-    .topbar, .tabs, .panel-toolbar, #toast,
+    .topbar, .tabs, .panel-toolbar, #toast, #modal-share,
     #view-form, #view-hist { display:none !important; }
     main{ padding:0 !important; max-width:100% !important; }
     #view-panel{ display:block !important; }
@@ -758,6 +794,17 @@
 
 </main>
 
+<div id="modal-share" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <h3>✅ Informe guardado</h3>
+    <p>¿Quieres enviar el PDF del reporte a tu jefe?</p>
+    <div class="modal-actions">
+      <button class="btn primary" id="modal-btn-pdf" type="button">📤 Enviar PDF</button>
+      <button class="btn ghost" id="modal-btn-cerrar" type="button">Cerrar</button>
+    </div>
+  </div>
+</div>
+
 <div id="toast"></div>
 
 <script>
@@ -798,10 +845,6 @@ function lines(id){
 
 /* =========================================================================
    1.1. NOMBRES DE ARCHIVO — ESTÁNDAR PARA DASHBOARD
-   Formato: reporte_planta_YYYY-MM-DD[_responsable].{csv|pdf}
-   - Fecha en ISO (ordenable lexicográficamente)
-   - Sin acentos ni caracteres especiales
-   - Responsable opcional, sanitizado (max 40 chars)
    ========================================================================= */
 function todayISO(){
   const d = new Date();
@@ -810,8 +853,8 @@ function todayISO(){
 
 function sanitizeFilename(s){
   return String(s || '').trim()
-    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')  // quita acentos
-    .replace(/[^\w\-]+/g, '_')                          // no-alfanumérico → _
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^\w\-]+/g, '_')
     .replace(/_+/g, '_')
     .replace(/^_|_$/g, '')
     .substring(0, 40);
@@ -838,7 +881,6 @@ function aggregateBaseName(prefix, list){
     : `reporte_planta_${prefix}_${desde}_a_${hasta}`;
 }
 
-/* Actualiza el hint de nombre de archivo bajo el selector de panel */
 function updateFilenameHint(){
   const hint = $('filename-hint');
   if (!hint) return;
@@ -1448,7 +1490,6 @@ function detailedCSV(r){
   const t  = r.tejeduria  || {};
   const a  = r.acabado    || {};
 
-  /* --- Bloque de metadatos (dashboard-friendly) --- */
   P('Tipo', 'Informe Planta - Reporte Diario');
   P('Fecha del informe', r.fecha || '');
   P('Responsable', r.responsable || '');
@@ -1457,7 +1498,6 @@ function detailedCSV(r){
   P('Archivo', fileBaseName(r) + '.csv');
   P();
 
-  /* --- HILANDERÍA --- */
   P('== HILANDERIA ==');
   P('Concepto', 'Valor');
   P('Kgs producidos en Open-End', nz(h.kgsOE));
@@ -1500,13 +1540,11 @@ function detailedCSV(r){
   pushMatrix('Puestos Parados por Causa', PARADOS_ROWS, h.parados);
   pushMatrix('Puestos Corregidos por Causa', CORREGIDOS_ROWS, h.corregidos);
 
-  /* --- NOVEDADES --- */
   P('== NOVEDADES DE PLANTA ==');
   P('N', 'Detalle');
   (r.novedadesPlanta || []).forEach((n, i) => P(i + 1, n));
   P();
 
-  /* --- HÚMEDOS --- */
   P('== PROCESOS HUMEDOS ==');
   P('Inventario de Unipacks en Urdido');
   P('Titulo', 'Unipacks', 'Open-End');
@@ -1543,7 +1581,6 @@ function detailedCSV(r){
   (hu.novedades || []).forEach((n, i) => P(i + 1, n));
   P();
 
-  /* --- TEJEDURÍA --- */
   P('== TEJEDURIA ==');
   P('Concepto', 'Valor');
   P('Metros tejidos del dia anterior', nz(t.metros));
@@ -1573,7 +1610,6 @@ function detailedCSV(r){
   P('Falta de trama', nz(t.otros?.trama), '');
   P();
 
-  /* --- ACABADO --- */
   P('== PLANTA ACABADO ==');
   P('Seccion', 'Metros');
   P('Sanforizado', nz(a.sanforizado));
@@ -1758,17 +1794,11 @@ function buildSummaryRow(r) {
     (r.novedadesPlanta || []).join(' | ')
   ];
 }
-  
-  
-  
-  
-  
-  // Reemplaza tu función guardar() existente con esta versión
+
 async function guardar() {
   const r = collect();
   if (!r.fecha) { toast('Debes indicar la fecha del informe', true); return; }
 
-  // 1. Guardado local (opcional, pero útil)
   const all = loadAll();
   const existente = all.find(x => x.fecha === r.fecha);
   if (existente) {
@@ -1783,8 +1813,7 @@ async function guardar() {
   renderHistory();
   refreshPanelSelect();
 
-  // 2. Enviar el CSV a Netlify Function → GitHub
-    const filename = fileBaseName(r) + '.csv';
+  const filename = fileBaseName(r) + '.csv';
   const csvContent = detailedCSV(r);
   const summaryRow = buildSummaryRow(r);
 
@@ -1807,15 +1836,153 @@ async function guardar() {
     toast('Guardado local OK, pero falló la subida a GitHub: ' + error.message, true);
   }
 
-  // 3. Cambiar a la pestaña Panel (tu lógica existente)
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.querySelector('.tab[data-view="panel"]').classList.add('active');
   $('view-panel').classList.add('active');
+
+  // Abrir modal para compartir el PDF
+  abrirModalCompartir(r);
 }
 $('btn-guardar').addEventListener('click', guardar);
 $('btn-guardar-2').addEventListener('click', guardar);
-  
+
+/* =========================================================================
+   GENERACIÓN Y COMPARTICIÓN DE PDF
+   ========================================================================= */
+let _pendingRegistro = null;
+
+async function generarPDFBlob(registro) {
+  const temp = document.createElement('div');
+  temp.style.position = 'fixed';
+  temp.style.left = '-99999px';
+  temp.style.top = '0';
+  temp.style.width = '210mm';
+  temp.style.background = '#fff';
+  temp.style.padding = '10mm';
+  temp.style.color = '#111';
+  temp.style.fontFamily = '"Segoe UI",Roboto,system-ui,sans-serif';
+  document.body.appendChild(temp);
+
+  const inner = document.createElement('div');
+  renderPanel(registro, inner);
+  temp.appendChild(inner);
+
+  // Forzar estilos claros (html2pdf no aplica @media print)
+  temp.querySelectorAll('.rep-sec h3').forEach(el => {
+    el.style.color = '#0b4a63';
+    el.style.borderBottom = '2px solid #cfe6f1';
+  });
+  temp.querySelectorAll('.rep-sec h4').forEach(el => { el.style.color = '#334'; });
+  temp.querySelectorAll('table.rep th').forEach(el => {
+    el.style.background = '#eef4f8';
+    el.style.color = '#333';
+  });
+  temp.querySelectorAll('table.rep td').forEach(el => {
+    el.style.color = '#111';
+    el.style.borderBottom = '1px solid #ddd';
+  });
+  temp.querySelectorAll('table.rep td.tot').forEach(el => {
+    el.style.background = '#e8f1f6';
+    el.style.color = '#0b4a63';
+  });
+  temp.querySelectorAll('table.rep tr.totrow td').forEach(el => {
+    el.style.background = '#dbe9f2';
+    el.style.color = '#0b4a63';
+  });
+  temp.querySelectorAll('.kpi').forEach(el => {
+    el.style.background = '#f5f8fb';
+    el.style.border = '1px solid #ccc';
+  });
+  temp.querySelectorAll('.kpi span').forEach(el => { el.style.color = '#556'; });
+  temp.querySelectorAll('.kpi b').forEach(el => { el.style.color = '#0b4a63'; });
+  temp.querySelectorAll('.rep-head').forEach(el => {
+    el.style.background = 'linear-gradient(135deg,#0a1a26,#0d2f42 70%,#0b4a63)';
+    el.style.color = '#fff';
+    el.style.padding = '10px 14px';
+  });
+  temp.querySelectorAll('.rep-head h2, .rep-head .rep-kicker').forEach(el => {
+    el.style.color = '#fff';
+  });
+  temp.querySelectorAll('.rep-date').forEach(el => {
+    el.style.background = 'rgba(91,200,232,.25)';
+    el.style.color = '#fff';
+    el.style.border = '1px solid #5bc8e8';
+  });
+  temp.querySelectorAll('.novedades li, .rep-sec *').forEach(el => {
+    if (!el.style.color) el.style.color = '#111';
+  });
+
+  const opt = {
+    margin: 0,
+    filename: fileBaseName(registro) + '.pdf',
+    image: { type: 'jpeg', quality: 0.95 },
+    html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff' },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  };
+
+  const blob = await html2pdf().set(opt).from(temp).outputPdf('blob');
+  document.body.removeChild(temp);
+
+  return { blob, filename: opt.filename };
+}
+
+async function compartirPDF(registro) {
+  try {
+    toast('Generando PDF…');
+    const { blob, filename } = await generarPDFBlob(registro);
+    const file = new File([blob], filename, { type: 'application/pdf' });
+
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({
+        files: [file],
+        title: 'Reporte Diario de Planta',
+        text: `Reporte del ${fmtDate(registro.fecha)}`
+      });
+      toast('PDF compartido');
+    } else {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
+      toast('PDF descargado: ' + filename);
+    }
+  } catch (error) {
+    if (error.name === 'AbortError') {
+      toast('Envío cancelado');
+    } else {
+      console.error(error);
+      toast('Error al generar el PDF: ' + error.message, true);
+    }
+  }
+}
+
+function abrirModalCompartir(registro) {
+  _pendingRegistro = registro;
+  $('modal-share').classList.add('show');
+}
+
+function cerrarModalCompartir() {
+  $('modal-share').classList.remove('show');
+  _pendingRegistro = null;
+}
+
+$('modal-btn-pdf').addEventListener('click', async () => {
+  const r = _pendingRegistro;
+  cerrarModalCompartir();
+  if (r) await compartirPDF(r);
+});
+
+$('modal-btn-cerrar').addEventListener('click', cerrarModalCompartir);
+
+$('modal-share').addEventListener('click', (e) => {
+  if (e.target.id === 'modal-share') cerrarModalCompartir();
+});
+
 function limpiar(){
   if (!confirm('¿Vaciar todos los campos del formulario?')) return;
   $('report-form').reset();
@@ -1853,7 +2020,6 @@ $('btn-panel-cargar').addEventListener('click', () => {
   toast('Informe cargado en el formulario');
 });
 
-/* --- CSV (panel) --- */
 $('btn-panel-csv').addEventListener('click', () => {
   const r = getById($('panel-select').value);
   if (!r){ toast('No hay informe seleccionado', true); return; }
@@ -1862,31 +2028,10 @@ $('btn-panel-csv').addEventListener('click', () => {
   toast('CSV exportado: ' + nombre);
 });
 
-/* --- PDF (panel) --- */
-$('btn-panel-pdf').addEventListener('click', () => {
+$('btn-panel-pdf').addEventListener('click', async () => {
   const r = getById($('panel-select').value);
   if (!r){ toast('No hay informe seleccionado', true); return; }
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  document.querySelector('.tab[data-view="panel"]').classList.add('active');
-  $('view-panel').classList.add('active');
-  renderPanel(r, $('panel-body'));
-
-  const baseName = fileBaseName(r);
-  const originalTitle = document.title;
-  document.title = baseName;
-
-  const restoreTitle = () => {
-    document.title = originalTitle;
-    window.removeEventListener('afterprint', restoreTitle);
-  };
-  window.addEventListener('afterprint', restoreTitle);
-
-  setTimeout(() => {
-    toast('Nombre sugerido al guardar PDF: ' + baseName);
-    window.print();
-    setTimeout(restoreTitle, 3000); // fallback
-  }, 200);
+  await compartirPDF(r);
 });
 
 $('btn-panel-borrar').addEventListener('click', () => {
@@ -1940,7 +2085,6 @@ document.querySelector('#hist-table tbody').addEventListener('click', e => {
   }
 });
 
-/* --- CSV: resumen (todos los informes) --- */
 $('btn-hist-resumen').addEventListener('click', () => {
   const list = sortByFechaDesc(loadAll());
   if (!list.length){ toast('No hay informes para exportar', true); return; }
@@ -1949,7 +2093,6 @@ $('btn-hist-resumen').addEventListener('click', () => {
   toast(`Resumen exportado: ${nombre} (${list.length} informes)`);
 });
 
-/* --- CSV: detallado (todos los informes) --- */
 $('btn-hist-todo').addEventListener('click', () => {
   const list = sortByFechaDesc(loadAll());
   if (!list.length){ toast('No hay informes para exportar', true); return; }
