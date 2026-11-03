@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-03
 Responsable,Karla Betancourt
-Creado,2026-11-03T14:15:05.018Z
-Exportado,2026-11-03T14:15:10.536Z
+Creado,2026-11-03T14:19:56.166Z
+Exportado,2026-11-03T14:19:57.198Z
 Archivo,reporte_planta_2026-11-03_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -74,7 +74,7 @@ Estilo,Lote,Mh,Mph
 Alexa,202001,09,12
 
 Engomado
-Metros engomados del dia anterior,22
+Metros engomados del dia anterior,22000
 Engomadora,Estilo,Lote,Mh,Mph,Observacion
 01,Bulldenim 11,200097,12,12,
 02,Oxigeno,100068,12,12,
