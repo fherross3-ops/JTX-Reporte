@@ -352,17 +352,26 @@
   }
   @media print{
     @page{ size:A4 portrait; margin:10mm; }
-    html{ color-scheme: light; }
-    body{ background:#fff !important; color:#111 !important; font-size:11px; }
+    html, body{
+      color-scheme: light !important;
+      forced-color-adjust: none !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      background: #ffffff !important;
+      color: #111111 !important;
+    }
+    body{ font-size: 11px !important; }
     .topbar, .tabs, .panel-toolbar, #toast, #modal-share,
     #view-form, #view-hist { display:none !important; }
     main{ padding:0 !important; max-width:100% !important; }
-    #view-panel{ display:block !important; }
-    #panel-body{ padding:0 !important; }
+    #view-panel{ display:block !important; background: #ffffff !important; }
+    #panel-body{ padding:0 !important; background: #ffffff !important; }
     .report{
       box-shadow:none !important;
       border:1px solid #bbb !important;
       border-radius:0 !important;
+      background: #ffffff !important;
+      color: #111111 !important;
     }
     .rep-head{
       background:linear-gradient(135deg,#0a1a26,#0d2f42 70%,#0b4a63) !important;
@@ -375,18 +384,18 @@
       color:#fff !important; border:1px solid #5bc8e8 !important;
       -webkit-print-color-adjust: exact; print-color-adjust: exact;
     }
-    .rep-sec, .rep-sec *{ color:#111 !important; }
+    .rep-sec, .rep-sec *{ color:#111 !important; background: #ffffff !important; }
     .rep-sec h3{ color:#0b4a63 !important; border-bottom:2px solid #cfe6f1 !important; }
     .rep-sec h4{ color:#334 !important; }
     .rep-sec{ page-break-inside:auto; padding:10px 14px !important; }
     .rep-sec h3, .rep-sec h4{ page-break-after: avoid; }
     .rep-table-wrap{ overflow:visible !important; }
-    table.rep{ min-width:0 !important; }
+    table.rep{ min-width:0 !important; background: #ffffff !important; }
     table.rep th{
       background:#eef4f8 !important; color:#333 !important;
       -webkit-print-color-adjust: exact; print-color-adjust: exact;
     }
-    table.rep td{ border-bottom:1px solid #ddd !important; color:#111 !important; }
+    table.rep td{ border-bottom:1px solid #ddd !important; color:#111 !important; background: #ffffff !important; }
     table.rep td.lh{ color:#222 !important; }
     table.rep td.tot{
       background:#e8f1f6 !important; color:#0b4a63 !important;
@@ -1451,7 +1460,6 @@ const SYNC_INTERVAL_MS = 5 * 60 * 1000; // 5 minutos
 
 async function syncFromGitHub(silencioso, force) {
   try {
-    // Solo sincronizar si ha pasado suficiente tiempo o si es forzado
     if (!force) {
       const lastSync = Number(sessionStorage.getItem(SYNC_CACHE_KEY) || '0');
       if (Date.now() - lastSync < SYNC_INTERVAL_MS) {
@@ -1459,7 +1467,6 @@ async function syncFromGitHub(silencioso, force) {
         return;
       }
     }
-
     if (!silencioso) toast('Sincronizando con GitHub…');
 
     const listUrl = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/reportes/json?ref=${GITHUB_BRANCH}`;
@@ -1616,7 +1623,6 @@ $('btn-guardar-2').addEventListener('click', guardar);
 let _pendingRegistro = null;
 
 async function generarPDFBlob(registro) {
-  // Overlay de carga que cubre la pantalla mientras se genera el PDF
   const overlay = document.createElement('div');
   overlay.style.cssText = `
     position: fixed; inset: 0; z-index: 999999;
@@ -1635,94 +1641,63 @@ async function generarPDFBlob(registro) {
   `;
   document.body.appendChild(overlay);
 
-  // Contenedor del reporte: VISIBLE al 100% (html2canvas necesita verlo real),
-  // pero queda debajo del overlay, así el usuario no lo ve.
   const temp = document.createElement('div');
   temp.style.cssText = `
-    position: fixed;
+    position: absolute;
     top: 0; left: 0;
     width: 210mm;
-    min-height: 297mm;
     background: #ffffff;
     padding: 10mm;
-    color: #111;
+    color: #111111;
     font-family: "Segoe UI",Roboto,system-ui,sans-serif;
-    z-index: 999998;
+    z-index: 1;
   `;
   document.body.appendChild(temp);
+  const prevOverflow = document.body.style.overflow;
+  document.body.style.overflow = 'hidden';
 
   try {
-    // 1. Renderizar el reporte dentro del contenedor
     const inner = document.createElement('div');
     renderPanel(registro, inner);
     temp.appendChild(inner);
 
-    // 2. Forzar estilos claros (html2pdf no aplica @media print)
-    temp.querySelectorAll('.rep-sec h3').forEach(el => {
-      el.style.color = '#0b4a63';
-      el.style.borderBottom = '2px solid #cfe6f1';
+    const forceStyle = (sel, styles) => {
+      temp.querySelectorAll(sel).forEach(el => Object.assign(el.style, styles));
+    };
+    forceStyle('.report, .rep-sec, .subcard, .kpis, .rep-table-wrap', {
+      background: '#ffffff', border: 'none', boxShadow: 'none'
     });
-    temp.querySelectorAll('.rep-sec h4').forEach(el => { el.style.color = '#334'; });
-    temp.querySelectorAll('table.rep th').forEach(el => {
-      el.style.background = '#eef4f8';
-      el.style.color = '#333';
-    });
-    temp.querySelectorAll('table.rep td').forEach(el => {
-      el.style.color = '#111';
-      el.style.borderBottom = '1px solid #ddd';
-    });
-    temp.querySelectorAll('table.rep td.tot').forEach(el => {
-      el.style.background = '#e8f1f6';
-      el.style.color = '#0b4a63';
-    });
-    temp.querySelectorAll('table.rep tr.totrow td').forEach(el => {
-      el.style.background = '#dbe9f2';
-      el.style.color = '#0b4a63';
-    });
-    temp.querySelectorAll('.kpi').forEach(el => {
-      el.style.background = '#f5f8fb';
-      el.style.border = '1px solid #ccc';
-    });
-    temp.querySelectorAll('.kpi span').forEach(el => { el.style.color = '#556'; });
-    temp.querySelectorAll('.kpi b').forEach(el => { el.style.color = '#0b4a63'; });
-    temp.querySelectorAll('.rep-head').forEach(el => {
-      el.style.background = 'linear-gradient(135deg,#0a1a26,#0d2f42 70%,#0b4a63)';
-      el.style.color = '#fff';
-      el.style.padding = '10px 14px';
-    });
-    temp.querySelectorAll('.rep-head h2, .rep-head .rep-kicker').forEach(el => {
-      el.style.color = '#fff';
-    });
-    temp.querySelectorAll('.rep-date').forEach(el => {
-      el.style.background = 'rgba(91,200,232,.25)';
-      el.style.color = '#fff';
-      el.style.border = '1px solid #5bc8e8';
-    });
-    temp.querySelectorAll('.novedades li, .rep-sec *').forEach(el => {
-      if (!el.style.color) el.style.color = '#111';
-    });
-    temp.querySelectorAll('.report').forEach(el => {
-      el.style.background = '#fff';
-      el.style.border = 'none';
-      el.style.boxShadow = 'none';
-    });
+    forceStyle('.rep-sec h3', { color: '#0b4a63', borderBottom: '2px solid #cfe6f1' });
+    forceStyle('.rep-sec h4', { color: '#334455' });
+    forceStyle('table.rep th', { background: '#eef4f8', color: '#333333' });
+    forceStyle('table.rep td', { color: '#111111', borderBottom: '1px solid #dddddd' });
+    forceStyle('table.rep td.tot', { background: '#e8f1f6', color: '#0b4a63' });
+    forceStyle('table.rep tr.totrow td', { background: '#dbe9f2', color: '#0b4a63' });
+    forceStyle('.kpi', { background: '#f5f8fb', border: '1px solid #cccccc' });
+    forceStyle('.kpi span', { color: '#555566' });
+    forceStyle('.kpi b', { color: '#0b4a63' });
+    forceStyle('.rep-head', { background: '#0b4a63', color: '#ffffff', padding: '10px 14px' });
+    forceStyle('.rep-head h2, .rep-head .rep-kicker', { color: '#ffffff' });
+    forceStyle('.rep-date', { background: '#c9ecf8', color: '#0b4a63', border: '1px solid #5bc8e8' });
+    forceStyle('.novedades li, .rep-sec *', { color: '#111111' });
+    forceStyle('.empty', { color: '#666666' });
 
-    // 3. Esperar a que el navegador termine de pintar (esto es CLAVE)
     await new Promise(resolve => setTimeout(resolve, 800));
 
-    // 4. Generar el PDF
     const opt = {
       margin: 0,
       filename: fileBaseName(registro) + '.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
+      image: { type: 'jpeg', quality: 0.95 },
       html2canvas: {
-        scale: 2,
+        scale: 1.5,
         useCORS: true,
         backgroundColor: '#ffffff',
         logging: false,
         scrollX: 0,
         scrollY: 0,
-        windowWidth: temp.scrollWidth,
+        width: temp.offsetWidth,
+        height: temp.scrollHeight,
+        windowWidth: temp.offsetWidth,
         windowHeight: temp.scrollHeight
       },
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
@@ -1731,15 +1706,18 @@ async function generarPDFBlob(registro) {
 
     const blob = await html2pdf().set(opt).from(temp).outputPdf('blob');
 
-    // 5. Limpieza
+    if (!blob || blob.size < 5000) {
+      throw new Error('PDF vacío o demasiado pequeño (canvas excedido)');
+    }
+
     document.body.removeChild(temp);
     document.body.removeChild(overlay);
-
+    document.body.style.overflow = prevOverflow;
     return { blob, filename: opt.filename };
   } catch (error) {
-    // Limpieza en caso de error
     if (temp.parentNode) document.body.removeChild(temp);
     if (overlay.parentNode) document.body.removeChild(overlay);
+    document.body.style.overflow = prevOverflow;
     throw error;
   }
 }
@@ -1748,35 +1726,20 @@ async function descargarPDF(registro) {
   try {
     toast('Generando PDF…');
     const { blob, filename } = await generarPDFBlob(registro);
-
-    // Descargar el blob como archivo
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
     setTimeout(() => URL.revokeObjectURL(url), 1500);
-
     toast('PDF descargado: ' + filename);
   } catch (error) {
-    console.error(error);
-    toast('Error al generar el PDF: ' + error.message, true);
-    // Si falla html2pdf, ofrecer el diálogo de impresión
-    if (confirm('El PDF no se pudo generar con el método directo.\n¿Quieres intentar con el diálogo de impresión (Guardar como PDF)?')) {
-      await imprimirPDF(registro);
-    }
+    console.warn('html2pdf falló, usando impresión:', error);
+    toast('PDF grande detectado, usando "Guardar como PDF"…', true);
+    await imprimirPDF(registro);
   }
 }
 
-
-
-
-
-  
 async function imprimirPDF(registro) {
-  // Cambiar a la pestaña Panel y seleccionar el informe
   $('panel-select').value = registro.id || '';
   renderPanel(registro, $('panel-body'));
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
