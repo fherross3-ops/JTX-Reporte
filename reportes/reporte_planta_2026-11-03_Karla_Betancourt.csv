@@ -1,0 +1,117 @@
+Tipo,Informe Planta - Reporte Diario
+Fecha del informe,2026-11-03
+Responsable,Karla Betancourt
+Creado,2026-11-03T13:24:41.885Z
+Exportado,2026-11-03T13:24:41.916Z
+Archivo,reporte_planta_2026-11-03_Karla_Betancourt.csv
+
+== HILANDERIA ==
+Concepto,Valor
+Kgs producidos en Open-End,9760.3
+Kgs producidos en Carda,12.005
+
+Titulos Open-End
+Open-End,Titulo,Uso
+01,,Urdido
+02,,Urdido
+03,,Urdido
+04,,Urdido
+05,,Urdido
+
+Puestos Inactivos Open-End
+Open-End,Puestos
+01,0
+02,85
+03,23
+04,0
+05,0
+Total,108
+Porcentaje de 1440,7.5%
+Causa,
+
+Puestos Parados por Causa
+Causa,01,02,03,04,05,Total
+Inactivos,,,,,,0
+Ajustes,,,,,,0
+F.A.,,,,,,0
+Total,0,0,0,0,0,0
+
+Puestos Corregidos por Causa
+Causa,01,02,03,04,05,Total
+Ajuste-Fuga,,,,,,0
+Fuentes,,,,,,0
+Fugas,,,,,,0
+Amortig/Fuga,,,,,,0
+Total,0,0,0,0,0,0
+
+== NOVEDADES DE PLANTA ==
+N,Detalle
+1,Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. Sigue la novedad.
+2,CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.
+3,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda"
+4,Cl- C3 se tranca cadena que ejerce movimiento a la banda  ascendente . Se para maquina por mantenimiento preventivo y correctivo. ( el sr de metalmecanica  Flores se lleva motor de caja reductora para su reparacion. Eso afectando la linea de carda #01 (
+
+== PROCESOS HUMEDOS ==
+Inventario de Unipacks en Urdido
+Titulo,Unipacks,Open-End
+
+Urdido
+Urdidora,Estilo,Lote,Mh,Mph
+
+Tenido
+Tren,Estilo,Lote,Mh,Mph,Observacion
+
+Reurdido
+Estilo,Lote,Mh,Mph
+
+Engomado
+Metros engomados del dia anterior,
+Engomadora,Estilo,Lote,Mh,Mph,Observacion
+
+Pendientes por Engomar
+Estilo,Lote,Mh,Mph
+
+Novedades de Engomado
+
+== TEJEDURIA ==
+Concepto,Valor
+Metros tejidos del dia anterior,353
+Promedio Rot/hora,0.42
+Telares cargados,82
+Telares operativos,59
+Telares parados,53
+Cadenas inventario,3
+
+Causas de telares parados
+Causa,Cantidad,Detalle
+Mecanica,1,
+Electronica,0,
+Electrica,1,
+Montaje,2,
+Repuesto,7,"5,40,47,73,96,100,108"
+
+Otros paros
+Causa,Cantidad,Detalle
+Presion de aire,0,
+Orden superior,33,
+Falta de urdimbre,8,1- Roques- 06 satin iris black - 01 pañaltext
+Calidad,0,
+E.C.U.,2,
+Falta de trama,0,
+
+== PLANTA ACABADO ==
+Seccion,Metros
+Sanforizado,0
+Revision,5.574
+Corte,5.842
+General valor primera calidad (%),74.43
+Inventario Tela Cruda (Noria),44.775
+
+Novedades de Acabado
+1,Cibitex:
+2,16 horas de paro por mantenimiento preventivo.
+3,08 horas de paro por falta de tela cruda.
+4,Revision:
+5,17 horas de paro por falta de tela sanforizada
+6,Corte:
+7,19 horas de paro por falta de tela revisada.
