@@ -769,6 +769,7 @@
     <div class="panel-toolbar">
       <div class="grp"><strong style="font-size:14px">Informes guardados</strong></div>
       <div class="grp">
+        <button class="btn soft mini" type="button" id="btn-hist-sync">⟳ Sincronizar</button>
         <button class="btn soft mini" type="button" id="btn-hist-resumen">Exportar resumen CSV</button>
         <button class="btn soft mini" type="button" id="btn-hist-todo">Exportar todo (detallado)</button>
       </div>
@@ -1346,7 +1347,6 @@ function renderPanel(r, host){
       <div class="rep-date">${fmtDate(r.fecha)}</div>
     </div>`;
 
-  /* HILANDERÍA */
   html += '<section class="rep-sec"><h3>Hilandería</h3>';
   html += `<div class="kpis">
       <div class="kpi"><span>Kgs Open-End</span><b>${fmtNum(h.kgsOE)}</b></div>
@@ -1373,12 +1373,10 @@ function renderPanel(r, host){
   html += matrixHTML(CORREGIDOS_ROWS, h.corregidos, 'Causa');
   html += '</section>';
 
-  /* NOVEDADES */
   html += '<section class="rep-sec"><h3>Novedades de planta</h3>';
   html += novedadesHTML(r.novedadesPlanta);
   html += '</section>';
 
-  /* HÚMEDOS */
   html += '<section class="rep-sec"><h3>Procesos húmedos</h3>';
   html += '<h4>Inventario de Unipacks en Urdido</h4>';
   html += simpleTable(['Título','Unipacks','Open-End'], hu.unipacks, x => [x.titulo, x.unipacks, x.openend]);
@@ -1408,7 +1406,6 @@ function renderPanel(r, host){
   html += novedadesHTML(hu.novedades);
   html += '</section>';
 
-  /* TEJEDURÍA */
   html += '<section class="rep-sec"><h3>Tejeduría</h3>';
   html += `<div class="kpis">
       <div class="kpi"><span>Metros tejidos</span><b>${fmtNum(t.metros)}</b></div>
@@ -1445,7 +1442,6 @@ function renderPanel(r, host){
   html += '</tbody></table></div>';
   html += '</section>';
 
-  /* ACABADO */
   html += '<section class="rep-sec"><h3>Planta de Acabado</h3>';
   html += `<div class="kpis">
       <div class="kpi"><span>Sanforizado</span><b>${fmtNum(a.sanforizado)}</b></div>
@@ -1463,7 +1459,7 @@ function renderPanel(r, host){
 }
 
 /* =========================================================================
-   9. EXPORTACIÓN CSV (con metadatos de trazabilidad)
+   9. EXPORTACIÓN CSV
    ========================================================================= */
 function csvEscape(v){
   const s = String(v ?? '');
@@ -1728,7 +1724,69 @@ function refreshPanelSelect(){
 function getById(id){ return loadAll().find(r => r.id === id) || null; }
 
 /* =========================================================================
-   12. INICIALIZACIÓN
+   12. SINCRONIZACIÓN DESDE GITHUB
+   ========================================================================= */
+const GITHUB_OWNER  = 'fherross3-ops';
+const GITHUB_REPO   = 'JTX-Reporte';
+const GITHUB_BRANCH = 'main';
+
+async function syncFromGitHub(silencioso) {
+  try {
+    if (!silencioso) toast('Sincronizando con GitHub…');
+
+    const listUrl = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/reportes/json?ref=${GITHUB_BRANCH}`;
+    const res = await fetch(listUrl, { headers: { Accept: 'application/vnd.github+json' } });
+
+    if (res.status === 404) {
+      if (!silencioso) toast('No hay informes remotos aún');
+      return;
+    }
+    if (!res.ok) throw new Error(`GitHub list → ${res.status}`);
+
+    const files = await res.json();
+    if (!Array.isArray(files) || !files.length) {
+      if (!silencioso) toast('No hay informes remotos aún');
+      return;
+    }
+
+    const local = loadAll();
+    const fechasLocales = new Set(local.map(r => r.fecha));
+    let nuevos = 0;
+
+    for (const file of files) {
+      if (!file.name.endsWith('.json')) continue;
+
+      const rawUrl = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${GITHUB_BRANCH}/reportes/json/${file.name}`;
+      const rres = await fetch(rawUrl + '?t=' + Date.now());
+      if (!rres.ok) continue;
+
+      let report;
+      try { report = await rres.json(); } catch(e) { continue; }
+      if (!report || !report.fecha) continue;
+      if (fechasLocales.has(report.fecha)) continue;
+
+      if (!report.id) report.id = uid();
+      local.push(report);
+      fechasLocales.add(report.fecha);
+      nuevos++;
+    }
+
+    if (nuevos > 0) {
+      saveAll(local);
+      renderHistory();
+      refreshPanelSelect();
+      toast(`Sincronizados ${nuevos} informe(s) desde GitHub`);
+    } else {
+      if (!silencioso) toast('Todo sincronizado');
+    }
+  } catch (error) {
+    console.error('Sync error:', error);
+    if (!silencioso) toast('Error al sincronizar: ' + error.message, true);
+  }
+}
+
+/* =========================================================================
+   13. INICIALIZACIÓN
    ========================================================================= */
 function init(){
   Object.keys(TABLES).forEach(k => initTable(k, [{}]));
@@ -1747,10 +1805,13 @@ function init(){
 
   renderHistory();
   refreshPanelSelect();
+
+  // Sincronizar en segundo plano al abrir
+  syncFromGitHub(true);
 }
 
 /* =========================================================================
-   13. EVENTOS
+   14. EVENTOS
    ========================================================================= */
 document.querySelectorAll('.tab').forEach(tab => {
   tab.addEventListener('click', () => {
@@ -1821,7 +1882,7 @@ async function guardar() {
     const response = await fetch('/.netlify/functions/guardar', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ filename, csvContent, summaryRow }),
+      body: JSON.stringify({ filename, csvContent, summaryRow, reportJSON: r }),
     });
 
     if (!response.ok) {
@@ -1841,14 +1902,13 @@ async function guardar() {
   document.querySelector('.tab[data-view="panel"]').classList.add('active');
   $('view-panel').classList.add('active');
 
-  // Abrir modal para compartir el PDF
   abrirModalCompartir(r);
 }
 $('btn-guardar').addEventListener('click', guardar);
 $('btn-guardar-2').addEventListener('click', guardar);
 
 /* =========================================================================
-   GENERACIÓN Y COMPARTICIÓN DE PDF
+   15. GENERACIÓN Y COMPARTICIÓN DE PDF
    ========================================================================= */
 let _pendingRegistro = null;
 
@@ -1868,7 +1928,6 @@ async function generarPDFBlob(registro) {
   renderPanel(registro, inner);
   temp.appendChild(inner);
 
-  // Forzar estilos claros (html2pdf no aplica @media print)
   temp.querySelectorAll('.rep-sec h3').forEach(el => {
     el.style.color = '#0b4a63';
     el.style.borderBottom = '2px solid #cfe6f1';
@@ -2085,6 +2144,8 @@ document.querySelector('#hist-table tbody').addEventListener('click', e => {
   }
 });
 
+$('btn-hist-sync').addEventListener('click', () => syncFromGitHub(false));
+
 $('btn-hist-resumen').addEventListener('click', () => {
   const list = sortByFechaDesc(loadAll());
   if (!list.length){ toast('No hay informes para exportar', true); return; }
@@ -2106,7 +2167,7 @@ $('btn-hist-todo').addEventListener('click', () => {
 });
 
 /* =========================================================================
-   14. DATOS DEL INFORME ADJUNTO
+   16. DATOS DEL INFORME ADJUNTO
    ========================================================================= */
 const EJEMPLO = {
   fecha: '2026-09-04',
