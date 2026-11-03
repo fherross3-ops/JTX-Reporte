@@ -1,11 +1,11 @@
 {
-  "id": "mw0ydlnxvzp6t",
+  "id": "mw0rchfw9nouy",
   "fecha": "2026-11-03",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-03T14:31:07.420Z",
+  "creado": "2026-11-03T17:41:54.946Z",
   "hilanderia": {
-    "kgsOE": "9760.3",
-    "kgsCarda": "12.005",
+    "kgsOE": 9760.3,
+    "kgsCarda": 12.005,
     "titulos": [
       {
         "maquina": "01",
@@ -35,24 +35,66 @@
     ],
     "inactivos": {
       "m": [
-        "0",
-        "85",
-        "23",
-        "0",
-        "0"
+        0,
+        85,
+        23,
+        0,
+        0
       ],
       "causa": ""
     },
     "parados": {
-      "inactivos": {},
-      "ajustes": {},
-      "fa": {}
+      "inactivos": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "ajustes": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fa": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      }
     },
     "corregidos": {
-      "ajustefuga": {},
-      "fuentes": {},
-      "fugas": {},
-      "amortig": {}
+      "ajustefuga": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fuentes": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fugas": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "amortig": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      }
     }
   },
   "novedadesPlanta": [
@@ -82,7 +124,7 @@
     "urdido": [
       {
         "urdidora": "01",
-        "estilo": "Señal",
+        "estilo": "Senat",
         "lote": "1071",
         "mh": "03",
         "mph": "18"
@@ -128,7 +170,7 @@
       }
     ],
     "engomado": {
-      "metros": "22000",
+      "metros": 22000,
       "rows": [
         {
           "engomadora": "01",
@@ -167,40 +209,40 @@
       "Engomadora 02 parada desde las 6:00am hasta las 2:00 pm por mecanica.",
       "Luego se paro a la 1:50am por electronica, hasta las 6:00am",
       "Engomadora 01 estuvo parada desde las 6:00 am hasta las 2:00pm por Falla electronica y instrumentacion. Nuevamente paro desde las 12:40 am hasta las 4:30 am",
-      "(Por preparacion y conteo Nuevamente, por caida de un plegador de el creer,)"
+      "(Por preparacion y conteo Nuevamente, por caida de un plegador de el creel,)"
     ]
   },
   "tejeduria": {
-    "metros": "353",
-    "rot": "0.42",
-    "cargados": "82",
-    "operativos": "59",
-    "parados": "53",
-    "cadenas": "3",
+    "metros": 353,
+    "rot": 0.42,
+    "cargados": 82,
+    "operativos": 59,
+    "parados": 53,
+    "cadenas": 3,
     "causas": {
-      "mecanica": "1",
-      "electronica": "0",
-      "electrica": "1",
-      "montaje": "2",
-      "repuesto": "7",
+      "mecanica": 1,
+      "electronica": 0,
+      "electrica": 1,
+      "montaje": 2,
+      "repuesto": 7,
       "repuestoTelares": "5,40,47,73,96,100,108"
     },
     "otros": {
-      "presion": "0",
-      "orden": "33",
-      "urdimbre": "8",
+      "presion": 0,
+      "orden": 33,
+      "urdimbre": 8,
       "urdimbreDet": "1- Roques- 06 satin iris black - 01 pañaltext",
-      "calidad": "0",
-      "ecu": "2",
-      "trama": "0"
+      "calidad": 0,
+      "ecu": 2,
+      "trama": 0
     }
   },
   "acabado": {
-    "sanforizado": "0",
-    "revision": "5.574",
-    "corte": "5.842",
-    "calidad": "74.43",
-    "inventario": "44.775",
+    "sanforizado": 0,
+    "revision": 5.574,
+    "corte": 5.842,
+    "calidad": 74.43,
+    "inventario": 44.775,
     "novedades": [
       "Cibitex:",
       "16 horas de paro por mantenimiento preventivo.",
