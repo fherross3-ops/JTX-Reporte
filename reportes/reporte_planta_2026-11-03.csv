@@ -1,0 +1,102 @@
+Tipo,Informe Planta - Reporte Diario
+Fecha del informe,2026-11-03
+Responsable,
+Creado,2026-11-03T14:02:56.972Z
+Exportado,2026-11-03T14:02:56.977Z
+Archivo,reporte_planta_2026-11-03.csv
+
+== HILANDERIA ==
+Concepto,Valor
+Kgs producidos en Open-End,
+Kgs producidos en Carda,
+
+Titulos Open-End
+Open-End,Titulo,Uso
+,,Urdido
+
+Puestos Inactivos Open-End
+Open-End,Puestos
+01,
+02,
+03,
+04,
+05,
+Total,0
+Porcentaje de 1440,0.0%
+Causa,
+
+Puestos Parados por Causa
+Causa,01,02,03,04,05,Total
+Inactivos,,,,,,0
+Ajustes,,,,,,0
+F.A.,,,,,,0
+Total,0,0,0,0,0,0
+
+Puestos Corregidos por Causa
+Causa,01,02,03,04,05,Total
+Ajuste-Fuga,,,,,,0
+Fuentes,,,,,,0
+Fugas,,,,,,0
+Amortig/Fuga,,,,,,0
+Total,0,0,0,0,0,0
+
+== NOVEDADES DE PLANTA ==
+N,Detalle
+
+== PROCESOS HUMEDOS ==
+Inventario de Unipacks en Urdido
+Titulo,Unipacks,Open-End
+
+Urdido
+Urdidora,Estilo,Lote,Mh,Mph
+
+Tenido
+Tren,Estilo,Lote,Mh,Mph,Observacion
+
+Reurdido
+Estilo,Lote,Mh,Mph
+
+Engomado
+Metros engomados del dia anterior,
+Engomadora,Estilo,Lote,Mh,Mph,Observacion
+
+Pendientes por Engomar
+Estilo,Lote,Mh,Mph
+
+Novedades de Engomado
+
+== TEJEDURIA ==
+Concepto,Valor
+Metros tejidos del dia anterior,
+Promedio Rot/hora,
+Telares cargados,
+Telares operativos,
+Telares parados,
+Cadenas inventario,
+
+Causas de telares parados
+Causa,Cantidad,Detalle
+Mecanica,,
+Electronica,,
+Electrica,,
+Montaje,,
+Repuesto,,
+
+Otros paros
+Causa,Cantidad,Detalle
+Presion de aire,,
+Orden superior,,
+Falta de urdimbre,,
+Calidad,,
+E.C.U.,,
+Falta de trama,,
+
+== PLANTA ACABADO ==
+Seccion,Metros
+Sanforizado,
+Revision,
+Corte,
+General valor primera calidad (%),
+Inventario Tela Cruda (Noria),
+
+Novedades de Acabado
