@@ -1,0 +1,126 @@
+{
+  "id": "mw0rchfw9nouy",
+  "fecha": "2026-11-03",
+  "responsable": "",
+  "creado": "2026-11-03T14:15:43.525Z",
+  "hilanderia": {
+    "kgsOE": "",
+    "kgsCarda": "",
+    "titulos": [
+      {
+        "maquina": "",
+        "titulo": "",
+        "uso": "Urdido"
+      }
+    ],
+    "inactivos": {
+      "m": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "causa": ""
+    },
+    "parados": {
+      "inactivos": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "ajustes": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fa": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      }
+    },
+    "corregidos": {
+      "ajustefuga": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fuentes": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fugas": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "amortig": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      }
+    }
+  },
+  "novedadesPlanta": [],
+  "humedos": {
+    "unipacks": [],
+    "urdido": [],
+    "tenido": [],
+    "reurdido": [],
+    "engomado": {
+      "metros": "",
+      "rows": [],
+      "porEngomar": []
+    },
+    "novedades": []
+  },
+  "tejeduria": {
+    "metros": "",
+    "rot": "",
+    "cargados": "",
+    "operativos": "",
+    "parados": "",
+    "cadenas": "",
+    "causas": {
+      "mecanica": "",
+      "electronica": "",
+      "electrica": "",
+      "montaje": "",
+      "repuesto": "",
+      "repuestoTelares": ""
+    },
+    "otros": {
+      "presion": "",
+      "orden": "",
+      "urdimbre": "",
+      "urdimbreDet": "",
+      "calidad": "",
+      "ecu": "",
+      "trama": ""
+    }
+  },
+  "acabado": {
+    "sanforizado": "",
+    "revision": "",
+    "corte": "",
+    "calidad": "",
+    "inventario": "",
+    "novedades": []
+  }
+}
