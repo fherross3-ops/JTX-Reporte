@@ -1,5 +1,4 @@
 // netlify/functions/migrar.js
-// Migra CSVs antiguos a JSON completos (una sola vez)
 exports.handler = async (event) => {
   try {
     const token = process.env.GITHUB_TOKEN;
@@ -9,6 +8,9 @@ exports.handler = async (event) => {
     const repo = 'JTX-Reporte';
     const branch = 'main';
     const apiBase = `https://api.github.com/repos/${owner}/${repo}/contents`;
+
+    // ?force=1 → reemplaza JSONs existentes (para regenerar los migrados con datos viejos)
+    const force = (event.queryStringParameters && event.queryStringParameters.force === '1');
 
     async function listFiles(path) {
       const res = await fetch(`${apiBase}/${path}?ref=${branch}`, {
@@ -55,7 +57,6 @@ exports.handler = async (event) => {
       return res.json();
     }
 
-    // Listar CSVs y JSONs existentes
     const csvFiles = await listFiles('reportes');
     const csvs = csvFiles.filter(f => f.name.endsWith('.csv') && f.name !== 'consolidado.csv');
     let jsonFiles = [];
@@ -65,8 +66,8 @@ exports.handler = async (event) => {
     const results = [];
     for (const csvFile of csvs) {
       const jsonName = csvFile.name.replace(/\.csv$/, '.json');
-      if (existing.has(jsonName)) {
-        results.push({ file: csvFile.name, status: 'ya existe' });
+      if (existing.has(jsonName) && !force) {
+        results.push({ file: csvFile.name, status: 'ya existe (usa ?force=1 para regenerar)' });
         continue;
       }
       try {
@@ -76,13 +77,13 @@ exports.handler = async (event) => {
         if (!report.fecha) { results.push({ file: csvFile.name, status: 'sin fecha' }); continue; }
         report.id = uid();
         await putFileContent(`reportes/json/${jsonName}`, JSON.stringify(report, null, 2), `Migrar ${csvFile.name}`);
-        results.push({ file: csvFile.name, status: 'migrado', fecha: report.fecha });
+        results.push({ file: csvFile.name, status: force ? 'regenerado' : 'migrado', fecha: report.fecha });
       } catch (e) {
         results.push({ file: csvFile.name, status: 'error: ' + e.message });
       }
     }
 
-    return { statusCode: 200, body: JSON.stringify({ ok: true, results }, null, 2) };
+    return { statusCode: 200, body: JSON.stringify({ ok: true, force, results }, null, 2) };
   } catch (error) {
     return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
   }
@@ -125,7 +126,6 @@ function parseDetailedCsv(text) {
   const isSection = s => s.startsWith('==') && s.endsWith('==');
 
   let i = 0;
-  // Metadatos iniciales
   while (i < rows.length) {
     const r = rows[i];
     if (isSection(first(r))) break;
@@ -406,7 +406,9 @@ function parseDetailedCsv(text) {
       i++;
       while (i < rows.length) {
         const r2 = rows[i];
-        if (!nonEmpty(r2) || isSection(first(r2))) break;
+        // ← FIX: usar continue en vacías, no break
+        if (!nonEmpty(r2)) { i++; continue; }
+        if (isSection(first(r2))) break;
         const c = first(r2);
         if (c === 'Seccion') { i++; continue; }
         if (c === 'Sanforizado') { rep.acabado.sanforizado = (r2[1]||'').trim(); }
