@@ -1,5 +1,5 @@
 {
-  "id": "mw0xrrtx4kf0l",
+  "id": "mw0ydlnxvzp6t",
   "fecha": "2026-11-03",
   "responsable": "Karla Betancourt",
   "creado": "2026-11-03T14:31:07.420Z",
@@ -201,6 +201,14 @@
     "corte": "5.842",
     "calidad": "74.43",
     "inventario": "44.775",
-    "novedades": []
+    "novedades": [
+      "Cibitex:",
+      "16 horas de paro por mantenimiento preventivo.",
+      "08 horas de paro por falta de tela cruda.",
+      "Revision:",
+      "17 horas de paro por falta de tela sanforizada",
+      "Corte:",
+      "19 horas de paro por falta de tela revisada."
+    ]
   }
 }
