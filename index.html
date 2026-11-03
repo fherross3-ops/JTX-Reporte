@@ -756,7 +756,7 @@
       <div class="grp">
         <button class="btn soft mini" type="button" id="btn-panel-cargar">Cargar en formulario</button>
         <button class="btn soft mini" type="button" id="btn-panel-csv">Exportar CSV</button>
-        <button class="btn soft mini" type="button" id="btn-panel-pdf">Exportar PDF</button>
+        <button class="btn soft mini" type="button" id="btn-panel-pdf">Descargar PDF</button>
         <button class="btn danger mini" type="button" id="btn-panel-borrar">Eliminar</button>
       </div>
     </div>
@@ -798,9 +798,9 @@
 <div id="modal-share" role="dialog" aria-modal="true">
   <div class="modal-card">
     <h3>✅ Informe guardado</h3>
-    <p>¿Quieres enviar el PDF del reporte a tu jefe?</p>
+    <p>¿Quieres descargar el PDF del reporte?</p>
     <div class="modal-actions">
-      <button class="btn primary" id="modal-btn-pdf" type="button">📤 Enviar PDF</button>
+      <button class="btn primary" id="modal-btn-pdf" type="button">📥 Descargar PDF</button>
       <button class="btn ghost" id="modal-btn-cerrar" type="button">Cerrar</button>
     </div>
   </div>
@@ -845,7 +845,7 @@ function lines(id){
 }
 
 /* =========================================================================
-   1.1. NOMBRES DE ARCHIVO — ESTÁNDAR PARA DASHBOARD
+   1.1. NOMBRES DE ARCHIVO
    ========================================================================= */
 function todayISO(){
   const d = new Date();
@@ -1691,6 +1691,7 @@ function renderHistory(){
         <button class="btn soft mini" data-act="ver"  data-id="${r.id}">Ver</button>
         <button class="btn soft mini" data-act="cargar" data-id="${r.id}">Cargar</button>
         <button class="btn soft mini" data-act="csv"  data-id="${r.id}">CSV</button>
+        <button class="btn soft mini" data-act="pdf"  data-id="${r.id}">PDF</button>
         <button class="btn danger mini" data-act="del" data-id="${r.id}">Eliminar</button>
       </td>
     </tr>`;
@@ -1806,7 +1807,6 @@ function init(){
   renderHistory();
   refreshPanelSelect();
 
-  // Sincronizar en segundo plano al abrir
   syncFromGitHub(true);
 }
 
@@ -1908,7 +1908,7 @@ $('btn-guardar').addEventListener('click', guardar);
 $('btn-guardar-2').addEventListener('click', guardar);
 
 /* =========================================================================
-   15. GENERACIÓN Y COMPARTICIÓN DE PDF
+   15. GENERACIÓN Y DESCARGA DE PDF
    ========================================================================= */
 let _pendingRegistro = null;
 
@@ -1980,43 +1980,34 @@ async function generarPDFBlob(registro) {
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
   };
 
+  // Pequeña espera para asegurar que todo se renderizó
+  await new Promise(resolve => setTimeout(resolve, 200));
+
   const blob = await html2pdf().set(opt).from(temp).outputPdf('blob');
   document.body.removeChild(temp);
 
   return { blob, filename: opt.filename };
 }
 
-async function compartirPDF(registro) {
+async function descargarPDF(registro) {
   try {
     toast('Generando PDF…');
     const { blob, filename } = await generarPDFBlob(registro);
-    const file = new File([blob], filename, { type: 'application/pdf' });
 
-    if (navigator.canShare && navigator.canShare({ files: [file] })) {
-      await navigator.share({
-        files: [file],
-        title: 'Reporte Diario de Planta',
-        text: `Reporte del ${fmtDate(registro.fecha)}`
-      });
-      toast('PDF compartido');
-    } else {
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      setTimeout(() => URL.revokeObjectURL(url), 1500);
-      toast('PDF descargado: ' + filename);
-    }
+    // Descargar directamente el PDF
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1500);
+
+    toast('PDF descargado: ' + filename);
   } catch (error) {
-    if (error.name === 'AbortError') {
-      toast('Envío cancelado');
-    } else {
-      console.error(error);
-      toast('Error al generar el PDF: ' + error.message, true);
-    }
+    console.error(error);
+    toast('Error al generar el PDF: ' + error.message, true);
   }
 }
 
@@ -2033,7 +2024,7 @@ function cerrarModalCompartir() {
 $('modal-btn-pdf').addEventListener('click', async () => {
   const r = _pendingRegistro;
   cerrarModalCompartir();
-  if (r) await compartirPDF(r);
+  if (r) await descargarPDF(r);
 });
 
 $('modal-btn-cerrar').addEventListener('click', cerrarModalCompartir);
@@ -2090,7 +2081,7 @@ $('btn-panel-csv').addEventListener('click', () => {
 $('btn-panel-pdf').addEventListener('click', async () => {
   const r = getById($('panel-select').value);
   if (!r){ toast('No hay informe seleccionado', true); return; }
-  await compartirPDF(r);
+  await descargarPDF(r);
 });
 
 $('btn-panel-borrar').addEventListener('click', () => {
@@ -2134,6 +2125,9 @@ document.querySelector('#hist-table tbody').addEventListener('click', e => {
     const nombre = fileBaseName(r) + '.csv';
     downloadCSV(nombre, detailedCSV(r));
     toast('CSV exportado: ' + nombre);
+
+  } else if (act === 'pdf'){
+    await descargarPDF(r);
 
   } else if (act === 'del'){
     if (!confirm(`¿Eliminar el informe del ${fmtDate(r.fecha)}?`)) return;
