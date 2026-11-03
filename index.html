@@ -1487,8 +1487,8 @@ async function syncFromGitHub(silencioso, force) {
     }
 
     const local = loadAll();
-    const fechasLocales = new Set(local.map(r => r.fecha));
     let nuevos = 0;
+    let actualizados = 0;
 
     for (const file of files) {
       if (!file.name.endsWith('.json')) continue;
@@ -1498,20 +1498,38 @@ async function syncFromGitHub(silencioso, force) {
       let report;
       try { report = await rres.json(); } catch(e) { continue; }
       if (!report || !report.fecha) continue;
-      if (fechasLocales.has(report.fecha)) continue;
-      if (!report.id) report.id = uid();
-      local.push(report);
-      fechasLocales.add(report.fecha);
-      nuevos++;
+
+      // Buscar si ya existe localmente por fecha
+      const idx = local.findIndex(r => r.fecha === report.fecha);
+
+      if (idx >= 0) {
+        // Ya existe → comparar contenido. Si es distinto, reemplazar con el remoto.
+        const localStr = JSON.stringify(local[idx]);
+        const remoteStr = JSON.stringify(report);
+        if (localStr !== remoteStr) {
+          report.id = local[idx].id; // preservar el id para no romper la UI
+          local[idx] = report;
+          actualizados++;
+        }
+        // Si es igual, no hace nada
+      } else {
+        // No existe → agregar
+        if (!report.id) report.id = uid();
+        local.push(report);
+        nuevos++;
+      }
     }
 
     sessionStorage.setItem(SYNC_CACHE_KEY, String(Date.now()));
 
-    if (nuevos > 0) {
+    if (nuevos > 0 || actualizados > 0) {
       saveAll(local);
       renderHistory();
       refreshPanelSelect();
-      toast(`Sincronizados ${nuevos} informe(s) desde GitHub`);
+      const partes = [];
+      if (nuevos > 0) partes.push(`${nuevos} nuevo(s)`);
+      if (actualizados > 0) partes.push(`${actualizados} actualizado(s)`);
+      toast(`Sincronizado: ${partes.join(', ')}`);
     } else {
       if (!silencioso) toast('Todo sincronizado');
     }
@@ -1520,7 +1538,6 @@ async function syncFromGitHub(silencioso, force) {
     if (!silencioso) toast('Error al sincronizar: ' + error.message, true);
   }
 }
-
 /* =========================================================================
    13. INICIALIZACIÓN
    ========================================================================= */
