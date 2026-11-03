@@ -5,7 +5,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const { filename, csvContent, summaryRow } = JSON.parse(event.body);
+    const { filename, csvContent, summaryRow, reportJSON } = JSON.parse(event.body);
     const token = process.env.GITHUB_TOKEN;
 
     const owner = 'fherross3-ops';
@@ -20,10 +20,7 @@ exports.handler = async (event) => {
 
     async function getFile(path) {
       const res = await fetch(`${apiBase}/${path}?ref=${branch}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          Accept: 'application/vnd.github+json',
-        },
+        headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' },
       });
       if (res.status === 404) return null;
       if (!res.ok) throw new Error(`GET ${path} → ${res.status}`);
@@ -55,17 +52,25 @@ exports.handler = async (event) => {
       return res.json();
     }
 
-    // ---- 1. Guardar el CSV individual (detalle) ----
+    // ---- 1. Guardar el CSV individual ----
     const detailPath = `reportes/${filename}`;
     const existingDetail = await getFile(detailPath);
-    await putFile(
-      detailPath,
-      csvContent,
-      `Reporte detalle ${filename}`,
-      existingDetail ? existingDetail.sha : null
-    );
+    await putFile(detailPath, csvContent, `Reporte detalle ${filename}`, existingDetail ? existingDetail.sha : null);
 
-    // ---- 2. Actualizar el consolidado (una fila por fecha) ----
+    // ---- 1b. Guardar el JSON individual (para sincronización entre dispositivos) ----
+    if (reportJSON) {
+      const jsonFilename = filename.replace(/\.csv$/, '.json');
+      const jsonPath = `reportes/json/${jsonFilename}`;
+      const existingJson = await getFile(jsonPath);
+      await putFile(
+        jsonPath,
+        JSON.stringify(reportJSON, null, 2),
+        `Reporte JSON ${jsonFilename}`,
+        existingJson ? existingJson.sha : null
+      );
+    }
+
+    // ---- 2. Actualizar consolidado (una fila por fecha) ----
     const consolidatedPath = 'reportes/consolidado.csv';
     const CONSOLIDATED_HEADER = [
       'Fecha','Responsable','Kgs_OE','Kgs_Carda','Puestos_Inactivos','Pct_Inactivos',
@@ -77,18 +82,11 @@ exports.handler = async (event) => {
     const existingConsolidated = await getFile(consolidatedPath);
     let lines = [];
     if (existingConsolidated && existingConsolidated.content.trim()) {
-      lines = existingConsolidated.content
-        .replace(/\r\n/g, '\n')
-        .split('\n')
-        .filter(l => l.trim() !== '');
+      lines = existingConsolidated.content.replace(/\r\n/g, '\n').split('\n').filter(l => l.trim() !== '');
     }
-
-    if (lines.length === 0) {
-      lines.push(CONSOLIDATED_HEADER.join(','));
-    }
+    if (lines.length === 0) lines.push(CONSOLIDATED_HEADER.join(','));
 
     const fecha = String(summaryRow[0] ?? '').trim();
-
     let replaced = false;
     for (let i = 1; i < lines.length; i++) {
       const firstCol = lines[i].split(',')[0].replace(/^"|"$/g, '').trim();
@@ -98,13 +96,9 @@ exports.handler = async (event) => {
         break;
       }
     }
-
-    if (!replaced) {
-      lines.push(summaryRow.map(csvEscape).join(','));
-    }
+    if (!replaced) lines.push(summaryRow.map(csvEscape).join(','));
 
     const consolidatedContent = lines.join('\r\n');
-
     await putFile(
       consolidatedPath,
       consolidatedContent,
@@ -122,10 +116,7 @@ exports.handler = async (event) => {
       }),
     };
   } catch (error) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: error.message }),
-    };
+    return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
   }
 };
 
