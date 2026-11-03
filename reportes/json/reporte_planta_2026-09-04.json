@@ -1,5 +1,5 @@
 {
-  "id": "mvva172ulb9ja",
+  "id": "mw0ydja05jcyx",
   "fecha": "2026-09-04",
   "responsable": "",
   "creado": "2026-11-03T16:28:41.998Z",
@@ -45,65 +45,49 @@
     ],
     "inactivos": {
       "m": [
-        0,
-        64,
-        79,
-        52,
-        0
+        "0",
+        "64",
+        "79",
+        "52",
+        "0"
       ],
       "causa": "Fuentes de poder — 195 puestos"
     },
     "parados": {
       "inactivos": {
-        "01": 11,
-        "02": 11,
-        "03": 11,
-        "04": 11,
-        "05": 6
+        "01": "11",
+        "02": "11",
+        "03": "11",
+        "04": "11",
+        "05": "6"
       },
       "ajustes": {
-        "01": 8,
-        "02": 8,
-        "03": 5,
-        "04": 21,
-        "05": 3
+        "01": "8",
+        "02": "8",
+        "03": "5",
+        "04": "21",
+        "05": "3"
       },
       "fa": {
-        "01": 0,
-        "02": 64,
-        "03": 79,
-        "04": 52,
-        "05": 0
+        "01": "0",
+        "02": "64",
+        "03": "79",
+        "04": "52",
+        "05": "0"
       }
     },
     "corregidos": {
       "ajustefuga": {
-        "01": "",
-        "02": 7,
-        "03": "",
-        "04": "",
-        "05": ""
+        "02": "7"
       },
       "fuentes": {
-        "01": "",
-        "02": 9,
-        "03": "",
-        "04": "",
-        "05": ""
+        "02": "9"
       },
       "fugas": {
-        "01": "",
-        "02": "",
-        "03": "",
-        "04": 30,
-        "05": ""
+        "04": "30"
       },
       "amortig": {
-        "01": 8,
-        "02": "",
-        "03": "",
-        "04": "",
-        "05": ""
+        "01": "8"
       }
     }
   },
@@ -212,7 +196,7 @@
       }
     ],
     "engomado": {
-      "metros": 29016,
+      "metros": "29016",
       "rows": [
         {
           "engomadora": "01",
@@ -259,36 +243,36 @@
     ]
   },
   "tejeduria": {
-    "metros": 20208,
-    "rot": 1.09,
-    "cargados": 91,
-    "operativos": 66,
-    "parados": 46,
-    "cadenas": 56,
+    "metros": "20208",
+    "rot": "1.09",
+    "cargados": "91",
+    "operativos": "66",
+    "parados": "46",
+    "cadenas": "56",
     "causas": {
-      "mecanica": 8,
-      "electronica": 4,
-      "electrica": 0,
-      "montaje": 1,
-      "repuesto": 6,
+      "mecanica": "8",
+      "electronica": "4",
+      "electrica": "0",
+      "montaje": "1",
+      "repuesto": "6",
       "repuestoTelares": "5, 47, 73, 33, 108, 43"
     },
     "otros": {
-      "presion": 0,
-      "orden": 15,
-      "urdimbre": 5,
+      "presion": "0",
+      "orden": "15",
+      "urdimbre": "5",
       "urdimbreDet": "Amazonas (4), Indigo Oscuro (1)",
-      "calidad": 0,
-      "ecu": 2,
-      "trama": 0
+      "calidad": "0",
+      "ecu": "2",
+      "trama": "0"
     }
   },
   "acabado": {
-    "sanforizado": 29768,
-    "revision": 20824,
-    "corte": 19501,
-    "calidad": 71.23,
-    "inventario": 55858,
+    "sanforizado": "29768",
+    "revision": "20824",
+    "corte": "19501",
+    "calidad": "71.23",
+    "inventario": "55858",
     "novedades": [
       "Cibitex: 1 hora de paro por cambio de título / cambio de estilo / ensarte.",
       "Corte: 7 horas de paro por falta de tela revisada."
