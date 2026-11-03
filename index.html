@@ -1744,6 +1744,37 @@ async function generarPDFBlob(registro) {
   }
 }
 
+async function descargarPDF(registro) {
+  try {
+    toast('Generando PDF…');
+    const { blob, filename } = await generarPDFBlob(registro);
+
+    // Descargar el blob como archivo
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1500);
+
+    toast('PDF descargado: ' + filename);
+  } catch (error) {
+    console.error(error);
+    toast('Error al generar el PDF: ' + error.message, true);
+    // Si falla html2pdf, ofrecer el diálogo de impresión
+    if (confirm('El PDF no se pudo generar con el método directo.\n¿Quieres intentar con el diálogo de impresión (Guardar como PDF)?')) {
+      await imprimirPDF(registro);
+    }
+  }
+}
+
+
+
+
+
+  
 async function imprimirPDF(registro) {
   // Cambiar a la pestaña Panel y seleccionar el informe
   $('panel-select').value = registro.id || '';
