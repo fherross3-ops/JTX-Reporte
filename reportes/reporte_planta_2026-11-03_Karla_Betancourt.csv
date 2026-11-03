@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-03
 Responsable,Karla Betancourt
-Creado,2026-11-03T17:23:38.032Z
-Exportado,2026-11-03T17:23:39.175Z
+Creado,2026-11-03T17:41:54.946Z
+Exportado,2026-11-03T17:41:59.204Z
 Archivo,reporte_planta_2026-11-03_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -60,7 +60,7 @@ Titulo,Unipacks,Open-End
 
 Urdido
 Urdidora,Estilo,Lote,Mh,Mph
-01,Señal,1071,03,18
+01,Senat,1071,03,18
 02,Arandano dark,2001,01,14
 03,Farina,3001,01,14
 04,Arandano negro,4079,11,14
@@ -89,7 +89,7 @@ Novedades de Engomado
 2,Engomadora 02 parada desde las 6:00am hasta las 2:00 pm por mecanica.
 3,"Luego se paro a la 1:50am por electronica, hasta las 6:00am"
 4,Engomadora 01 estuvo parada desde las 6:00 am hasta las 2:00pm por Falla electronica y instrumentacion. Nuevamente paro desde las 12:40 am hasta las 4:30 am
-5,"(Por preparacion y conteo Nuevamente, por caida de un plegador de el creer,)"
+5,"(Por preparacion y conteo Nuevamente, por caida de un plegador de el creel,)"
 
 == TEJEDURIA ==
 Concepto,Valor
