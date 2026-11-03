@@ -1616,114 +1616,131 @@ $('btn-guardar-2').addEventListener('click', guardar);
 let _pendingRegistro = null;
 
 async function generarPDFBlob(registro) {
-  // Contenedor temporal CASI invisible (opacity .01) pero dentro del viewport,
-  // porque html2canvas NO captura bien elementos fuera de pantalla ni con z-index negativo.
+  // Overlay de carga que cubre la pantalla mientras se genera el PDF
+  const overlay = document.createElement('div');
+  overlay.style.cssText = `
+    position: fixed; inset: 0; z-index: 999999;
+    background: rgba(15,20,26,0.92); color: #e8eef4;
+    display: flex; flex-direction: column; gap: 14px;
+    align-items: center; justify-content: center;
+    font-family: "Segoe UI",Roboto,system-ui,sans-serif;
+    font-size: 16px; font-weight: 600; text-align: center; padding: 20px;
+  `;
+  overlay.innerHTML = `
+    <div style="font-size:36px">⏳</div>
+    <div>Generando PDF…</div>
+    <div style="font-size:12px;opacity:.7;font-weight:400;max-width:280px">
+      Espera unos segundos mientras se prepara el documento.
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  // Contenedor del reporte: VISIBLE al 100% (html2canvas necesita verlo real),
+  // pero queda debajo del overlay, así el usuario no lo ve.
   const temp = document.createElement('div');
   temp.style.cssText = `
-    position: absolute;
+    position: fixed;
     top: 0; left: 0;
     width: 210mm;
+    min-height: 297mm;
     background: #ffffff;
     padding: 10mm;
     color: #111;
     font-family: "Segoe UI",Roboto,system-ui,sans-serif;
-    z-index: 99999;
-    opacity: 0.01;
-    pointer-events: none;
+    z-index: 999998;
   `;
   document.body.appendChild(temp);
 
-  const inner = document.createElement('div');
-  renderPanel(registro, inner);
-  temp.appendChild(inner);
-
-  // Forzar estilos claros (html2pdf no aplica @media print)
-  temp.querySelectorAll('.rep-sec h3').forEach(el => {
-    el.style.color = '#0b4a63';
-    el.style.borderBottom = '2px solid #cfe6f1';
-  });
-  temp.querySelectorAll('.rep-sec h4').forEach(el => { el.style.color = '#334'; });
-  temp.querySelectorAll('table.rep th').forEach(el => {
-    el.style.background = '#eef4f8';
-    el.style.color = '#333';
-  });
-  temp.querySelectorAll('table.rep td').forEach(el => {
-    el.style.color = '#111';
-    el.style.borderBottom = '1px solid #ddd';
-  });
-  temp.querySelectorAll('table.rep td.tot').forEach(el => {
-    el.style.background = '#e8f1f6';
-    el.style.color = '#0b4a63';
-  });
-  temp.querySelectorAll('table.rep tr.totrow td').forEach(el => {
-    el.style.background = '#dbe9f2';
-    el.style.color = '#0b4a63';
-  });
-  temp.querySelectorAll('.kpi').forEach(el => {
-    el.style.background = '#f5f8fb';
-    el.style.border = '1px solid #ccc';
-  });
-  temp.querySelectorAll('.kpi span').forEach(el => { el.style.color = '#556'; });
-  temp.querySelectorAll('.kpi b').forEach(el => { el.style.color = '#0b4a63'; });
-  temp.querySelectorAll('.rep-head').forEach(el => {
-    el.style.background = 'linear-gradient(135deg,#0a1a26,#0d2f42 70%,#0b4a63)';
-    el.style.color = '#fff';
-    el.style.padding = '10px 14px';
-  });
-  temp.querySelectorAll('.rep-head h2, .rep-head .rep-kicker').forEach(el => {
-    el.style.color = '#fff';
-  });
-  temp.querySelectorAll('.rep-date').forEach(el => {
-    el.style.background = 'rgba(91,200,232,.25)';
-    el.style.color = '#fff';
-    el.style.border = '1px solid #5bc8e8';
-  });
-  temp.querySelectorAll('.novedades li, .rep-sec *').forEach(el => {
-    if (!el.style.color) el.style.color = '#111';
-  });
-
-  const opt = {
-    margin: 0,
-    filename: fileBaseName(registro) + '.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: {
-      scale: 2,
-      useCORS: true,
-      backgroundColor: '#ffffff',
-      logging: false
-    },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: ['css', 'legacy'] }
-  };
-
-  // Esperar renderizado
-  await new Promise(resolve => setTimeout(resolve, 500));
-
-  const blob = await html2pdf().set(opt).from(temp).outputPdf('blob');
-  document.body.removeChild(temp);
-  return { blob, filename: opt.filename };
-}
-
-async function descargarPDF(registro) {
   try {
-    toast('Generando PDF…');
-    const { blob, filename } = await generarPDFBlob(registro);
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    setTimeout(() => URL.revokeObjectURL(url), 1500);
-    toast('PDF descargado: ' + filename);
+    // 1. Renderizar el reporte dentro del contenedor
+    const inner = document.createElement('div');
+    renderPanel(registro, inner);
+    temp.appendChild(inner);
+
+    // 2. Forzar estilos claros (html2pdf no aplica @media print)
+    temp.querySelectorAll('.rep-sec h3').forEach(el => {
+      el.style.color = '#0b4a63';
+      el.style.borderBottom = '2px solid #cfe6f1';
+    });
+    temp.querySelectorAll('.rep-sec h4').forEach(el => { el.style.color = '#334'; });
+    temp.querySelectorAll('table.rep th').forEach(el => {
+      el.style.background = '#eef4f8';
+      el.style.color = '#333';
+    });
+    temp.querySelectorAll('table.rep td').forEach(el => {
+      el.style.color = '#111';
+      el.style.borderBottom = '1px solid #ddd';
+    });
+    temp.querySelectorAll('table.rep td.tot').forEach(el => {
+      el.style.background = '#e8f1f6';
+      el.style.color = '#0b4a63';
+    });
+    temp.querySelectorAll('table.rep tr.totrow td').forEach(el => {
+      el.style.background = '#dbe9f2';
+      el.style.color = '#0b4a63';
+    });
+    temp.querySelectorAll('.kpi').forEach(el => {
+      el.style.background = '#f5f8fb';
+      el.style.border = '1px solid #ccc';
+    });
+    temp.querySelectorAll('.kpi span').forEach(el => { el.style.color = '#556'; });
+    temp.querySelectorAll('.kpi b').forEach(el => { el.style.color = '#0b4a63'; });
+    temp.querySelectorAll('.rep-head').forEach(el => {
+      el.style.background = 'linear-gradient(135deg,#0a1a26,#0d2f42 70%,#0b4a63)';
+      el.style.color = '#fff';
+      el.style.padding = '10px 14px';
+    });
+    temp.querySelectorAll('.rep-head h2, .rep-head .rep-kicker').forEach(el => {
+      el.style.color = '#fff';
+    });
+    temp.querySelectorAll('.rep-date').forEach(el => {
+      el.style.background = 'rgba(91,200,232,.25)';
+      el.style.color = '#fff';
+      el.style.border = '1px solid #5bc8e8';
+    });
+    temp.querySelectorAll('.novedades li, .rep-sec *').forEach(el => {
+      if (!el.style.color) el.style.color = '#111';
+    });
+    temp.querySelectorAll('.report').forEach(el => {
+      el.style.background = '#fff';
+      el.style.border = 'none';
+      el.style.boxShadow = 'none';
+    });
+
+    // 3. Esperar a que el navegador termine de pintar (esto es CLAVE)
+    await new Promise(resolve => setTimeout(resolve, 800));
+
+    // 4. Generar el PDF
+    const opt = {
+      margin: 0,
+      filename: fileBaseName(registro) + '.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: '#ffffff',
+        logging: false,
+        scrollX: 0,
+        scrollY: 0,
+        windowWidth: temp.scrollWidth,
+        windowHeight: temp.scrollHeight
+      },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      pagebreak: { mode: ['css', 'legacy'] }
+    };
+
+    const blob = await html2pdf().set(opt).from(temp).outputPdf('blob');
+
+    // 5. Limpieza
+    document.body.removeChild(temp);
+    document.body.removeChild(overlay);
+
+    return { blob, filename: opt.filename };
   } catch (error) {
-    console.error(error);
-    toast('Error al generar el PDF: ' + error.message, true);
-    // Si falla, ofrecer la alternativa de imprimir
-    if (confirm('El PDF no se pudo generar con el método directo. ¿Quieres intentar con el diálogo de impresión (Guardar como PDF)?')) {
-      await imprimirPDF(registro);
-    }
+    // Limpieza en caso de error
+    if (temp.parentNode) document.body.removeChild(temp);
+    if (overlay.parentNode) document.body.removeChild(overlay);
+    throw error;
   }
 }
 
