@@ -1,0 +1,84 @@
+{
+  "id": "mw0xrqpdvokj4",
+  "fecha": "2026-11-02",
+  "responsable": "",
+  "creado": "2026-11-02T14:16:39.809Z",
+  "hilanderia": {
+    "kgsOE": "",
+    "kgsCarda": "",
+    "titulos": [
+      {
+        "maquina": "",
+        "titulo": "",
+        "uso": "Urdido"
+      }
+    ],
+    "inactivos": {
+      "m": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "causa": ""
+    },
+    "parados": {
+      "inactivos": {},
+      "ajustes": {},
+      "fa": {}
+    },
+    "corregidos": {
+      "ajustefuga": {},
+      "fuentes": {},
+      "fugas": {},
+      "amortig": {}
+    }
+  },
+  "novedadesPlanta": [],
+  "humedos": {
+    "unipacks": [],
+    "urdido": [],
+    "tenido": [],
+    "reurdido": [],
+    "engomado": {
+      "metros": "",
+      "rows": [],
+      "porEngomar": []
+    },
+    "novedades": []
+  },
+  "tejeduria": {
+    "metros": "",
+    "rot": "",
+    "cargados": "",
+    "operativos": "",
+    "parados": "",
+    "cadenas": "",
+    "causas": {
+      "mecanica": "",
+      "electronica": "",
+      "electrica": "",
+      "montaje": "",
+      "repuesto": "",
+      "repuestoTelares": ""
+    },
+    "otros": {
+      "presion": "",
+      "orden": "",
+      "urdimbre": "",
+      "urdimbreDet": "",
+      "calidad": "",
+      "ecu": "",
+      "trama": ""
+    }
+  },
+  "acabado": {
+    "sanforizado": "",
+    "revision": "",
+    "corte": "",
+    "calidad": "",
+    "inventario": "",
+    "novedades": []
+  }
+}
