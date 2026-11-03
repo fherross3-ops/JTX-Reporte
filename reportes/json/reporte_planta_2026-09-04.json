@@ -1,0 +1,297 @@
+{
+  "id": "mvva172ulb9ja",
+  "fecha": "2026-09-04",
+  "responsable": "",
+  "creado": "2026-11-03T16:10:58.101Z",
+  "hilanderia": {
+    "kgsOE": "",
+    "kgsCarda": "",
+    "titulos": [
+      {
+        "maquina": "01",
+        "titulo": "Ne 10",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "02",
+        "titulo": "Ne 20",
+        "uso": "Ventas"
+      },
+      {
+        "maquina": "02",
+        "titulo": "Ne 5.6",
+        "uso": "Trama"
+      },
+      {
+        "maquina": "02",
+        "titulo": "Ne 8",
+        "uso": "Trama"
+      },
+      {
+        "maquina": "03",
+        "titulo": "Ne 8",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "04",
+        "titulo": "Ne 10",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "05",
+        "titulo": "Ne 16",
+        "uso": "Ventas"
+      }
+    ],
+    "inactivos": {
+      "m": [
+        0,
+        64,
+        79,
+        52,
+        0
+      ],
+      "causa": "Fuentes de poder — 195 puestos"
+    },
+    "parados": {
+      "inactivos": {
+        "01": 11,
+        "02": 11,
+        "03": 11,
+        "04": 11,
+        "05": 6
+      },
+      "ajustes": {
+        "01": 8,
+        "02": 8,
+        "03": 5,
+        "04": 21,
+        "05": 3
+      },
+      "fa": {
+        "01": 0,
+        "02": 64,
+        "03": 79,
+        "04": 52,
+        "05": 0
+      }
+    },
+    "corregidos": {
+      "ajustefuga": {
+        "01": "",
+        "02": 7,
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fuentes": {
+        "01": "",
+        "02": 9,
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fugas": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": 30,
+        "05": ""
+      },
+      "amortig": {
+        "01": 8,
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      }
+    }
+  },
+  "novedadesPlanta": [
+    "Parada la Recuperadora de Cinta (Abridora BO-R) y regletas de púas. Sigue la novedad.",
+    "CL-R de sala de recuperación (máquina trabajando) en espera de repuestos.",
+    "Se para Carda Nr.3; se presume que la guarnición del tambor principal se despega, provocando daños graves en la estructura de la carda.",
+    "Se para motor de prefiltro de 75 HP y se va a montar uno de 100 HP para poder arrancar el área de cardado. Se paró todo el 3er turno, línea 2."
+  ],
+  "humedos": {
+    "unipacks": [
+      {
+        "titulo": "Ne 10",
+        "unipacks": "14",
+        "openend": "01"
+      },
+      {
+        "titulo": "Ne 10",
+        "unipacks": "06",
+        "openend": "04"
+      },
+      {
+        "titulo": "Ne 8",
+        "unipacks": "13",
+        "openend": "05"
+      },
+      {
+        "titulo": "Ne 8",
+        "unipacks": "02",
+        "openend": "03"
+      },
+      {
+        "titulo": "Ne 10 slub",
+        "unipacks": "2.5",
+        "openend": "???"
+      }
+    ],
+    "urdido": [
+      {
+        "urdidora": "01",
+        "estilo": "Victoria 250.",
+        "lote": "1054",
+        "mh": "12",
+        "mph": "16"
+      },
+      {
+        "urdidora": "02",
+        "estilo": "Arandano Dark",
+        "lote": "2079",
+        "mh": "11",
+        "mph": "14"
+      },
+      {
+        "urdidora": "03",
+        "estilo": "Arandano Negro",
+        "lote": "3058",
+        "mh": "01",
+        "mph": "14"
+      },
+      {
+        "urdidora": "04",
+        "estilo": "Indigo Soft",
+        "lote": "4070",
+        "mh": "01",
+        "mph": "12"
+      }
+    ],
+    "tenido": [
+      {
+        "tren": "Belloit 1",
+        "estilo": "Arandano Negro",
+        "lote": "301189",
+        "mh": "14",
+        "mph": "14",
+        "obs": "Arrancó a las 6:40 AM"
+      },
+      {
+        "tren": "Belloit 2",
+        "estilo": "Victoria 250.",
+        "lote": "1054",
+        "mh": "11",
+        "mph": "16",
+        "obs": ""
+      },
+      {
+        "tren": "Belloit 2",
+        "estilo": "Arandano Dark",
+        "lote": "2079",
+        "mh": "10",
+        "mph": "16",
+        "obs": "En el Creel"
+      }
+    ],
+    "reurdido": [
+      {
+        "estilo": "Fashion",
+        "lote": "102187",
+        "mh": "10",
+        "mph": "14"
+      },
+      {
+        "estilo": "Cepe Dark",
+        "lote": "202188",
+        "mh": "12",
+        "mph": "12"
+      }
+    ],
+    "engomado": {
+      "metros": 29016,
+      "rows": [
+        {
+          "engomadora": "01",
+          "estilo": "",
+          "lote": "",
+          "mh": "",
+          "mph": "",
+          "obs": "Sin material"
+        },
+        {
+          "engomadora": "02",
+          "estilo": "Mulberry",
+          "lote": "301184",
+          "mh": "14",
+          "mph": "14",
+          "obs": "En proceso cadena Nro. 3"
+        },
+        {
+          "engomadora": "02",
+          "estilo": "Fashion",
+          "lote": "412186",
+          "mh": "",
+          "mph": "",
+          "obs": "En el Creel cargado — Stand By"
+        }
+      ],
+      "porEngomar": [
+        {
+          "estilo": "Amazonas XIII",
+          "lote": "1039",
+          "mh": "18",
+          "mph": "18"
+        },
+        {
+          "estilo": "Fashion Oscuro",
+          "lote": "4022186",
+          "mh": "12",
+          "mph": "12"
+        }
+      ]
+    },
+    "novedades": [
+      "No hay existencia de PVA en planta. Sigue la novedad."
+    ]
+  },
+  "tejeduria": {
+    "metros": 20208,
+    "rot": 1.09,
+    "cargados": 91,
+    "operativos": 66,
+    "parados": 46,
+    "cadenas": 56,
+    "causas": {
+      "mecanica": 8,
+      "electronica": 4,
+      "electrica": 0,
+      "montaje": 1,
+      "repuesto": 6,
+      "repuestoTelares": "5, 47, 73, 33, 108, 43"
+    },
+    "otros": {
+      "presion": 0,
+      "orden": 15,
+      "urdimbre": 5,
+      "urdimbreDet": "Amazonas (4), Indigo Oscuro (1)",
+      "calidad": 0,
+      "ecu": 2,
+      "trama": 0
+    }
+  },
+  "acabado": {
+    "sanforizado": 29768,
+    "revision": 20824,
+    "corte": 19501,
+    "calidad": 71.23,
+    "inventario": 55858,
+    "novedades": [
+      "Cibitex: 1 hora de paro por cambio de título / cambio de estilo / ensarte.",
+      "Corte: 7 horas de paro por falta de tela revisada."
+    ]
+  }
+}
