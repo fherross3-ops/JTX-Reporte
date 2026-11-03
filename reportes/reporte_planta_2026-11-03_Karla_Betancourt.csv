@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-03
 Responsable,Karla Betancourt
-Creado,2026-11-03T13:37:23.932Z
-Exportado,2026-11-03T13:37:25.191Z
+Creado,2026-11-03T13:53:04.035Z
+Exportado,2026-11-03T13:53:05.151Z
 Archivo,reporte_planta_2026-11-03_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -54,24 +54,42 @@ N,Detalle
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
 Titulo,Unipacks,Open-End
+10,04,01
+08,05,03
+08,1,04
 
 Urdido
 Urdidora,Estilo,Lote,Mh,Mph
+01,Señal,1071,03,18
+02,Arandano dark,2001,01,14
+03,Farina,3001,01,14
+04,Arandano negro,4079,11,14
 
 Tenido
 Tren,Estilo,Lote,Mh,Mph,Observacion
+Beloit 01,Arandano negro,4079,10,14,
 
 Reurdido
 Estilo,Lote,Mh,Mph
+Alexa,202001,09,12
 
 Engomado
-Metros engomados del dia anterior,
+Metros engomados del dia anterior,22
 Engomadora,Estilo,Lote,Mh,Mph,Observacion
+01,Bulldenim 11,200097,12,12,
+02,Oxigeno,100068,12,12,
 
 Pendientes por Engomar
 Estilo,Lote,Mh,Mph
+Farina,102225,14,14
+Arandano dark,402226,14,14
 
 Novedades de Engomado
+1,No hay existencia de PVA en planta.
+2,Engomadora 02 parada desde las 6:00am hasta las 2:00 pm por mecanica.
+3,"Luego se paro a la 1:50am por electronica, hasta las 6:00am"
+4,Engomadora 01 estuvo parada desde las 6:00 am hasta las 2:00pm por Falla electronica y instrumentacion. Nuevamente paro desde las 12:40 am hasta las 4:30 am
+5,"(Por preparacion y conteo Nuevamente, por caida de un plegador de el creer,)"
 
 == TEJEDURIA ==
 Concepto,Valor
