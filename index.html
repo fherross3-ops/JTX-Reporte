@@ -6,42 +6,26 @@
 <title>Reporte Diario de Planta — Formulario</title>
 <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
 <style>
-  /* ============ TEMA OSCURO — LECTURA CÓMODA ============ */
   :root{
-    --bg:#0f141a;
-    --bg-2:#131a22;
-    --card:#1a222c;
-    --card-2:#202a36;
-    --ink:#e8eef4;
-    --muted:#8b9aad;
-    --line:#2a3644;
-    --line-2:#354252;
-    --accent:#5bc8e8;
-    --accent-2:#7ddaf2;
-    --input-bg:#131a22;
-    --danger:#f87171;
-    --danger-bg:#3d1a1a;
-    --ok:#34d399;
-    --radius:10px;
-    --shadow:0 2px 6px rgba(0,0,0,.35), 0 1px 2px rgba(0,0,0,.25);
+    --bg:#0f141a; --bg-2:#131a22; --card:#1a222c; --card-2:#202a36;
+    --ink:#e8eef4; --muted:#8b9aad; --line:#2a3644; --line-2:#354252;
+    --accent:#5bc8e8; --accent-2:#7ddaf2; --input-bg:#131a22;
+    --danger:#f87171; --danger-bg:#3d1a1a; --ok:#34d399;
+    --radius:10px; --shadow:0 2px 6px rgba(0,0,0,.35), 0 1px 2px rgba(0,0,0,.25);
   }
   html{ color-scheme: dark; }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   body{
     font-family:"Segoe UI",Roboto,system-ui,-apple-system,Arial,sans-serif;
-    background:var(--bg); color:var(--ink);
-    font-size:14px; line-height:1.5;
+    background:var(--bg); color:var(--ink); font-size:14px; line-height:1.5;
     -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3,h4{margin:0}
   input,select,textarea,button{font-family:inherit;font-size:14px;color:var(--ink)}
   input,select,textarea{
-    background:var(--input-bg);
-    border:1px solid var(--line-2);
-    border-radius:7px;
-    padding:8px 10px;
-    transition:.15s;
+    background:var(--input-bg); border:1px solid var(--line-2);
+    border-radius:7px; padding:8px 10px; transition:.15s;
   }
   input:focus,select:focus,textarea:focus{
     outline:none;border-color:var(--accent-2);
@@ -50,15 +34,12 @@
   input[type="date"]::-webkit-calendar-picker-indicator,
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button{
-    filter: invert(.85) brightness(1.1);
-    cursor:pointer;
+    filter: invert(.85) brightness(1.1); cursor:pointer;
   }
   input:-webkit-autofill{
     -webkit-box-shadow:0 0 0 100px var(--input-bg) inset;
     -webkit-text-fill-color:var(--ink);
   }
-
-  /* ============ TOPBAR ============ */
   .topbar{
     background:linear-gradient(135deg,#0a1a26,#0d2f42 60%,#0b4a63);
     color:#fff; padding:12px 18px;
@@ -76,8 +57,6 @@
   .brand h1{font-size:18px;font-weight:700;color:#e8f4fb}
   .brand p{margin:2px 0 0;font-size:12px;color:#8fb6cc}
   .topbar-actions{display:flex;flex-wrap:wrap;gap:8px}
-
-  /* ============ BOTONES ============ */
   .btn{
     border:1px solid transparent;border-radius:8px;
     padding:8px 14px;cursor:pointer;
@@ -98,25 +77,18 @@
     margin-top:8px;background:#1e2c3a;
     border:1px dashed #3d5a75;color:#9ed4ea;
     border-radius:7px;padding:6px 12px;
-    cursor:pointer;font-weight:600;font-size:12.5px;
-    transition:.15s;
+    cursor:pointer;font-weight:600;font-size:12.5px;transition:.15s;
   }
   .btn-mini:hover{background:#26384a;border-color:#5bc8e8;color:#c9ecf8}
-
-  /* ============ TABS ============ */
   .tabs{
     display:flex;gap:4px;padding:0 14px;
-    background:var(--card);
-    border-bottom:1px solid var(--line);
-    position:sticky;top:0;z-index:20;
-    overflow-x:auto;
+    background:var(--card);border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:20;overflow-x:auto;
   }
   .tab{
-    background:none;border:none;
-    padding:13px 18px;cursor:pointer;
+    background:none;border:none;padding:13px 18px;cursor:pointer;
     color:var(--muted);font-weight:600;font-size:14px;
-    border-bottom:3px solid transparent;
-    white-space:nowrap;transition:.15s;
+    border-bottom:3px solid transparent;white-space:nowrap;transition:.15s;
   }
   .tab:hover{color:var(--accent)}
   .tab.active{color:var(--accent-2);border-bottom-color:var(--accent-2)}
@@ -125,16 +97,12 @@
     border-radius:20px;padding:1px 8px;
     font-size:11.5px;margin-left:5px;font-weight:700;
   }
-
-  /* ============ LAYOUT ============ */
   main{padding:16px;max-width:1240px;margin:0 auto}
   .view{display:none}
   .view.active{display:block}
   .card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
+    background:var(--card);border:1px solid var(--line);
+    border-radius:var(--radius);box-shadow:var(--shadow);
     margin-bottom:14px;overflow:hidden;
   }
   .card-head{
@@ -150,102 +118,66 @@
   .card-head .hint{font-size:12px;color:var(--muted);font-weight:500}
   .card-body{padding:14px 16px}
   .subcard{
-    border:1px solid var(--line);
-    border-radius:8px;
-    padding:12px 14px;
-    margin-bottom:12px;
-    background:var(--bg-2);
+    border:1px solid var(--line);border-radius:8px;
+    padding:12px 14px;margin-bottom:12px;background:var(--bg-2);
   }
   .subcard:last-child{margin-bottom:0}
   .subcard h4{
     font-size:13px;color:var(--accent);
     margin-bottom:10px;letter-spacing:.3px;font-weight:700;
   }
-
-  /* ============ CAMPOS ============ */
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
   .grid.tight{grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .field{display:flex;flex-direction:column;gap:5px}
-  .field>span{
-    font-size:12px;font-weight:600;color:#a3b4c6;
-    letter-spacing:.3px;
-  }
+  .field>span{font-size:12px;font-weight:600;color:#a3b4c6;letter-spacing:.3px}
   .field input,.field select,.field textarea{width:100%}
   .field textarea{resize:vertical;min-height:72px;line-height:1.5}
   .calc{
-    margin-top:10px;background:#0e2a3a;
-    border:1px solid #1f4b63;
-    border-radius:7px;padding:8px 12px;
-    font-size:13px;color:#9ed4ea;
+    margin-top:10px;background:#0e2a3a;border:1px solid #1f4b63;
+    border-radius:7px;padding:8px 12px;font-size:13px;color:#9ed4ea;
   }
   .calc b{font-size:15px;color:var(--accent-2)}
-
-  /* ============ TABLAS DINÁMICAS ============ */
   .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
   table.dyn{width:100%;border-collapse:collapse;min-width:460px}
   table.dyn th{
-    text-align:left;
-    font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;
-    color:#9aabbd;background:#1e2a36;
-    padding:8px 10px;border-bottom:1px solid var(--line-2);
-    font-weight:700;
+    text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;
+    color:#9aabbd;background:#1e2a36;padding:8px 10px;
+    border-bottom:1px solid var(--line-2);font-weight:700;
   }
-  table.dyn td{
-    padding:5px 6px;border-bottom:1px solid #232f3c;
-    vertical-align:middle;
-  }
-  table.dyn input,table.dyn select{
-    width:100%;padding:7px 9px;font-size:13px;
-    border-radius:6px;
-  }
+  table.dyn td{padding:5px 6px;border-bottom:1px solid #232f3c;vertical-align:middle}
+  table.dyn input,table.dyn select{width:100%;padding:7px 9px;font-size:13px;border-radius:6px}
   .col-del{width:38px;text-align:center}
   .del{
     border:none;background:var(--danger-bg);color:var(--danger);
     border-radius:6px;width:26px;height:26px;
-    cursor:pointer;font-weight:700;line-height:1;font-size:11px;
-    transition:.15s;
+    cursor:pointer;font-weight:700;line-height:1;font-size:11px;transition:.15s;
   }
   .del:hover{background:#4d2020;color:#fca5a5}
-
-  /* ============ MATRICES ============ */
   table.matrix{width:100%;border-collapse:collapse;min-width:420px}
   table.matrix th{
     font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;
-    color:#9aabbd;background:#1e2a36;
-    padding:7px 5px;border-bottom:1px solid var(--line-2);
-    text-align:center;
+    color:#9aabbd;background:#1e2a36;padding:7px 5px;
+    border-bottom:1px solid var(--line-2);text-align:center;
   }
   table.matrix th:first-child{text-align:left;min-width:120px}
-  table.matrix td{
-    border-bottom:1px solid #232f3c;
-    padding:5px 5px;text-align:center;
-  }
-  table.matrix td.rowhead{
-    text-align:left;font-weight:600;color:#c1d2e2;font-size:13px;
-  }
+  table.matrix td{border-bottom:1px solid #232f3c;padding:5px 5px;text-align:center}
+  table.matrix td.rowhead{text-align:left;font-weight:600;color:#c1d2e2;font-size:13px}
   table.matrix input.mini{
-    width:64px;text-align:center;
-    border:1px solid var(--line-2);border-radius:6px;
-    padding:6px 4px;background:var(--input-bg);font-size:13px;
+    width:64px;text-align:center;border:1px solid var(--line-2);
+    border-radius:6px;padding:6px 4px;background:var(--input-bg);font-size:13px;
   }
-  table.matrix td.tot{
-    font-weight:700;background:#16232e;color:var(--accent-2);
-    font-size:13px;
-  }
+  table.matrix td.tot{font-weight:700;background:#16232e;color:var(--accent-2);font-size:13px}
   table.matrix tr.totrow td{
     background:#1a3d52;font-weight:700;color:var(--accent-2);
     border-top:1px solid #1f4b63;font-size:13px;
   }
-
-  /* ============ PANEL / REPORTE ============ */
   .panel-toolbar{
     display:flex;gap:10px;flex-wrap:wrap;
     align-items:center;justify-content:space-between;
     background:var(--card);border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:12px 16px;margin-bottom:14px;
-    box-shadow:var(--shadow);
+    border-radius:var(--radius);padding:12px 16px;
+    margin-bottom:14px;box-shadow:var(--shadow);
   }
   .panel-toolbar .grp{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
   .panel-toolbar select{
@@ -257,19 +189,16 @@
     font-size:11.5px;color:var(--muted);
     font-family:ui-monospace,Consolas,monospace;
     background:#0e1a24;border:1px dashed #2a3644;
-    border-radius:6px;padding:4px 9px;
-    word-break:break-all;
+    border-radius:6px;padding:4px 9px;word-break:break-all;
   }
   .filename-hint b{color:var(--accent-2);font-weight:600}
   .report{
     background:var(--card);border:1px solid var(--line);
-    border-radius:var(--radius);box-shadow:var(--shadow);
-    overflow:hidden;
+    border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;
   }
   .rep-head{
     display:flex;justify-content:space-between;align-items:center;
-    gap:12px;flex-wrap:wrap;
-    padding:16px 22px;
+    gap:12px;flex-wrap:wrap;padding:16px 22px;
     background:linear-gradient(135deg,#0a1a26,#0d2f42 70%,#0b4a63);
     color:#fff;
   }
@@ -285,30 +214,19 @@
   .rep-sec:last-child{border-bottom:none}
   .rep-sec h3{
     font-size:13px;text-transform:uppercase;letter-spacing:1px;
-    color:var(--accent-2);
-    margin-bottom:12px;padding-bottom:8px;
+    color:var(--accent-2);margin-bottom:12px;padding-bottom:8px;
     border-bottom:2px solid #1a4559;
   }
-  .rep-sec h4{
-    font-size:13px;color:#a3b4c6;
-    margin:14px 0 8px;font-weight:700;
-  }
+  .rep-sec h4{font-size:13px;color:#a3b4c6;margin:14px 0 8px;font-weight:700}
   .rep-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:10px}
   .rep-table-wrap table.rep{margin-bottom:0}
-  table.rep{
-    width:100%;border-collapse:collapse;font-size:13px;
-    min-width:400px;
-  }
+  table.rep{width:100%;border-collapse:collapse;font-size:13px;min-width:400px}
   table.rep th{
     background:#1e2a36;color:#9aabbd;
     font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;
-    padding:8px 10px;border-bottom:1px solid var(--line-2);
-    text-align:left;
+    padding:8px 10px;border-bottom:1px solid var(--line-2);text-align:left;
   }
-  table.rep td{
-    padding:7px 10px;border-bottom:1px solid #232f3c;
-    color:#d6e0eb;
-  }
+  table.rep td{padding:7px 10px;border-bottom:1px solid #232f3c;color:#d6e0eb}
   table.rep td.num{text-align:center;font-variant-numeric:tabular-nums}
   table.rep td.lh{font-weight:600;color:#c1d2e2}
   table.rep td.tot{font-weight:700;background:#16232e;color:var(--accent-2)}
@@ -317,8 +235,7 @@
     border-top:1px solid #1f4b63;
   }
   .kpis{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
     gap:10px;margin-bottom:10px;
   }
   .kpi{
@@ -329,33 +246,21 @@
     display:block;font-size:11px;text-transform:uppercase;
     letter-spacing:.5px;color:var(--muted);margin-bottom:2px;
   }
-  .kpi b{
-    font-size:18px;color:var(--accent-2);
-    font-variant-numeric:tabular-nums;line-height:1.2;
-  }
+  .kpi b{font-size:18px;color:var(--accent-2);font-variant-numeric:tabular-nums;line-height:1.2}
   .novedades{margin:0;padding-left:22px}
-  .novedades li{
-    margin-bottom:6px;color:#d6e0eb;font-size:13.5px;
-    line-height:1.5;
-  }
+  .novedades li{margin-bottom:6px;color:#d6e0eb;font-size:13.5px;line-height:1.5}
   .empty{
     color:var(--muted);text-align:center;padding:40px 20px;
     font-style:italic;font-size:13.5px;
   }
-
-  /* ============ HISTÓRICO ============ */
   .hist-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
   table.hist{width:100%;border-collapse:collapse;font-size:13.5px}
   table.hist th{
     background:#1e2a36;color:#9aabbd;
     font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;
-    padding:11px 12px;text-align:left;
-    border-bottom:1px solid var(--line-2);
+    padding:11px 12px;text-align:left;border-bottom:1px solid var(--line-2);
   }
-  table.hist td{
-    padding:11px 12px;border-bottom:1px solid #232f3c;
-    vertical-align:middle;
-  }
+  table.hist td{padding:11px 12px;border-bottom:1px solid #232f3c;vertical-align:middle}
   table.hist tr:hover td{background:#202c39}
   table.hist td.acts{display:flex;gap:6px;flex-wrap:wrap}
   .tag{
@@ -363,8 +268,6 @@
     border-radius:6px;padding:3px 9px;font-size:12.5px;
     font-weight:700;white-space:nowrap;
   }
-
-  /* ============ TOAST ============ */
   #toast{
     position:fixed;bottom:22px;right:22px;
     background:#0e2433;color:#e8f4fb;
@@ -373,49 +276,31 @@
     box-shadow:0 10px 30px rgba(0,0,0,.5);
     opacity:0;transform:translateY(12px);
     transition:.25s;pointer-events:none;z-index:100;
-    font-weight:600;font-size:13.5px;
-    max-width:calc(100vw - 44px);
+    font-weight:600;font-size:13.5px;max-width:calc(100vw - 44px);
   }
   #toast.show{opacity:1;transform:translateY(0)}
   #toast.err{background:#3d1a1a;border-color:#5b2323;color:#fca5a5}
-
-  /* ============ MODAL POST-GUARDADO ============ */
   #modal-share{
-    position:fixed; inset:0; z-index:200;
-    background:rgba(0,0,0,.65);
-    display:none; align-items:center; justify-content:center;
-    padding:20px;
+    position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.65);
+    display:none;align-items:center;justify-content:center;padding:20px;
   }
   #modal-share.show{display:flex}
   .modal-card{
-    background:var(--card); border:1px solid var(--line-2);
-    border-radius:14px; padding:26px 24px;
-    max-width:420px; width:100%;
-    box-shadow:0 20px 60px rgba(0,0,0,.6);
-    text-align:center;
+    background:var(--card);border:1px solid var(--line-2);
+    border-radius:14px;padding:26px 24px;
+    max-width:420px;width:100%;
+    box-shadow:0 20px 60px rgba(0,0,0,.6);text-align:center;
   }
-  .modal-card h3{
-    font-size:18px; color:var(--accent-2);
-    margin-bottom:8px;
-  }
-  .modal-card p{
-    color:var(--muted); font-size:14px;
-    margin:0 0 22px; line-height:1.5;
-  }
-  .modal-card .modal-actions{
-    display:flex; flex-direction:column; gap:10px;
-  }
-  .modal-card .btn{
-    padding:14px 18px; font-size:15px; width:100%;
-  }
+  .modal-card h3{font-size:18px;color:var(--accent-2);margin-bottom:8px}
+  .modal-card p{color:var(--muted);font-size:14px;margin:0 0 22px;line-height:1.5}
+  .modal-card .modal-actions{display:flex;flex-direction:column;gap:10px}
+  .modal-card .btn{padding:14px 18px;font-size:15px;width:100%}
   .modal-card .btn.ghost{background:#26343f;color:#cfe3f0;border-color:#35485a}
   .modal-card .btn.ghost:hover{background:#2e4052}
   @media (max-width:480px){
     .modal-card{padding:22px 18px}
     .modal-card h3{font-size:16px}
   }
-
-  /* ============ RESPONSIVE (MÓVIL) ============ */
   @media (max-width:760px){
     body{font-size:14.5px}
     .brand h1{font-size:16px}
@@ -465,8 +350,6 @@
     table.matrix input.mini{width:46px}
     .brand p{display:none}
   }
-
-  /* ============ PRINT / PDF ============ */
   @media print{
     @page{ size:A4 portrait; margin:10mm; }
     html{ color-scheme: light; }
@@ -483,18 +366,14 @@
     }
     .rep-head{
       background:linear-gradient(135deg,#0a1a26,#0d2f42 70%,#0b4a63) !important;
-      color:#fff !important;
-      padding:10px 14px !important;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
+      color:#fff !important; padding:10px 14px !important;
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
     }
     .rep-head h2, .rep-head .rep-kicker{ color:#fff !important; }
     .rep-date{
       background:rgba(91,200,232,.25) !important;
-      color:#fff !important;
-      border:1px solid #5bc8e8 !important;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
+      color:#fff !important; border:1px solid #5bc8e8 !important;
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
     }
     .rep-sec, .rep-sec *{ color:#111 !important; }
     .rep-sec h3{ color:#0b4a63 !important; border-bottom:2px solid #cfe6f1 !important; }
@@ -505,20 +384,17 @@
     table.rep{ min-width:0 !important; }
     table.rep th{
       background:#eef4f8 !important; color:#333 !important;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
     }
     table.rep td{ border-bottom:1px solid #ddd !important; color:#111 !important; }
     table.rep td.lh{ color:#222 !important; }
     table.rep td.tot{
       background:#e8f1f6 !important; color:#0b4a63 !important;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
     }
     table.rep tr.totrow td{
       background:#dbe9f2 !important; color:#0b4a63 !important;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
     }
     .kpis{ page-break-inside:avoid; }
     .kpi{ background:#f5f8fb !important; border:1px solid #ccc !important; }
@@ -554,10 +430,8 @@
 
 <main>
 
-  <!-- ==================== VISTA: FORMULARIO ==================== -->
   <section class="view active" id="view-form">
     <form id="report-form" autocomplete="off" onsubmit="return false;">
-
       <div class="card">
         <div class="card-head"><h3>Datos generales</h3></div>
         <div class="card-body">
@@ -574,17 +448,14 @@
           <span class="hint">Producción, títulos y estado Open-End</span>
         </div>
         <div class="card-body">
-
           <div class="grid tight" style="margin-bottom:14px">
             <label class="field"><span>Kgs producidos en Open-End</span><input type="number" step="any" id="h_kgs_oe"></label>
             <label class="field"><span>Kgs producidos en Carda</span><input type="number" step="any" id="h_kgs_carda"></label>
           </div>
-
           <div class="subcard">
             <h4>Títulos Open-End</h4>
             <div class="table-wrap" data-table="titulos"></div>
           </div>
-
           <div class="subcard">
             <h4>Puestos inactivos de la Open-End</h4>
             <div class="grid tight">
@@ -599,7 +470,6 @@
             </div>
             <div class="calc">Total: <b id="inact_total">0</b> puestos de 1440 = <b id="inact_pct">0.0</b>%</div>
           </div>
-
           <div class="subcard">
             <div class="grid2">
               <div>
@@ -612,7 +482,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -632,27 +501,22 @@
           <span class="hint">Urdido · Teñido · Reurdido · Engomado</span>
         </div>
         <div class="card-body">
-
           <div class="subcard">
             <h4>Inventario de Unipacks en Urdido</h4>
             <div class="table-wrap" data-table="unipacks"></div>
           </div>
-
           <div class="subcard">
             <h4>Urdido</h4>
             <div class="table-wrap" data-table="urdido"></div>
           </div>
-
           <div class="subcard">
             <h4>Teñido</h4>
             <div class="table-wrap" data-table="tenido"></div>
           </div>
-
           <div class="subcard">
             <h4>Reurdido</h4>
             <div class="table-wrap" data-table="reurdido"></div>
           </div>
-
           <div class="subcard">
             <h4>Engomado</h4>
             <div class="grid tight" style="margin-bottom:12px">
@@ -662,7 +526,6 @@
             <h4 style="margin-top:16px">Pendientes por engomar</h4>
             <div class="table-wrap" data-table="porengomar"></div>
           </div>
-
           <div class="subcard">
             <h4>Novedades de engomado</h4>
             <label class="field">
@@ -670,14 +533,12 @@
               <textarea id="novedades_engomado" rows="3" placeholder="1.- No hay existencia de PVA en planta..."></textarea>
             </label>
           </div>
-
         </div>
       </div>
 
       <div class="card">
         <div class="card-head"><h3>Tejeduría</h3></div>
         <div class="card-body">
-
           <div class="grid tight" style="margin-bottom:14px">
             <label class="field"><span>Metros tejidos del día anterior</span><input type="number" step="any" id="t_metros"></label>
             <label class="field"><span>Promedio Rot / hora</span><input type="number" step="any" id="t_rot"></label>
@@ -686,7 +547,6 @@
             <label class="field"><span>Telares parados</span><input type="number" step="any" id="t_parados"></label>
             <label class="field"><span>Cadenas en inventario</span><input type="number" step="any" id="t_cadenas"></label>
           </div>
-
           <div class="subcard">
             <h4>Causas de telares parados</h4>
             <div class="grid tight">
@@ -700,7 +560,6 @@
               <label class="field"><span>Telares afectados por repuesto</span><input type="text" id="c_repuesto_telares" placeholder="Ej. 5, 47, 73, 33, 108, 43"></label>
             </div>
           </div>
-
           <div class="subcard">
             <h4>Otros paros</h4>
             <div class="grid tight">
@@ -715,7 +574,6 @@
               <label class="field"><span>Detalle falta de urdimbre</span><input type="text" id="o_urdimbre_det" placeholder="Ej. Amazonas (4), Indigo Oscuro (1)"></label>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -740,11 +598,9 @@
         <button class="btn soft" type="button" id="btn-limpiar-2">Limpiar</button>
         <button class="btn primary" type="button" id="btn-guardar-2">Guardar informe</button>
       </div>
-
     </form>
   </section>
 
-  <!-- ==================== VISTA: PANEL ==================== -->
   <section class="view" id="view-panel">
     <div class="panel-toolbar">
       <div class="grp">
@@ -757,6 +613,7 @@
         <button class="btn soft mini" type="button" id="btn-panel-cargar">Cargar en formulario</button>
         <button class="btn soft mini" type="button" id="btn-panel-csv">Exportar CSV</button>
         <button class="btn soft mini" type="button" id="btn-panel-pdf">Descargar PDF</button>
+        <button class="btn soft mini" type="button" id="btn-panel-print">Imprimir / PDF</button>
         <button class="btn danger mini" type="button" id="btn-panel-borrar">Eliminar</button>
       </div>
     </div>
@@ -764,7 +621,6 @@
     <div id="panel-body"></div>
   </section>
 
-  <!-- ==================== VISTA: HISTÓRICO ==================== -->
   <section class="view" id="view-hist">
     <div class="panel-toolbar">
       <div class="grp"><strong style="font-size:14px">Informes guardados</strong></div>
@@ -801,6 +657,7 @@
     <p>¿Quieres descargar el PDF del reporte?</p>
     <div class="modal-actions">
       <button class="btn primary" id="modal-btn-pdf" type="button">📥 Descargar PDF</button>
+      <button class="btn soft" id="modal-btn-print" type="button">🖨️ Guardar como PDF (Imprimir)</button>
       <button class="btn ghost" id="modal-btn-cerrar" type="button">Cerrar</button>
     </div>
   </div>
@@ -851,37 +708,28 @@ function todayISO(){
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 }
-
 function sanitizeFilename(s){
   return String(s || '').trim()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^\w\-]+/g, '_')
-    .replace(/_+/g, '_')
-    .replace(/^_|_$/g, '')
-    .substring(0, 40);
+    .replace(/[^\w\-]+/g, '_').replace(/_+/g, '_')
+    .replace(/^_|_$/g, '').substring(0, 40);
 }
-
 function fileBaseName(r){
   const fecha = (r && r.fecha) ? r.fecha : 'sin_fecha';
   const resp  = sanitizeFilename(r && r.responsable);
   return resp ? `reporte_planta_${fecha}_${resp}` : `reporte_planta_${fecha}`;
 }
-
 function dateRangeFromList(list){
   const fechas = (list || []).map(r => r.fecha).filter(Boolean).sort();
   if (!fechas.length) return { desde: 'sin_fecha', hasta: 'sin_fecha', single: true };
-  const desde = fechas[0];
-  const hasta = fechas[fechas.length - 1];
-  return { desde, hasta, single: desde === hasta };
+  return { desde: fechas[0], hasta: fechas[fechas.length - 1], single: fechas[0] === fechas[fechas.length - 1] };
 }
-
 function aggregateBaseName(prefix, list){
   const { desde, hasta, single } = dateRangeFromList(list);
   return single
     ? `reporte_planta_${prefix}_${desde}`
     : `reporte_planta_${prefix}_${desde}_a_${hasta}`;
 }
-
 function updateFilenameHint(){
   const hint = $('filename-hint');
   if (!hint) return;
@@ -896,72 +744,35 @@ function updateFilenameHint(){
    2. DEFINICIÓN DE TABLAS DINÁMICAS
    ========================================================================= */
 const TABLES = {
-  titulos: {
-    minRows: 1,
-    cols: [
-      { k:'maquina', t:'Open-End' },
-      { k:'titulo',  t:'Título' },
-      { k:'uso',     t:'Uso', type:'select', opts:['Urdido','Ventas','Trama'] }
-    ]
-  },
-  unipacks: {
-    minRows: 1,
-    cols: [
-      { k:'titulo',   t:'Título' },
-      { k:'unipacks', t:'Unipacks', type:'number' },
-      { k:'openend',  t:'Open-End' }
-    ]
-  },
-  urdido: {
-    minRows: 1,
-    cols: [
-      { k:'urdidora', t:'Urdidora' },
-      { k:'estilo',   t:'Estilo' },
-      { k:'lote',     t:'Lote' },
-      { k:'mh',       t:'Mh' },
-      { k:'mph',      t:'Mph' }
-    ]
-  },
-  tenido: {
-    minRows: 1,
-    cols: [
-      { k:'tren',   t:'Tren' },
-      { k:'estilo', t:'Estilo' },
-      { k:'lote',   t:'Lote' },
-      { k:'mh',     t:'Mh' },
-      { k:'mph',    t:'Mph' },
-      { k:'obs',    t:'Observación' }
-    ]
-  },
-  reurdido: {
-    minRows: 1,
-    cols: [
-      { k:'estilo', t:'Estilo' },
-      { k:'lote',   t:'Lote' },
-      { k:'mh',     t:'Mh' },
-      { k:'mph',    t:'Mph' }
-    ]
-  },
-  engomado: {
-    minRows: 1,
-    cols: [
-      { k:'engomadora', t:'Engomadora' },
-      { k:'estilo',     t:'Estilo' },
-      { k:'lote',       t:'Lote' },
-      { k:'mh',         t:'Mh' },
-      { k:'mph',        t:'Mph' },
-      { k:'obs',        t:'Observación' }
-    ]
-  },
-  porengomar: {
-    minRows: 1,
-    cols: [
-      { k:'estilo', t:'Estilo' },
-      { k:'lote',   t:'Lote' },
-      { k:'mh',     t:'Mh' },
-      { k:'mph',    t:'Mph' }
-    ]
-  }
+  titulos: { minRows: 1, cols: [
+    { k:'maquina', t:'Open-End' }, { k:'titulo', t:'Título' },
+    { k:'uso', t:'Uso', type:'select', opts:['Urdido','Ventas','Trama'] }
+  ]},
+  unipacks: { minRows: 1, cols: [
+    { k:'titulo', t:'Título' }, { k:'unipacks', t:'Unipacks', type:'number' },
+    { k:'openend', t:'Open-End' }
+  ]},
+  urdido: { minRows: 1, cols: [
+    { k:'urdidora', t:'Urdidora' }, { k:'estilo', t:'Estilo' },
+    { k:'lote', t:'Lote' }, { k:'mh', t:'Mh' }, { k:'mph', t:'Mph' }
+  ]},
+  tenido: { minRows: 1, cols: [
+    { k:'tren', t:'Tren' }, { k:'estilo', t:'Estilo' }, { k:'lote', t:'Lote' },
+    { k:'mh', t:'Mh' }, { k:'mph', t:'Mph' }, { k:'obs', t:'Observación' }
+  ]},
+  reurdido: { minRows: 1, cols: [
+    { k:'estilo', t:'Estilo' }, { k:'lote', t:'Lote' },
+    { k:'mh', t:'Mh' }, { k:'mph', t:'Mph' }
+  ]},
+  engomado: { minRows: 1, cols: [
+    { k:'engomadora', t:'Engomadora' }, { k:'estilo', t:'Estilo' },
+    { k:'lote', t:'Lote' }, { k:'mh', t:'Mh' }, { k:'mph', t:'Mph' },
+    { k:'obs', t:'Observación' }
+  ]},
+  porengomar: { minRows: 1, cols: [
+    { k:'estilo', t:'Estilo' }, { k:'lote', t:'Lote' },
+    { k:'mh', t:'Mh' }, { k:'mph', t:'Mph' }
+  ]}
 };
 
 const PARADOS_ROWS = [
@@ -998,7 +809,6 @@ function rowHTML(cfg, r){
   h += '<td class="col-del"><button type="button" class="del" title="Eliminar fila">✕</button></td></tr>';
   return h;
 }
-
 function initTable(key, rows){
   const host = document.querySelector(`[data-table="${key}"]`);
   if (!host) return;
@@ -1007,11 +817,9 @@ function initTable(key, rows){
   host.innerHTML =
     `<table class="dyn"><thead><tr>${head}<th class="col-del"></th></tr></thead><tbody></tbody></table>
      <button type="button" class="btn-mini add-row">+ Agregar fila</button>`;
-
   const tb = host.querySelector('tbody');
   const seed = (rows && rows.length) ? rows : [{}];
   seed.forEach(r => tb.insertAdjacentHTML('beforeend', rowHTML(cfg, r)));
-
   host.querySelector('.add-row').addEventListener('click', () => {
     tb.insertAdjacentHTML('beforeend', rowHTML(cfg, {}));
   });
@@ -1022,7 +830,6 @@ function initTable(key, rows){
     }
   });
 }
-
 function setTable(key, rows){
   const host = document.querySelector(`[data-table="${key}"]`);
   if (!host) return;
@@ -1032,7 +839,6 @@ function setTable(key, rows){
   const seed = (rows && rows.length) ? rows : [{}];
   seed.forEach(r => tb.insertAdjacentHTML('beforeend', rowHTML(cfg, r)));
 }
-
 function readTable(key){
   const host = document.querySelector(`[data-table="${key}"] tbody`);
   if (!host) return [];
@@ -1051,7 +857,6 @@ function buildMatrix(hostId, defs, prefix){
   let h = '<table class="matrix"><thead><tr><th>Causa</th>';
   MAQUINAS.forEach(m => h += `<th>${m}</th>`);
   h += '<th>Total</th></tr></thead><tbody>';
-
   defs.forEach(d => {
     h += `<tr><td class="rowhead">${d.t}</td>`;
     MAQUINAS.forEach(m => {
@@ -1060,34 +865,26 @@ function buildMatrix(hostId, defs, prefix){
     });
     h += `<td class="tot" id="${prefix}_tot_${d.k}">0</td></tr>`;
   });
-
   h += '<tr class="totrow"><td class="rowhead">Total</td>';
   MAQUINAS.forEach(m => h += `<td class="tot" id="${prefix}_col_${m}">0</td>`);
-  h += `<td class="tot" id="${prefix}_grand">0</td></tr>`;
-  h += '</tbody></table>';
-
+  h += `<td class="tot" id="${prefix}_grand">0</td></tr></tbody></table>`;
   host.innerHTML = h;
   host.addEventListener('input', () => recalcMatrix(prefix, defs));
 }
-
 function recalcMatrix(prefix, defs){
-  const colTot = {};
-  MAQUINAS.forEach(m => colTot[m] = 0);
+  const colTot = {}; MAQUINAS.forEach(m => colTot[m] = 0);
   let grand = 0;
-
   defs.forEach(d => {
     let rowTot = 0;
     MAQUINAS.forEach(m => {
       const el = $(`${prefix}_${d.k}_${m}`);
       const n = el && el.value !== '' ? Number(el.value) || 0 : 0;
-      rowTot += n;
-      colTot[m] += n;
+      rowTot += n; colTot[m] += n;
     });
     const cell = $(`${prefix}_tot_${d.k}`);
     if (cell) cell.textContent = rowTot;
     grand += rowTot;
   });
-
   MAQUINAS.forEach(m => {
     const c = $(`${prefix}_col_${m}`);
     if (c) c.textContent = colTot[m];
@@ -1095,7 +892,6 @@ function recalcMatrix(prefix, defs){
   const g = $(`${prefix}_grand`);
   if (g) g.textContent = grand;
 }
-
 function readMatrix(prefix, defs){
   const o = {};
   defs.forEach(d => {
@@ -1108,7 +904,6 @@ function readMatrix(prefix, defs){
   });
   return o;
 }
-
 function setMatrix(prefix, defs, data){
   defs.forEach(d => {
     MAQUINAS.forEach(m => {
@@ -1147,10 +942,7 @@ function collect(){
       kgsOE: num('h_kgs_oe'),
       kgsCarda: num('h_kgs_carda'),
       titulos: readTable('titulos'),
-      inactivos: {
-        m: MAQUINAS.map(m => num('inact_' + m)),
-        causa: val('inact_causa')
-      },
+      inactivos: { m: MAQUINAS.map(m => num('inact_' + m)), causa: val('inact_causa') },
       parados: readMatrix('par', PARADOS_ROWS),
       corregidos: readMatrix('cor', CORREGIDOS_ROWS)
     },
@@ -1207,52 +999,41 @@ function fillForm(r){
   if (!r) return;
   $('fecha').value = r.fecha || '';
   $('responsable').value = r.responsable || '';
-
   const h  = r.hilanderia || {};
   const hu = r.humedos    || {};
   const t  = r.tejeduria  || {};
   const a  = r.acabado    || {};
-
   $('h_kgs_oe').value    = nz(h.kgsOE);
   $('h_kgs_carda').value = nz(h.kgsCarda);
-
   setTable('titulos', h.titulos || []);
-
   MAQUINAS.forEach((m, i) => {
     $('inact_' + m).value = nz((h.inactivos?.m || [])[i]);
   });
   $('inact_causa').value = h.inactivos?.causa || '';
   recalcInactivos();
-
   setMatrix('par', PARADOS_ROWS, h.parados || {});
   setMatrix('cor', CORREGIDOS_ROWS, h.corregidos || {});
-
   $('novedades_planta').value = (r.novedadesPlanta || []).join('\n');
-
   setTable('unipacks',   hu.unipacks || []);
   setTable('urdido',     hu.urdido   || []);
   setTable('tenido',     hu.tenido   || []);
   setTable('reurdido',   hu.reurdido || []);
-
   $('eng_metros').value = nz(hu.engomado?.metros);
   setTable('engomado',   hu.engomado?.rows || []);
   setTable('porengomar', hu.engomado?.porEngomar || []);
   $('novedades_engomado').value = (hu.novedades || []).join('\n');
-
   $('t_metros').value     = nz(t.metros);
   $('t_rot').value        = nz(t.rot);
   $('t_cargados').value   = nz(t.cargados);
   $('t_operativos').value = nz(t.operativos);
   $('t_parados').value    = nz(t.parados);
   $('t_cadenas').value    = nz(t.cadenas);
-
   $('c_mecanica').value    = nz(t.causas?.mecanica);
   $('c_electronica').value = nz(t.causas?.electronica);
   $('c_electrica').value   = nz(t.causas?.electrica);
   $('c_montaje').value     = nz(t.causas?.montaje);
   $('c_repuesto').value    = nz(t.causas?.repuesto);
   $('c_repuesto_telares').value = t.causas?.repuestoTelares || '';
-
   $('o_presion').value  = nz(t.otros?.presion);
   $('o_orden').value    = nz(t.otros?.orden);
   $('o_urdimbre').value = nz(t.otros?.urdimbre);
@@ -1260,7 +1041,6 @@ function fillForm(r){
   $('o_calidad').value  = nz(t.otros?.calidad);
   $('o_ecu').value      = nz(t.otros?.ecu);
   $('o_trama').value    = nz(t.otros?.trama);
-
   $('a_sanforizado').value = nz(a.sanforizado);
   $('a_revision').value    = nz(a.revision);
   $('a_corte').value       = nz(a.corte);
@@ -1273,7 +1053,6 @@ function fillForm(r){
    7. ALMACENAMIENTO
    ========================================================================= */
 const STORE_KEY = 'reportes_planta_diario_v1';
-
 function loadAll(){
   try { return JSON.parse(localStorage.getItem(STORE_KEY) || '[]'); }
   catch(e){ return []; }
@@ -1288,9 +1067,7 @@ function matrixHTML(defs, data, firstHeader){
   let h = `<div class="rep-table-wrap"><table class="rep"><thead><tr><th>${firstHeader || 'Causa'}</th>`;
   MAQUINAS.forEach(m => h += `<th style="text-align:center">${m}</th>`);
   h += '<th style="text-align:center">Total</th></tr></thead><tbody>';
-
   const colTot = {}; MAQUINAS.forEach(m => colTot[m] = 0);
-
   defs.forEach(d => {
     const row = (data && data[d.k]) || {};
     let rowTot = 0;
@@ -1303,14 +1080,12 @@ function matrixHTML(defs, data, firstHeader){
     });
     h += `<td class="num tot">${rowTot}</td></tr>`;
   });
-
   const grand = MAQUINAS.reduce((s, m) => s + colTot[m], 0);
   h += '<tr class="totrow"><td class="lh">Total</td>';
   MAQUINAS.forEach(m => h += `<td class="num">${colTot[m]}</td>`);
   h += `<td class="num">${grand}</td></tr></tbody></table></div>`;
   return h;
 }
-
 function simpleTable(cols, rows, mapper){
   if (!rows || !rows.length) return '<p class="empty" style="padding:14px">Sin registros</p>';
   let h = '<div class="rep-table-wrap"><table class="rep"><thead><tr>' + cols.map(c => `<th>${c}</th>`).join('') + '</tr></thead><tbody>';
@@ -1319,12 +1094,10 @@ function simpleTable(cols, rows, mapper){
   });
   return h + '</tbody></table></div>';
 }
-
 function novedadesHTML(list){
   if (!list || !list.length) return '<p class="empty" style="padding:10px">Sin novedades</p>';
   return '<ol class="novedades">' + list.map(n => `<li>${esc(n)}</li>`).join('') + '</ol>';
 }
-
 function renderPanel(r, host){
   if (!r){
     host.innerHTML = '<div class="report"><p class="empty">No hay informes guardados todavía.<br>Captura uno en la pestaña <b>Formulario</b>.</p></div>';
@@ -1334,10 +1107,8 @@ function renderPanel(r, host){
   const hu = r.humedos    || {};
   const t  = r.tejeduria  || {};
   const a  = r.acabado    || {};
-
   const inactTotal = (h.inactivos?.m || []).reduce((s, v) => s + (Number(v) || 0), 0);
   const inactPct   = ((inactTotal / 1440) * 100).toFixed(1);
-
   let html = '<div class="report">';
   html += `<div class="rep-head">
       <div>
@@ -1346,7 +1117,6 @@ function renderPanel(r, host){
       </div>
       <div class="rep-date">${fmtDate(r.fecha)}</div>
     </div>`;
-
   html += '<section class="rep-sec"><h3>Hilandería</h3>';
   html += `<div class="kpis">
       <div class="kpi"><span>Kgs Open-End</span><b>${fmtNum(h.kgsOE)}</b></div>
@@ -1356,56 +1126,43 @@ function renderPanel(r, host){
     </div>`;
   html += '<h4>Títulos Open-End</h4>';
   html += simpleTable(['Open-End','Título','Uso'], h.titulos, x => [x.maquina, x.titulo, x.uso]);
-
   html += '<h4>Puestos inactivos de la Open-End</h4>';
   html += '<div class="rep-table-wrap"><table class="rep"><thead><tr><th>Open-End</th><th style="text-align:center">Puestos</th></tr></thead><tbody>';
   MAQUINAS.forEach((m, i) => {
     html += `<tr><td class="lh">Open-End ${m}</td><td class="num">${fmtNum((h.inactivos?.m || [])[i])}</td></tr>`;
   });
-  html += `<tr class="totrow"><td>Total</td><td class="num">${inactTotal} de 1440 = ${inactPct}%</td></tr>`;
-  html += '</tbody></table></div>';
+  html += `<tr class="totrow"><td>Total</td><td class="num">${inactTotal} de 1440 = ${inactPct}%</td></tr></tbody></table></div>`;
   if (h.inactivos?.causa) html += `<p style="margin:6px 0 0;color:#d6e0eb;font-size:13px"><b style="color:#a3b4c6">Causa:</b> ${esc(h.inactivos.causa)}</p>`;
-
   html += '<h4>Puestos parados por causa</h4>';
   html += matrixHTML(PARADOS_ROWS, h.parados, 'Causa');
-
   html += '<h4>Puestos corregidos por causa</h4>';
   html += matrixHTML(CORREGIDOS_ROWS, h.corregidos, 'Causa');
   html += '</section>';
-
   html += '<section class="rep-sec"><h3>Novedades de planta</h3>';
   html += novedadesHTML(r.novedadesPlanta);
   html += '</section>';
-
   html += '<section class="rep-sec"><h3>Procesos húmedos</h3>';
   html += '<h4>Inventario de Unipacks en Urdido</h4>';
   html += simpleTable(['Título','Unipacks','Open-End'], hu.unipacks, x => [x.titulo, x.unipacks, x.openend]);
-
   html += '<h4>Urdido</h4>';
   html += simpleTable(['Urdidora','Estilo','Lote','(Mh-Mph)'], hu.urdido,
     x => [x.urdidora, x.estilo, x.lote, (x.mh || x.mph) ? `(${x.mh || '—'}-${x.mph || '—'})` : '']);
-
   html += '<h4>Teñido</h4>';
   html += simpleTable(['Tren','Estilo','Lote','(Mh-Mph)','Observación'], hu.tenido,
     x => [x.tren, x.estilo, x.lote, (x.mh || x.mph) ? `(${x.mh || '—'}-${x.mph || '—'})` : '', x.obs]);
-
   html += '<h4>Reurdido</h4>';
   html += simpleTable(['Estilo','Lote','(Mh-Mph)'], hu.reurdido,
     x => [x.estilo, x.lote, (x.mh || x.mph) ? `(${x.mh || '—'}-${x.mph || '—'})` : '']);
-
   html += '<h4>Engomado</h4>';
   html += `<div class="kpis"><div class="kpi"><span>Metros engomados (día anterior)</span><b>${fmtNum(hu.engomado?.metros)}</b></div></div>`;
   html += simpleTable(['Engomadora','Estilo','Lote','(Mh-Mph)','Observación'], hu.engomado?.rows,
     x => [x.engomadora, x.estilo, x.lote, (x.mh || x.mph) ? `(${x.mh || '—'}-${x.mph || '—'})` : '', x.obs]);
-
   html += '<h4>Pendientes por engomar</h4>';
   html += simpleTable(['Estilo','Lote','(Mh-Mph)'], hu.engomado?.porEngomar,
     x => [x.estilo, x.lote, (x.mh || x.mph) ? `(${x.mh || '—'}-${x.mph || '—'})` : '']);
-
   html += '<h4>Novedades de engomado</h4>';
   html += novedadesHTML(hu.novedades);
   html += '</section>';
-
   html += '<section class="rep-sec"><h3>Tejeduría</h3>';
   html += `<div class="kpis">
       <div class="kpi"><span>Metros tejidos</span><b>${fmtNum(t.metros)}</b></div>
@@ -1415,11 +1172,9 @@ function renderPanel(r, host){
       <div class="kpi"><span>Telares parados</span><b>${fmtNum(t.parados)}</b></div>
       <div class="kpi"><span>Cadenas en inventario</span><b>${fmtNum(t.cadenas)}</b></div>
     </div>`;
-
   const causas = t.causas || {};
   const totalCausas = ['mecanica','electronica','electrica','montaje','repuesto']
     .reduce((s, k) => s + (Number(causas[k]) || 0), 0);
-
   html += '<h4>Causas de telares parados</h4>';
   html += '<div class="rep-table-wrap"><table class="rep"><thead><tr><th>Causa</th><th style="text-align:center">Cantidad</th><th>Detalle</th></tr></thead><tbody>';
   html += `<tr><td class="lh">Mecánica</td><td class="num">${fmtNum(causas.mecanica)}</td><td></td></tr>`;
@@ -1427,9 +1182,7 @@ function renderPanel(r, host){
   html += `<tr><td class="lh">Eléctrica</td><td class="num">${fmtNum(causas.electrica)}</td><td></td></tr>`;
   html += `<tr><td class="lh">Montaje</td><td class="num">${fmtNum(causas.montaje)}</td><td></td></tr>`;
   html += `<tr><td class="lh">Repuesto</td><td class="num">${fmtNum(causas.repuesto)}</td><td>${esc(causas.repuestoTelares || '')}</td></tr>`;
-  html += `<tr class="totrow"><td>Total</td><td class="num">${totalCausas}</td><td></td></tr>`;
-  html += '</tbody></table></div>';
-
+  html += `<tr class="totrow"><td>Total</td><td class="num">${totalCausas}</td><td></td></tr></tbody></table></div>`;
   const otros = t.otros || {};
   html += '<h4>Otros paros</h4>';
   html += '<div class="rep-table-wrap"><table class="rep"><thead><tr><th>Causa</th><th style="text-align:center">Cantidad</th><th>Detalle</th></tr></thead><tbody>';
@@ -1438,10 +1191,8 @@ function renderPanel(r, host){
   html += `<tr><td class="lh">Falta de urdimbre</td><td class="num">${fmtNum(otros.urdimbre)}</td><td>${esc(otros.urdimbreDet || '')}</td></tr>`;
   html += `<tr><td class="lh">Calidad</td><td class="num">${fmtNum(otros.calidad)}</td><td></td></tr>`;
   html += `<tr><td class="lh">E.C.U.</td><td class="num">${fmtNum(otros.ecu)}</td><td></td></tr>`;
-  html += `<tr><td class="lh">Falta de trama</td><td class="num">${fmtNum(otros.trama)}</td><td></td></tr>`;
-  html += '</tbody></table></div>';
+  html += `<tr><td class="lh">Falta de trama</td><td class="num">${fmtNum(otros.trama)}</td><td></td></tr></tbody></table></div>`;
   html += '</section>';
-
   html += '<section class="rep-sec"><h3>Planta de Acabado</h3>';
   html += `<div class="kpis">
       <div class="kpi"><span>Sanforizado</span><b>${fmtNum(a.sanforizado)}</b></div>
@@ -1452,9 +1203,7 @@ function renderPanel(r, host){
     </div>`;
   html += '<h4>Novedades de acabado</h4>';
   html += novedadesHTML(a.novedades);
-  html += '</section>';
-
-  html += '</div>';
+  html += '</section></div>';
   host.innerHTML = html;
 }
 
@@ -1470,14 +1219,10 @@ function downloadCSV(filename, content){
   const blob = new Blob(['\uFEFF' + content], { type: 'text/csv;charset=utf-8;' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
   setTimeout(() => URL.revokeObjectURL(url), 1500);
 }
-
 function detailedCSV(r){
   const L = [];
   const P = (...c) => L.push(c);
@@ -1485,7 +1230,6 @@ function detailedCSV(r){
   const hu = r.humedos    || {};
   const t  = r.tejeduria  || {};
   const a  = r.acabado    || {};
-
   P('Tipo', 'Informe Planta - Reporte Diario');
   P('Fecha del informe', r.fecha || '');
   P('Responsable', r.responsable || '');
@@ -1493,18 +1237,15 @@ function detailedCSV(r){
   P('Exportado', new Date().toISOString());
   P('Archivo', fileBaseName(r) + '.csv');
   P();
-
   P('== HILANDERIA ==');
   P('Concepto', 'Valor');
   P('Kgs producidos en Open-End', nz(h.kgsOE));
   P('Kgs producidos en Carda', nz(h.kgsCarda));
   P();
-
   P('Titulos Open-End');
   P('Open-End', 'Titulo', 'Uso');
   (h.titulos || []).forEach(x => P(x.maquina, x.titulo, x.uso));
   P();
-
   P('Puestos Inactivos Open-End');
   P('Open-End', 'Puestos');
   const inactTotal = (h.inactivos?.m || []).reduce((s, v) => s + (Number(v) || 0), 0);
@@ -1513,7 +1254,6 @@ function detailedCSV(r){
   P('Porcentaje de 1440', ((inactTotal / 1440) * 100).toFixed(1) + '%');
   P('Causa', h.inactivos?.causa || '');
   P();
-
   const pushMatrix = (titulo, defs, data) => {
     P(titulo);
     P('Causa', ...MAQUINAS, 'Total');
@@ -1535,48 +1275,39 @@ function detailedCSV(r){
   };
   pushMatrix('Puestos Parados por Causa', PARADOS_ROWS, h.parados);
   pushMatrix('Puestos Corregidos por Causa', CORREGIDOS_ROWS, h.corregidos);
-
   P('== NOVEDADES DE PLANTA ==');
   P('N', 'Detalle');
   (r.novedadesPlanta || []).forEach((n, i) => P(i + 1, n));
   P();
-
   P('== PROCESOS HUMEDOS ==');
   P('Inventario de Unipacks en Urdido');
   P('Titulo', 'Unipacks', 'Open-End');
   (hu.unipacks || []).forEach(x => P(x.titulo, x.unipacks, x.openend));
   P();
-
   P('Urdido');
   P('Urdidora', 'Estilo', 'Lote', 'Mh', 'Mph');
   (hu.urdido || []).forEach(x => P(x.urdidora, x.estilo, x.lote, x.mh, x.mph));
   P();
-
   P('Tenido');
   P('Tren', 'Estilo', 'Lote', 'Mh', 'Mph', 'Observacion');
   (hu.tenido || []).forEach(x => P(x.tren, x.estilo, x.lote, x.mh, x.mph, x.obs));
   P();
-
   P('Reurdido');
   P('Estilo', 'Lote', 'Mh', 'Mph');
   (hu.reurdido || []).forEach(x => P(x.estilo, x.lote, x.mh, x.mph));
   P();
-
   P('Engomado');
   P('Metros engomados del dia anterior', nz(hu.engomado?.metros));
   P('Engomadora', 'Estilo', 'Lote', 'Mh', 'Mph', 'Observacion');
   (hu.engomado?.rows || []).forEach(x => P(x.engomadora, x.estilo, x.lote, x.mh, x.mph, x.obs));
   P();
-
   P('Pendientes por Engomar');
   P('Estilo', 'Lote', 'Mh', 'Mph');
   (hu.engomado?.porEngomar || []).forEach(x => P(x.estilo, x.lote, x.mh, x.mph));
   P();
-
   P('Novedades de Engomado');
   (hu.novedades || []).forEach((n, i) => P(i + 1, n));
   P();
-
   P('== TEJEDURIA ==');
   P('Concepto', 'Valor');
   P('Metros tejidos del dia anterior', nz(t.metros));
@@ -1586,7 +1317,6 @@ function detailedCSV(r){
   P('Telares parados', nz(t.parados));
   P('Cadenas inventario', nz(t.cadenas));
   P();
-
   P('Causas de telares parados');
   P('Causa', 'Cantidad', 'Detalle');
   P('Mecanica', nz(t.causas?.mecanica), '');
@@ -1595,7 +1325,6 @@ function detailedCSV(r){
   P('Montaje', nz(t.causas?.montaje), '');
   P('Repuesto', nz(t.causas?.repuesto), t.causas?.repuestoTelares || '');
   P();
-
   P('Otros paros');
   P('Causa', 'Cantidad', 'Detalle');
   P('Presion de aire', nz(t.otros?.presion), '');
@@ -1605,7 +1334,6 @@ function detailedCSV(r){
   P('E.C.U.', nz(t.otros?.ecu), '');
   P('Falta de trama', nz(t.otros?.trama), '');
   P();
-
   P('== PLANTA ACABADO ==');
   P('Seccion', 'Metros');
   P('Sanforizado', nz(a.sanforizado));
@@ -1614,13 +1342,10 @@ function detailedCSV(r){
   P('General valor primera calidad (%)', nz(a.calidad));
   P('Inventario Tela Cruda (Noria)', nz(a.inventario));
   P();
-
   P('Novedades de Acabado');
   (a.novedades || []).forEach((n, i) => P(i + 1, n));
-
   return toCSV(L);
 }
-
 function summaryCSV(list){
   const exportado = new Date().toISOString();
   const headers = [
@@ -1633,19 +1358,16 @@ function summaryCSV(list){
     'Inventario Tela Cruda','Novedades Planta','Novedades Engomado','Novedades Acabado'
   ];
   const rows = [headers];
-
   list.forEach(r => {
     const h  = r.hilanderia || {};
     const hu = r.humedos    || {};
     const t  = r.tejeduria  || {};
     const a  = r.acabado    || {};
-
     const inactTotal = (h.inactivos?.m || []).reduce((s, v) => s + (Number(v) || 0), 0);
     const parTot = Object.values(h.parados || {}).reduce(
       (s, row) => s + MAQUINAS.reduce((x, m) => x + (Number(row[m]) || 0), 0), 0);
     const corTot = Object.values(h.corregidos || {}).reduce(
       (s, row) => s + MAQUINAS.reduce((x, m) => x + (Number(row[m]) || 0), 0), 0);
-
     rows.push([
       r.fecha, r.responsable || '', r.creado || '', exportado,
       nz(h.kgsOE), nz(h.kgsCarda),
@@ -1671,12 +1393,10 @@ function renderHistory(){
   const list = sortByFechaDesc(loadAll());
   const tb = document.querySelector('#hist-table tbody');
   $('hist-count').textContent = list.length;
-
   if (!list.length){
     tb.innerHTML = '<tr><td colspan="6" class="empty">No hay informes guardados.</td></tr>';
     return;
   }
-
   tb.innerHTML = list.map(r => {
     const t = r.tejeduria || {};
     const a = r.acabado || {};
@@ -1705,40 +1425,48 @@ function refreshPanelSelect(){
   const list = sortByFechaDesc(loadAll());
   const sel = $('panel-select');
   const prev = sel.value;
-
   if (!list.length){
     sel.innerHTML = '<option value="">— sin informes —</option>';
     renderPanel(null, $('panel-body'));
     updateFilenameHint();
     return;
   }
-
   sel.innerHTML = list.map(r =>
     `<option value="${r.id}">${fmtDate(r.fecha)} — ${r.responsable ? esc(r.responsable) : 'Sin responsable'}</option>`
   ).join('');
-
   if (list.some(r => r.id === prev)) sel.value = prev;
   renderPanel(getById(sel.value), $('panel-body'));
   updateFilenameHint();
 }
-
 function getById(id){ return loadAll().find(r => r.id === id) || null; }
 
 /* =========================================================================
-   12. SINCRONIZACIÓN DESDE GITHUB
+   12. SINCRONIZACIÓN DESDE GITHUB (con caché para no agotar rate limit)
    ========================================================================= */
 const GITHUB_OWNER  = 'fherross3-ops';
 const GITHUB_REPO   = 'JTX-Reporte';
 const GITHUB_BRANCH = 'main';
+const SYNC_CACHE_KEY = 'reportes_sync_ts';
+const SYNC_INTERVAL_MS = 5 * 60 * 1000; // 5 minutos
 
-async function syncFromGitHub(silencioso) {
+async function syncFromGitHub(silencioso, force) {
   try {
+    // Solo sincronizar si ha pasado suficiente tiempo o si es forzado
+    if (!force) {
+      const lastSync = Number(sessionStorage.getItem(SYNC_CACHE_KEY) || '0');
+      if (Date.now() - lastSync < SYNC_INTERVAL_MS) {
+        if (!silencioso) toast('Ya sincronizado hace poco');
+        return;
+      }
+    }
+
     if (!silencioso) toast('Sincronizando con GitHub…');
 
     const listUrl = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/reportes/json?ref=${GITHUB_BRANCH}`;
     const res = await fetch(listUrl, { headers: { Accept: 'application/vnd.github+json' } });
 
     if (res.status === 404) {
+      sessionStorage.setItem(SYNC_CACHE_KEY, String(Date.now()));
       if (!silencioso) toast('No hay informes remotos aún');
       return;
     }
@@ -1746,6 +1474,7 @@ async function syncFromGitHub(silencioso) {
 
     const files = await res.json();
     if (!Array.isArray(files) || !files.length) {
+      sessionStorage.setItem(SYNC_CACHE_KEY, String(Date.now()));
       if (!silencioso) toast('No hay informes remotos aún');
       return;
     }
@@ -1756,21 +1485,20 @@ async function syncFromGitHub(silencioso) {
 
     for (const file of files) {
       if (!file.name.endsWith('.json')) continue;
-
       const rawUrl = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${GITHUB_BRANCH}/reportes/json/${file.name}`;
       const rres = await fetch(rawUrl + '?t=' + Date.now());
       if (!rres.ok) continue;
-
       let report;
       try { report = await rres.json(); } catch(e) { continue; }
       if (!report || !report.fecha) continue;
       if (fechasLocales.has(report.fecha)) continue;
-
       if (!report.id) report.id = uid();
       local.push(report);
       fechasLocales.add(report.fecha);
       nuevos++;
     }
+
+    sessionStorage.setItem(SYNC_CACHE_KEY, String(Date.now()));
 
     if (nuevos > 0) {
       saveAll(local);
@@ -1794,19 +1522,15 @@ function init(){
   buildMatrix('mat_par', PARADOS_ROWS, 'par');
   buildMatrix('mat_cor', CORREGIDOS_ROWS, 'cor');
   MAQUINAS.forEach(m => $('inact_' + m).addEventListener('input', recalcInactivos));
-
   const hoy = new Date();
   const iso = `${hoy.getFullYear()}-${String(hoy.getMonth() + 1).padStart(2,'0')}-${String(hoy.getDate()).padStart(2,'0')}`;
   $('fecha').value = iso;
-
   if (!loadAll().length){
     const semilla = Object.assign({}, EJEMPLO, { id: uid() });
     saveAll([semilla]);
   }
-
   renderHistory();
   refreshPanelSelect();
-
   syncFromGitHub(true);
 }
 
@@ -1829,29 +1553,14 @@ function buildSummaryRow(r) {
   const hu = r.humedos    || {};
   const t  = r.tejeduria  || {};
   const a  = r.acabado    || {};
-
   const inactTotal = (h.inactivos?.m || []).reduce((s, v) => s + (Number(v) || 0), 0);
   const pctInact   = ((inactTotal / 1440) * 100).toFixed(1);
-
   return [
-    r.fecha || '',
-    r.responsable || '',
-    nz(h.kgsOE),
-    nz(h.kgsCarda),
-    inactTotal,
-    pctInact,
-    nz(t.metros),
-    nz(t.rot),
-    nz(t.cargados),
-    nz(t.operativos),
-    nz(t.parados),
-    nz(t.cadenas),
-    nz(hu.engomado?.metros),
-    nz(a.sanforizado),
-    nz(a.revision),
-    nz(a.corte),
-    nz(a.calidad),
-    nz(a.inventario),
+    r.fecha || '', r.responsable || '',
+    nz(h.kgsOE), nz(h.kgsCarda), inactTotal, pctInact,
+    nz(t.metros), nz(t.rot), nz(t.cargados), nz(t.operativos), nz(t.parados),
+    nz(t.cadenas), nz(hu.engomado?.metros),
+    nz(a.sanforizado), nz(a.revision), nz(a.corte), nz(a.calidad), nz(a.inventario),
     (r.novedadesPlanta || []).join(' | ')
   ];
 }
@@ -1859,7 +1568,6 @@ function buildSummaryRow(r) {
 async function guardar() {
   const r = collect();
   if (!r.fecha) { toast('Debes indicar la fecha del informe', true); return; }
-
   const all = loadAll();
   const existente = all.find(x => x.fecha === r.fecha);
   if (existente) {
@@ -1873,35 +1581,30 @@ async function guardar() {
   saveAll(all);
   renderHistory();
   refreshPanelSelect();
-
   const filename = fileBaseName(r) + '.csv';
   const csvContent = detailedCSV(r);
   const summaryRow = buildSummaryRow(r);
-
   try {
     const response = await fetch('/.netlify/functions/guardar', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ filename, csvContent, summaryRow, reportJSON: r }),
     });
-
     if (!response.ok) {
       const err = await response.json();
       throw new Error(err.error || 'Error al guardar en GitHub');
     }
-
     const result = await response.json();
     const accion = result.replaced ? 'actualizado' : 'añadido';
     toast(`Informe guardado y ${accion} en el consolidado`);
+    sessionStorage.removeItem(SYNC_CACHE_KEY);
   } catch (error) {
     toast('Guardado local OK, pero falló la subida a GitHub: ' + error.message, true);
   }
-
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.querySelector('.tab[data-view="panel"]').classList.add('active');
   $('view-panel').classList.add('active');
-
   abrirModalCompartir(r);
 }
 $('btn-guardar').addEventListener('click', guardar);
@@ -1913,23 +1616,28 @@ $('btn-guardar-2').addEventListener('click', guardar);
 let _pendingRegistro = null;
 
 async function generarPDFBlob(registro) {
+  // Contenedor temporal CASI invisible (opacity .01) pero dentro del viewport,
+  // porque html2canvas NO captura bien elementos fuera de pantalla ni con z-index negativo.
   const temp = document.createElement('div');
-  temp.style.position = 'fixed';
-  temp.style.left = '0';        // ← antes -99999px
-  temp.style.top = '0';
-  temp.style.zIndex = '-1';     // ← nuevo: lo oculta detrás de la página
-  temp.style.width = '210mm';
-  temp.style.background = '#fff';
-  temp.style.padding = '10mm';
-  temp.style.color = '#111';
-  temp.style.fontFamily = '"Segoe UI",Roboto,system-ui,sans-serif';
+  temp.style.cssText = `
+    position: absolute;
+    top: 0; left: 0;
+    width: 210mm;
+    background: #ffffff;
+    padding: 10mm;
+    color: #111;
+    font-family: "Segoe UI",Roboto,system-ui,sans-serif;
+    z-index: 99999;
+    opacity: 0.01;
+    pointer-events: none;
+  `;
   document.body.appendChild(temp);
-  // ... el resto del código sigue igual
 
   const inner = document.createElement('div');
   renderPanel(registro, inner);
   temp.appendChild(inner);
 
+  // Forzar estilos claros (html2pdf no aplica @media print)
   temp.querySelectorAll('.rep-sec h3').forEach(el => {
     el.style.color = '#0b4a63';
     el.style.borderBottom = '2px solid #cfe6f1';
@@ -1977,17 +1685,22 @@ async function generarPDFBlob(registro) {
   const opt = {
     margin: 0,
     filename: fileBaseName(registro) + '.pdf',
-    image: { type: 'jpeg', quality: 0.95 },
-    html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff' },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: '#ffffff',
+      logging: false
+    },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['css', 'legacy'] }
   };
 
-  // Pequeña espera para asegurar que todo se renderizó
-  await new Promise(resolve => setTimeout(resolve, 200));
+  // Esperar renderizado
+  await new Promise(resolve => setTimeout(resolve, 500));
 
   const blob = await html2pdf().set(opt).from(temp).outputPdf('blob');
   document.body.removeChild(temp);
-
   return { blob, filename: opt.filename };
 }
 
@@ -1995,8 +1708,6 @@ async function descargarPDF(registro) {
   try {
     toast('Generando PDF…');
     const { blob, filename } = await generarPDFBlob(registro);
-
-    // Descargar directamente el PDF
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -2005,32 +1716,65 @@ async function descargarPDF(registro) {
     a.click();
     document.body.removeChild(a);
     setTimeout(() => URL.revokeObjectURL(url), 1500);
-
     toast('PDF descargado: ' + filename);
   } catch (error) {
     console.error(error);
     toast('Error al generar el PDF: ' + error.message, true);
+    // Si falla, ofrecer la alternativa de imprimir
+    if (confirm('El PDF no se pudo generar con el método directo. ¿Quieres intentar con el diálogo de impresión (Guardar como PDF)?')) {
+      await imprimirPDF(registro);
+    }
   }
+}
+
+async function imprimirPDF(registro) {
+  // Cambiar a la pestaña Panel y seleccionar el informe
+  $('panel-select').value = registro.id || '';
+  renderPanel(registro, $('panel-body'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelector('.tab[data-view="panel"]').classList.add('active');
+  $('view-panel').classList.add('active');
+  updateFilenameHint();
+
+  await new Promise(r => setTimeout(r, 300));
+
+  const baseName = fileBaseName(registro);
+  const originalTitle = document.title;
+  document.title = baseName;
+
+  const restoreTitle = () => {
+    document.title = originalTitle;
+    window.removeEventListener('afterprint', restoreTitle);
+  };
+  window.addEventListener('afterprint', restoreTitle);
+
+  toast('En el diálogo, elige "Guardar como PDF"');
+  setTimeout(() => {
+    window.print();
+    setTimeout(restoreTitle, 3000);
+  }, 200);
 }
 
 function abrirModalCompartir(registro) {
   _pendingRegistro = registro;
   $('modal-share').classList.add('show');
 }
-
 function cerrarModalCompartir() {
   $('modal-share').classList.remove('show');
   _pendingRegistro = null;
 }
-
 $('modal-btn-pdf').addEventListener('click', async () => {
   const r = _pendingRegistro;
   cerrarModalCompartir();
   if (r) await descargarPDF(r);
 });
-
+$('modal-btn-print').addEventListener('click', async () => {
+  const r = _pendingRegistro;
+  cerrarModalCompartir();
+  if (r) await imprimirPDF(r);
+});
 $('modal-btn-cerrar').addEventListener('click', cerrarModalCompartir);
-
 $('modal-share').addEventListener('click', (e) => {
   if (e.target.id === 'modal-share') cerrarModalCompartir();
 });
@@ -2086,6 +1830,12 @@ $('btn-panel-pdf').addEventListener('click', async () => {
   await descargarPDF(r);
 });
 
+$('btn-panel-print').addEventListener('click', async () => {
+  const r = getById($('panel-select').value);
+  if (!r){ toast('No hay informe seleccionado', true); return; }
+  await imprimirPDF(r);
+});
+
 $('btn-panel-borrar').addEventListener('click', () => {
   const id = $('panel-select').value;
   const r = getById(id);
@@ -2097,7 +1847,7 @@ $('btn-panel-borrar').addEventListener('click', () => {
   toast('Informe eliminado');
 });
 
-document.querySelector('#hist-table tbody').addEventListener('click', e => {
+document.querySelector('#hist-table tbody').addEventListener('click', async e => {
   const btn = e.target.closest('button[data-act]');
   if (!btn) return;
   const id = btn.dataset.id;
@@ -2113,7 +1863,6 @@ document.querySelector('#hist-table tbody').addEventListener('click', e => {
     $('view-panel').classList.add('active');
     renderPanel(r, $('panel-body'));
     updateFilenameHint();
-
   } else if (act === 'cargar'){
     fillForm(r);
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -2122,15 +1871,12 @@ document.querySelector('#hist-table tbody').addEventListener('click', e => {
     $('view-form').classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
     toast('Informe cargado en el formulario');
-
   } else if (act === 'csv'){
     const nombre = fileBaseName(r) + '.csv';
     downloadCSV(nombre, detailedCSV(r));
     toast('CSV exportado: ' + nombre);
-
   } else if (act === 'pdf'){
     await descargarPDF(r);
-
   } else if (act === 'del'){
     if (!confirm(`¿Eliminar el informe del ${fmtDate(r.fecha)}?`)) return;
     saveAll(loadAll().filter(x => x.id !== id));
@@ -2140,7 +1886,7 @@ document.querySelector('#hist-table tbody').addEventListener('click', e => {
   }
 });
 
-$('btn-hist-sync').addEventListener('click', () => syncFromGitHub(false));
+$('btn-hist-sync').addEventListener('click', () => syncFromGitHub(false, true));
 
 $('btn-hist-resumen').addEventListener('click', () => {
   const list = sortByFechaDesc(loadAll());
@@ -2166,11 +1912,9 @@ $('btn-hist-todo').addEventListener('click', () => {
    16. DATOS DEL INFORME ADJUNTO
    ========================================================================= */
 const EJEMPLO = {
-  fecha: '2026-09-04',
-  responsable: '',
+  fecha: '2026-09-04', responsable: '',
   hilanderia: {
-    kgsOE: '',
-    kgsCarda: '',
+    kgsOE: '', kgsCarda: '',
     titulos: [
       { maquina:'01', titulo:'Ne 10',  uso:'Urdido' },
       { maquina:'02', titulo:'Ne 20',  uso:'Ventas' },
@@ -2187,10 +1931,8 @@ const EJEMPLO = {
       fa:        { '01':0,  '02':64, '03':79, '04':52, '05':0 }
     },
     corregidos: {
-      ajustefuga: { '02':7 },
-      fuentes:    { '02':9 },
-      fugas:      { '04':30 },
-      amortig:    { '01':8 }
+      ajustefuga: { '02':7 }, fuentes: { '02':9 },
+      fugas: { '04':30 }, amortig: { '01':8 }
     }
   },
   novedadesPlanta: [
@@ -2201,36 +1943,36 @@ const EJEMPLO = {
   ],
   humedos: {
     unipacks: [
-      { titulo:'Ne 10',      unipacks:'14',  openend:'01' },
-      { titulo:'Ne 10',      unipacks:'06',  openend:'04' },
-      { titulo:'Ne 8',       unipacks:'13',  openend:'05' },
-      { titulo:'Ne 8',       unipacks:'02',  openend:'03' },
+      { titulo:'Ne 10', unipacks:'14', openend:'01' },
+      { titulo:'Ne 10', unipacks:'06', openend:'04' },
+      { titulo:'Ne 8',  unipacks:'13', openend:'05' },
+      { titulo:'Ne 8',  unipacks:'02', openend:'03' },
       { titulo:'Ne 10 slub', unipacks:'2.5', openend:'???' }
     ],
     urdido: [
       { urdidora:'01', estilo:'Victoria 250.', lote:'1054', mh:'12', mph:'16' },
       { urdidora:'02', estilo:'Arandano Dark', lote:'2079', mh:'11', mph:'14' },
       { urdidora:'03', estilo:'Arandano Negro', lote:'3058', mh:'01', mph:'14' },
-      { urdidora:'04', estilo:'Indigo Soft',    lote:'4070', mh:'01', mph:'12' }
+      { urdidora:'04', estilo:'Indigo Soft', lote:'4070', mh:'01', mph:'12' }
     ],
     tenido: [
       { tren:'Belloit 1', estilo:'Arandano Negro', lote:'301189', mh:'14', mph:'14', obs:'Arrancó a las 6:40 AM' },
-      { tren:'Belloit 2', estilo:'Victoria 250.',   lote:'1054',   mh:'11', mph:'16', obs:'' },
-      { tren:'Belloit 2', estilo:'Arandano Dark',   lote:'2079',   mh:'10', mph:'16', obs:'En el Creel' }
+      { tren:'Belloit 2', estilo:'Victoria 250.', lote:'1054', mh:'11', mph:'16', obs:'' },
+      { tren:'Belloit 2', estilo:'Arandano Dark', lote:'2079', mh:'10', mph:'16', obs:'En el Creel' }
     ],
     reurdido: [
-      { estilo:'Fashion',   lote:'102187', mh:'10', mph:'14' },
+      { estilo:'Fashion', lote:'102187', mh:'10', mph:'14' },
       { estilo:'Cepe Dark', lote:'202188', mh:'12', mph:'12' }
     ],
     engomado: {
       metros: 29016,
       rows: [
-        { engomadora:'01', estilo:'',        lote:'',       mh:'',   mph:'',   obs:'Sin material' },
+        { engomadora:'01', estilo:'', lote:'', mh:'', mph:'', obs:'Sin material' },
         { engomadora:'02', estilo:'Mulberry', lote:'301184', mh:'14', mph:'14', obs:'En proceso cadena Nro. 3' },
-        { engomadora:'02', estilo:'Fashion',  lote:'412186', mh:'',   mph:'',   obs:'En el Creel cargado — Stand By' }
+        { engomadora:'02', estilo:'Fashion', lote:'412186', mh:'', mph:'', obs:'En el Creel cargado — Stand By' }
       ],
       porEngomar: [
-        { estilo:'Amazonas XIII',  lote:'1039',    mh:'18', mph:'18' },
+        { estilo:'Amazonas XIII', lote:'1039', mh:'18', mph:'18' },
         { estilo:'Fashion Oscuro', lote:'4022186', mh:'12', mph:'12' }
       ]
     },
@@ -2238,15 +1980,11 @@ const EJEMPLO = {
   },
   tejeduria: {
     metros: 20208, rot: 1.09, cargados: 91, operativos: 66, parados: 46, cadenas: 56,
-    causas: {
-      mecanica: 8, electronica: 4, electrica: 0, montaje: 1, repuesto: 6,
-      repuestoTelares: '5, 47, 73, 33, 108, 43'
-    },
-    otros: {
-      presion: 0, orden: 15, urdimbre: 5,
+    causas: { mecanica: 8, electronica: 4, electrica: 0, montaje: 1, repuesto: 6,
+      repuestoTelares: '5, 47, 73, 33, 108, 43' },
+    otros: { presion: 0, orden: 15, urdimbre: 5,
       urdimbreDet: 'Amazonas (4), Indigo Oscuro (1)',
-      calidad: 0, ecu: 2, trama: 0
-    }
+      calidad: 0, ecu: 2, trama: 0 }
   },
   acabado: {
     sanforizado: 29768, revision: 20824, corte: 19501,
