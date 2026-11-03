@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-03
 Responsable,Karla Betancourt
-Creado,2026-11-03T13:26:02.695Z
-Exportado,2026-11-03T13:26:08.705Z
+Creado,2026-11-03T13:37:23.932Z
+Exportado,2026-11-03T13:37:25.191Z
 Archivo,reporte_planta_2026-11-03_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -12,11 +12,11 @@ Kgs producidos en Carda,12.005
 
 Titulos Open-End
 Open-End,Titulo,Uso
-01,,Urdido
-02,,Urdido
-03,,Urdido
-04,,Urdido
-05,,Urdido
+01,10 mezcla 01,Urdido
+02,"08 , 6,5 5,6",Trama
+03,08 mezcla 01,Urdido
+04,"6,5 mezcla 01",Urdido
+05,16,Ventas
 
 Puestos Inactivos Open-End
 Open-End,Puestos
@@ -49,7 +49,7 @@ N,Detalle
 1,Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. Sigue la novedad.
 2,CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.
 3,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda"
-4,Cl- C3 se tranca cadena que ejerce movimiento a la banda  ascendente . Se para maquina por mantenimiento preventivo y correctivo. ( el sr de metalmecanica  Flores se lleva motor de caja reductora para su reparacion. Eso afectando la linea de carda #01 (
+4,Cl- C3 se tranca cadena que ejerce movimiento a la banda  ascendente . Se para maquina por mantenimiento preventivo y correctivo. ( el sr de metalmecanica  Flores se lleva motor de caja reductora para su reparation. Eso afectando la linea de carda #01 (en produccion bajo observacion en su proceso)
 
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
