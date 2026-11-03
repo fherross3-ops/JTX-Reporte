@@ -1,0 +1,206 @@
+{
+  "id": "mw0xrrtx4kf0l",
+  "fecha": "2026-11-03",
+  "responsable": "Karla Betancourt",
+  "creado": "2026-11-03T14:31:07.420Z",
+  "hilanderia": {
+    "kgsOE": "9760.3",
+    "kgsCarda": "12.005",
+    "titulos": [
+      {
+        "maquina": "01",
+        "titulo": "10 mezcla 01",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "02",
+        "titulo": "08 , 6,5 5,6",
+        "uso": "Trama"
+      },
+      {
+        "maquina": "03",
+        "titulo": "08 mezcla 01",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "04",
+        "titulo": "6,5 mezcla 01",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "05",
+        "titulo": "16",
+        "uso": "Ventas"
+      }
+    ],
+    "inactivos": {
+      "m": [
+        "0",
+        "85",
+        "23",
+        "0",
+        "0"
+      ],
+      "causa": ""
+    },
+    "parados": {
+      "inactivos": {},
+      "ajustes": {},
+      "fa": {}
+    },
+    "corregidos": {
+      "ajustefuga": {},
+      "fuentes": {},
+      "fugas": {},
+      "amortig": {}
+    }
+  },
+  "novedadesPlanta": [
+    "Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. Sigue la novedad.",
+    "CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.",
+    "Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda",
+    "Cl- C3 se tranca cadena que ejerce movimiento a la banda  ascendente . Se para maquina por mantenimiento preventivo y correctivo. ( el sr de metalmecanica  Flores se lleva motor de caja reductora para su reparation. Eso afectando la linea de carda #01 (en produccion bajo observacion en su proceso)"
+  ],
+  "humedos": {
+    "unipacks": [
+      {
+        "titulo": "10",
+        "unipacks": "04",
+        "openend": "01"
+      },
+      {
+        "titulo": "08",
+        "unipacks": "05",
+        "openend": "03"
+      },
+      {
+        "titulo": "08",
+        "unipacks": "1",
+        "openend": "04"
+      }
+    ],
+    "urdido": [
+      {
+        "urdidora": "01",
+        "estilo": "Señal",
+        "lote": "1071",
+        "mh": "03",
+        "mph": "18"
+      },
+      {
+        "urdidora": "02",
+        "estilo": "Arandano dark",
+        "lote": "2001",
+        "mh": "01",
+        "mph": "14"
+      },
+      {
+        "urdidora": "03",
+        "estilo": "Farina",
+        "lote": "3001",
+        "mh": "01",
+        "mph": "14"
+      },
+      {
+        "urdidora": "04",
+        "estilo": "Arandano negro",
+        "lote": "4079",
+        "mh": "11",
+        "mph": "14"
+      }
+    ],
+    "tenido": [
+      {
+        "tren": "Beloit 01",
+        "estilo": "Arandano negro",
+        "lote": "4079",
+        "mh": "10",
+        "mph": "14",
+        "obs": ""
+      }
+    ],
+    "reurdido": [
+      {
+        "estilo": "Alexa",
+        "lote": "202001",
+        "mh": "09",
+        "mph": "12"
+      }
+    ],
+    "engomado": {
+      "metros": "22000",
+      "rows": [
+        {
+          "engomadora": "01",
+          "estilo": "Bulldenim 11",
+          "lote": "200097",
+          "mh": "12",
+          "mph": "12",
+          "obs": ""
+        },
+        {
+          "engomadora": "02",
+          "estilo": "Oxigeno",
+          "lote": "100068",
+          "mh": "12",
+          "mph": "12",
+          "obs": ""
+        }
+      ],
+      "porEngomar": [
+        {
+          "estilo": "Farina",
+          "lote": "102225",
+          "mh": "14",
+          "mph": "14"
+        },
+        {
+          "estilo": "Arandano dark",
+          "lote": "402226",
+          "mh": "14",
+          "mph": "14"
+        }
+      ]
+    },
+    "novedades": [
+      "No hay existencia de PVA en planta.",
+      "Engomadora 02 parada desde las 6:00am hasta las 2:00 pm por mecanica.",
+      "Luego se paro a la 1:50am por electronica, hasta las 6:00am",
+      "Engomadora 01 estuvo parada desde las 6:00 am hasta las 2:00pm por Falla electronica y instrumentacion. Nuevamente paro desde las 12:40 am hasta las 4:30 am",
+      "(Por preparacion y conteo Nuevamente, por caida de un plegador de el creer,)"
+    ]
+  },
+  "tejeduria": {
+    "metros": "353",
+    "rot": "0.42",
+    "cargados": "82",
+    "operativos": "59",
+    "parados": "53",
+    "cadenas": "3",
+    "causas": {
+      "mecanica": "1",
+      "electronica": "0",
+      "electrica": "1",
+      "montaje": "2",
+      "repuesto": "7",
+      "repuestoTelares": "5,40,47,73,96,100,108"
+    },
+    "otros": {
+      "presion": "0",
+      "orden": "33",
+      "urdimbre": "8",
+      "urdimbreDet": "1- Roques- 06 satin iris black - 01 pañaltext",
+      "calidad": "0",
+      "ecu": "2",
+      "trama": "0"
+    }
+  },
+  "acabado": {
+    "sanforizado": "0",
+    "revision": "5.574",
+    "corte": "5.842",
+    "calidad": "74.43",
+    "inventario": "44.775",
+    "novedades": []
+  }
+}
