@@ -1471,24 +1471,13 @@ async function syncFromGitHub(silencioso, force) {
 
     const listUrl = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/reportes/json?ref=${GITHUB_BRANCH}`;
     const res = await fetch(listUrl, { headers: { Accept: 'application/vnd.github+json' } });
-
-    if (res.status === 404) {
-      sessionStorage.setItem(SYNC_CACHE_KEY, String(Date.now()));
-      if (!silencioso) toast('Carpeta reportes/json/ no existe');
-      return;
-    }
+    if (res.status === 404) { sessionStorage.setItem(SYNC_CACHE_KEY, String(Date.now())); return; }
     if (!res.ok) throw new Error(`GitHub list → ${res.status}`);
-
     const files = await res.json();
-    if (!Array.isArray(files) || !files.length) {
-      sessionStorage.setItem(SYNC_CACHE_KEY, String(Date.now()));
-      if (!silencioso) toast('No hay JSONs en GitHub');
-      return;
-    }
+    if (!Array.isArray(files) || !files.length) { sessionStorage.setItem(SYNC_CACHE_KEY, String(Date.now())); return; }
 
-    const local = loadAll();
-    let nuevos = 0, actualizados = 0;
-
+    // Descargar TODOS primero, luego resolver colisiones por "más datos gana"
+    const descargados = [];
     for (const file of files) {
       if (!file.name.endsWith('.json')) continue;
       const rawUrl = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${GITHUB_BRANCH}/reportes/json/${file.name}`;
@@ -1497,23 +1486,56 @@ async function syncFromGitHub(silencioso, force) {
       let report;
       try { report = await rres.json(); } catch(e) { continue; }
       if (!report || !report.fecha) continue;
+      descargados.push(report);
+    }
 
-      const idx = local.findIndex(r => r.fecha === report.fecha);
+    // Función que mide "cuántos datos tiene" un reporte
+    const pesoReporte = (r) => {
+      let n = 0;
+      const h = r.hilanderia || {}; const hu = r.humedos || {}; const t = r.tejeduria || {}; const a = r.acabado || {};
+      if (h.kgsOE) n += 10;
+      if (h.kgsCarda) n += 5;
+      if ((h.titulos||[]).length) n += 5;
+      if ((hu.urdido||[]).length) n += 5;
+      if ((hu.tenido||[]).length) n += 5;
+      if ((hu.reurdido||[]).length) n += 5;
+      if ((hu.engomado?.rows||[]).length) n += 5;
+      if (t.cargados) n += 5; if (t.parados) n += 5;
+      if (a.calidad) n += 5; if (a.inventario) n += 3;
+      if ((r.novedadesPlanta||[]).length) n += 3;
+      if ((a.novedades||[]).length) n += 3;
+      return n;
+    };
+
+    // Agrupar por fecha, quedarse con el de más peso
+    const porFecha = new Map();
+    for (const rep of descargados) {
+      const actual = porFecha.get(rep.fecha);
+      if (!actual || pesoReporte(rep) > pesoReporte(actual)) {
+        porFecha.set(rep.fecha, rep);
+      }
+    }
+
+    const local = loadAll();
+    let nuevos = 0, actualizados = 0;
+    for (const [fecha, remote] of porFecha) {
+      const idx = local.findIndex(r => r.fecha === fecha);
       if (idx >= 0) {
-        if (JSON.stringify(local[idx]) !== JSON.stringify(report)) {
-          report.id = local[idx].id;
-          local[idx] = report;
-          actualizados++;
+        if (pesoReporte(remote) >= pesoReporte(local[idx])) {
+          if (JSON.stringify(local[idx]) !== JSON.stringify(remote)) {
+            remote.id = local[idx].id;
+            local[idx] = remote;
+            actualizados++;
+          }
         }
       } else {
-        if (!report.id) report.id = uid();
-        local.push(report);
+        if (!remote.id) remote.id = uid();
+        local.push(remote);
         nuevos++;
       }
     }
 
     sessionStorage.setItem(SYNC_CACHE_KEY, String(Date.now()));
-
     if (nuevos > 0 || actualizados > 0) {
       saveAll(local);
       renderHistory();
