@@ -1,0 +1,135 @@
+Tipo,Informe Planta - Reporte Diario
+Fecha del informe,2026-11-04
+Responsable,Karla Betancourt
+Creado,2026-11-04T12:00:23.004Z
+Exportado,2026-11-04T12:00:23.028Z
+Archivo,reporte_planta_2026-11-04_Karla_Betancourt.csv
+
+== HILANDERIA ==
+Concepto,Valor
+Kgs producidos en Open-End,11985.2
+Kgs producidos en Carda,15.156
+
+Titulos Open-End
+Open-End,Titulo,Uso
+01,10 mezcla 01,Urdido
+02,"08 , 6,5 5,6",Trama
+03,08 mezcla 01,Urdido
+04,"6,5 mezcla 01",Urdido
+05,16,Ventas
+
+Puestos Inactivos Open-End
+Open-End,Puestos
+01,0
+02,85
+03,23
+04,0
+05,0
+Total,108
+Porcentaje de 1440,7.5%
+Causa,
+
+Puestos Parados por Causa
+Causa,01,02,03,04,05,Total
+Inactivos,16,13,15,4,12,60
+Ajustes,28,17,48,0,3,96
+F.A.,4,85,23,0,0,112
+Total,48,115,86,4,15,268
+
+Puestos Corregidos por Causa
+Causa,01,02,03,04,05,Total
+Ajuste-Fuga,,,,,,0
+Fuentes,,,,,,0
+Fugas,,,,,,0
+Amortig/Fuga,,,,,,0
+Total,0,0,0,0,0,0
+
+== NOVEDADES DE PLANTA ==
+N,Detalle
+1,Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. Sigue la novedad.
+2,CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.
+3,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda"
+4,Cl- C3 se tranca cadena que ejerce movimiento a la banda  ascendente . Se para maquina por mantenimiento preventivo y correctivo. ( el sr de metalmecanica  Flores se lleva motor de caja reductora para su reparation. Eso afectando la linea de carda #01 (en produccion bajo observacion en su proceso)
+
+== PROCESOS HUMEDOS ==
+Inventario de Unipacks en Urdido
+Titulo,Unipacks,Open-End
+10,04,01
+08,05,03
+08,1,04
+
+Urdido
+Urdidora,Estilo,Lote,Mh,Mph
+01,Señal,1071,03,18
+02,Arandano dark,2001,01,14
+03,Farina,3001,01,14
+04,Arandano negro,4079,11,14
+
+Tenido
+Tren,Estilo,Lote,Mh,Mph,Observacion
+Beloit 01,Arandano negro,4079,10,14,
+
+Reurdido
+Estilo,Lote,Mh,Mph
+Alexa,202001,09,12
+
+Engomado
+Metros engomados del dia anterior,41010
+Engomadora,Estilo,Lote,Mh,Mph,Observacion
+01,Bulldenim 11,200097,12,12,
+02,Oxigeno,100068,12,12,
+
+Pendientes por Engomar
+Estilo,Lote,Mh,Mph
+Farina,102225,14,14
+Arandano dark,402226,14,14
+
+Novedades de Engomado
+1,No hay existencia de PVA en planta.
+2,Engomadora 02 parada desde las 6:00am hasta las 2:00 pm por mecanica.
+3,"Luego se paro a la 1:50am por electronica, hasta las 6:00am"
+4,Engomadora 01 estuvo parada desde las 6:00 am hasta las 2:00pm por Falla electronica y instrumentacion. Nuevamente paro desde las 12:40 am hasta las 4:30 am
+5,"(Por preparacion y conteo Nuevamente, por caida de un plegador de el creer,)"
+
+== TEJEDURIA ==
+Concepto,Valor
+Metros tejidos del dia anterior,353
+Promedio Rot/hora,0.42
+Telares cargados,82
+Telares operativos,59
+Telares parados,53
+Cadenas inventario,3
+
+Causas de telares parados
+Causa,Cantidad,Detalle
+Mecanica,1,
+Electronica,0,
+Electrica,1,
+Montaje,2,
+Repuesto,7,"5,40,47,73,96,100,108"
+
+Otros paros
+Causa,Cantidad,Detalle
+Presion de aire,0,
+Orden superior,33,
+Falta de urdimbre,8,1- Roques- 06 satin iris black - 01 pañaltext
+Calidad,0,
+E.C.U.,2,
+Falta de trama,0,
+
+== PLANTA ACABADO ==
+Seccion,Metros
+Sanforizado,0
+Revision,0
+Corte,0
+General valor primera calidad (%),0
+Inventario Tela Cruda (Noria),54.434
+
+Novedades de Acabado
+1,Cibitex:
+2,16 horas de paro por orden superior
+3,08 horas de paro por falta de tela cruda.
+4,Revision:
+5,24 horas de paro por falta de tela sanforizada
+6,Corte:
+7,24 horas de paro por falta de tela revisada.
