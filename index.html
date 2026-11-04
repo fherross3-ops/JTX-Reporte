@@ -1592,6 +1592,7 @@ function buildSummaryRow(r) {
 async function guardar() {
   const r = collect();
   if (!r.fecha) { toast('Debes indicar la fecha del informe', true); return; }
+
   const all = loadAll();
   const existente = all.find(x => x.fecha === r.fecha);
   if (existente) {
@@ -1605,9 +1606,11 @@ async function guardar() {
   saveAll(all);
   renderHistory();
   refreshPanelSelect();
+
   const filename = fileBaseName(r) + '.csv';
   const csvContent = detailedCSV(r);
   const summaryRow = buildSummaryRow(r);
+
   try {
     const response = await fetch('/.netlify/functions/guardar', {
       method: 'POST',
@@ -1620,124 +1623,21 @@ async function guardar() {
     }
     const result = await response.json();
     const accion = result.replaced ? 'actualizado' : 'añadido';
-    toast(`Informe guardado y ${accion} en el consolidado`);
+    toast(`Guardado OK: CSV + JSON + ${accion} en consolidado`);
     sessionStorage.removeItem(SYNC_CACHE_KEY);
   } catch (error) {
     toast('Guardado local OK, pero falló la subida a GitHub: ' + error.message, true);
   }
+
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.querySelector('.tab[data-view="panel"]').classList.add('active');
   $('view-panel').classList.add('active');
+
   abrirModalCompartir(r);
 }
 $('btn-guardar').addEventListener('click', guardar);
 $('btn-guardar-2').addEventListener('click', guardar);
-
-/* =========================================================================
-   15. GENERACIÓN Y DESCARGA DE PDF
-   ========================================================================= */
-let _pendingRegistro = null;
-
-async function generarPDFBlob(registro) {
-  const overlay = document.createElement('div');
-  overlay.style.cssText = `
-    position: fixed; inset: 0; z-index: 999999;
-    background: rgba(15,20,26,0.92); color: #e8eef4;
-    display: flex; flex-direction: column; gap: 14px;
-    align-items: center; justify-content: center;
-    font-family: "Segoe UI",Roboto,system-ui,sans-serif;
-    font-size: 16px; font-weight: 600; text-align: center; padding: 20px;
-  `;
-  overlay.innerHTML = `
-    <div style="font-size:36px">⏳</div>
-    <div>Generando PDF…</div>
-    <div style="font-size:12px;opacity:.7;font-weight:400;max-width:280px">
-      Espera unos segundos mientras se prepara el documento.
-    </div>
-  `;
-  document.body.appendChild(overlay);
-
-  const temp = document.createElement('div');
-  temp.style.cssText = `
-    position: absolute;
-    top: 0; left: 0;
-    width: 210mm;
-    background: #ffffff;
-    padding: 10mm;
-    color: #111111;
-    font-family: "Segoe UI",Roboto,system-ui,sans-serif;
-    z-index: 1;
-  `;
-  document.body.appendChild(temp);
-  const prevOverflow = document.body.style.overflow;
-  document.body.style.overflow = 'hidden';
-
-  try {
-    const inner = document.createElement('div');
-    renderPanel(registro, inner);
-    temp.appendChild(inner);
-
-    const forceStyle = (sel, styles) => {
-      temp.querySelectorAll(sel).forEach(el => Object.assign(el.style, styles));
-    };
-    forceStyle('.report, .rep-sec, .subcard, .kpis, .rep-table-wrap', {
-      background: '#ffffff', border: 'none', boxShadow: 'none'
-    });
-    forceStyle('.rep-sec h3', { color: '#0b4a63', borderBottom: '2px solid #cfe6f1' });
-    forceStyle('.rep-sec h4', { color: '#334455' });
-    forceStyle('table.rep th', { background: '#eef4f8', color: '#333333' });
-    forceStyle('table.rep td', { color: '#111111', borderBottom: '1px solid #dddddd' });
-    forceStyle('table.rep td.tot', { background: '#e8f1f6', color: '#0b4a63' });
-    forceStyle('table.rep tr.totrow td', { background: '#dbe9f2', color: '#0b4a63' });
-    forceStyle('.kpi', { background: '#f5f8fb', border: '1px solid #cccccc' });
-    forceStyle('.kpi span', { color: '#555566' });
-    forceStyle('.kpi b', { color: '#0b4a63' });
-    forceStyle('.rep-head', { background: '#0b4a63', color: '#ffffff', padding: '10px 14px' });
-    forceStyle('.rep-head h2, .rep-head .rep-kicker', { color: '#ffffff' });
-    forceStyle('.rep-date', { background: '#c9ecf8', color: '#0b4a63', border: '1px solid #5bc8e8' });
-    forceStyle('.novedades li, .rep-sec *', { color: '#111111' });
-    forceStyle('.empty', { color: '#666666' });
-
-    await new Promise(resolve => setTimeout(resolve, 800));
-
-    const opt = {
-      margin: 0,
-      filename: fileBaseName(registro) + '.pdf',
-      image: { type: 'jpeg', quality: 0.95 },
-      html2canvas: {
-        scale: 1.5,
-        useCORS: true,
-        backgroundColor: '#ffffff',
-        logging: false,
-        scrollX: 0,
-        scrollY: 0,
-        width: temp.offsetWidth,
-        height: temp.scrollHeight,
-        windowWidth: temp.offsetWidth,
-        windowHeight: temp.scrollHeight
-      },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-      pagebreak: { mode: ['css', 'legacy'] }
-    };
-
-    const blob = await html2pdf().set(opt).from(temp).outputPdf('blob');
-
-    if (!blob || blob.size < 5000) {
-      throw new Error('PDF vacío o demasiado pequeño (canvas excedido)');
-    }
-
-    document.body.removeChild(temp);
-    document.body.removeChild(overlay);
-    document.body.style.overflow = prevOverflow;
-    return { blob, filename: opt.filename };
-  } catch (error) {
-    if (temp.parentNode) document.body.removeChild(temp);
-    if (overlay.parentNode) document.body.removeChild(overlay);
-    document.body.style.overflow = prevOverflow;
-    throw error;
-  }
-}
 
 async function descargarPDF(registro) {
   try {
