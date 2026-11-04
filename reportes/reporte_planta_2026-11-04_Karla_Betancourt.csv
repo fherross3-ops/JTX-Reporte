@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-04
 Responsable,Karla Betancourt
-Creado,2026-11-04T13:03:56.769Z
-Exportado,2026-11-04T13:03:57.995Z
+Creado,2026-11-04T13:52:03.806Z
+Exportado,2026-11-04T13:52:04.907Z
 Archivo,reporte_planta_2026-11-04_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -53,42 +53,43 @@ N,Detalle
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
 Titulo,Unipacks,Open-End
-10,04,01
-08,05,03
-08,1,04
+6.55,03,04
+08,5.5,03
 
 Urdido
 Urdidora,Estilo,Lote,Mh,Mph
-01,Señal,1071,03,18
-02,Arandano dark,2001,01,14
-03,Farina,3001,01,14
-04,Arandano negro,4079,11,14
+01,Senat,1071,03,18
+02,Arandano dark,2001,03,14
+03,Farina,3001,11,14
+04,Indigo oscuro,4079,01,12
 
 Tenido
 Tren,Estilo,Lote,Mh,Mph,Observacion
-Beloit 01,Arandano negro,4079,10,14,
+Beloit 02,Farina,3001,10,14,
+Creel,Arandano dark,2001,02,14,
 
 Reurdido
 Estilo,Lote,Mh,Mph
-Alexa,202001,09,12
+Arandano negro,401002,11,14
 
 Engomado
 Metros engomados del dia anterior,41010
 Engomadora,Estilo,Lote,Mh,Mph,Observacion
-01,Bulldenim 11,200097,12,12,
-02,Oxigeno,100068,12,12,
+01,Senat,100070,18,18,"Montaje, preparacion y conteo"
+02,Alexa,202001,12,12,En proceso cadena #3
+En el creel,Arandano dark,402226,14,14,
 
 Pendientes por Engomar
 Estilo,Lote,Mh,Mph
-Farina,102225,14,14
-Arandano dark,402226,14,14
+Senat,1071,02,18
+Pañaltex,1069,18,18
 
 Novedades de Engomado
 1,No hay existencia de PVA en planta.
 
 == TEJEDURIA ==
 Concepto,Valor
-Metros tejidos del dia anterior,353
+Metros tejidos del dia anterior,
 Promedio Rot/hora,
 Telares cargados,72
 Telares operativos,55
