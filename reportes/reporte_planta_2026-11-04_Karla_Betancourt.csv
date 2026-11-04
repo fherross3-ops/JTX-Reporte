@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-04
 Responsable,Karla Betancourt
-Creado,2026-11-04T12:29:44.634Z
-Exportado,2026-11-04T12:29:45.786Z
+Creado,2026-11-04T13:03:56.769Z
+Exportado,2026-11-04T13:03:57.995Z
 Archivo,reporte_planta_2026-11-04_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -15,26 +15,26 @@ Open-End,Titulo,Uso
 01,10 mezcla 01,Urdido
 02,"08 , 6,5 5,6",Trama
 03,08 mezcla 01,Urdido
-04,"6,5 mezcla 01",Urdido
+04,"6,5 -24",Urdido
 05,16,Ventas
 
 Puestos Inactivos Open-End
 Open-End,Puestos
 01,0
-02,85
+02,78
 03,23
 04,0
 05,0
-Total,108
-Porcentaje de 1440,7.5%
-Causa,
+Total,101
+Porcentaje de 1440,7.0%
+Causa,Reemplazo por fuentes de poder
 
 Puestos Parados por Causa
 Causa,01,02,03,04,05,Total
-Inactivos,16,13,15,4,12,60
-Ajustes,28,17,48,0,3,96
-F.A.,4,85,23,0,0,112
-Total,48,115,86,4,15,268
+Inactivos,16,13,15,0,12,56
+Ajustes,28,17,48,7,3,103
+F.A.,4,78,23,0,0,105
+Total,48,108,86,7,15,264
 
 Puestos Corregidos por Causa
 Causa,01,02,03,04,05,Total
@@ -48,8 +48,7 @@ Total,0,0,0,0,0,0
 N,Detalle
 1,Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. Sigue la novedad.
 2,CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.
-3,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda"
-4,Cl- C3 se tranca cadena que ejerce movimiento a la banda  ascendente . Se para maquina por mantenimiento preventivo y correctivo. ( el sr de metalmecanica  Flores se lleva motor de caja reductora para su reparation. Eso afectando la linea de carda #01 (en produccion bajo observacion en su proceso)
+3,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda."
 
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
