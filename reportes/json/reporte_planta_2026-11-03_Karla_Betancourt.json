@@ -1,11 +1,11 @@
 {
-  "id": "mw0rchfw9nouy",
+  "id": "mw28d9cl40m98",
   "fecha": "2026-11-03",
   "responsable": "Karla Betancourt",
   "creado": "2026-11-04T09:49:26.293Z",
   "hilanderia": {
-    "kgsOE": 9760.3,
-    "kgsCarda": 12.005,
+    "kgsOE": "9760.3",
+    "kgsCarda": "12.005",
     "titulos": [
       {
         "maquina": "01",
@@ -35,66 +35,42 @@
     ],
     "inactivos": {
       "m": [
-        0,
-        85,
-        23,
-        0,
-        0
+        "0",
+        "85",
+        "23",
+        "0",
+        "0"
       ],
       "causa": ""
     },
     "parados": {
       "inactivos": {
-        "01": 16,
-        "02": 13,
-        "03": 15,
-        "04": 4,
-        "05": 12
+        "01": "16",
+        "02": "13",
+        "03": "15",
+        "04": "4",
+        "05": "12"
       },
       "ajustes": {
-        "01": 28,
-        "02": 17,
-        "03": 48,
-        "04": 0,
-        "05": 3
+        "01": "28",
+        "02": "17",
+        "03": "48",
+        "04": "0",
+        "05": "3"
       },
       "fa": {
-        "01": 4,
-        "02": 85,
-        "03": 23,
-        "04": 0,
-        "05": 0
+        "01": "4",
+        "02": "85",
+        "03": "23",
+        "04": "0",
+        "05": "0"
       }
     },
     "corregidos": {
-      "ajustefuga": {
-        "01": "",
-        "02": "",
-        "03": "",
-        "04": "",
-        "05": ""
-      },
-      "fuentes": {
-        "01": "",
-        "02": "",
-        "03": "",
-        "04": "",
-        "05": ""
-      },
-      "fugas": {
-        "01": "",
-        "02": "",
-        "03": "",
-        "04": "",
-        "05": ""
-      },
-      "amortig": {
-        "01": "",
-        "02": "",
-        "03": "",
-        "04": "",
-        "05": ""
-      }
+      "ajustefuga": {},
+      "fuentes": {},
+      "fugas": {},
+      "amortig": {}
     }
   },
   "novedadesPlanta": [
@@ -170,7 +146,7 @@
       }
     ],
     "engomado": {
-      "metros": 22000,
+      "metros": "22000",
       "rows": [
         {
           "engomadora": "01",
@@ -213,36 +189,36 @@
     ]
   },
   "tejeduria": {
-    "metros": 353,
-    "rot": 0.42,
-    "cargados": 82,
-    "operativos": 59,
-    "parados": 53,
-    "cadenas": 3,
+    "metros": "353",
+    "rot": "0.42",
+    "cargados": "82",
+    "operativos": "59",
+    "parados": "53",
+    "cadenas": "3",
     "causas": {
-      "mecanica": 1,
-      "electronica": 0,
-      "electrica": 1,
-      "montaje": 2,
-      "repuesto": 7,
+      "mecanica": "1",
+      "electronica": "0",
+      "electrica": "1",
+      "montaje": "2",
+      "repuesto": "7",
       "repuestoTelares": "5,40,47,73,96,100,108"
     },
     "otros": {
-      "presion": 0,
-      "orden": 33,
-      "urdimbre": 8,
+      "presion": "0",
+      "orden": "33",
+      "urdimbre": "8",
       "urdimbreDet": "1- Roques- 06 satin iris black - 01 pañaltext",
-      "calidad": 0,
-      "ecu": 2,
-      "trama": 0
+      "calidad": "0",
+      "ecu": "2",
+      "trama": "0"
     }
   },
   "acabado": {
-    "sanforizado": 0,
-    "revision": 5.574,
-    "corte": 5.842,
-    "calidad": 74.43,
-    "inventario": 44.775,
+    "sanforizado": "0",
+    "revision": "5.574",
+    "corte": "5.842",
+    "calidad": "74.43",
+    "inventario": "44.775",
     "novedades": [
       "Cibitex:",
       "16 horas de paro por mantenimiento preventivo.",
