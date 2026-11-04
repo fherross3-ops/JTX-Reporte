@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-04
 Responsable,Karla Betancourt
-Creado,2026-11-04T12:00:32.529Z
-Exportado,2026-11-04T12:00:35.421Z
+Creado,2026-11-04T12:29:44.634Z
+Exportado,2026-11-04T12:29:45.786Z
 Archivo,reporte_planta_2026-11-04_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -86,32 +86,28 @@ Arandano dark,402226,14,14
 
 Novedades de Engomado
 1,No hay existencia de PVA en planta.
-2,Engomadora 02 parada desde las 6:00am hasta las 2:00 pm por mecanica.
-3,"Luego se paro a la 1:50am por electronica, hasta las 6:00am"
-4,Engomadora 01 estuvo parada desde las 6:00 am hasta las 2:00pm por Falla electronica y instrumentacion. Nuevamente paro desde las 12:40 am hasta las 4:30 am
-5,"(Por preparacion y conteo Nuevamente, por caida de un plegador de el creer,)"
 
 == TEJEDURIA ==
 Concepto,Valor
 Metros tejidos del dia anterior,353
-Promedio Rot/hora,0.42
-Telares cargados,82
-Telares operativos,59
-Telares parados,53
-Cadenas inventario,3
+Promedio Rot/hora,
+Telares cargados,72
+Telares operativos,55
+Telares parados,57
+Cadenas inventario,18
 
 Causas de telares parados
 Causa,Cantidad,Detalle
-Mecanica,1,
-Electronica,0,
-Electrica,1,
-Montaje,2,
+Mecanica,2,
+Electronica,1,
+Electrica,12,
+Montaje,1,
 Repuesto,7,"5,40,47,73,96,100,108"
 
 Otros paros
 Causa,Cantidad,Detalle
 Presion de aire,0,
-Orden superior,33,
+Orden superior,24,
 Falta de urdimbre,8,1- Roques- 06 satin iris black - 01 pañaltext
 Calidad,0,
 E.C.U.,2,
@@ -133,3 +129,4 @@ Novedades de Acabado
 5,24 horas de paro por falta de tela sanforizada
 6,Corte:
 7,24 horas de paro por falta de tela revisada.
+8,"El dia de hoy, el área sigue parada"
