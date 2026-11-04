@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-04
 Responsable,Karla Betancourt
-Creado,2026-11-04T13:52:03.806Z
-Exportado,2026-11-04T13:52:04.907Z
+Creado,2026-11-04T15:29:02.152Z
+Exportado,2026-11-04T15:29:05.216Z
 Archivo,reporte_planta_2026-11-04_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -73,7 +73,7 @@ Estilo,Lote,Mh,Mph
 Arandano negro,401002,11,14
 
 Engomado
-Metros engomados del dia anterior,41010
+Metros engomados del dia anterior,43360
 Engomadora,Estilo,Lote,Mh,Mph,Observacion
 01,Senat,100070,18,18,"Montaje, preparacion y conteo"
 02,Alexa,202001,12,12,En proceso cadena #3
@@ -89,7 +89,7 @@ Novedades de Engomado
 
 == TEJEDURIA ==
 Concepto,Valor
-Metros tejidos del dia anterior,
+Metros tejidos del dia anterior,21153
 Promedio Rot/hora,
 Telares cargados,72
 Telares operativos,55
