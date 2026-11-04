@@ -1,11 +1,11 @@
 {
-  "id": "mw28wwd631zqy",
+  "id": "mw28daidjru8j",
   "fecha": "2026-11-04",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-04T13:52:03.806Z",
+  "creado": "2026-11-04T15:29:02.152Z",
   "hilanderia": {
-    "kgsOE": "11985.2",
-    "kgsCarda": "15.156",
+    "kgsOE": 11985.2,
+    "kgsCarda": 15.156,
     "titulos": [
       {
         "maquina": "01",
@@ -35,42 +35,66 @@
     ],
     "inactivos": {
       "m": [
-        "0",
-        "78",
-        "23",
-        "0",
-        "0"
+        0,
+        78,
+        23,
+        0,
+        0
       ],
       "causa": "Reemplazo por fuentes de poder"
     },
     "parados": {
       "inactivos": {
-        "01": "16",
-        "02": "13",
-        "03": "15",
-        "04": "0",
-        "05": "12"
+        "01": 16,
+        "02": 13,
+        "03": 15,
+        "04": 0,
+        "05": 12
       },
       "ajustes": {
-        "01": "28",
-        "02": "17",
-        "03": "48",
-        "04": "7",
-        "05": "3"
+        "01": 28,
+        "02": 17,
+        "03": 48,
+        "04": 7,
+        "05": 3
       },
       "fa": {
-        "01": "4",
-        "02": "78",
-        "03": "23",
-        "04": "0",
-        "05": "0"
+        "01": 4,
+        "02": 78,
+        "03": 23,
+        "04": 0,
+        "05": 0
       }
     },
     "corregidos": {
-      "ajustefuga": {},
-      "fuentes": {},
-      "fugas": {},
-      "amortig": {}
+      "ajustefuga": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fuentes": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fugas": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "amortig": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      }
     }
   },
   "novedadesPlanta": [
@@ -148,7 +172,7 @@
       }
     ],
     "engomado": {
-      "metros": "41010",
+      "metros": 43360,
       "rows": [
         {
           "engomadora": "01",
@@ -195,36 +219,36 @@
     ]
   },
   "tejeduria": {
-    "metros": "",
+    "metros": 21153,
     "rot": "",
-    "cargados": "72",
-    "operativos": "55",
-    "parados": "57",
-    "cadenas": "18",
+    "cargados": 72,
+    "operativos": 55,
+    "parados": 57,
+    "cadenas": 18,
     "causas": {
-      "mecanica": "2",
-      "electronica": "1",
-      "electrica": "12",
-      "montaje": "1",
-      "repuesto": "7",
+      "mecanica": 2,
+      "electronica": 1,
+      "electrica": 12,
+      "montaje": 1,
+      "repuesto": 7,
       "repuestoTelares": "5,40,47,73,96,100,108"
     },
     "otros": {
-      "presion": "0",
-      "orden": "24",
-      "urdimbre": "8",
+      "presion": 0,
+      "orden": 24,
+      "urdimbre": 8,
       "urdimbreDet": "1- Roques- 06 satin iris black - 01 pañaltext",
-      "calidad": "0",
-      "ecu": "2",
-      "trama": "0"
+      "calidad": 0,
+      "ecu": 2,
+      "trama": 0
     }
   },
   "acabado": {
-    "sanforizado": "0",
-    "revision": "0",
-    "corte": "0",
-    "calidad": "0",
-    "inventario": "54.434",
+    "sanforizado": 0,
+    "revision": 0,
+    "corte": 0,
+    "calidad": 0,
+    "inventario": 54.434,
     "novedades": [
       "Cibitex:",
       "16 horas de paro por orden superior",
