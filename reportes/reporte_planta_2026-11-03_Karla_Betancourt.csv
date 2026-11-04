@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-03
 Responsable,Karla Betancourt
-Creado,2026-11-03T17:41:54.946Z
-Exportado,2026-11-03T17:41:59.204Z
+Creado,2026-11-04T09:49:26.293Z
+Exportado,2026-11-04T09:49:27.257Z
 Archivo,reporte_planta_2026-11-03_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -31,10 +31,10 @@ Causa,
 
 Puestos Parados por Causa
 Causa,01,02,03,04,05,Total
-Inactivos,,,,,,0
-Ajustes,,,,,,0
-F.A.,,,,,,0
-Total,0,0,0,0,0,0
+Inactivos,16,13,15,4,12,60
+Ajustes,28,17,48,0,3,96
+F.A.,4,85,23,0,0,112
+Total,48,115,86,4,15,268
 
 Puestos Corregidos por Causa
 Causa,01,02,03,04,05,Total
