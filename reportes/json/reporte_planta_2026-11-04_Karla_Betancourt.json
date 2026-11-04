@@ -1,0 +1,239 @@
+{
+  "id": "mw28daidjru8j",
+  "fecha": "2026-11-04",
+  "responsable": "Karla Betancourt",
+  "creado": "2026-11-04T13:52:03.806Z",
+  "hilanderia": {
+    "kgsOE": "11985.2",
+    "kgsCarda": "15.156",
+    "titulos": [
+      {
+        "maquina": "01",
+        "titulo": "10 mezcla 01",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "02",
+        "titulo": "08 , 6,5 5,6",
+        "uso": "Trama"
+      },
+      {
+        "maquina": "03",
+        "titulo": "08 mezcla 01",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "04",
+        "titulo": "6,5 -24",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "05",
+        "titulo": "16",
+        "uso": "Ventas"
+      }
+    ],
+    "inactivos": {
+      "m": [
+        "0",
+        "78",
+        "23",
+        "0",
+        "0"
+      ],
+      "causa": "Reemplazo por fuentes de poder"
+    },
+    "parados": {
+      "inactivos": {
+        "01": "16",
+        "02": "13",
+        "03": "15",
+        "04": "0",
+        "05": "12"
+      },
+      "ajustes": {
+        "01": "28",
+        "02": "17",
+        "03": "48",
+        "04": "7",
+        "05": "3"
+      },
+      "fa": {
+        "01": "4",
+        "02": "78",
+        "03": "23",
+        "04": "0",
+        "05": "0"
+      }
+    },
+    "corregidos": {
+      "ajustefuga": {},
+      "fuentes": {},
+      "fugas": {},
+      "amortig": {}
+    }
+  },
+  "novedadesPlanta": [
+    "Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. Sigue la novedad.",
+    "CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.",
+    "Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda."
+  ],
+  "humedos": {
+    "unipacks": [
+      {
+        "titulo": "6.55",
+        "unipacks": "03",
+        "openend": "04"
+      },
+      {
+        "titulo": "08",
+        "unipacks": "5.5",
+        "openend": "03"
+      }
+    ],
+    "urdido": [
+      {
+        "urdidora": "01",
+        "estilo": "Senat",
+        "lote": "1071",
+        "mh": "03",
+        "mph": "18"
+      },
+      {
+        "urdidora": "02",
+        "estilo": "Arandano dark",
+        "lote": "2001",
+        "mh": "03",
+        "mph": "14"
+      },
+      {
+        "urdidora": "03",
+        "estilo": "Farina",
+        "lote": "3001",
+        "mh": "11",
+        "mph": "14"
+      },
+      {
+        "urdidora": "04",
+        "estilo": "Indigo oscuro",
+        "lote": "4079",
+        "mh": "01",
+        "mph": "12"
+      }
+    ],
+    "tenido": [
+      {
+        "tren": "Beloit 02",
+        "estilo": "Farina",
+        "lote": "3001",
+        "mh": "10",
+        "mph": "14",
+        "obs": ""
+      },
+      {
+        "tren": "Creel",
+        "estilo": "Arandano dark",
+        "lote": "2001",
+        "mh": "02",
+        "mph": "14",
+        "obs": ""
+      }
+    ],
+    "reurdido": [
+      {
+        "estilo": "Arandano negro",
+        "lote": "401002",
+        "mh": "11",
+        "mph": "14"
+      }
+    ],
+    "engomado": {
+      "metros": "41010",
+      "rows": [
+        {
+          "engomadora": "01",
+          "estilo": "Senat",
+          "lote": "100070",
+          "mh": "18",
+          "mph": "18",
+          "obs": "Montaje, preparacion y conteo"
+        },
+        {
+          "engomadora": "02",
+          "estilo": "Alexa",
+          "lote": "202001",
+          "mh": "12",
+          "mph": "12",
+          "obs": "En proceso cadena #3"
+        },
+        {
+          "engomadora": "En el creel",
+          "estilo": "Arandano dark",
+          "lote": "402226",
+          "mh": "14",
+          "mph": "14",
+          "obs": ""
+        }
+      ],
+      "porEngomar": [
+        {
+          "estilo": "Senat",
+          "lote": "1071",
+          "mh": "02",
+          "mph": "18"
+        },
+        {
+          "estilo": "Pañaltex",
+          "lote": "1069",
+          "mh": "18",
+          "mph": "18"
+        }
+      ]
+    },
+    "novedades": [
+      "No hay existencia de PVA en planta."
+    ]
+  },
+  "tejeduria": {
+    "metros": "",
+    "rot": "",
+    "cargados": "72",
+    "operativos": "55",
+    "parados": "57",
+    "cadenas": "18",
+    "causas": {
+      "mecanica": "2",
+      "electronica": "1",
+      "electrica": "12",
+      "montaje": "1",
+      "repuesto": "7",
+      "repuestoTelares": "5,40,47,73,96,100,108"
+    },
+    "otros": {
+      "presion": "0",
+      "orden": "24",
+      "urdimbre": "8",
+      "urdimbreDet": "1- Roques- 06 satin iris black - 01 pañaltext",
+      "calidad": "0",
+      "ecu": "2",
+      "trama": "0"
+    }
+  },
+  "acabado": {
+    "sanforizado": "0",
+    "revision": "0",
+    "corte": "0",
+    "calidad": "0",
+    "inventario": "54.434",
+    "novedades": [
+      "Cibitex:",
+      "16 horas de paro por orden superior",
+      "08 horas de paro por falta de tela cruda.",
+      "Revision:",
+      "24 horas de paro por falta de tela sanforizada",
+      "Corte:",
+      "24 horas de paro por falta de tela revisada.",
+      "El dia de hoy, el área sigue parada"
+    ]
+  }
+}
