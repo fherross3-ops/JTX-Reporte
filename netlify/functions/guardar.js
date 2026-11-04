@@ -15,6 +15,9 @@ exports.handler = async (event) => {
     if (!token) {
       return { statusCode: 500, body: JSON.stringify({ error: 'Token no configurado' }) };
     }
+    if (!reportJSON) {
+      return { statusCode: 400, body: JSON.stringify({ error: 'reportJSON no recibido del frontend' }) };
+    }
 
     const apiBase = `https://api.github.com/repos/${owner}/${repo}/contents`;
 
@@ -25,8 +28,7 @@ exports.handler = async (event) => {
       if (res.status === 404) return null;
       if (!res.ok) throw new Error(`GET ${path} → ${res.status}`);
       const data = await res.json();
-      const content = Buffer.from(data.content, 'base64').toString('utf8');
-      return { sha: data.sha, content };
+      return { sha: data.sha, content: Buffer.from(data.content, 'base64').toString('utf8') };
     }
 
     async function putFile(path, content, message, sha = null) {
@@ -45,32 +47,22 @@ exports.handler = async (event) => {
         },
         body: JSON.stringify(body),
       });
-      if (!res.ok) {
-        const errText = await res.text();
-        throw new Error(`PUT ${path} → ${res.status}: ${errText}`);
-      }
+      if (!res.ok) throw new Error(`PUT ${path} → ${res.status}: ${await res.text()}`);
       return res.json();
     }
 
-    // ---- 1. Guardar el CSV individual ----
+    // 1. CSV individual
     const detailPath = `reportes/${filename}`;
     const existingDetail = await getFile(detailPath);
     await putFile(detailPath, csvContent, `Reporte detalle ${filename}`, existingDetail ? existingDetail.sha : null);
 
-    // ---- 1b. Guardar el JSON individual (para sincronización entre dispositivos) ----
-    if (reportJSON) {
-      const jsonFilename = filename.replace(/\.csv$/, '.json');
-      const jsonPath = `reportes/json/${jsonFilename}`;
-      const existingJson = await getFile(jsonPath);
-      await putFile(
-        jsonPath,
-        JSON.stringify(reportJSON, null, 2),
-        `Reporte JSON ${jsonFilename}`,
-        existingJson ? existingJson.sha : null
-      );
-    }
+    // 2. JSON individual (fuente del Histórico)
+    const jsonFilename = filename.replace(/\.csv$/, '.json');
+    const jsonPath = `reportes/json/${jsonFilename}`;
+    const existingJson = await getFile(jsonPath);
+    await putFile(jsonPath, JSON.stringify(reportJSON, null, 2), `Reporte JSON ${jsonFilename}`, existingJson ? existingJson.sha : null);
 
-    // ---- 2. Actualizar consolidado (una fila por fecha) ----
+    // 3. Consolidado
     const consolidatedPath = 'reportes/consolidado.csv';
     const CONSOLIDATED_HEADER = [
       'Fecha','Responsable','Kgs_OE','Kgs_Carda','Puestos_Inactivos','Pct_Inactivos',
@@ -98,10 +90,9 @@ exports.handler = async (event) => {
     }
     if (!replaced) lines.push(summaryRow.map(csvEscape).join(','));
 
-    const consolidatedContent = lines.join('\r\n');
     await putFile(
       consolidatedPath,
-      consolidatedContent,
+      lines.join('\r\n'),
       `Consolidado actualizado (${fecha})`,
       existingConsolidated ? existingConsolidated.sha : null
     );
@@ -111,6 +102,7 @@ exports.handler = async (event) => {
       body: JSON.stringify({
         success: true,
         detail: detailPath,
+        json: jsonPath,
         consolidated: consolidatedPath,
         replaced,
       }),
