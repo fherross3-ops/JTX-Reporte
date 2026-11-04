@@ -1474,7 +1474,7 @@ async function syncFromGitHub(silencioso, force) {
 
     if (res.status === 404) {
       sessionStorage.setItem(SYNC_CACHE_KEY, String(Date.now()));
-      if (!silencioso) toast('No hay informes remotos aún');
+      if (!silencioso) toast('Carpeta reportes/json/ no existe');
       return;
     }
     if (!res.ok) throw new Error(`GitHub list → ${res.status}`);
@@ -1482,13 +1482,12 @@ async function syncFromGitHub(silencioso, force) {
     const files = await res.json();
     if (!Array.isArray(files) || !files.length) {
       sessionStorage.setItem(SYNC_CACHE_KEY, String(Date.now()));
-      if (!silencioso) toast('No hay informes remotos aún');
+      if (!silencioso) toast('No hay JSONs en GitHub');
       return;
     }
 
     const local = loadAll();
-    let nuevos = 0;
-    let actualizados = 0;
+    let nuevos = 0, actualizados = 0;
 
     for (const file of files) {
       if (!file.name.endsWith('.json')) continue;
@@ -1499,21 +1498,14 @@ async function syncFromGitHub(silencioso, force) {
       try { report = await rres.json(); } catch(e) { continue; }
       if (!report || !report.fecha) continue;
 
-      // Buscar si ya existe localmente por fecha
       const idx = local.findIndex(r => r.fecha === report.fecha);
-
       if (idx >= 0) {
-        // Ya existe → comparar contenido. Si es distinto, reemplazar con el remoto.
-        const localStr = JSON.stringify(local[idx]);
-        const remoteStr = JSON.stringify(report);
-        if (localStr !== remoteStr) {
-          report.id = local[idx].id; // preservar el id para no romper la UI
+        if (JSON.stringify(local[idx]) !== JSON.stringify(report)) {
+          report.id = local[idx].id;
           local[idx] = report;
           actualizados++;
         }
-        // Si es igual, no hace nada
       } else {
-        // No existe → agregar
         if (!report.id) report.id = uid();
         local.push(report);
         nuevos++;
