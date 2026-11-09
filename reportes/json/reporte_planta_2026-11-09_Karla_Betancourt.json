@@ -2,7 +2,7 @@
   "id": "mw98ff5zzhj4n",
   "fecha": "2026-11-09",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-09T13:45:52.387Z",
+  "creado": "2026-11-09T13:49:17.353Z",
   "hilanderia": {
     "kgsOE": 10245.9,
     "kgsCarda": 8.664,
@@ -31,13 +31,18 @@
         "maquina": "05",
         "titulo": "16",
         "uso": "Ventas"
+      },
+      {
+        "maquina": "",
+        "titulo": "",
+        "uso": "Urdido"
       }
     ],
     "inactivos": {
       "m": [
         0,
-        75,
-        23,
+        71,
+        29,
         0,
         0
       ],
