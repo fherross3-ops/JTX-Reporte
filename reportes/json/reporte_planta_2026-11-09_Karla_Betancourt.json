@@ -2,7 +2,7 @@
   "id": "mw98ff5zzhj4n",
   "fecha": "2026-11-09",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-09T13:11:04.547Z",
+  "creado": "2026-11-09T13:45:23.006Z",
   "hilanderia": {
     "kgsOE": 10245.9,
     "kgsCarda": 8.664,
@@ -45,23 +45,23 @@
     },
     "parados": {
       "inactivos": {
-        "01": 16,
-        "02": 13,
-        "03": 15,
+        "01": 22,
+        "02": 16,
+        "03": 16,
         "04": 0,
         "05": 12
       },
       "ajustes": {
-        "01": 28,
-        "02": 17,
-        "03": 48,
-        "04": 7,
-        "05": 3
+        "01": 11,
+        "02": 24,
+        "03": 51,
+        "04": 4,
+        "05": 7
       },
       "fa": {
-        "01": 4,
-        "02": 75,
-        "03": 23,
+        "01": 0,
+        "02": 71,
+        "03": 29,
         "04": 0,
         "05": 0
       }
@@ -121,7 +121,7 @@
       {
         "urdidora": "01",
         "estilo": "Senat",
-        "lote": "1072",
+        "lote": "1001",
         "mh": "01",
         "mph": "18"
       },
@@ -129,7 +129,7 @@
         "urdidora": "02",
         "estilo": "Oxigeno",
         "lote": "2002",
-        "mh": "04",
+        "mh": "07",
         "mph": "12"
       },
       {
@@ -143,30 +143,30 @@
         "urdidora": "04",
         "estilo": "Indigo oscuro",
         "lote": "4001",
-        "mh": "06",
+        "mh": "08",
         "mph": "12"
       }
     ],
     "tenido": [
       {
-        "tren": "Beloit 02",
+        "tren": "Belloit 02",
         "estilo": "Indigo oscuro",
         "lote": "4001",
-        "mh": "05",
+        "mh": "07",
         "mph": "12",
         "obs": ""
       }
     ],
     "reurdido": [
       {
-        "estilo": "Arandano Dark",
+        "estilo": "Arandano dark",
         "lote": "202004",
-        "mh": "14",
+        "mh": "02",
         "mph": "14"
       }
     ],
     "engomado": {
-      "metros": 24323,
+      "metros": 20000,
       "rows": [
         {
           "engomadora": "01",
@@ -174,15 +174,15 @@
           "lote": "100069",
           "mh": "18",
           "mph": "18",
-          "obs": "Montaje, preparacion y conteo"
+          "obs": "Preparacion y conteo de peine, arranque"
         },
         {
           "engomadora": "02",
-          "estilo": "Farina",
-          "lote": "302003",
-          "mh": "",
-          "mph": "",
-          "obs": "En proceso en espera de urdido"
+          "estilo": "Arandano dark",
+          "lote": "202004",
+          "mh": "9",
+          "mph": "14",
+          "obs": "En espera de reurdido"
         }
       ],
       "porEngomar": [
@@ -195,7 +195,8 @@
       ]
     },
     "novedades": [
-      "No hay existencia de PVA en planta."
+      "No hay existencia de PVA en planta.",
+      "Urdidora 01 alineacion del creel"
     ]
   },
   "tejeduria": {
