@@ -1,0 +1,242 @@
+{
+  "id": "mw98ff5zzhj4n",
+  "fecha": "2026-11-09",
+  "responsable": "Karla Betancourt",
+  "creado": "2026-11-09T12:23:16.872Z",
+  "hilanderia": {
+    "kgsOE": 10245.9,
+    "kgsCarda": 8.664,
+    "titulos": [
+      {
+        "maquina": "01",
+        "titulo": "12 mezcla 01",
+        "uso": "Ventas"
+      },
+      {
+        "maquina": "02",
+        "titulo": "08 / 5.6 Ne",
+        "uso": "Trama"
+      },
+      {
+        "maquina": "03",
+        "titulo": "08 mezcla 01",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "04",
+        "titulo": "6,5 / 24",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "05",
+        "titulo": "16",
+        "uso": "Ventas"
+      }
+    ],
+    "inactivos": {
+      "m": [
+        0,
+        75,
+        23,
+        0,
+        0
+      ],
+      "causa": "Reemplazo por fuentes de poder"
+    },
+    "parados": {
+      "inactivos": {
+        "01": 16,
+        "02": 13,
+        "03": 15,
+        "04": 0,
+        "05": 12
+      },
+      "ajustes": {
+        "01": 28,
+        "02": 17,
+        "03": 48,
+        "04": 7,
+        "05": 3
+      },
+      "fa": {
+        "01": 4,
+        "02": 75,
+        "03": 23,
+        "04": 0,
+        "05": 0
+      }
+    },
+    "corregidos": {
+      "ajustefuga": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fuentes": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fugas": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "amortig": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      }
+    }
+  },
+  "novedadesPlanta": [
+    "Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. Sigue la novedad.",
+    "CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.",
+    "Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda.",
+    "BR- COI N #02  se tranca rodamiento uc 28 parando en Su totalidad la linea de carda,por no tener repuesto se procede a bajar rodamiento de BR-COI de linea 01  (para que la sala trabaje el 50%)",
+    "Open end 01 montaje de mangueras de los puestos de hilatura (cambiado 38 puestos)"
+  ],
+  "humedos": {
+    "unipacks": [
+      {
+        "titulo": "24",
+        "unipacks": "03",
+        "openend": "04"
+      },
+      {
+        "titulo": "08",
+        "unipacks": "02",
+        "openend": "03"
+      }
+    ],
+    "urdido": [
+      {
+        "urdidora": "01",
+        "estilo": "Senat",
+        "lote": "1072",
+        "mh": "01",
+        "mph": "18"
+      },
+      {
+        "urdidora": "02",
+        "estilo": "Oxigeno",
+        "lote": "2002",
+        "mh": "04",
+        "mph": "12"
+      },
+      {
+        "urdidora": "03",
+        "estilo": "Sin material",
+        "lote": "",
+        "mh": "",
+        "mph": ""
+      },
+      {
+        "urdidora": "04",
+        "estilo": "Indigo oscuro",
+        "lote": "4001",
+        "mh": "06",
+        "mph": "12"
+      }
+    ],
+    "tenido": [
+      {
+        "tren": "Beloit 02",
+        "estilo": "Indigo oscuro",
+        "lote": "4001",
+        "mh": "05",
+        "mph": "12",
+        "obs": ""
+      }
+    ],
+    "reurdido": [
+      {
+        "estilo": "Arandano Dark",
+        "lote": "202004",
+        "mh": "14",
+        "mph": "14"
+      }
+    ],
+    "engomado": {
+      "metros": 24323,
+      "rows": [
+        {
+          "engomadora": "01",
+          "estilo": "Pañaltex",
+          "lote": "100069",
+          "mh": "18",
+          "mph": "18",
+          "obs": "Montaje, preparacion y conteo"
+        },
+        {
+          "engomadora": "02",
+          "estilo": "Farina",
+          "lote": "302003",
+          "mh": "",
+          "mph": "",
+          "obs": "En proceso en espera de urdido"
+        }
+      ],
+      "porEngomar": [
+        {
+          "estilo": "Sin material",
+          "lote": "",
+          "mh": "",
+          "mph": ""
+        }
+      ]
+    },
+    "novedades": [
+      "No hay existencia de PVA en planta."
+    ]
+  },
+  "tejeduria": {
+    "metros": 23162,
+    "rot": "",
+    "cargados": 70,
+    "operativos": 55,
+    "parados": 57,
+    "cadenas": 24,
+    "causas": {
+      "mecanica": 1,
+      "electronica": 2,
+      "electrica": 0,
+      "montaje": 0,
+      "repuesto": 7,
+      "repuestoTelares": "5,40,47,73,96,100,108"
+    },
+    "otros": {
+      "presion": 0,
+      "orden": 31,
+      "urdimbre": 3,
+      "urdimbreDet": "1- pañaltex 02- Fashion oscuro",
+      "calidad": 1,
+      "ecu": 7,
+      "trama": ""
+    }
+  },
+  "acabado": {
+    "sanforizado": 7.64,
+    "revision": 15.632,
+    "corte": 23.512,
+    "calidad": 87.04,
+    "inventario": 59.285,
+    "novedades": [
+      "Cibitex:",
+      "10 horas de paro por Falla de instrumentacion.",
+      "08 horas de Falla mecanica (",
+      "01 hora de paro por lluvias y Goteras.",
+      "Corte:",
+      "02 horas de paro por falta de tela revisada.",
+      "02 horas de paro por Falla mecanica ("
+    ]
+  }
+}
