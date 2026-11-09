@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-09
 Responsable,Karla Betancourt
-Creado,2026-11-09T12:23:16.872Z
-Exportado,2026-11-09T12:23:16.898Z
+Creado,2026-11-09T13:11:04.547Z
+Exportado,2026-11-09T13:11:05.657Z
 Archivo,reporte_planta_2026-11-09_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -49,8 +49,8 @@ N,Detalle
 1,Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. Sigue la novedad.
 2,CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.
 3,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda."
-4,"BR- COI N #02  se tranca rodamiento uc 28 parando en Su totalidad la linea de carda,por no tener repuesto se procede a bajar rodamiento de BR-COI de linea 01  (para que la sala trabaje el 50%)"
-5,Open end 01 montaje de mangueras de los puestos de hilatura (cambiado 38 puestos)
+4,Open end 01 parada por fuga de aire.
+5,"Open end 03 cambiador Lado A se remplaza manguera de aire y se le cambia chapa de acoplamiento, que abre puesto de hilatura."
 
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
