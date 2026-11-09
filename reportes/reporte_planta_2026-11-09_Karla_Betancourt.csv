@@ -1,0 +1,130 @@
+Tipo,Informe Planta - Reporte Diario
+Fecha del informe,2026-11-09
+Responsable,Karla Betancourt
+Creado,2026-11-09T12:23:16.872Z
+Exportado,2026-11-09T12:23:16.898Z
+Archivo,reporte_planta_2026-11-09_Karla_Betancourt.csv
+
+== HILANDERIA ==
+Concepto,Valor
+Kgs producidos en Open-End,10245.9
+Kgs producidos en Carda,8.664
+
+Titulos Open-End
+Open-End,Titulo,Uso
+01,12 mezcla 01,Ventas
+02,08 / 5.6 Ne,Trama
+03,08 mezcla 01,Urdido
+04,"6,5 / 24",Urdido
+05,16,Ventas
+
+Puestos Inactivos Open-End
+Open-End,Puestos
+01,0
+02,75
+03,23
+04,0
+05,0
+Total,98
+Porcentaje de 1440,6.8%
+Causa,Reemplazo por fuentes de poder
+
+Puestos Parados por Causa
+Causa,01,02,03,04,05,Total
+Inactivos,16,13,15,0,12,56
+Ajustes,28,17,48,7,3,103
+F.A.,4,75,23,0,0,102
+Total,48,105,86,7,15,261
+
+Puestos Corregidos por Causa
+Causa,01,02,03,04,05,Total
+Ajuste-Fuga,,,,,,0
+Fuentes,,,,,,0
+Fugas,,,,,,0
+Amortig/Fuga,,,,,,0
+Total,0,0,0,0,0,0
+
+== NOVEDADES DE PLANTA ==
+N,Detalle
+1,Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. Sigue la novedad.
+2,CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.
+3,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda."
+4,"BR- COI N #02  se tranca rodamiento uc 28 parando en Su totalidad la linea de carda,por no tener repuesto se procede a bajar rodamiento de BR-COI de linea 01  (para que la sala trabaje el 50%)"
+5,Open end 01 montaje de mangueras de los puestos de hilatura (cambiado 38 puestos)
+
+== PROCESOS HUMEDOS ==
+Inventario de Unipacks en Urdido
+Titulo,Unipacks,Open-End
+24,03,04
+08,02,03
+
+Urdido
+Urdidora,Estilo,Lote,Mh,Mph
+01,Senat,1072,01,18
+02,Oxigeno,2002,04,12
+03,Sin material,,,
+04,Indigo oscuro,4001,06,12
+
+Tenido
+Tren,Estilo,Lote,Mh,Mph,Observacion
+Beloit 02,Indigo oscuro,4001,05,12,
+
+Reurdido
+Estilo,Lote,Mh,Mph
+Arandano Dark,202004,14,14
+
+Engomado
+Metros engomados del dia anterior,24323
+Engomadora,Estilo,Lote,Mh,Mph,Observacion
+01,Pañaltex,100069,18,18,"Montaje, preparacion y conteo"
+02,Farina,302003,,,En proceso en espera de urdido
+
+Pendientes por Engomar
+Estilo,Lote,Mh,Mph
+Sin material,,,
+
+Novedades de Engomado
+1,No hay existencia de PVA en planta.
+
+== TEJEDURIA ==
+Concepto,Valor
+Metros tejidos del dia anterior,23162
+Promedio Rot/hora,
+Telares cargados,70
+Telares operativos,55
+Telares parados,57
+Cadenas inventario,24
+
+Causas de telares parados
+Causa,Cantidad,Detalle
+Mecanica,1,
+Electronica,2,
+Electrica,0,
+Montaje,0,
+Repuesto,7,"5,40,47,73,96,100,108"
+
+Otros paros
+Causa,Cantidad,Detalle
+Presion de aire,0,
+Orden superior,31,
+Falta de urdimbre,3,1- pañaltex 02- Fashion oscuro
+Calidad,1,
+E.C.U.,7,
+Falta de trama,,
+
+== PLANTA ACABADO ==
+Seccion,Metros
+Sanforizado,7.64
+Revision,15.632
+Corte,23.512
+General valor primera calidad (%),87.04
+Inventario Tela Cruda (Noria),59.285
+
+Novedades de Acabado
+1,Cibitex:
+2,10 horas de paro por Falla de instrumentacion.
+3,08 horas de Falla mecanica (
+4,01 hora de paro por lluvias y Goteras.
+5,Corte:
+6,02 horas de paro por falta de tela revisada.
+7,02 horas de paro por Falla mecanica (
