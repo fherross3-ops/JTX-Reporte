@@ -380,9 +380,10 @@ function parseDetailedCsv(text) {
         if (k === 'Otros paros') {
           i++;
           if (first(rows[i]) === 'Causa') i++;
-          const map = {
+                    const map = {
             'Presion de aire':'presion', 'Orden superior':'orden', 'Falta de urdimbre':'urdimbre',
-            'Calidad':'calidad', 'E.C.U.':'ecu', 'Falta de trama':'trama'
+            'Calidad':'calidad', 'E.C.U.':'ecu', 'Falta de trama':'trama',
+            'Otros':'otros'
           };
           while (i < rows.length) {
             const r3 = rows[i];
@@ -392,6 +393,7 @@ function parseDetailedCsv(text) {
             if (key) {
               rep.tejeduria.otros[key] = (r3[1]||'').trim();
               if (c === 'Falta de urdimbre') rep.tejeduria.otros.urdimbreDet = (r3[2]||'').trim();
+              if (c === 'Otros') rep.tejeduria.otros.otrosDet = (r3[2]||'').trim();
             }
             i++;
           }
