@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-10
 Responsable,Karla Betancourt
-Creado,2026-11-10T12:25:32.159Z
-Exportado,2026-11-10T12:25:34.472Z
+Creado,2026-11-10T12:50:45.023Z
+Exportado,2026-11-10T12:50:46.032Z
 Archivo,reporte_planta_2026-11-10_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -50,8 +50,11 @@ N,Detalle
 1,Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. Sigue la novedad.
 2,CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.
 3,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda."
-4,Open end 01 parada por fuga de aire.
-5,"Open end 03 cambiador Lado A se remplaza manguera de aire y se le cambia chapa de acoplamiento, que abre puesto de hilatura."
+4,Open end 01 escurriendo para cambiar a titulo 10.
+5,Cambiador de OE 02 lado A se cambia fuente de poder.
+6,Se cambia banda transportadora de bobina open end 04 lado B.
+7,En la open end 01 de corrigieron 13 puestos por fuga de aire.
+8,Open end 02 se corrige una fuga por manguera rota en distribución principal.
 
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
@@ -124,9 +127,9 @@ Inventario Tela Cruda (Noria),67.018
 Novedades de Acabado
 1,Cibitex:
 2,08 horas de paro por Falla de instrumentacion.
-3,02 horas de Falla mecanica (
+3,02 horas de Falla mecanica (sin rodamiento para el cilindro de banda)
 4,Revision:
 5,03 horas de paro por falta de tela sanforizada.
 6,Corte:
 7,10 horas de paro por falta de tela revisada.
-8,08 horas de paro por otras:
+8,08 horas de paro por otras: ( por falta de tela sanforizada)
