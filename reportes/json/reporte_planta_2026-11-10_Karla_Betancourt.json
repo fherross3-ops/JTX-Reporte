@@ -2,7 +2,7 @@
   "id": "mwann1tk4h6tr",
   "fecha": "2026-11-10",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-10T12:50:45.023Z",
+  "creado": "2026-11-10T13:06:25.687Z",
   "hilanderia": {
     "kgsOE": 5542.8,
     "kgsCarda": 7168,
@@ -115,9 +115,9 @@
   "humedos": {
     "unipacks": [
       {
-        "titulo": "08",
-        "unipacks": "3.5",
-        "openend": "03"
+        "titulo": "6.55",
+        "unipacks": "03",
+        "openend": "04"
       }
     ],
     "urdido": [
@@ -130,9 +130,9 @@
       },
       {
         "urdidora": "02",
-        "estilo": "Oxigeno",
-        "lote": "2002",
-        "mh": "07",
+        "estilo": "Bulldenim 11",
+        "lote": "2003",
+        "mh": "04",
         "mph": "12"
       },
       {
@@ -144,28 +144,28 @@
       },
       {
         "urdidora": "04",
-        "estilo": "Indigo oscuro",
-        "lote": "4001",
-        "mh": "08",
+        "estilo": "Índigo soft",
+        "lote": "4002",
+        "mh": "01",
         "mph": "12"
       }
     ],
     "tenido": [
       {
-        "tren": "Belloit 02",
-        "estilo": "Indigo oscuro",
-        "lote": "4001",
-        "mh": "07",
-        "mph": "12",
+        "tren": "Sin material",
+        "estilo": "",
+        "lote": "",
+        "mh": "",
+        "mph": "",
         "obs": ""
       }
     ],
     "reurdido": [
       {
-        "estilo": "Arandano dark",
-        "lote": "202004",
-        "mh": "02",
-        "mph": "14"
+        "estilo": "Indigo oscuro",
+        "lote": "402005",
+        "mh": "09",
+        "mph": "12"
       }
     ],
     "engomado": {
@@ -173,19 +173,19 @@
       "rows": [
         {
           "engomadora": "01",
-          "estilo": "Pañaltex",
-          "lote": "100069",
-          "mh": "18",
-          "mph": "18",
+          "estilo": "Oxigeno",
+          "lote": "200002",
+          "mh": "12",
+          "mph": "12",
           "obs": "Preparacion y conteo de peine, arranque"
         },
         {
           "engomadora": "02",
           "estilo": "Arandano dark",
           "lote": "202004",
-          "mh": "9",
+          "mh": "14",
           "mph": "14",
-          "obs": "En espera de reurdido"
+          "obs": "Paro x fuga en tambor #2 cadena #03"
         }
       ],
       "porEngomar": [
@@ -199,7 +199,7 @@
     },
     "novedades": [
       "No hay existencia de PVA en planta.",
-      "Urdidora 01 alineacion del creel"
+      "Paro en la Engomadora 02 por fuga en el tambor de la torre de secado #03"
     ]
   },
   "tejeduria": {
