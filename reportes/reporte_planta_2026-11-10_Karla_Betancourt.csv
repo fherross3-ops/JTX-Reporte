@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-10
 Responsable,Karla Betancourt
-Creado,2026-11-10T12:16:59.185Z
-Exportado,2026-11-10T12:17:00.433Z
+Creado,2026-11-10T12:25:32.159Z
+Exportado,2026-11-10T12:25:34.472Z
 Archivo,reporte_planta_2026-11-10_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -89,28 +89,28 @@ Novedades de Engomado
 
 == TEJEDURIA ==
 Concepto,Valor
-Metros tejidos del dia anterior,23162
+Metros tejidos del dia anterior,22434
 Promedio Rot/hora,
-Telares cargados,70
-Telares operativos,55
-Telares parados,57
-Cadenas inventario,24
+Telares cargados,74
+Telares operativos,48
+Telares parados,64
+Cadenas inventario,22
 
 Causas de telares parados
 Causa,Cantidad,Detalle
 Mecanica,1,
-Electronica,2,
-Electrica,0,
+Electronica,3,
+Electrica,1,
 Montaje,0,
 Repuesto,7,"5,40,47,73,96,100,108"
 
 Otros paros
 Causa,Cantidad,Detalle
 Presion de aire,0,
-Orden superior,31,
-Falta de urdimbre,3,1- pañaltex 02- Fashion oscuro
+Orden superior,38,
+Falta de urdimbre,8,2- fashion oscuro 02- satin iris black 04- Bulldenim 11
 Calidad,1,
-E.C.U.,7,
+E.C.U.,6,
 Falta de trama,,
 
 == PLANTA ACABADO ==
