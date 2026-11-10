@@ -569,20 +569,24 @@
               <label class="field"><span>Telares afectados por repuesto</span><input type="text" id="c_repuesto_telares" placeholder="Ej. 5, 47, 73, 33, 108, 43"></label>
             </div>
           </div>
-          <div class="subcard">
-            <h4>Otros paros</h4>
-            <div class="grid tight">
-              <label class="field"><span>Presión de aire</span><input type="number" step="any" id="o_presion"></label>
-              <label class="field"><span>Orden superior</span><input type="number" step="any" id="o_orden"></label>
-              <label class="field"><span>Falta de urdimbre</span><input type="number" step="any" id="o_urdimbre"></label>
-              <label class="field"><span>Calidad</span><input type="number" step="any" id="o_calidad"></label>
-              <label class="field"><span>E.C.U.</span><input type="number" step="any" id="o_ecu"></label>
-              <label class="field"><span>Falta de trama</span><input type="number" step="any" id="o_trama"></label>
-            </div>
-            <div style="margin-top:12px">
-              <label class="field"><span>Detalle falta de urdimbre</span><input type="text" id="o_urdimbre_det" placeholder="Ej. Amazonas (4), Indigo Oscuro (1)"></label>
-            </div>
-          </div>
+         <div class="subcard">
+  <h4>Otros paros</h4>
+  <div class="grid tight">
+    <label class="field"><span>Presión de aire</span><input type="number" step="any" id="o_presion"></label>
+    <label class="field"><span>Orden superior</span><input type="number" step="any" id="o_orden"></label>
+    <label class="field"><span>Falta de urdimbre</span><input type="number" step="any" id="o_urdimbre"></label>
+    <label class="field"><span>Calidad</span><input type="number" step="any" id="o_calidad"></label>
+    <label class="field"><span>E.C.U.</span><input type="number" step="any" id="o_ecu"></label>
+    <label class="field"><span>Falta de trama</span><input type="number" step="any" id="o_trama"></label>
+    <label class="field"><span>Otros</span><input type="number" step="any" id="o_otros"></label>
+  </div>
+  <div style="margin-top:12px">
+    <label class="field"><span>Detalle falta de urdimbre</span><input type="text" id="o_urdimbre_det" placeholder="Ej. Amazonas (4), Indigo Oscuro (1)"></label>
+  </div>
+  <div style="margin-top:12px">
+    <label class="field"><span>Detalle Otros</span><input type="text" id="o_otros_det" placeholder="Ej. Ausentismo: 3 telares"></label>
+  </div>
+</div>
         </div>
       </div>
 
@@ -983,14 +987,16 @@ function collect(){
         repuesto: num('c_repuesto'),
         repuestoTelares: val('c_repuesto_telares')
       },
-      otros: {
+          otros: {
         presion: num('o_presion'),
         orden: num('o_orden'),
         urdimbre: num('o_urdimbre'),
         urdimbreDet: val('o_urdimbre_det'),
         calidad: num('o_calidad'),
         ecu: num('o_ecu'),
-        trama: num('o_trama')
+        trama: num('o_trama'),
+        otros: num('o_otros'),
+        otrosDet: val('o_otros_det')
       }
     },
     acabado: {
@@ -1050,6 +1056,10 @@ function fillForm(r){
   $('o_calidad').value  = nz(t.otros?.calidad);
   $('o_ecu').value      = nz(t.otros?.ecu);
   $('o_trama').value    = nz(t.otros?.trama);
+$('o_otros').value    = nz(t.otros?.otros);
+  $('o_otros_det').value = t.otros?.otrosDet || '';
+
+  
   $('a_sanforizado').value = nz(a.sanforizado);
   $('a_revision').value    = nz(a.revision);
   $('a_corte').value       = nz(a.corte);
@@ -1200,7 +1210,9 @@ function renderPanel(r, host){
   html += `<tr><td class="lh">Falta de urdimbre</td><td class="num">${fmtNum(otros.urdimbre)}</td><td>${esc(otros.urdimbreDet || '')}</td></tr>`;
   html += `<tr><td class="lh">Calidad</td><td class="num">${fmtNum(otros.calidad)}</td><td></td></tr>`;
   html += `<tr><td class="lh">E.C.U.</td><td class="num">${fmtNum(otros.ecu)}</td><td></td></tr>`;
-  html += `<tr><td class="lh">Falta de trama</td><td class="num">${fmtNum(otros.trama)}</td><td></td></tr></tbody></table></div>`;
+  html += `<tr><td class="lh">Falta de trama</td><td class="num">${fmtNum(otros.trama)}</td><td></td></tr>;
+  html += `<tr><td class="lh">Otros</td><td class="num">${fmtNum(otros.otros)}</td><td>${esc(otros.otrosDet || '')}</td></tr>`;
+  </tbody></table></div>`;
   html += '</section>';
   html += '<section class="rep-sec"><h3>Planta de Acabado</h3>';
   html += `<div class="kpis">
@@ -1342,6 +1354,9 @@ function detailedCSV(r){
   P('Calidad', nz(t.otros?.calidad), '');
   P('E.C.U.', nz(t.otros?.ecu), '');
   P('Falta de trama', nz(t.otros?.trama), '');
+ P('Otros', nz(t.otros?.otros), t.otros?.otrosDet || '');
+
+  
   P();
   P('== PLANTA ACABADO ==');
   P('Seccion', 'Metros');
