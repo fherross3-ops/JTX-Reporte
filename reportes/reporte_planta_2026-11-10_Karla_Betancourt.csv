@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-10
 Responsable,Karla Betancourt
-Creado,2026-11-10T12:50:45.023Z
-Exportado,2026-11-10T12:50:46.032Z
+Creado,2026-11-10T13:06:25.687Z
+Exportado,2026-11-10T13:06:26.863Z
 Archivo,reporte_planta_2026-11-10_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -59,28 +59,28 @@ N,Detalle
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
 Titulo,Unipacks,Open-End
-08,3.5,03
+6.55,03,04
 
 Urdido
 Urdidora,Estilo,Lote,Mh,Mph
 01,Senat,1001,01,18
-02,Oxigeno,2002,07,12
+02,Bulldenim 11,2003,04,12
 03,Sin material,,,
-04,Indigo oscuro,4001,08,12
+04,Índigo soft,4002,01,12
 
 Tenido
 Tren,Estilo,Lote,Mh,Mph,Observacion
-Belloit 02,Indigo oscuro,4001,07,12,
+Sin material,,,,,
 
 Reurdido
 Estilo,Lote,Mh,Mph
-Arandano dark,202004,02,14
+Indigo oscuro,402005,09,12
 
 Engomado
 Metros engomados del dia anterior,19180
 Engomadora,Estilo,Lote,Mh,Mph,Observacion
-01,Pañaltex,100069,18,18,"Preparacion y conteo de peine, arranque"
-02,Arandano dark,202004,9,14,En espera de reurdido
+01,Oxigeno,200002,12,12,"Preparacion y conteo de peine, arranque"
+02,Arandano dark,202004,14,14,Paro x fuga en tambor #2 cadena #03
 
 Pendientes por Engomar
 Estilo,Lote,Mh,Mph
@@ -88,7 +88,7 @@ Sin material,,,
 
 Novedades de Engomado
 1,No hay existencia de PVA en planta.
-2,Urdidora 01 alineacion del creel
+2,Paro en la Engomadora 02 por fuga en el tambor de la torre de secado #03
 
 == TEJEDURIA ==
 Concepto,Valor
