@@ -2,7 +2,7 @@
   "id": "mwann1tk4h6tr",
   "fecha": "2026-11-10",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-10T12:16:59.185Z",
+  "creado": "2026-11-10T12:25:32.159Z",
   "hilanderia": {
     "kgsOE": 5542.8,
     "kgsCarda": 7168,
@@ -200,27 +200,27 @@
     ]
   },
   "tejeduria": {
-    "metros": 23162,
+    "metros": 22434,
     "rot": "",
-    "cargados": 70,
-    "operativos": 55,
-    "parados": 57,
-    "cadenas": 24,
+    "cargados": 74,
+    "operativos": 48,
+    "parados": 64,
+    "cadenas": 22,
     "causas": {
       "mecanica": 1,
-      "electronica": 2,
-      "electrica": 0,
+      "electronica": 3,
+      "electrica": 1,
       "montaje": 0,
       "repuesto": 7,
       "repuestoTelares": "5,40,47,73,96,100,108"
     },
     "otros": {
       "presion": 0,
-      "orden": 31,
-      "urdimbre": 3,
-      "urdimbreDet": "1- pañaltex 02- Fashion oscuro",
+      "orden": 38,
+      "urdimbre": 8,
+      "urdimbreDet": "2- fashion oscuro 02- satin iris black 04- Bulldenim 11",
       "calidad": 1,
-      "ecu": 7,
+      "ecu": 6,
       "trama": ""
     }
   },
