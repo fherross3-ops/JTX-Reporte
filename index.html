@@ -569,24 +569,24 @@
               <label class="field"><span>Telares afectados por repuesto</span><input type="text" id="c_repuesto_telares" placeholder="Ej. 5, 47, 73, 33, 108, 43"></label>
             </div>
           </div>
-         <div class="subcard">
-  <h4>Otros paros</h4>
-  <div class="grid tight">
-    <label class="field"><span>Presión de aire</span><input type="number" step="any" id="o_presion"></label>
-    <label class="field"><span>Orden superior</span><input type="number" step="any" id="o_orden"></label>
-    <label class="field"><span>Falta de urdimbre</span><input type="number" step="any" id="o_urdimbre"></label>
-    <label class="field"><span>Calidad</span><input type="number" step="any" id="o_calidad"></label>
-    <label class="field"><span>E.C.U.</span><input type="number" step="any" id="o_ecu"></label>
-    <label class="field"><span>Falta de trama</span><input type="number" step="any" id="o_trama"></label>
-    <label class="field"><span>Otros</span><input type="number" step="any" id="o_otros"></label>
-  </div>
-  <div style="margin-top:12px">
-    <label class="field"><span>Detalle falta de urdimbre</span><input type="text" id="o_urdimbre_det" placeholder="Ej. Amazonas (4), Indigo Oscuro (1)"></label>
-  </div>
-  <div style="margin-top:12px">
-    <label class="field"><span>Detalle Otros</span><input type="text" id="o_otros_det" placeholder="Ej. Ausentismo: 3 telares"></label>
-  </div>
-</div>
+          <div class="subcard">
+            <h4>Otros paros</h4>
+            <div class="grid tight">
+              <label class="field"><span>Presión de aire</span><input type="number" step="any" id="o_presion"></label>
+              <label class="field"><span>Orden superior</span><input type="number" step="any" id="o_orden"></label>
+              <label class="field"><span>Falta de urdimbre</span><input type="number" step="any" id="o_urdimbre"></label>
+              <label class="field"><span>Calidad</span><input type="number" step="any" id="o_calidad"></label>
+              <label class="field"><span>E.C.U.</span><input type="number" step="any" id="o_ecu"></label>
+              <label class="field"><span>Falta de trama</span><input type="number" step="any" id="o_trama"></label>
+              <label class="field"><span>Otros</span><input type="number" step="any" id="o_otros"></label>
+            </div>
+            <div style="margin-top:12px">
+              <label class="field"><span>Detalle falta de urdimbre</span><input type="text" id="o_urdimbre_det" placeholder="Ej. Amazonas (4), Indigo Oscuro (1)"></label>
+            </div>
+            <div style="margin-top:12px">
+              <label class="field"><span>Detalle Otros</span><input type="text" id="o_otros_det" placeholder="Ej. Ausentismo: 3 telares"></label>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -987,7 +987,7 @@ function collect(){
         repuesto: num('c_repuesto'),
         repuestoTelares: val('c_repuesto_telares')
       },
-          otros: {
+      otros: {
         presion: num('o_presion'),
         orden: num('o_orden'),
         urdimbre: num('o_urdimbre'),
@@ -1056,10 +1056,8 @@ function fillForm(r){
   $('o_calidad').value  = nz(t.otros?.calidad);
   $('o_ecu').value      = nz(t.otros?.ecu);
   $('o_trama').value    = nz(t.otros?.trama);
-$('o_otros').value    = nz(t.otros?.otros);
+  $('o_otros').value    = nz(t.otros?.otros);
   $('o_otros_det').value = t.otros?.otrosDet || '';
-
-  
   $('a_sanforizado').value = nz(a.sanforizado);
   $('a_revision').value    = nz(a.revision);
   $('a_corte').value       = nz(a.corte);
@@ -1210,9 +1208,9 @@ function renderPanel(r, host){
   html += `<tr><td class="lh">Falta de urdimbre</td><td class="num">${fmtNum(otros.urdimbre)}</td><td>${esc(otros.urdimbreDet || '')}</td></tr>`;
   html += `<tr><td class="lh">Calidad</td><td class="num">${fmtNum(otros.calidad)}</td><td></td></tr>`;
   html += `<tr><td class="lh">E.C.U.</td><td class="num">${fmtNum(otros.ecu)}</td><td></td></tr>`;
-  html += `<tr><td class="lh">Falta de trama</td><td class="num">${fmtNum(otros.trama)}</td><td></td></tr>;
+  html += `<tr><td class="lh">Falta de trama</td><td class="num">${fmtNum(otros.trama)}</td><td></td></tr>`;
   html += `<tr><td class="lh">Otros</td><td class="num">${fmtNum(otros.otros)}</td><td>${esc(otros.otrosDet || '')}</td></tr>`;
-  </tbody></table></div>`;
+  html += '</tbody></table></div>';
   html += '</section>';
   html += '<section class="rep-sec"><h3>Planta de Acabado</h3>';
   html += `<div class="kpis">
@@ -1354,9 +1352,7 @@ function detailedCSV(r){
   P('Calidad', nz(t.otros?.calidad), '');
   P('E.C.U.', nz(t.otros?.ecu), '');
   P('Falta de trama', nz(t.otros?.trama), '');
- P('Otros', nz(t.otros?.otros), t.otros?.otrosDet || '');
-
-  
+  P('Otros', nz(t.otros?.otros), t.otros?.otrosDet || '');
   P();
   P('== PLANTA ACABADO ==');
   P('Seccion', 'Metros');
@@ -1465,13 +1461,13 @@ function refreshPanelSelect(){
 function getById(id){ return loadAll().find(r => r.id === id) || null; }
 
 /* =========================================================================
-   12. SINCRONIZACIÓN DESDE GITHUB (con caché para no agotar rate limit)
+   12. SINCRONIZACIÓN DESDE GITHUB
    ========================================================================= */
 const GITHUB_OWNER  = 'fherross3-ops';
 const GITHUB_REPO   = 'JTX-Reporte';
 const GITHUB_BRANCH = 'main';
 const SYNC_CACHE_KEY = 'reportes_sync_ts';
-const SYNC_INTERVAL_MS = 5 * 60 * 1000; // 5 minutos
+const SYNC_INTERVAL_MS = 5 * 60 * 1000;
 
 async function syncFromGitHub(silencioso, force) {
   try {
@@ -1491,7 +1487,6 @@ async function syncFromGitHub(silencioso, force) {
     const files = await res.json();
     if (!Array.isArray(files) || !files.length) { sessionStorage.setItem(SYNC_CACHE_KEY, String(Date.now())); return; }
 
-    // Descargar TODOS primero, luego resolver colisiones por "más datos gana"
     const descargados = [];
     for (const file of files) {
       if (!file.name.endsWith('.json')) continue;
@@ -1504,7 +1499,6 @@ async function syncFromGitHub(silencioso, force) {
       descargados.push(report);
     }
 
-    // Función que mide "cuántos datos tiene" un reporte
     const pesoReporte = (r) => {
       let n = 0;
       const h = r.hilanderia || {}; const hu = r.humedos || {}; const t = r.tejeduria || {}; const a = r.acabado || {};
@@ -1522,7 +1516,6 @@ async function syncFromGitHub(silencioso, force) {
       return n;
     };
 
-    // Agrupar por fecha, quedarse con el de más peso
     const porFecha = new Map();
     for (const rep of descargados) {
       const actual = porFecha.get(rep.fecha);
@@ -1567,6 +1560,7 @@ async function syncFromGitHub(silencioso, force) {
     if (!silencioso) toast('Error al sincronizar: ' + error.message, true);
   }
 }
+
 /* =========================================================================
    13. INICIALIZACIÓN
    ========================================================================= */
@@ -1667,6 +1661,111 @@ async function guardar() {
 }
 $('btn-guardar').addEventListener('click', guardar);
 $('btn-guardar-2').addEventListener('click', guardar);
+
+/* =========================================================================
+   15. GENERACIÓN Y DESCARGA DE PDF
+   ========================================================================= */
+let _pendingRegistro = null;
+
+async function generarPDFBlob(registro) {
+  const overlay = document.createElement('div');
+  overlay.style.cssText = `
+    position: fixed; inset: 0; z-index: 999999;
+    background: rgba(15,20,26,0.92); color: #e8eef4;
+    display: flex; flex-direction: column; gap: 14px;
+    align-items: center; justify-content: center;
+    font-family: "Segoe UI",Roboto,system-ui,sans-serif;
+    font-size: 16px; font-weight: 600; text-align: center; padding: 20px;
+  `;
+  overlay.innerHTML = `
+    <div style="font-size:36px">⏳</div>
+    <div>Generando PDF…</div>
+    <div style="font-size:12px;opacity:.7;font-weight:400;max-width:280px">
+      Espera unos segundos mientras se prepara el documento.
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  const temp = document.createElement('div');
+  temp.style.cssText = `
+    position: absolute;
+    top: 0; left: 0;
+    width: 210mm;
+    background: #ffffff;
+    padding: 10mm;
+    color: #111111;
+    font-family: "Segoe UI",Roboto,system-ui,sans-serif;
+    z-index: 1;
+  `;
+  document.body.appendChild(temp);
+  const prevOverflow = document.body.style.overflow;
+  document.body.style.overflow = 'hidden';
+
+  try {
+    const inner = document.createElement('div');
+    renderPanel(registro, inner);
+    temp.appendChild(inner);
+
+    const forceStyle = (sel, styles) => {
+      temp.querySelectorAll(sel).forEach(el => Object.assign(el.style, styles));
+    };
+    forceStyle('.report, .rep-sec, .subcard, .kpis, .rep-table-wrap', {
+      background: '#ffffff', border: 'none', boxShadow: 'none'
+    });
+    forceStyle('.rep-sec h3', { color: '#0b4a63', borderBottom: '2px solid #cfe6f1' });
+    forceStyle('.rep-sec h4', { color: '#334455' });
+    forceStyle('table.rep th', { background: '#eef4f8', color: '#333333' });
+    forceStyle('table.rep td', { color: '#111111', borderBottom: '1px solid #dddddd' });
+    forceStyle('table.rep td.tot', { background: '#e8f1f6', color: '#0b4a63' });
+    forceStyle('table.rep tr.totrow td', { background: '#dbe9f2', color: '#0b4a63' });
+    forceStyle('.kpi', { background: '#f5f8fb', border: '1px solid #cccccc' });
+    forceStyle('.kpi span', { color: '#555566' });
+    forceStyle('.kpi b', { color: '#0b4a63' });
+    forceStyle('.rep-head', { background: '#0b4a63', color: '#ffffff', padding: '10px 14px' });
+    forceStyle('.rep-head h2, .rep-head .rep-kicker', { color: '#ffffff' });
+    forceStyle('.rep-date', { background: '#c9ecf8', color: '#0b4a63', border: '1px solid #5bc8e8' });
+    forceStyle('.novedades li, .rep-sec *', { color: '#111111' });
+    forceStyle('.empty', { color: '#666666' });
+
+    await new Promise(resolve => setTimeout(resolve, 800));
+
+    const opt = {
+      margin: 0,
+      filename: fileBaseName(registro) + '.pdf',
+      image: { type: 'jpeg', quality: 0.95 },
+      html2canvas: {
+        scale: 1.5,
+        useCORS: true,
+        backgroundColor: '#ffffff',
+        logging: false,
+        scrollX: 0,
+        scrollY: 0,
+        width: temp.offsetWidth,
+        height: temp.scrollHeight,
+        windowWidth: temp.offsetWidth,
+        windowHeight: temp.scrollHeight
+      },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      pagebreak: { mode: ['css', 'legacy'] }
+    };
+
+    const blob = await html2pdf().set(opt).from(temp).outputPdf('blob');
+
+    if (!blob || blob.size < 5000) {
+      throw new Error('PDF vacío o demasiado pequeño (canvas excedido)');
+    }
+
+    document.body.removeChild(temp);
+    document.body.removeChild(overlay);
+    document.body.style.overflow = prevOverflow;
+    return { blob, filename: opt.filename };
+  } catch (error) {
+    if (temp.parentNode) document.body.removeChild(temp);
+    if (overlay.parentNode) document.body.removeChild(overlay);
+    document.body.style.overflow = prevOverflow;
+    throw error;
+  }
+}
 
 async function descargarPDF(registro) {
   try {
@@ -1941,7 +2040,8 @@ const EJEMPLO = {
       repuestoTelares: '5, 47, 73, 33, 108, 43' },
     otros: { presion: 0, orden: 15, urdimbre: 5,
       urdimbreDet: 'Amazonas (4), Indigo Oscuro (1)',
-      calidad: 0, ecu: 2, trama: 0 }
+      calidad: 0, ecu: 2, trama: 0,
+      otros: 3, otrosDet: 'Ausentismo: 3 telares' }
   },
   acabado: {
     sanforizado: 29768, revision: 20824, corte: 19501,
