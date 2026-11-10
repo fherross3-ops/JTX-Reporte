@@ -2,7 +2,7 @@
   "id": "mwann1tk4h6tr",
   "fecha": "2026-11-10",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-10T12:25:32.159Z",
+  "creado": "2026-11-10T12:50:45.023Z",
   "hilanderia": {
     "kgsOE": 5542.8,
     "kgsCarda": 7168,
@@ -106,8 +106,11 @@
     "Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. Sigue la novedad.",
     "CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.",
     "Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda.",
-    "Open end 01 parada por fuga de aire.",
-    "Open end 03 cambiador Lado A se remplaza manguera de aire y se le cambia chapa de acoplamiento, que abre puesto de hilatura."
+    "Open end 01 escurriendo para cambiar a titulo 10.",
+    "Cambiador de OE 02 lado A se cambia fuente de poder.",
+    "Se cambia banda transportadora de bobina open end 04 lado B.",
+    "En la open end 01 de corrigieron 13 puestos por fuga de aire.",
+    "Open end 02 se corrige una fuga por manguera rota en distribución principal."
   ],
   "humedos": {
     "unipacks": [
@@ -233,12 +236,12 @@
     "novedades": [
       "Cibitex:",
       "08 horas de paro por Falla de instrumentacion.",
-      "02 horas de Falla mecanica (",
+      "02 horas de Falla mecanica (sin rodamiento para el cilindro de banda)",
       "Revision:",
       "03 horas de paro por falta de tela sanforizada.",
       "Corte:",
       "10 horas de paro por falta de tela revisada.",
-      "08 horas de paro por otras:"
+      "08 horas de paro por otras: ( por falta de tela sanforizada)"
     ]
   }
 }
