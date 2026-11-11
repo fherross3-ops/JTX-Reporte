@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-11
 Responsable,Karla Betancourt
-Creado,2026-11-11T12:16:08.720Z
-Exportado,2026-11-11T12:16:08.734Z
+Creado,2026-11-11T13:38:01.323Z
+Exportado,2026-11-11T13:38:02.707Z
 Archivo,reporte_planta_2026-11-11_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -12,30 +12,30 @@ Kgs producidos en Carda,8371.8
 
 Titulos Open-End
 Open-End,Titulo,Uso
-01,12 mezcla 01,Ventas
+01,10 mezcla 01,Ventas
 02,08 / 5.6 Ne,Trama
 03,08 mezcla 01,Urdido
-04,"6,5 / 24",Urdido
+04,"6,5",Urdido
 05,16,Ventas
 ,,Urdido
 
 Puestos Inactivos Open-End
 Open-End,Puestos
 01,0
-02,71
-03,29
+02,64
+03,14
 04,0
 05,0
-Total,100
-Porcentaje de 1440,6.9%
+Total,78
+Porcentaje de 1440,5.4%
 Causa,Reemplazo por fuentes de poder
 
 Puestos Parados por Causa
 Causa,01,02,03,04,05,Total
 Inactivos,22,16,16,0,12,66
-Ajustes,11,24,51,4,7,97
-F.A.,0,71,29,0,0,100
-Total,33,111,96,4,19,263
+Ajustes,11,18,66,4,7,106
+F.A.,0,64,14,0,0,78
+Total,33,98,96,4,19,250
 
 Puestos Corregidos por Causa
 Causa,01,02,03,04,05,Total
@@ -47,40 +47,42 @@ Total,0,0,0,0,0,0
 
 == NOVEDADES DE PLANTA ==
 N,Detalle
-1,Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. Sigue la novedad.
+1,Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. (Se trabaja en la máquina ya q llegan los repuestos)
 2,CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.
 3,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda."
-4,Open end 01 escurriendo para cambiar a titulo 10.
-5,Cambiador de OE 02 lado A se cambia fuente de poder.
-6,Se cambia banda transportadora de bobina open end 04 lado B.
-7,En la open end 01 de corrigieron 13 puestos por fuga de aire.
-8,Open end 02 se corrige una fuga por manguera rota en distribución principal.
+4,Carda Ñ*6 parada por correa 740-5M-25 del IDF
+5,Open-end 04 se cambia sensor de banda transportadora de bobina.
+6,Open end 02 se monitore cambiador lado B por falla en tarjeta 162.
+7,En la open end 02 se recuperan 13 puestos. 06 por ajuste y 07 por fuente de poder.
+8,En la open en le 03 se monta 15 fuentes de alimentacion.
 
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
 Titulo,Unipacks,Open-End
 6.55,03,04
+8,3.5,03
+10,3,01
 
 Urdido
 Urdidora,Estilo,Lote,Mh,Mph
-01,Senat,1001,01,18
-02,Bulldenim 11,2003,04,12
+01,Senat,1001,10,18
+02,Bulldenim 11,2003,06,12
 03,Sin material,,,
-04,Índigo soft,4002,01,12
+04,Índigo soft,4002,05,12
 
 Tenido
 Tren,Estilo,Lote,Mh,Mph,Observacion
-Sin material,,,,,
+Beloit 02,Indigo soft,4002,04,12,
 
 Reurdido
 Estilo,Lote,Mh,Mph
-Indigo oscuro,402005,09,12
+Sin material,,,
 
 Engomado
 Metros engomados del dia anterior,34410
 Engomadora,Estilo,Lote,Mh,Mph,Observacion
-01,Oxigeno,200002,12,12,"Preparacion y conteo de peine, arranque"
-02,Arandano dark,202004,14,14,Paro x fuga en tambor #2 cadena #03
+01,Bulldebim 11,200003,12,12,
+02,Fashion oscuro /indigo oscuro,402005,14,12,Preparacion conteo de peine y arranque
 
 Pendientes por Engomar
 Estilo,Lote,Mh,Mph
@@ -88,7 +90,6 @@ Sin material,,,
 
 Novedades de Engomado
 1,No hay existencia de PVA en planta.
-2,Paro en la Engomadora 02 por fuga en el tambor de la torre de secado #03
 
 == TEJEDURIA ==
 Concepto,Valor
@@ -129,8 +130,8 @@ Novedades de Acabado
 1,Cibitex:
 2,30 minutos de paro por comida.
 3,Revisión:
-4,02 hora de paro por falla del sistema (
+4,02 hora de paro por falla del sistema (sisgo)
 5,Corte:
 6,07 horas de paro por calidad
 7,02 horas de paro por falla de instrumentacion
-8,30 minutos de paro por falla mecánica (
+8,30 minutos de paro por falla mecánica (se partio cadena de la rulela del peso )
