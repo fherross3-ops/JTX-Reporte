@@ -1,0 +1,249 @@
+{
+  "id": "mwc31y4q9z45o",
+  "fecha": "2026-11-11",
+  "responsable": "Karla Betancourt",
+  "creado": "2026-11-11T12:16:08.720Z",
+  "hilanderia": {
+    "kgsOE": 10633,
+    "kgsCarda": 8371.8,
+    "titulos": [
+      {
+        "maquina": "01",
+        "titulo": "12 mezcla 01",
+        "uso": "Ventas"
+      },
+      {
+        "maquina": "02",
+        "titulo": "08 / 5.6 Ne",
+        "uso": "Trama"
+      },
+      {
+        "maquina": "03",
+        "titulo": "08 mezcla 01",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "04",
+        "titulo": "6,5 / 24",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "05",
+        "titulo": "16",
+        "uso": "Ventas"
+      },
+      {
+        "maquina": "",
+        "titulo": "",
+        "uso": "Urdido"
+      }
+    ],
+    "inactivos": {
+      "m": [
+        0,
+        71,
+        29,
+        0,
+        0
+      ],
+      "causa": "Reemplazo por fuentes de poder"
+    },
+    "parados": {
+      "inactivos": {
+        "01": 22,
+        "02": 16,
+        "03": 16,
+        "04": 0,
+        "05": 12
+      },
+      "ajustes": {
+        "01": 11,
+        "02": 24,
+        "03": 51,
+        "04": 4,
+        "05": 7
+      },
+      "fa": {
+        "01": 0,
+        "02": 71,
+        "03": 29,
+        "04": 0,
+        "05": 0
+      }
+    },
+    "corregidos": {
+      "ajustefuga": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fuentes": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fugas": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "amortig": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      }
+    }
+  },
+  "novedadesPlanta": [
+    "Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. Sigue la novedad.",
+    "CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.",
+    "Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda.",
+    "Open end 01 escurriendo para cambiar a titulo 10.",
+    "Cambiador de OE 02 lado A se cambia fuente de poder.",
+    "Se cambia banda transportadora de bobina open end 04 lado B.",
+    "En la open end 01 de corrigieron 13 puestos por fuga de aire.",
+    "Open end 02 se corrige una fuga por manguera rota en distribución principal."
+  ],
+  "humedos": {
+    "unipacks": [
+      {
+        "titulo": "6.55",
+        "unipacks": "03",
+        "openend": "04"
+      }
+    ],
+    "urdido": [
+      {
+        "urdidora": "01",
+        "estilo": "Senat",
+        "lote": "1001",
+        "mh": "01",
+        "mph": "18"
+      },
+      {
+        "urdidora": "02",
+        "estilo": "Bulldenim 11",
+        "lote": "2003",
+        "mh": "04",
+        "mph": "12"
+      },
+      {
+        "urdidora": "03",
+        "estilo": "Sin material",
+        "lote": "",
+        "mh": "",
+        "mph": ""
+      },
+      {
+        "urdidora": "04",
+        "estilo": "Índigo soft",
+        "lote": "4002",
+        "mh": "01",
+        "mph": "12"
+      }
+    ],
+    "tenido": [
+      {
+        "tren": "Sin material",
+        "estilo": "",
+        "lote": "",
+        "mh": "",
+        "mph": "",
+        "obs": ""
+      }
+    ],
+    "reurdido": [
+      {
+        "estilo": "Indigo oscuro",
+        "lote": "402005",
+        "mh": "09",
+        "mph": "12"
+      }
+    ],
+    "engomado": {
+      "metros": 34410,
+      "rows": [
+        {
+          "engomadora": "01",
+          "estilo": "Oxigeno",
+          "lote": "200002",
+          "mh": "12",
+          "mph": "12",
+          "obs": "Preparacion y conteo de peine, arranque"
+        },
+        {
+          "engomadora": "02",
+          "estilo": "Arandano dark",
+          "lote": "202004",
+          "mh": "14",
+          "mph": "14",
+          "obs": "Paro x fuga en tambor #2 cadena #03"
+        }
+      ],
+      "porEngomar": [
+        {
+          "estilo": "Sin material",
+          "lote": "",
+          "mh": "",
+          "mph": ""
+        }
+      ]
+    },
+    "novedades": [
+      "No hay existencia de PVA en planta.",
+      "Paro en la Engomadora 02 por fuga en el tambor de la torre de secado #03"
+    ]
+  },
+  "tejeduria": {
+    "metros": 16975,
+    "rot": "",
+    "cargados": 75,
+    "operativos": 43,
+    "parados": 69,
+    "cadenas": 24,
+    "causas": {
+      "mecanica": 3,
+      "electronica": 1,
+      "electrica": 0,
+      "montaje": 4,
+      "repuesto": 7,
+      "repuestoTelares": "5,40,47,73,96,100,108"
+    },
+    "otros": {
+      "presion": 0,
+      "orden": 40,
+      "urdimbre": 13,
+      "urdimbreDet": "05- Fashion oscuro 03- satin iris black 05- Bulldenim 11",
+      "calidad": 0,
+      "ecu": 5,
+      "trama": "",
+      "otros": "",
+      "otrosDet": ""
+    }
+  },
+  "acabado": {
+    "sanforizado": 31839,
+    "revision": 19722,
+    "corte": 18741,
+    "calidad": 77.73,
+    "inventario": 43587,
+    "novedades": [
+      "Cibitex:",
+      "30 minutos de paro por comida.",
+      "Revisión:",
+      "02 hora de paro por falla del sistema (",
+      "Corte:",
+      "07 horas de paro por calidad",
+      "02 horas de paro por falla de instrumentacion",
+      "30 minutos de paro por falla mecánica ("
+    ]
+  }
+}
