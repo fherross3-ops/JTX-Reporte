@@ -2,14 +2,14 @@
   "id": "mwc31y4q9z45o",
   "fecha": "2026-11-11",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-11T12:16:08.720Z",
+  "creado": "2026-11-11T13:38:01.323Z",
   "hilanderia": {
     "kgsOE": 10633,
     "kgsCarda": 8371.8,
     "titulos": [
       {
         "maquina": "01",
-        "titulo": "12 mezcla 01",
+        "titulo": "10 mezcla 01",
         "uso": "Ventas"
       },
       {
@@ -24,7 +24,7 @@
       },
       {
         "maquina": "04",
-        "titulo": "6,5 / 24",
+        "titulo": "6,5",
         "uso": "Urdido"
       },
       {
@@ -41,8 +41,8 @@
     "inactivos": {
       "m": [
         0,
-        71,
-        29,
+        64,
+        14,
         0,
         0
       ],
@@ -58,15 +58,15 @@
       },
       "ajustes": {
         "01": 11,
-        "02": 24,
-        "03": 51,
+        "02": 18,
+        "03": 66,
         "04": 4,
         "05": 7
       },
       "fa": {
         "01": 0,
-        "02": 71,
-        "03": 29,
+        "02": 64,
+        "03": 14,
         "04": 0,
         "05": 0
       }
@@ -103,14 +103,14 @@
     }
   },
   "novedadesPlanta": [
-    "Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. Sigue la novedad.",
+    "Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. (Se trabaja en la máquina ya q llegan los repuestos)",
     "CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.",
     "Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda.",
-    "Open end 01 escurriendo para cambiar a titulo 10.",
-    "Cambiador de OE 02 lado A se cambia fuente de poder.",
-    "Se cambia banda transportadora de bobina open end 04 lado B.",
-    "En la open end 01 de corrigieron 13 puestos por fuga de aire.",
-    "Open end 02 se corrige una fuga por manguera rota en distribución principal."
+    "Carda Ñ*6 parada por correa 740-5M-25 del IDF",
+    "Open-end 04 se cambia sensor de banda transportadora de bobina.",
+    "Open end 02 se monitore cambiador lado B por falla en tarjeta 162.",
+    "En la open end 02 se recuperan 13 puestos. 06 por ajuste y 07 por fuente de poder.",
+    "En la open en le 03 se monta 15 fuentes de alimentacion."
   ],
   "humedos": {
     "unipacks": [
@@ -118,6 +118,16 @@
         "titulo": "6.55",
         "unipacks": "03",
         "openend": "04"
+      },
+      {
+        "titulo": "8",
+        "unipacks": "3.5",
+        "openend": "03"
+      },
+      {
+        "titulo": "10",
+        "unipacks": "3",
+        "openend": "01"
       }
     ],
     "urdido": [
@@ -125,14 +135,14 @@
         "urdidora": "01",
         "estilo": "Senat",
         "lote": "1001",
-        "mh": "01",
+        "mh": "10",
         "mph": "18"
       },
       {
         "urdidora": "02",
         "estilo": "Bulldenim 11",
         "lote": "2003",
-        "mh": "04",
+        "mh": "06",
         "mph": "12"
       },
       {
@@ -146,26 +156,26 @@
         "urdidora": "04",
         "estilo": "Índigo soft",
         "lote": "4002",
-        "mh": "01",
+        "mh": "05",
         "mph": "12"
       }
     ],
     "tenido": [
       {
-        "tren": "Sin material",
-        "estilo": "",
-        "lote": "",
-        "mh": "",
-        "mph": "",
+        "tren": "Beloit 02",
+        "estilo": "Indigo soft",
+        "lote": "4002",
+        "mh": "04",
+        "mph": "12",
         "obs": ""
       }
     ],
     "reurdido": [
       {
-        "estilo": "Indigo oscuro",
-        "lote": "402005",
-        "mh": "09",
-        "mph": "12"
+        "estilo": "Sin material",
+        "lote": "",
+        "mh": "",
+        "mph": ""
       }
     ],
     "engomado": {
@@ -173,19 +183,19 @@
       "rows": [
         {
           "engomadora": "01",
-          "estilo": "Oxigeno",
-          "lote": "200002",
+          "estilo": "Bulldebim 11",
+          "lote": "200003",
           "mh": "12",
           "mph": "12",
-          "obs": "Preparacion y conteo de peine, arranque"
+          "obs": ""
         },
         {
           "engomadora": "02",
-          "estilo": "Arandano dark",
-          "lote": "202004",
+          "estilo": "Fashion oscuro /indigo oscuro",
+          "lote": "402005",
           "mh": "14",
-          "mph": "14",
-          "obs": "Paro x fuga en tambor #2 cadena #03"
+          "mph": "12",
+          "obs": "Preparacion conteo de peine y arranque"
         }
       ],
       "porEngomar": [
@@ -198,8 +208,7 @@
       ]
     },
     "novedades": [
-      "No hay existencia de PVA en planta.",
-      "Paro en la Engomadora 02 por fuga en el tambor de la torre de secado #03"
+      "No hay existencia de PVA en planta."
     ]
   },
   "tejeduria": {
@@ -239,11 +248,11 @@
       "Cibitex:",
       "30 minutos de paro por comida.",
       "Revisión:",
-      "02 hora de paro por falla del sistema (",
+      "02 hora de paro por falla del sistema (sisgo)",
       "Corte:",
       "07 horas de paro por calidad",
       "02 horas de paro por falla de instrumentacion",
-      "30 minutos de paro por falla mecánica ("
+      "30 minutos de paro por falla mecánica (se partio cadena de la rulela del peso )"
     ]
   }
 }
