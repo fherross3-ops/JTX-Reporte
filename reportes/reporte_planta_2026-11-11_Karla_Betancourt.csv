@@ -1,14 +1,14 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-11
 Responsable,Karla Betancourt
-Creado,2026-11-11T13:41:22.064Z
-Exportado,2026-11-11T13:41:23.110Z
+Creado,2026-11-11T13:45:20.070Z
+Exportado,2026-11-11T13:45:20.913Z
 Archivo,reporte_planta_2026-11-11_Karla_Betancourt.csv
 
 == HILANDERIA ==
 Concepto,Valor
-Kgs producidos en Open-End,10633
-Kgs producidos en Carda,8371.8
+Kgs producidos en Open-End,12688.8
+Kgs producidos en Carda,12188
 
 Titulos Open-End
 Open-End,Titulo,Uso
