@@ -1,0 +1,138 @@
+Tipo,Informe Planta - Reporte Diario
+Fecha del informe,2026-11-12
+Responsable,Karla Betancourt
+Creado,2026-11-12T12:09:22.810Z
+Exportado,2026-11-12T12:09:22.839Z
+Archivo,reporte_planta_2026-11-12_Karla_Betancourt.csv
+
+== HILANDERIA ==
+Concepto,Valor
+Kgs producidos en Open-End,7708.9
+Kgs producidos en Carda,8390
+
+Titulos Open-End
+Open-End,Titulo,Uso
+01,10 mezcla 01,Ventas
+02,08 / 5.6 Ne,Trama
+03,08 mezcla 01,Urdido
+04,"6,5",Urdido
+05,16,Ventas
+,,Urdido
+
+Puestos Inactivos Open-End
+Open-End,Puestos
+01,0
+02,64
+03,14
+04,0
+05,0
+Total,78
+Porcentaje de 1440,5.4%
+Causa,Reemplazo por fuentes de poder
+
+Puestos Parados por Causa
+Causa,01,02,03,04,05,Total
+Inactivos,22,16,16,0,12,66
+Ajustes,11,18,66,4,7,106
+F.A.,0,64,14,0,0,78
+Total,33,98,96,4,19,250
+
+Puestos Corregidos por Causa
+Causa,01,02,03,04,05,Total
+Ajuste-Fuga,,,,,,0
+Fuentes,,,,,,0
+Fugas,,,,,,0
+Amortig/Fuga,,,,,,0
+Total,0,0,0,0,0,0
+
+== NOVEDADES DE PLANTA ==
+N,Detalle
+1,Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. (Se trabaja en la máquina ya q llegan los repuestos)
+2,CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.
+3,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda."
+4,Carda Ñ*6 parada por correa 740-5M-25 del IDF
+5,Open-end 04 se cambia sensor de banda transportadora de bobina.
+6,Open end 02 se monitore cambiador lado B por falla en tarjeta 162.
+7,En la open end 02 se recuperan 13 puestos. 06 por ajuste y 07 por fuente de poder.
+8,En la open en le 03 se monta 15 fuentes de alimentacion.
+
+== PROCESOS HUMEDOS ==
+Inventario de Unipacks en Urdido
+Titulo,Unipacks,Open-End
+6.55,03,04
+8,3.5,03
+10,3,01
+
+Urdido
+Urdidora,Estilo,Lote,Mh,Mph
+01,Senat,1001,10,18
+02,Bulldenim 11,2003,06,12
+03,Sin material,,,
+04,Índigo soft,4002,05,12
+
+Tenido
+Tren,Estilo,Lote,Mh,Mph,Observacion
+Beloit 02,Indigo soft,4002,04,12,
+
+Reurdido
+Estilo,Lote,Mh,Mph
+Sin material,,,
+
+Engomado
+Metros engomados del dia anterior,25477
+Engomadora,Estilo,Lote,Mh,Mph,Observacion
+01,Bulldebim 11,200003,12,12,
+02,Fashion oscuro /indigo oscuro,402005,14,12,Preparacion conteo de peine y arranque
+
+Pendientes por Engomar
+Estilo,Lote,Mh,Mph
+Sin material,,,
+
+Novedades de Engomado
+1,No hay existencia de PVA en planta.
+
+== TEJEDURIA ==
+Concepto,Valor
+Metros tejidos del dia anterior,16347
+Promedio Rot/hora,
+Telares cargados,80
+Telares operativos,44
+Telares parados,68
+Cadenas inventario,27
+
+Causas de telares parados
+Causa,Cantidad,Detalle
+Mecanica,4,
+Electronica,3,
+Electrica,0,
+Montaje,4,
+Repuesto,7,"5,40,47,73,96,100,108"
+
+Otros paros
+Causa,Cantidad,Detalle
+Presion de aire,0,
+Orden superior,38,
+Falta de urdimbre,11,01- Alexa  01-Fashion oscuro 04- satin iris black 05- Bulldenim 11
+Calidad,1,
+E.C.U.,3,
+Falta de trama,,
+Otros,,
+
+== PLANTA ACABADO ==
+Seccion,Metros
+Sanforizado,23521
+Revision,22880
+Corte,22735
+General valor primera calidad (%),83.92
+Inventario Tela Cruda (Noria),35445
+
+Novedades de Acabado
+1,Cibitex:
+2,04 horas de paro por soplar - limpieza de maquina.
+3,02 horas de paro por Falla electronica.
+4,Revisión:
+5,01 hora de paro por Falla operativa.
+6,Corte:
+7,03 horas de paro por falla de instrumentacion
+8,02 horas de paro por Falla electronica (
+9,01 hora de paro por falla electrica. (
