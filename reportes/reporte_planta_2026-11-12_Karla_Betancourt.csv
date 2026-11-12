@@ -1,14 +1,14 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-12
 Responsable,Karla Betancourt
-Creado,2026-11-12T12:09:22.810Z
-Exportado,2026-11-12T12:09:22.839Z
+Creado,2026-11-12T13:40:36.655Z
+Exportado,2026-11-12T13:40:37.763Z
 Archivo,reporte_planta_2026-11-12_Karla_Betancourt.csv
 
 == HILANDERIA ==
 Concepto,Valor
-Kgs producidos en Open-End,7708.9
-Kgs producidos en Carda,8390
+Kgs producidos en Open-End,10726.9
+Kgs producidos en Carda,9722
 
 Titulos Open-End
 Open-End,Titulo,Uso
@@ -17,7 +17,6 @@ Open-End,Titulo,Uso
 03,08 mezcla 01,Urdido
 04,"6,5",Urdido
 05,16,Ventas
-,,Urdido
 
 Puestos Inactivos Open-End
 Open-End,Puestos
@@ -59,20 +58,20 @@ N,Detalle
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
 Titulo,Unipacks,Open-End
-6.55,03,04
-8,3.5,03
-10,3,01
+10,6,01
+8,0.5,03
 
 Urdido
 Urdidora,Estilo,Lote,Mh,Mph
-01,Senat,1001,10,18
-02,Bulldenim 11,2003,06,12
-03,Sin material,,,
-04,Índigo soft,4002,05,12
+01,Alexa,1002,01,12
+02,Aurora black,2004,02,14
+03,Escurrida,,,
+04,Escurrida,,,
 
 Tenido
 Tren,Estilo,Lote,Mh,Mph,Observacion
-Beloit 02,Indigo soft,4002,04,12,
+Beloit 02,Aurora  black,2004,01,14,
+Belloit 02,Indigo soft,402006,12,12,Hora de arranque 9:10 pm
 
 Reurdido
 Estilo,Lote,Mh,Mph
@@ -81,8 +80,8 @@ Sin material,,,
 Engomado
 Metros engomados del dia anterior,25477
 Engomadora,Estilo,Lote,Mh,Mph,Observacion
-01,Bulldebim 11,200003,12,12,
-02,Fashion oscuro /indigo oscuro,402005,14,12,Preparacion conteo de peine y arranque
+01,Oxigeno,200004,07,12,En proceso cadena #07
+02,Sin material,,,,
 
 Pendientes por Engomar
 Estilo,Lote,Mh,Mph
