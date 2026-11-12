@@ -2,7 +2,7 @@
   "id": "mwdi93lkunf3e",
   "fecha": "2026-11-12",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-12T13:40:36.655Z",
+  "creado": "2026-11-12T13:46:34.421Z",
   "hilanderia": {
     "kgsOE": 10726.9,
     "kgsCarda": 9722,
@@ -250,8 +250,8 @@
       "01 hora de paro por Falla operativa.",
       "Corte:",
       "03 horas de paro por falla de instrumentacion",
-      "02 horas de paro por Falla electronica (",
-      "01 hora de paro por falla electrica. ("
+      "02 horas de paro por Falla electronica (falla de comunicación de sistema).",
+      "01 hora de paro por falla electrica."
     ]
   }
 }
