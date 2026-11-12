@@ -2,10 +2,10 @@
   "id": "mwdi93lkunf3e",
   "fecha": "2026-11-12",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-12T12:09:22.810Z",
+  "creado": "2026-11-12T13:40:36.655Z",
   "hilanderia": {
-    "kgsOE": 7708.9,
-    "kgsCarda": 8390,
+    "kgsOE": 10726.9,
+    "kgsCarda": 9722,
     "titulos": [
       {
         "maquina": "01",
@@ -31,11 +31,6 @@
         "maquina": "05",
         "titulo": "16",
         "uso": "Ventas"
-      },
-      {
-        "maquina": "",
-        "titulo": "",
-        "uso": "Urdido"
       }
     ],
     "inactivos": {
@@ -115,59 +110,62 @@
   "humedos": {
     "unipacks": [
       {
-        "titulo": "6.55",
-        "unipacks": "03",
-        "openend": "04"
+        "titulo": "10",
+        "unipacks": "6",
+        "openend": "01"
       },
       {
         "titulo": "8",
-        "unipacks": "3.5",
+        "unipacks": "0.5",
         "openend": "03"
-      },
-      {
-        "titulo": "10",
-        "unipacks": "3",
-        "openend": "01"
       }
     ],
     "urdido": [
       {
         "urdidora": "01",
-        "estilo": "Senat",
-        "lote": "1001",
-        "mh": "10",
-        "mph": "18"
-      },
-      {
-        "urdidora": "02",
-        "estilo": "Bulldenim 11",
-        "lote": "2003",
-        "mh": "06",
+        "estilo": "Alexa",
+        "lote": "1002",
+        "mh": "01",
         "mph": "12"
       },
       {
+        "urdidora": "02",
+        "estilo": "Aurora black",
+        "lote": "2004",
+        "mh": "02",
+        "mph": "14"
+      },
+      {
         "urdidora": "03",
-        "estilo": "Sin material",
+        "estilo": "Escurrida",
         "lote": "",
         "mh": "",
         "mph": ""
       },
       {
         "urdidora": "04",
-        "estilo": "Índigo soft",
-        "lote": "4002",
-        "mh": "05",
-        "mph": "12"
+        "estilo": "Escurrida",
+        "lote": "",
+        "mh": "",
+        "mph": ""
       }
     ],
     "tenido": [
       {
         "tren": "Beloit 02",
-        "estilo": "Indigo soft",
-        "lote": "4002",
-        "mh": "04",
-        "mph": "12",
+        "estilo": "Aurora  black",
+        "lote": "2004",
+        "mh": "01",
+        "mph": "14",
         "obs": ""
+      },
+      {
+        "tren": "Belloit 02",
+        "estilo": "Indigo soft",
+        "lote": "402006",
+        "mh": "12",
+        "mph": "12",
+        "obs": "Hora de arranque 9:10 pm"
       }
     ],
     "reurdido": [
@@ -183,19 +181,19 @@
       "rows": [
         {
           "engomadora": "01",
-          "estilo": "Bulldebim 11",
-          "lote": "200003",
-          "mh": "12",
+          "estilo": "Oxigeno",
+          "lote": "200004",
+          "mh": "07",
           "mph": "12",
-          "obs": ""
+          "obs": "En proceso cadena #07"
         },
         {
           "engomadora": "02",
-          "estilo": "Fashion oscuro /indigo oscuro",
-          "lote": "402005",
-          "mh": "14",
-          "mph": "12",
-          "obs": "Preparacion conteo de peine y arranque"
+          "estilo": "Sin material",
+          "lote": "",
+          "mh": "",
+          "mph": "",
+          "obs": ""
         }
       ],
       "porEngomar": [
