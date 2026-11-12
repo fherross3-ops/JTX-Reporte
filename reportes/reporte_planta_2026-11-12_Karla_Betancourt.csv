@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-12
 Responsable,Karla Betancourt
-Creado,2026-11-12T13:40:36.655Z
-Exportado,2026-11-12T13:40:37.763Z
+Creado,2026-11-12T13:46:34.421Z
+Exportado,2026-11-12T13:46:36.594Z
 Archivo,reporte_planta_2026-11-12_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -133,5 +133,5 @@ Novedades de Acabado
 5,01 hora de paro por Falla operativa.
 6,Corte:
 7,03 horas de paro por falla de instrumentacion
-8,02 horas de paro por Falla electronica (
-9,01 hora de paro por falla electrica. (
+8,02 horas de paro por Falla electronica (falla de comunicación de sistema).
+9,01 hora de paro por falla electrica.
