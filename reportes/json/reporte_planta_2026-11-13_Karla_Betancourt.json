@@ -2,7 +2,7 @@
   "id": "mwex20adk9wmp",
   "fecha": "2026-11-13",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-13T12:33:59.598Z",
+  "creado": "2026-11-13T13:18:52.866Z",
   "hilanderia": {
     "kgsOE": 10726.9,
     "kgsCarda": 9722,
@@ -53,15 +53,15 @@
       },
       "ajustes": {
         "01": 11,
-        "02": 18,
-        "03": 66,
+        "02": 15,
+        "03": 67,
         "04": 4,
         "05": 7
       },
       "fa": {
         "01": 0,
-        "02": 64,
-        "03": 14,
+        "02": 54,
+        "03": 0,
         "04": 0,
         "05": 0
       }
@@ -98,14 +98,11 @@
     }
   },
   "novedadesPlanta": [
-    "Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. (Se trabaja en la máquina ya q llegan los repuestos)",
+    "Se activa abridora BO-R dejándola en producción con material de desperdicio",
     "CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.",
     "Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda.",
-    "Carda Ñ*6 parada por correa 740-5M-25 del IDF",
-    "Open-end 04 se cambia sensor de banda transportadora de bobina.",
-    "Open end 02 se monitore cambiador lado B por falla en tarjeta 162.",
-    "En la open end 02 se recuperan 13 puestos. 06 por ajuste y 07 por fuente de poder.",
-    "En la open en le 03 se monta 15 fuentes de alimentacion."
+    "En la open end 02 se recuperan 13 puestos. 03 por ajuste y 10 por fuente de poder.",
+    "En la open en le 03 se activaron 13 puestos"
   ],
   "humedos": {
     "unipacks": [
