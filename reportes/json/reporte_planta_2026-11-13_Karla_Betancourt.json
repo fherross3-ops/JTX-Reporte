@@ -2,10 +2,10 @@
   "id": "mwex20adk9wmp",
   "fecha": "2026-11-13",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-13T13:18:52.866Z",
+  "creado": "2026-11-13T13:47:40.782Z",
   "hilanderia": {
-    "kgsOE": 10726.9,
-    "kgsCarda": 9722,
+    "kgsOE": 10283.4,
+    "kgsCarda": 12350,
     "titulos": [
       {
         "maquina": "01",
@@ -108,28 +108,23 @@
     "unipacks": [
       {
         "titulo": "10",
-        "unipacks": "6",
+        "unipacks": "8",
         "openend": "01"
-      },
-      {
-        "titulo": "8",
-        "unipacks": "0.5",
-        "openend": "03"
       }
     ],
     "urdido": [
       {
         "urdidora": "01",
-        "estilo": "Alexa",
+        "estilo": "Alexa L",
         "lote": "1002",
-        "mh": "01",
+        "mh": "05",
         "mph": "12"
       },
       {
         "urdidora": "02",
         "estilo": "Aurora black",
         "lote": "2004",
-        "mh": "02",
+        "mh": "12",
         "mph": "14"
       },
       {
@@ -152,17 +147,9 @@
         "tren": "Beloit 02",
         "estilo": "Aurora  black",
         "lote": "2004",
-        "mh": "01",
+        "mh": "11",
         "mph": "14",
         "obs": ""
-      },
-      {
-        "tren": "Belloit 02",
-        "estilo": "Indigo soft",
-        "lote": "402006",
-        "mh": "12",
-        "mph": "12",
-        "obs": "Hora de arranque 9:10 pm"
       }
     ],
     "reurdido": [
@@ -178,11 +165,11 @@
       "rows": [
         {
           "engomadora": "01",
-          "estilo": "Oxigeno",
-          "lote": "200004",
-          "mh": "07",
-          "mph": "12",
-          "obs": "En proceso cadena #07"
+          "estilo": "Senat",
+          "lote": "100001",
+          "mh": "18",
+          "mph": "18",
+          "obs": "En proceso cadena #01"
         },
         {
           "engomadora": "02",
