@@ -1,0 +1,258 @@
+{
+  "id": "mwex20adk9wmp",
+  "fecha": "2026-11-13",
+  "responsable": "Karla Betancourt",
+  "creado": "2026-11-13T12:16:56.558Z",
+  "hilanderia": {
+    "kgsOE": 10726.9,
+    "kgsCarda": 9722,
+    "titulos": [
+      {
+        "maquina": "01",
+        "titulo": "10 mezcla 01",
+        "uso": "Ventas"
+      },
+      {
+        "maquina": "02",
+        "titulo": "08 / 5.6 Ne",
+        "uso": "Trama"
+      },
+      {
+        "maquina": "03",
+        "titulo": "08 mezcla 01",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "04",
+        "titulo": "6,5",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "05",
+        "titulo": "16",
+        "uso": "Ventas"
+      }
+    ],
+    "inactivos": {
+      "m": [
+        0,
+        64,
+        14,
+        0,
+        0
+      ],
+      "causa": "Reemplazo por fuentes de poder"
+    },
+    "parados": {
+      "inactivos": {
+        "01": 22,
+        "02": 16,
+        "03": 16,
+        "04": 0,
+        "05": 12
+      },
+      "ajustes": {
+        "01": 11,
+        "02": 18,
+        "03": 66,
+        "04": 4,
+        "05": 7
+      },
+      "fa": {
+        "01": 0,
+        "02": 64,
+        "03": 14,
+        "04": 0,
+        "05": 0
+      }
+    },
+    "corregidos": {
+      "ajustefuga": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fuentes": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fugas": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "amortig": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      }
+    }
+  },
+  "novedadesPlanta": [
+    "Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. (Se trabaja en la máquina ya q llegan los repuestos)",
+    "CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.",
+    "Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda.",
+    "Carda Ñ*6 parada por correa 740-5M-25 del IDF",
+    "Open-end 04 se cambia sensor de banda transportadora de bobina.",
+    "Open end 02 se monitore cambiador lado B por falla en tarjeta 162.",
+    "En la open end 02 se recuperan 13 puestos. 06 por ajuste y 07 por fuente de poder.",
+    "En la open en le 03 se monta 15 fuentes de alimentacion."
+  ],
+  "humedos": {
+    "unipacks": [
+      {
+        "titulo": "10",
+        "unipacks": "6",
+        "openend": "01"
+      },
+      {
+        "titulo": "8",
+        "unipacks": "0.5",
+        "openend": "03"
+      }
+    ],
+    "urdido": [
+      {
+        "urdidora": "01",
+        "estilo": "Alexa",
+        "lote": "1002",
+        "mh": "01",
+        "mph": "12"
+      },
+      {
+        "urdidora": "02",
+        "estilo": "Aurora black",
+        "lote": "2004",
+        "mh": "02",
+        "mph": "14"
+      },
+      {
+        "urdidora": "03",
+        "estilo": "Escurrida",
+        "lote": "",
+        "mh": "",
+        "mph": ""
+      },
+      {
+        "urdidora": "04",
+        "estilo": "Escurrida",
+        "lote": "",
+        "mh": "",
+        "mph": ""
+      }
+    ],
+    "tenido": [
+      {
+        "tren": "Beloit 02",
+        "estilo": "Aurora  black",
+        "lote": "2004",
+        "mh": "01",
+        "mph": "14",
+        "obs": ""
+      },
+      {
+        "tren": "Belloit 02",
+        "estilo": "Indigo soft",
+        "lote": "402006",
+        "mh": "12",
+        "mph": "12",
+        "obs": "Hora de arranque 9:10 pm"
+      }
+    ],
+    "reurdido": [
+      {
+        "estilo": "Sin material",
+        "lote": "",
+        "mh": "",
+        "mph": ""
+      }
+    ],
+    "engomado": {
+      "metros": 10940,
+      "rows": [
+        {
+          "engomadora": "01",
+          "estilo": "Oxigeno",
+          "lote": "200004",
+          "mh": "07",
+          "mph": "12",
+          "obs": "En proceso cadena #07"
+        },
+        {
+          "engomadora": "02",
+          "estilo": "Sin material",
+          "lote": "",
+          "mh": "",
+          "mph": "",
+          "obs": ""
+        }
+      ],
+      "porEngomar": [
+        {
+          "estilo": "Sin material",
+          "lote": "",
+          "mh": "",
+          "mph": ""
+        }
+      ]
+    },
+    "novedades": [
+      "No hay existencia de PVA en planta."
+    ]
+  },
+  "tejeduria": {
+    "metros": 15820,
+    "rot": "",
+    "cargados": 80,
+    "operativos": 44,
+    "parados": 68,
+    "cadenas": 27,
+    "causas": {
+      "mecanica": 4,
+      "electronica": 3,
+      "electrica": 0,
+      "montaje": 4,
+      "repuesto": 7,
+      "repuestoTelares": "5,40,47,73,96,100,108"
+    },
+    "otros": {
+      "presion": 0,
+      "orden": 38,
+      "urdimbre": 11,
+      "urdimbreDet": "01- Alexa  01-Fashion oscuro 04- satin iris black 05- Bulldenim 11",
+      "calidad": 1,
+      "ecu": 3,
+      "trama": "",
+      "otros": "",
+      "otrosDet": ""
+    }
+  },
+  "acabado": {
+    "sanforizado": 23537,
+    "revision": 20229,
+    "corte": 14156,
+    "calidad": 68.36,
+    "inventario": 44.027,
+    "novedades": [
+      "Cibitex:",
+      "04 horas de paro por soplar - limpieza de maquina.",
+      "02 horas de paro por Falla electronica.",
+      "02 horas de paro por mantenimiento preventivo.",
+      "Revisión:",
+      "02 hora de paro por Falla operativa.",
+      "01 hora de paro por calidad.",
+      "Corte:",
+      "03 horas de paro por Falla electronica (falla de comunicación de sistema).",
+      "08 hora de paro  por falla de instrumentacion."
+    ]
+  }
+}
