@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-13
 Responsable,Karla Betancourt
-Creado,2026-11-13T12:33:59.598Z
-Exportado,2026-11-13T12:34:00.788Z
+Creado,2026-11-13T13:18:52.866Z
+Exportado,2026-11-13T13:18:53.913Z
 Archivo,reporte_planta_2026-11-13_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -32,9 +32,9 @@ Causa,Reemplazo por fuentes de poder
 Puestos Parados por Causa
 Causa,01,02,03,04,05,Total
 Inactivos,22,16,16,0,12,66
-Ajustes,11,18,66,4,7,106
-F.A.,0,64,14,0,0,78
-Total,33,98,96,4,19,250
+Ajustes,11,15,67,4,7,104
+F.A.,0,54,0,0,0,54
+Total,33,85,83,4,19,224
 
 Puestos Corregidos por Causa
 Causa,01,02,03,04,05,Total
@@ -46,14 +46,11 @@ Total,0,0,0,0,0,0
 
 == NOVEDADES DE PLANTA ==
 N,Detalle
-1,Parada la Recuperadora de cinta (abridora BO-R) por banda y regletas de puas. (Se trabaja en la máquina ya q llegan los repuestos)
+1,Se activa abridora BO-R dejándola en producción con material de desperdicio
 2,CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.
 3,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda."
-4,Carda Ñ*6 parada por correa 740-5M-25 del IDF
-5,Open-end 04 se cambia sensor de banda transportadora de bobina.
-6,Open end 02 se monitore cambiador lado B por falla en tarjeta 162.
-7,En la open end 02 se recuperan 13 puestos. 06 por ajuste y 07 por fuente de poder.
-8,En la open en le 03 se monta 15 fuentes de alimentacion.
+4,En la open end 02 se recuperan 13 puestos. 03 por ajuste y 10 por fuente de poder.
+5,En la open en le 03 se activaron 13 puestos
 
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
