@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-17
 Responsable,Karla Betancourt
-Creado,2026-11-17T12:45:50.035Z
-Exportado,2026-11-17T12:45:50.816Z
+Creado,2026-11-17T13:06:01.461Z
+Exportado,2026-11-17T13:06:02.636Z
 Archivo,reporte_planta_2026-11-17_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -53,27 +53,27 @@ N,Detalle
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
 Titulo,Unipacks,Open-End
-10,8,01
+"6,55",2.5,01
 
 Urdido
 Urdidora,Estilo,Lote,Mh,Mph
-01,Victoria 250,1003,04,16
-02,Escurrida,,,
-03,Escurrida,,,
-04,Escurrida,,,
+01,Victoria 250,1003,13,16
+02,Mantenimiento fin de año,,,
+03,Sin material,,,
+04,Fashion oscuro,01,12,
 
 Tenido
 Tren,Estilo,Lote,Mh,Mph,Observacion
-Beloit 02,Alexa L Sky blue,101008,12,12,Preparacion y arranque (5.000) mts
+Beloit 02,Victoria 250,1003,12,16,
 
 Reurdido
 Estilo,Lote,Mh,Mph
-Aurora black,201007,10,14
+Sin material,,,
 
 Engomado
 Metros engomados del dia anterior,20185
 Engomadora,Estilo,Lote,Mh,Mph,Observacion
-02,Fashion oscuro,402006,16,16,En proceso cadena # 05
+02,Alexa L sky blue,101008,12,12,
 
 Pendientes por Engomar
 Estilo,Lote,Mh,Mph
