@@ -2,7 +2,7 @@
   "id": "mwknxexxpugvo",
   "fecha": "2026-11-17",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-17T12:22:38.566Z",
+  "creado": "2026-11-17T12:32:59.606Z",
   "hilanderia": {
     "kgsOE": 7794.2,
     "kgsCarda": 9199,
@@ -223,17 +223,15 @@
       "07 horas de paro por burros vacios.",
       "Revision:",
       "03 horas de paro por falta de tela sanforizada.",
-      "02 horas de paro por Falla del sistema (",
+      "02 horas de paro por Falla del sistema (sisgo)",
       "Corte:",
       "Cortadora #01",
-      "* 03 horas de paro por Falla del sistema (",
+      "* 03 horas de paro por Falla del sistema (falta de conexion a internet)",
       "*02 horas de paro por Falla de instrumentacion.",
-      "30 minutos de paro por otras. (",
-      "Cortadora #02",
-      "*24 horas de paro por ausentismo.",
+      "30 minutos de paro por otras. ( plastico no conforme)",
       "*05 horas de paro por Falla electronica.",
       "*02 horas de paro por Falla mecanica.",
-      "*02 horas de paro por Falla de sistema."
+      "*02 horas de paro por Falla de sistema.( Falla de comunicacion)"
     ]
   }
 }
