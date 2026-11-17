@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-17
 Responsable,Karla Betancourt
-Creado,2026-11-17T13:06:01.461Z
-Exportado,2026-11-17T13:06:02.636Z
+Creado,2026-11-17T13:41:26.700Z
+Exportado,2026-11-17T13:41:27.751Z
 Archivo,reporte_planta_2026-11-17_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -49,6 +49,8 @@ N,Detalle
 1,BO-R se para el dia viernes por separador de barra de pua.
 2,CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.
 3,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda."
+4,Parada las cardas por pote.
+5,"Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación)"
 
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
