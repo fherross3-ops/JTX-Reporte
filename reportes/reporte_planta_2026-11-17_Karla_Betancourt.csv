@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-17
 Responsable,Karla Betancourt
-Creado,2026-11-17T12:22:38.566Z
-Exportado,2026-11-17T12:22:38.603Z
+Creado,2026-11-17T12:32:59.606Z
+Exportado,2026-11-17T12:33:00.945Z
 Archivo,reporte_planta_2026-11-17_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -124,14 +124,12 @@ Novedades de Acabado
 3,07 horas de paro por burros vacios.
 4,Revision:
 5,03 horas de paro por falta de tela sanforizada.
-6,02 horas de paro por Falla del sistema (
+6,02 horas de paro por Falla del sistema (sisgo)
 7,Corte:
 8,Cortadora #01
-9,* 03 horas de paro por Falla del sistema (
+9,* 03 horas de paro por Falla del sistema (falta de conexion a internet)
 10,*02 horas de paro por Falla de instrumentacion.
-11,30 minutos de paro por otras. (
-12,Cortadora #02
-13,*24 horas de paro por ausentismo.
-14,*05 horas de paro por Falla electronica.
-15,*02 horas de paro por Falla mecanica.
-16,*02 horas de paro por Falla de sistema.
+11,30 minutos de paro por otras. ( plastico no conforme)
+12,*05 horas de paro por Falla electronica.
+13,*02 horas de paro por Falla mecanica.
+14,*02 horas de paro por Falla de sistema.( Falla de comunicacion)
