@@ -2,7 +2,7 @@
   "id": "mwknxexxpugvo",
   "fecha": "2026-11-17",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-17T12:45:50.035Z",
+  "creado": "2026-11-17T13:06:01.461Z",
   "hilanderia": {
     "kgsOE": 7794.2,
     "kgsCarda": 9199,
@@ -105,8 +105,8 @@
   "humedos": {
     "unipacks": [
       {
-        "titulo": "10",
-        "unipacks": "8",
+        "titulo": "6,55",
+        "unipacks": "2.5",
         "openend": "01"
       }
     ],
@@ -115,47 +115,47 @@
         "urdidora": "01",
         "estilo": "Victoria 250",
         "lote": "1003",
-        "mh": "04",
+        "mh": "13",
         "mph": "16"
       },
       {
         "urdidora": "02",
-        "estilo": "Escurrida",
+        "estilo": "Mantenimiento fin de año",
         "lote": "",
         "mh": "",
         "mph": ""
       },
       {
         "urdidora": "03",
-        "estilo": "Escurrida",
+        "estilo": "Sin material",
         "lote": "",
         "mh": "",
         "mph": ""
       },
       {
         "urdidora": "04",
-        "estilo": "Escurrida",
-        "lote": "",
-        "mh": "",
+        "estilo": "Fashion oscuro",
+        "lote": "01",
+        "mh": "12",
         "mph": ""
       }
     ],
     "tenido": [
       {
         "tren": "Beloit 02",
-        "estilo": "Alexa L Sky blue",
-        "lote": "101008",
+        "estilo": "Victoria 250",
+        "lote": "1003",
         "mh": "12",
-        "mph": "12",
-        "obs": "Preparacion y arranque (5.000) mts"
+        "mph": "16",
+        "obs": ""
       }
     ],
     "reurdido": [
       {
-        "estilo": "Aurora black",
-        "lote": "201007",
-        "mh": "10",
-        "mph": "14"
+        "estilo": "Sin material",
+        "lote": "",
+        "mh": "",
+        "mph": ""
       }
     ],
     "engomado": {
@@ -163,11 +163,11 @@
       "rows": [
         {
           "engomadora": "02",
-          "estilo": "Fashion oscuro",
-          "lote": "402006",
-          "mh": "16",
-          "mph": "16",
-          "obs": "En proceso cadena # 05"
+          "estilo": "Alexa L sky blue",
+          "lote": "101008",
+          "mh": "12",
+          "mph": "12",
+          "obs": ""
         }
       ],
       "porEngomar": [
