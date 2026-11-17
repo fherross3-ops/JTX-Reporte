@@ -1,0 +1,137 @@
+Tipo,Informe Planta - Reporte Diario
+Fecha del informe,2026-11-17
+Responsable,Karla Betancourt
+Creado,2026-11-17T12:22:38.566Z
+Exportado,2026-11-17T12:22:38.603Z
+Archivo,reporte_planta_2026-11-17_Karla_Betancourt.csv
+
+== HILANDERIA ==
+Concepto,Valor
+Kgs producidos en Open-End,7794.2
+Kgs producidos en Carda,9199
+
+Titulos Open-End
+Open-End,Titulo,Uso
+01,"6,5",Urdido
+02,Parada por planificacion,Trama
+03,08 mezcla 01,Trama
+04,Ensayo 20,Ventas
+05,16,Ventas
+
+Puestos Inactivos Open-End
+Open-End,Puestos
+01,0
+02,64
+03,14
+04,0
+05,0
+Total,78
+Porcentaje de 1440,5.4%
+Causa,Reemplazo por fuentes de poder
+
+Puestos Parados por Causa
+Causa,01,02,03,04,05,Total
+Inactivos,22,16,16,0,12,66
+Ajustes,11,15,67,4,7,104
+F.A.,0,54,0,0,0,54
+Total,33,85,83,4,19,224
+
+Puestos Corregidos por Causa
+Causa,01,02,03,04,05,Total
+Ajuste-Fuga,,,,,,0
+Fuentes,,,,,,0
+Fugas,,,,,,0
+Amortig/Fuga,,,,,,0
+Total,0,0,0,0,0,0
+
+== NOVEDADES DE PLANTA ==
+N,Detalle
+1,BO-R se para el dia viernes por separador de barra de pua.
+2,CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.
+3,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda."
+
+== PROCESOS HUMEDOS ==
+Inventario de Unipacks en Urdido
+Titulo,Unipacks,Open-End
+10,8,01
+
+Urdido
+Urdidora,Estilo,Lote,Mh,Mph
+01,Victoria 250,1003,04,16
+02,Escurrida,,,
+03,Escurrida,,,
+04,Escurrida,,,
+
+Tenido
+Tren,Estilo,Lote,Mh,Mph,Observacion
+Beloit 02,Alexa L Sky blue,101008,12,12,Preparacion y arranque (5.000) mts
+
+Reurdido
+Estilo,Lote,Mh,Mph
+Aurora black,201007,10,14
+
+Engomado
+Metros engomados del dia anterior,20185
+Engomadora,Estilo,Lote,Mh,Mph,Observacion
+02,Fashion oscuro,402006,16,16,En proceso cadena # 05
+
+Pendientes por Engomar
+Estilo,Lote,Mh,Mph
+Sin material,,,
+
+Novedades de Engomado
+1,No hay existencia de PVA en planta.
+2,Engomadora 02 En paro en la madrugada viernes para sabado por Falla mecanica ( se parte la cadena de la batea)
+
+== TEJEDURIA ==
+Concepto,Valor
+Metros tejidos del dia anterior,19920
+Promedio Rot/hora,
+Telares cargados,65
+Telares operativos,56
+Telares parados,56
+Cadenas inventario,33
+
+Causas de telares parados
+Causa,Cantidad,Detalle
+Mecanica,2,
+Electronica,4,
+Electrica,0,
+Montaje,0,
+Repuesto,7,"5,40,47,73,96,100,108"
+
+Otros paros
+Causa,Cantidad,Detalle
+Presion de aire,0,
+Orden superior,18,
+Falta de urdimbre,24,12- Bulldenim 07- indigo oscuro  04- Victoria 250 01 - Amazonas Xlll
+Calidad,3,
+E.C.U.,5,
+Falta de trama,,
+Otros,,
+
+== PLANTA ACABADO ==
+Seccion,Metros
+Sanforizado,11.416
+Revision,19.576
+Corte,8.415
+General valor primera calidad (%),94.36
+Inventario Tela Cruda (Noria),30735
+
+Novedades de Acabado
+1,Cibitex:
+2,08 horas de paro por mantenimiento preventivo.
+3,07 horas de paro por burros vacios.
+4,Revision:
+5,03 horas de paro por falta de tela sanforizada.
+6,02 horas de paro por Falla del sistema (
+7,Corte:
+8,Cortadora #01
+9,* 03 horas de paro por Falla del sistema (
+10,*02 horas de paro por Falla de instrumentacion.
+11,30 minutos de paro por otras. (
+12,Cortadora #02
+13,*24 horas de paro por ausentismo.
+14,*05 horas de paro por Falla electronica.
+15,*02 horas de paro por Falla mecanica.
+16,*02 horas de paro por Falla de sistema.
