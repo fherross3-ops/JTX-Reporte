@@ -1,0 +1,239 @@
+{
+  "id": "mwknxexxpugvo",
+  "fecha": "2026-11-17",
+  "responsable": "Karla Betancourt",
+  "creado": "2026-11-17T12:22:38.566Z",
+  "hilanderia": {
+    "kgsOE": 7794.2,
+    "kgsCarda": 9199,
+    "titulos": [
+      {
+        "maquina": "01",
+        "titulo": "6,5",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "02",
+        "titulo": "Parada por planificacion",
+        "uso": "Trama"
+      },
+      {
+        "maquina": "03",
+        "titulo": "08 mezcla 01",
+        "uso": "Trama"
+      },
+      {
+        "maquina": "04",
+        "titulo": "Ensayo 20",
+        "uso": "Ventas"
+      },
+      {
+        "maquina": "05",
+        "titulo": "16",
+        "uso": "Ventas"
+      }
+    ],
+    "inactivos": {
+      "m": [
+        0,
+        64,
+        14,
+        0,
+        0
+      ],
+      "causa": "Reemplazo por fuentes de poder"
+    },
+    "parados": {
+      "inactivos": {
+        "01": 22,
+        "02": 16,
+        "03": 16,
+        "04": 0,
+        "05": 12
+      },
+      "ajustes": {
+        "01": 11,
+        "02": 15,
+        "03": 67,
+        "04": 4,
+        "05": 7
+      },
+      "fa": {
+        "01": 0,
+        "02": 54,
+        "03": 0,
+        "04": 0,
+        "05": 0
+      }
+    },
+    "corregidos": {
+      "ajustefuga": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fuentes": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fugas": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "amortig": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      }
+    }
+  },
+  "novedadesPlanta": [
+    "BO-R se para el dia viernes por separador de barra de pua.",
+    "CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.",
+    "Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda."
+  ],
+  "humedos": {
+    "unipacks": [
+      {
+        "titulo": "10",
+        "unipacks": "8",
+        "openend": "01"
+      }
+    ],
+    "urdido": [
+      {
+        "urdidora": "01",
+        "estilo": "Victoria 250",
+        "lote": "1003",
+        "mh": "04",
+        "mph": "16"
+      },
+      {
+        "urdidora": "02",
+        "estilo": "Escurrida",
+        "lote": "",
+        "mh": "",
+        "mph": ""
+      },
+      {
+        "urdidora": "03",
+        "estilo": "Escurrida",
+        "lote": "",
+        "mh": "",
+        "mph": ""
+      },
+      {
+        "urdidora": "04",
+        "estilo": "Escurrida",
+        "lote": "",
+        "mh": "",
+        "mph": ""
+      }
+    ],
+    "tenido": [
+      {
+        "tren": "Beloit 02",
+        "estilo": "Alexa L Sky blue",
+        "lote": "101008",
+        "mh": "12",
+        "mph": "12",
+        "obs": "Preparacion y arranque (5.000) mts"
+      }
+    ],
+    "reurdido": [
+      {
+        "estilo": "Aurora black",
+        "lote": "201007",
+        "mh": "10",
+        "mph": "14"
+      }
+    ],
+    "engomado": {
+      "metros": 20185,
+      "rows": [
+        {
+          "engomadora": "02",
+          "estilo": "Fashion oscuro",
+          "lote": "402006",
+          "mh": "16",
+          "mph": "16",
+          "obs": "En proceso cadena # 05"
+        }
+      ],
+      "porEngomar": [
+        {
+          "estilo": "Sin material",
+          "lote": "",
+          "mh": "",
+          "mph": ""
+        }
+      ]
+    },
+    "novedades": [
+      "No hay existencia de PVA en planta.",
+      "Engomadora 02 En paro en la madrugada viernes para sabado por Falla mecanica ( se parte la cadena de la batea)"
+    ]
+  },
+  "tejeduria": {
+    "metros": 19920,
+    "rot": "",
+    "cargados": 65,
+    "operativos": 56,
+    "parados": 56,
+    "cadenas": 33,
+    "causas": {
+      "mecanica": 2,
+      "electronica": 4,
+      "electrica": 0,
+      "montaje": 0,
+      "repuesto": 7,
+      "repuestoTelares": "5,40,47,73,96,100,108"
+    },
+    "otros": {
+      "presion": 0,
+      "orden": 18,
+      "urdimbre": 24,
+      "urdimbreDet": "12- Bulldenim 07- indigo oscuro  04- Victoria 250 01 - Amazonas Xlll",
+      "calidad": 3,
+      "ecu": 5,
+      "trama": "",
+      "otros": "",
+      "otrosDet": ""
+    }
+  },
+  "acabado": {
+    "sanforizado": 11.416,
+    "revision": 19.576,
+    "corte": 8.415,
+    "calidad": 94.36,
+    "inventario": 30735,
+    "novedades": [
+      "Cibitex:",
+      "08 horas de paro por mantenimiento preventivo.",
+      "07 horas de paro por burros vacios.",
+      "Revision:",
+      "03 horas de paro por falta de tela sanforizada.",
+      "02 horas de paro por Falla del sistema (",
+      "Corte:",
+      "Cortadora #01",
+      "* 03 horas de paro por Falla del sistema (",
+      "*02 horas de paro por Falla de instrumentacion.",
+      "30 minutos de paro por otras. (",
+      "Cortadora #02",
+      "*24 horas de paro por ausentismo.",
+      "*05 horas de paro por Falla electronica.",
+      "*02 horas de paro por Falla mecanica.",
+      "*02 horas de paro por Falla de sistema."
+    ]
+  }
+}
