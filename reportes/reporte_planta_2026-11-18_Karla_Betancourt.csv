@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-18
 Responsable,Karla Betancourt
-Creado,2026-11-18T13:27:19.801Z
-Exportado,2026-11-18T13:27:21.080Z
+Creado,2026-11-18T13:32:54.917Z
+Exportado,2026-11-18T13:32:55.885Z
 Archivo,reporte_planta_2026-11-18_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -59,7 +59,7 @@ N,Detalle
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
 Titulo,Unipacks,Open-End
-24,,01
+24,85,Conos de murata
 
 Urdido
 Urdidora,Estilo,Lote,Mh,Mph
@@ -89,7 +89,7 @@ Novedades de Engomado
 1,No hay existencia de PVA en planta.
 2,En la Beloitt 02 entra en mantenimiento fin de año.
 3,Engomadora 01 sin material
-4,Engomadora 02 sin material bajando rodillos guias para reparando.
+4,Engomadora 02 sin material.
 
 == TEJEDURIA ==
 Concepto,Valor
