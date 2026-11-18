@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-18
 Responsable,Karla Betancourt
-Creado,2026-11-18T13:36:36.002Z
-Exportado,2026-11-18T13:36:39.392Z
+Creado,2026-11-18T13:40:47.313Z
+Exportado,2026-11-18T13:40:48.639Z
 Archivo,reporte_planta_2026-11-18_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -130,11 +130,11 @@ Novedades de Acabado
 1,Cibitex:
 2,02 horas de paro por Falla operativa.
 3,Revision:
-4,04 horas de paro por colaborar en otra área.
+4,04 horas de paro por trabajador colaborar en otra área. ( esmerilado)
 5,01 hora de paro por calidad.
 6,01 hora de paro por comida.
 7,Corte:
-8,02 horas de paro por Falla de sistema.
+8,02 horas de paro por Falla de sistema.(GP)
 9,01 hora de paro por Falla operativa.
 10,01 hora de paro por (reunión con el personal /entrenamiento.)
 11,01 hora de paro por calidad.
