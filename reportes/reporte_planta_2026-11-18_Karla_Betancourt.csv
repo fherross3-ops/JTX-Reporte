@@ -1,0 +1,139 @@
+Tipo,Informe Planta - Reporte Diario
+Fecha del informe,2026-11-18
+Responsable,Karla Betancourt
+Creado,2026-11-18T13:14:52.814Z
+Exportado,2026-11-18T13:14:53.859Z
+Archivo,reporte_planta_2026-11-18_Karla_Betancourt.csv
+
+== HILANDERIA ==
+Concepto,Valor
+Kgs producidos en Open-End,6098.5
+Kgs producidos en Carda,8264
+
+Titulos Open-End
+Open-End,Titulo,Uso
+01,"6,5",Urdido
+02,Parada por planificacion,Trama
+03,08 mezcla 01,Trama
+04,Ensayo 20,Ventas
+05,16,Ventas
+
+Puestos Inactivos Open-End
+Open-End,Puestos
+01,0
+02,64
+03,14
+04,0
+05,0
+Total,78
+Porcentaje de 1440,5.4%
+Causa,Reemplazo por fuentes de poder
+
+Puestos Parados por Causa
+Causa,01,02,03,04,05,Total
+Inactivos,22,16,16,0,12,66
+Ajustes,11,11,67,2,5,96
+F.A.,0,52,0,0,0,52
+Total,33,79,83,2,17,214
+
+Puestos Corregidos por Causa
+Causa,01,02,03,04,05,Total
+Ajuste-Fuga,,,,,,0
+Fuentes,,,,,,0
+Fugas,,,,,,0
+Amortig/Fuga,,,,,,0
+Total,0,0,0,0,0,0
+
+== NOVEDADES DE PLANTA ==
+N,Detalle
+1,CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.
+2,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda."
+3,Parada las cardas por pote.
+4,"Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación) Sigue novedad."
+5,"Se para carda N#7 para realizar ajuste entre cilindro principal, doffer cilindro de alinentacion y lickeri."
+6,Parada carda N4 se para idf para realizar mantenimiento completo y ajuste .
+7,Open end 02 se recuperan 6 puestos 04 por ajuste y 02 por fuerte.
+8,En la open end 04 se recuperan 02 puestos por ajuste.
+9,En la open end 05 se recuperan 02 puestos por ajustes.
+
+== PROCESOS HUMEDOS ==
+Inventario de Unipacks en Urdido
+Titulo,Unipacks,Open-End
+"6,55",2.5,01
+
+Urdido
+Urdidora,Estilo,Lote,Mh,Mph
+01,Victoria 250,1003,13,16
+02,Mantenimiento fin de año,,,
+03,Sin material,,,
+04,Fashion oscuro,01,12,
+
+Tenido
+Tren,Estilo,Lote,Mh,Mph,Observacion
+Beloit 02,Victoria 250,1003,12,16,
+
+Reurdido
+Estilo,Lote,Mh,Mph
+Sin material,,,
+
+Engomado
+Metros engomados del dia anterior,4600
+Engomadora,Estilo,Lote,Mh,Mph,Observacion
+02,Alexa L sky blue,101008,12,12,
+
+Pendientes por Engomar
+Estilo,Lote,Mh,Mph
+Sin material,,,
+
+Novedades de Engomado
+1,No hay existencia de PVA en planta.
+2,Engomadora 02 En paro en la madrugada viernes para sabado por Falla mecanica ( se parte la cadena de la batea)
+
+== TEJEDURIA ==
+Concepto,Valor
+Metros tejidos del dia anterior,18282
+Promedio Rot/hora,
+Telares cargados,65
+Telares operativos,47
+Telares parados,65
+Cadenas inventario,21
+
+Causas de telares parados
+Causa,Cantidad,Detalle
+Mecanica,1,
+Electronica,2,
+Electrica,0,
+Montaje,0,
+Repuesto,7,"5,40,47,73,96,100,108"
+
+Otros paros
+Causa,Cantidad,Detalle
+Presion de aire,0,
+Orden superior,28,
+Falta de urdimbre,24,09-Bulldenim 07- indigo oscuro  04- Victoria 250 01 - Amazonas Xll 03- Fashion oscuro
+Calidad,1,
+E.C.U.,3,
+Falta de trama,,
+Otros,,
+
+== PLANTA ACABADO ==
+Seccion,Metros
+Sanforizado,26289
+Revision,16696
+Corte,19006
+General valor primera calidad (%),71.29
+Inventario Tela Cruda (Noria),35.838
+
+Novedades de Acabado
+1,Cibitex:
+2,02 horas de paro por Falla operativa.
+3,Revision:
+4,04 horas de paro por colaborar en otra área.
+5,01 hora de paro por calidad.
+6,01 hora de paro por comida.
+7,Corte:
+8,02 horas de paro por Falla de sistema.
+9,01 hora de paro por Falla operativa.
+10,01 hora de paro por (reunión con el personal /entrenamiento.)
+11,01 hora de paro por calidad.
+12,30 minutos de paro por comida.
