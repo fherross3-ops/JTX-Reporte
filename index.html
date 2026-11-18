@@ -350,6 +350,30 @@
     table.matrix input.mini{width:46px}
     .brand p{display:none}
   }
+
+  /* Resaltado en vivo de "operativo/operativa" en las novedades */
+  .hl-wrap{position:relative;width:100%;display:block}
+  .hl-wrap textarea{
+    position:relative;z-index:2;width:100%;
+    background:transparent !important;
+    color:transparent !important;
+    caret-color:var(--ink) !important;
+  }
+  .hl-wrap textarea::placeholder{color:var(--muted);opacity:1}
+  .hl-wrap textarea::selection{background:rgba(91,200,232,.35);color:transparent}
+  .hl-wrap .hl-back{
+    position:absolute;inset:0;z-index:1;
+    padding:8px 10px;border:1px solid transparent;border-radius:7px;
+    background:var(--input-bg);color:var(--ink);
+    font-family:inherit;font-size:14px;line-height:1.5;
+    white-space:pre-wrap;overflow-wrap:break-word;
+    overflow:auto;pointer-events:none;
+  }
+  .hl-op{color:var(--ok);font-weight:800}
+  @media (max-width:760px){
+    .hl-wrap .hl-back{font-size:16px;padding:10px 12px}
+  }
+
   @media print{
     @page{ size:A4 portrait; margin:10mm; }
     html, body{
@@ -715,6 +739,46 @@ function lines(id){
 }
 
 /* =========================================================================
+   1.2. RESALTADO EN VIVO: operativo / operativa (todas las variantes)
+   ========================================================================= */
+function renderHighlighted(text){
+  const esc = String(text ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const withZ = esc.endsWith('\n') ? esc + '\u200b' : esc;
+  return withZ.replace(/\boperativ[oa]s?\b/gi, m => `<span class="hl-op">${m}</span>`);
+}
+function setupHighlight(id){
+  const ta = $(id);
+  if (!ta || ta._hlReady) return;
+  const wrap = document.createElement('div');
+  wrap.className = 'hl-wrap';
+  ta.parentNode.insertBefore(wrap, ta);
+  const back = document.createElement('div');
+  back.className = 'hl-back';
+  back.setAttribute('aria-hidden', 'true');
+  wrap.appendChild(back);
+  wrap.appendChild(ta);
+  const update = () => {
+    back.innerHTML = renderHighlighted(ta.value);
+    back.scrollTop = ta.scrollTop;
+    back.scrollLeft = ta.scrollLeft;
+  };
+  ta.addEventListener('input', update);
+  ta.addEventListener('scroll', () => {
+    back.scrollTop = ta.scrollTop;
+    back.scrollLeft = ta.scrollLeft;
+  });
+  ta._hlReady  = true;
+  ta._updateHL = update;
+  update();
+}
+function refreshHighlights(){
+  ['novedades_planta','novedades_engomado','novedades_acabado'].forEach(id => {
+    const ta = $(id);
+    if (ta && ta._updateHL) ta._updateHL();
+  });
+}
+
+/* =========================================================================
    1.1. NOMBRES DE ARCHIVO
    ========================================================================= */
 function todayISO(){
@@ -1064,6 +1128,7 @@ function fillForm(r){
   $('a_calidad').value     = nz(a.calidad);
   $('a_inventario').value  = nz(a.inventario);
   $('novedades_acabado').value = (a.novedades || []).join('\n');
+  refreshHighlights();
 }
 
 /* =========================================================================
@@ -1568,6 +1633,7 @@ function init(){
   Object.keys(TABLES).forEach(k => initTable(k, [{}]));
   buildMatrix('mat_par', PARADOS_ROWS, 'par');
   buildMatrix('mat_cor', CORREGIDOS_ROWS, 'cor');
+  ['novedades_planta','novedades_engomado','novedades_acabado'].forEach(setupHighlight);
   MAQUINAS.forEach(m => $('inact_' + m).addEventListener('input', recalcInactivos));
   const hoy = new Date();
   const iso = `${hoy.getFullYear()}-${String(hoy.getMonth() + 1).padStart(2,'0')}-${String(hoy.getDate()).padStart(2,'0')}`;
@@ -1844,6 +1910,7 @@ function limpiar(){
   setMatrix('par', PARADOS_ROWS, {});
   setMatrix('cor', CORREGIDOS_ROWS, {});
   recalcInactivos();
+  refreshHighlights();
   toast('Formulario limpio');
 }
 $('btn-limpiar').addEventListener('click', limpiar);
