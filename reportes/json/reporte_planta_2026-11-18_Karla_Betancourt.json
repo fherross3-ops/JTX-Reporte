@@ -2,7 +2,7 @@
   "id": "mwm32owsscvy0",
   "fecha": "2026-11-18",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-18T13:14:52.814Z",
+  "creado": "2026-11-18T13:27:19.801Z",
   "hilanderia": {
     "kgsOE": 6098.5,
     "kgsCarda": 8264,
@@ -111,18 +111,18 @@
   "humedos": {
     "unipacks": [
       {
-        "titulo": "6,55",
-        "unipacks": "2.5",
+        "titulo": "24",
+        "unipacks": "",
         "openend": "01"
       }
     ],
     "urdido": [
       {
         "urdidora": "01",
-        "estilo": "Victoria 250",
-        "lote": "1003",
-        "mh": "13",
-        "mph": "16"
+        "estilo": "Senat",
+        "lote": "1004",
+        "mh": "01",
+        "mph": "18"
       },
       {
         "urdidora": "02",
@@ -141,38 +141,38 @@
       {
         "urdidora": "04",
         "estilo": "Fashion oscuro",
-        "lote": "01",
-        "mh": "12",
-        "mph": ""
+        "lote": "4003",
+        "mh": "07",
+        "mph": "12"
       }
     ],
     "tenido": [
       {
         "tren": "Beloit 02",
-        "estilo": "Victoria 250",
-        "lote": "1003",
-        "mh": "12",
-        "mph": "16",
+        "estilo": "Fashion oscuro",
+        "lote": "402010",
+        "mh": "06",
+        "mph": "12",
         "obs": ""
       }
     ],
     "reurdido": [
       {
-        "estilo": "Sin material",
-        "lote": "",
-        "mh": "",
-        "mph": ""
+        "estilo": "Victoria 250",
+        "lote": "102009",
+        "mh": "13",
+        "mph": "16"
       }
     ],
     "engomado": {
       "metros": 4600,
       "rows": [
         {
-          "engomadora": "02",
-          "estilo": "Alexa L sky blue",
-          "lote": "101008",
-          "mh": "12",
-          "mph": "12",
+          "engomadora": "Sin material",
+          "estilo": "",
+          "lote": "",
+          "mh": "",
+          "mph": "",
           "obs": ""
         }
       ],
@@ -187,7 +187,9 @@
     },
     "novedades": [
       "No hay existencia de PVA en planta.",
-      "Engomadora 02 En paro en la madrugada viernes para sabado por Falla mecanica ( se parte la cadena de la batea)"
+      "En la Beloitt 02 entra en mantenimiento fin de año.",
+      "Engomadora 01 sin material",
+      "Engomadora 02 sin material bajando rodillos guias para reparando."
     ]
   },
   "tejeduria": {
