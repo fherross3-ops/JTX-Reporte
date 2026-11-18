@@ -1,0 +1,241 @@
+{
+  "id": "mwm32owsscvy0",
+  "fecha": "2026-11-18",
+  "responsable": "Karla Betancourt",
+  "creado": "2026-11-18T13:14:52.814Z",
+  "hilanderia": {
+    "kgsOE": 6098.5,
+    "kgsCarda": 8264,
+    "titulos": [
+      {
+        "maquina": "01",
+        "titulo": "6,5",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "02",
+        "titulo": "Parada por planificacion",
+        "uso": "Trama"
+      },
+      {
+        "maquina": "03",
+        "titulo": "08 mezcla 01",
+        "uso": "Trama"
+      },
+      {
+        "maquina": "04",
+        "titulo": "Ensayo 20",
+        "uso": "Ventas"
+      },
+      {
+        "maquina": "05",
+        "titulo": "16",
+        "uso": "Ventas"
+      }
+    ],
+    "inactivos": {
+      "m": [
+        0,
+        64,
+        14,
+        0,
+        0
+      ],
+      "causa": "Reemplazo por fuentes de poder"
+    },
+    "parados": {
+      "inactivos": {
+        "01": 22,
+        "02": 16,
+        "03": 16,
+        "04": 0,
+        "05": 12
+      },
+      "ajustes": {
+        "01": 11,
+        "02": 11,
+        "03": 67,
+        "04": 2,
+        "05": 5
+      },
+      "fa": {
+        "01": 0,
+        "02": 52,
+        "03": 0,
+        "04": 0,
+        "05": 0
+      }
+    },
+    "corregidos": {
+      "ajustefuga": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fuentes": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fugas": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "amortig": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      }
+    }
+  },
+  "novedadesPlanta": [
+    "CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.",
+    "Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda.",
+    "Parada las cardas por pote.",
+    "Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación) Sigue novedad.",
+    "Se para carda N#7 para realizar ajuste entre cilindro principal, doffer cilindro de alinentacion y lickeri.",
+    "Parada carda N4 se para idf para realizar mantenimiento completo y ajuste .",
+    "Open end 02 se recuperan 6 puestos 04 por ajuste y 02 por fuerte.",
+    "En la open end 04 se recuperan 02 puestos por ajuste.",
+    "En la open end 05 se recuperan 02 puestos por ajustes."
+  ],
+  "humedos": {
+    "unipacks": [
+      {
+        "titulo": "6,55",
+        "unipacks": "2.5",
+        "openend": "01"
+      }
+    ],
+    "urdido": [
+      {
+        "urdidora": "01",
+        "estilo": "Victoria 250",
+        "lote": "1003",
+        "mh": "13",
+        "mph": "16"
+      },
+      {
+        "urdidora": "02",
+        "estilo": "Mantenimiento fin de año",
+        "lote": "",
+        "mh": "",
+        "mph": ""
+      },
+      {
+        "urdidora": "03",
+        "estilo": "Sin material",
+        "lote": "",
+        "mh": "",
+        "mph": ""
+      },
+      {
+        "urdidora": "04",
+        "estilo": "Fashion oscuro",
+        "lote": "01",
+        "mh": "12",
+        "mph": ""
+      }
+    ],
+    "tenido": [
+      {
+        "tren": "Beloit 02",
+        "estilo": "Victoria 250",
+        "lote": "1003",
+        "mh": "12",
+        "mph": "16",
+        "obs": ""
+      }
+    ],
+    "reurdido": [
+      {
+        "estilo": "Sin material",
+        "lote": "",
+        "mh": "",
+        "mph": ""
+      }
+    ],
+    "engomado": {
+      "metros": 4600,
+      "rows": [
+        {
+          "engomadora": "02",
+          "estilo": "Alexa L sky blue",
+          "lote": "101008",
+          "mh": "12",
+          "mph": "12",
+          "obs": ""
+        }
+      ],
+      "porEngomar": [
+        {
+          "estilo": "Sin material",
+          "lote": "",
+          "mh": "",
+          "mph": ""
+        }
+      ]
+    },
+    "novedades": [
+      "No hay existencia de PVA en planta.",
+      "Engomadora 02 En paro en la madrugada viernes para sabado por Falla mecanica ( se parte la cadena de la batea)"
+    ]
+  },
+  "tejeduria": {
+    "metros": 18282,
+    "rot": "",
+    "cargados": 65,
+    "operativos": 47,
+    "parados": 65,
+    "cadenas": 21,
+    "causas": {
+      "mecanica": 1,
+      "electronica": 2,
+      "electrica": 0,
+      "montaje": 0,
+      "repuesto": 7,
+      "repuestoTelares": "5,40,47,73,96,100,108"
+    },
+    "otros": {
+      "presion": 0,
+      "orden": 28,
+      "urdimbre": 24,
+      "urdimbreDet": "09-Bulldenim 07- indigo oscuro  04- Victoria 250 01 - Amazonas Xll 03- Fashion oscuro",
+      "calidad": 1,
+      "ecu": 3,
+      "trama": "",
+      "otros": "",
+      "otrosDet": ""
+    }
+  },
+  "acabado": {
+    "sanforizado": 26289,
+    "revision": 16696,
+    "corte": 19006,
+    "calidad": 71.29,
+    "inventario": 35.838,
+    "novedades": [
+      "Cibitex:",
+      "02 horas de paro por Falla operativa.",
+      "Revision:",
+      "04 horas de paro por colaborar en otra área.",
+      "01 hora de paro por calidad.",
+      "01 hora de paro por comida.",
+      "Corte:",
+      "02 horas de paro por Falla de sistema.",
+      "01 hora de paro por Falla operativa.",
+      "01 hora de paro por (reunión con el personal /entrenamiento.)",
+      "01 hora de paro por calidad.",
+      "30 minutos de paro por comida."
+    ]
+  }
+}
