@@ -2,7 +2,7 @@
   "id": "mwm32owsscvy0",
   "fecha": "2026-11-18",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-18T13:27:19.801Z",
+  "creado": "2026-11-18T13:32:54.917Z",
   "hilanderia": {
     "kgsOE": 6098.5,
     "kgsCarda": 8264,
@@ -112,8 +112,8 @@
     "unipacks": [
       {
         "titulo": "24",
-        "unipacks": "",
-        "openend": "01"
+        "unipacks": "85",
+        "openend": "Conos de murata"
       }
     ],
     "urdido": [
@@ -189,7 +189,7 @@
       "No hay existencia de PVA en planta.",
       "En la Beloitt 02 entra en mantenimiento fin de año.",
       "Engomadora 01 sin material",
-      "Engomadora 02 sin material bajando rodillos guias para reparando."
+      "Engomadora 02 sin material."
     ]
   },
   "tejeduria": {
