@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-19
 Responsable,Karla Betancourt
-Creado,2026-11-19T13:38:07.785Z
-Exportado,2026-11-19T13:38:08.752Z
+Creado,2026-11-19T13:50:58.648Z
+Exportado,2026-11-19T13:50:59.618Z
 Archivo,reporte_planta_2026-11-19_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -94,7 +94,7 @@ Novedades de Engomado
 == TEJEDURIA ==
 Concepto,Valor
 Metros tejidos del dia anterior,14924
-Promedio Rot/hora,
+Promedio Rot/hora,1.3
 Telares cargados,63
 Telares operativos,34
 Telares parados,78
