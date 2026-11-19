@@ -2,34 +2,34 @@
   "id": "mwniqap8rdle9",
   "fecha": "2026-11-19",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-19T12:20:31.376Z",
+  "creado": "2026-11-19T12:52:34.857Z",
   "hilanderia": {
     "kgsOE": 7638.7,
     "kgsCarda": 1478,
     "titulos": [
       {
         "maquina": "01",
-        "titulo": "6,5",
+        "titulo": "Escurrio mezcla 01",
         "uso": "Urdido"
       },
       {
         "maquina": "02",
-        "titulo": "Parada por planificacion",
-        "uso": "Trama"
+        "titulo": "6,55  mezcla 02",
+        "uso": "Urdido"
       },
       {
         "maquina": "03",
         "titulo": "08 mezcla 01",
-        "uso": "Trama"
+        "uso": "Urdido"
       },
       {
         "maquina": "04",
-        "titulo": "Ensayo 20",
+        "titulo": "12 mezcla 02",
         "uso": "Ventas"
       },
       {
         "maquina": "05",
-        "titulo": "16",
+        "titulo": "16 mezcla 01",
         "uso": "Ventas"
       }
     ],
@@ -100,7 +100,7 @@
   "novedadesPlanta": [
     "CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.",
     "Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda.",
-    "Parada las cardas por pote.",
+    "Paradas las cardas por espera de aprobacion de algodon.",
     "Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación) Sigue novedad.",
     "Se para carda N#7 para realizar ajuste entre cilindro principal, doffer cilindro de alinentacion y lickeri.",
     "Parada carda N4 se para idf para realizar mantenimiento completo y ajuste .",
