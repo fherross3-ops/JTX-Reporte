@@ -436,21 +436,6 @@
     .novedades li{ color:#333 !important; }
     .empty{ color:#888 !important; }
   }
-@media print {
-  * {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-}
-
-.palabra-verde-negrita {
-  color: #15803d !important; /* Verde oscuro legible */
-  font-weight: 700 !important;
-}
-
-
-
-  
 </style>
 </head>
 <body>
@@ -1748,44 +1733,6 @@ $('btn-guardar-2').addEventListener('click', guardar);
    ========================================================================= */
 let _pendingRegistro = null;
 
-
-// Función para envolver la palabra específica en verde y negrita
-function resaltarPalabraEnContenedor(contenedor, palabra) {
-  if (!palabra) return;
-  const regex = new RegExp(`\\b(${palabra})\\b`, 'gi'); // 'gi' ignora mayúsculas/minúsculas
-
-  // Recorre solo los nodos de texto para no romper etiquetas HTML
-  const walker = document.createTreeWalker(contenedor, NodeFilter.SHOW_TEXT, null, false);
-  const nodosTexto = [];
-  let nodo;
-  while ((nodo = walker.nextNode())) {
-    if (regex.test(nodo.nodeValue)) {
-      nodosTexto.push(nodo);
-    }
-  }
-
-  nodosTexto.forEach(textNode => {
-    const spanTemp = document.createElement('span');
-    spanTemp.innerHTML = textNode.nodeValue.replace(
-      regex,
-      '<span class="palabra-verde-negrita" style="color: #15803d !important; font-weight: 700 !important;">$1</span>'
-    );
-    textNode.parentNode.replaceChild(spanTemp, textNode);
-  });
-}
-
-
-
-
-
-
-
-
-
-
-
-
-  
 async function generarPDFBlob(registro) {
   const overlay = document.createElement('div');
   overlay.style.cssText = `
@@ -1846,18 +1793,6 @@ async function generarPDFBlob(registro) {
     forceStyle('.novedades li, .rep-sec *', { color: '#111111' });
     forceStyle('.empty', { color: '#666666' });
 
-
-    // ... tus líneas forceStyle anteriores ...
-    forceStyle('.novedades li, .rep-sec *', { color: '#111111' });
-    forceStyle('.empty', { color: '#666666' });
-
-    // 👉 AGREGA ESTO AQUÍ (cambia 'OPERATIVO' por tu palabra específica):
-    resaltarPalabraEnContenedor(temp, 'OPERATIVO');
-
-    
-
-
-    
     await new Promise(resolve => setTimeout(resolve, 800));
 
     const opt = {
@@ -1918,9 +1853,6 @@ async function descargarPDF(registro) {
 async function imprimirPDF(registro) {
   $('panel-select').value = registro.id || '';
   renderPanel(registro, $('panel-body'));
-// 👉 AGREGA ESTO AQUÍ también:
-  resaltarPalabraEnContenedor($('panel-body'), 'OPERATIVO');
-  
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.querySelector('.tab[data-view="panel"]').classList.add('active');
