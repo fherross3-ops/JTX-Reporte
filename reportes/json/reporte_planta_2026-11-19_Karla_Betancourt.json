@@ -2,7 +2,7 @@
   "id": "mwniqap8rdle9",
   "fecha": "2026-11-19",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-19T12:52:34.857Z",
+  "creado": "2026-11-19T13:38:07.785Z",
   "hilanderia": {
     "kgsOE": 7638.7,
     "kgsCarda": 1478,
@@ -52,7 +52,7 @@
         "05": 12
       },
       "ajustes": {
-        "01": 11,
+        "01": 1,
         "02": 11,
         "03": 67,
         "04": 2,
@@ -98,31 +98,36 @@
     }
   },
   "novedadesPlanta": [
-    "CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.",
+    "CL-R de sala de recuperación ( Máquina  operativa ) en espera de repuestos.",
     "Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda.",
     "Paradas las cardas por espera de aprobacion de algodon.",
     "Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación) Sigue novedad.",
-    "Se para carda N#7 para realizar ajuste entre cilindro principal, doffer cilindro de alinentacion y lickeri.",
-    "Parada carda N4 se para idf para realizar mantenimiento completo y ajuste .",
-    "Open end 02 se recuperan 6 puestos 04 por ajuste y 02 por fuerte.",
-    "En la open end 04 se recuperan 02 puestos por ajuste.",
-    "En la open end 05 se recuperan 02 puestos por ajustes."
+    "Se para carda N#7 para realizar ajuste entre cilindro principal, doffer cilindro de alinentacion y lickeri. Operativa",
+    "Parada carda N4 se para idf para realizar mantenimiento completo y ajuste . Aun Sigue en mantenimiento.",
+    "Open end 01 se recuperan 10 puestos 04 por ajuste",
+    "En la open end 04 se recuperan 07 puestos por ajuste.",
+    "En la open end 01 se cambia manguera 4.6.8 mm de 19 puestos"
   ],
   "humedos": {
     "unipacks": [
       {
-        "titulo": "24",
-        "unipacks": "85",
-        "openend": "Conos de murata"
+        "titulo": "6.55",
+        "unipacks": "4",
+        "openend": "02"
+      },
+      {
+        "titulo": "08",
+        "unipacks": "3",
+        "openend": "03"
       }
     ],
     "urdido": [
       {
         "urdidora": "01",
-        "estilo": "Senat",
+        "estilo": "Bulldenim 11",
         "lote": "1004",
         "mh": "01",
-        "mph": "18"
+        "mph": "12"
       },
       {
         "urdidora": "02",
@@ -142,7 +147,7 @@
         "urdidora": "04",
         "estilo": "Fashion oscuro",
         "lote": "4003",
-        "mh": "07",
+        "mh": "11",
         "mph": "12"
       }
     ],
@@ -151,29 +156,29 @@
         "tren": "Beloit 02",
         "estilo": "Fashion oscuro",
         "lote": "402010",
-        "mh": "06",
+        "mh": "10",
         "mph": "12",
         "obs": ""
       }
     ],
     "reurdido": [
       {
-        "estilo": "Victoria 250",
-        "lote": "102009",
-        "mh": "13",
-        "mph": "16"
+        "estilo": "Sin material",
+        "lote": "",
+        "mh": "",
+        "mph": ""
       }
     ],
     "engomado": {
-      "metros": 4600,
+      "metros": 0,
       "rows": [
         {
-          "engomadora": "Sin material",
-          "estilo": "",
-          "lote": "",
-          "mh": "",
-          "mph": "",
-          "obs": ""
+          "engomadora": "Engomadora 02",
+          "estilo": "Victoria 250",
+          "lote": "102009",
+          "mh": "13",
+          "mph": "16",
+          "obs": "En espera de reurdido"
         }
       ],
       "porEngomar": [
@@ -187,13 +192,12 @@
     },
     "novedades": [
       "No hay existencia de PVA en planta.",
-      "En la Beloitt 02 entra en mantenimiento fin de año.",
-      "Engomadora 01 sin material",
-      "Engomadora 02 sin material."
+      "En la Beloitt 01 entra en mantenimiento fin de año.",
+      "Engomadora 01 sin material."
     ]
   },
   "tejeduria": {
-    "metros": 18282,
+    "metros": 14924,
     "rot": "",
     "cargados": 63,
     "operativos": 34,
