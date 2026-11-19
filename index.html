@@ -452,6 +452,25 @@
       print-color-adjust: exact !important;
     }
   }
+    /* Evitar que un bloque se corte a la mitad entre páginas del PDF */
+    .rep-sec{ page-break-inside: auto !important; }
+    .rep-sec h3,
+    .rep-sec h4{ page-break-after: avoid !important; }
+    .kpi,
+    table.rep tr,
+    .novedades li{
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+    }
+    table.rep{ page-break-inside: auto !important; }
+
+
+
+
+
+
+
+  
 </style>
 </head>
 <body>
@@ -1801,13 +1820,12 @@ async function generarPDFBlob(registro) {
   `;
   document.body.appendChild(overlay);
 
-  const temp = document.createElement('div');
+    const temp = document.createElement('div');
   temp.style.cssText = `
     position: absolute;
     top: 0; left: 0;
-    width: 210mm;
+    width: 190mm;              /* 210mm - 2*10mm de margen */
     background: #ffffff;
-    padding: 10mm;
     color: #111111;
     font-family: "Segoe UI",Roboto,system-ui,sans-serif;
     z-index: 1;
@@ -1848,24 +1866,23 @@ async function generarPDFBlob(registro) {
 
     await new Promise(resolve => setTimeout(resolve, 800));
 
-    const opt = {
-      margin: 0,
+            const opt = {
+      margin: [10, 10, 10, 10],            // top, right, bottom, left en mm
       filename: fileBaseName(registro) + '.pdf',
       image: { type: 'jpeg', quality: 0.95 },
       html2canvas: {
-        scale: 1.5,
+        scale: 2,                           // más nitidez
         useCORS: true,
         backgroundColor: '#ffffff',
         logging: false,
         scrollX: 0,
         scrollY: 0,
-        width: temp.offsetWidth,
-        height: temp.scrollHeight,
-        windowWidth: temp.offsetWidth,
+        windowWidth: temp.scrollWidth,
         windowHeight: temp.scrollHeight
+        // ⚠️ NO fijar width/height aquí: dejamos que html2canvas mida el contenido
       },
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-      pagebreak: { mode: ['css', 'legacy'] }
+      pagebreak: { mode: ['css', 'avoid-all'] }  // 👈 clave: 'avoid-all' en vez de 'legacy'
     };
 
     const blob = await html2pdf().set(opt).from(temp).outputPdf('blob');
