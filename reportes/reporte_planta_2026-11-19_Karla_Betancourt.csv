@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-19
 Responsable,Karla Betancourt
-Creado,2026-11-19T12:20:31.376Z
-Exportado,2026-11-19T12:20:32.507Z
+Creado,2026-11-19T12:52:34.857Z
+Exportado,2026-11-19T12:52:35.871Z
 Archivo,reporte_planta_2026-11-19_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -12,11 +12,11 @@ Kgs producidos en Carda,1478
 
 Titulos Open-End
 Open-End,Titulo,Uso
-01,"6,5",Urdido
-02,Parada por planificacion,Trama
-03,08 mezcla 01,Trama
-04,Ensayo 20,Ventas
-05,16,Ventas
+01,Escurrio mezcla 01,Urdido
+02,"6,55  mezcla 02",Urdido
+03,08 mezcla 01,Urdido
+04,12 mezcla 02,Ventas
+05,16 mezcla 01,Ventas
 
 Puestos Inactivos Open-End
 Open-End,Puestos
@@ -48,7 +48,7 @@ Total,0,0,0,0,0,0
 N,Detalle
 1,CL-R de sala de recuperación ( Máquina trabajando) en espera de repuestos.
 2,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda."
-3,Parada las cardas por pote.
+3,Paradas las cardas por espera de aprobacion de algodon.
 4,"Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación) Sigue novedad."
 5,"Se para carda N#7 para realizar ajuste entre cilindro principal, doffer cilindro de alinentacion y lickeri."
 6,Parada carda N4 se para idf para realizar mantenimiento completo y ajuste .
