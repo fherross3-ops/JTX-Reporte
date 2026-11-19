@@ -374,6 +374,12 @@
     .hl-wrap .hl-back{font-size:16px;padding:10px 12px}
   }
 
+  /* Verde negrita para la palabra resaltada en panel / PDF */
+  .palabra-verde-negrita {
+    color: #15803d !important;
+    font-weight: 700 !important;
+  }
+
   @media print{
     @page{ size:A4 portrait; margin:10mm; }
     html, body{
@@ -435,6 +441,16 @@
     .kpi b{ color:#0b4a63 !important; }
     .novedades li{ color:#333 !important; }
     .empty{ color:#888 !important; }
+
+    /* Forzar verde también en impresión */
+    .rep-sec .palabra-verde-negrita,
+    .novedades .palabra-verde-negrita,
+    .palabra-verde-negrita{
+      color:#15803d !important;
+      font-weight:700 !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
   }
 </style>
 </head>
@@ -649,8 +665,8 @@
       <div class="grp">
         <button class="btn soft mini" type="button" id="btn-panel-cargar">Cargar en formulario</button>
         <button class="btn soft mini" type="button" id="btn-panel-csv">Exportar CSV</button>
-        <button class="btn soft mini" type="button" id="btn-panel-">Descargar </button>
-        <button class="btn soft mini" type="button" id="btn-panel-print">Imprimir / </button>
+        <button class="btn soft mini" type="button" id="btn-panel-pdf">Descargar PDF</button>
+        <button class="btn soft mini" type="button" id="btn-panel-print">Imprimir / PDF</button>
         <button class="btn danger mini" type="button" id="btn-panel-borrar">Eliminar</button>
       </div>
     </div>
@@ -691,7 +707,7 @@
 <div id="modal-share" role="dialog" aria-modal="true">
   <div class="modal-card">
     <h3>✅ Informe guardado</h3>
-    <p>¿Quieres descargar el  del reporte?</p>
+    <p>¿Quieres descargar el PDF del reporte?</p>
     <div class="modal-actions">
       <button class="btn primary" id="modal-btn-pdf" type="button">📥 Descargar PDF</button>
       <button class="btn soft" id="modal-btn-print" type="button">🖨️ Guardar como PDF (Imprimir)</button>
@@ -775,6 +791,39 @@ function refreshHighlights(){
   ['novedades_planta','novedades_engomado','novedades_acabado'].forEach(id => {
     const ta = $(id);
     if (ta && ta._updateHL) ta._updateHL();
+  });
+}
+
+/* =========================================================================
+   1.3. RESALTADO EN CONTENEDOR (panel / PDF / impresión)
+   ========================================================================= */
+function resaltarPalabraEnContenedor(contenedor, palabra) {
+  if (!palabra || !contenedor) return;
+  const base = String(palabra).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regex = new RegExp(`\\b(${base}[oa]s?)\\b`, 'gi');
+
+  const walker = document.createTreeWalker(contenedor, NodeFilter.SHOW_TEXT, null, false);
+  const nodosTexto = [];
+  let nodo;
+  while ((nodo = walker.nextNode())) {
+    regex.lastIndex = 0;
+    if (regex.test(nodo.nodeValue)) nodosTexto.push(nodo);
+  }
+  nodosTexto.forEach(textNode => {
+    const spanTemp = document.createElement('span');
+    regex.lastIndex = 0;
+    spanTemp.innerHTML = textNode.nodeValue.replace(
+      regex,
+      '<span class="palabra-verde-negrita" style="color:#15803d !important;font-weight:700 !important;">$1</span>'
+    );
+    textNode.parentNode.replaceChild(spanTemp, textNode);
+  });
+}
+function blindarVerde(scope){
+  if (!scope) return;
+  scope.querySelectorAll('.palabra-verde-negrita').forEach(el => {
+    el.style.setProperty('color', '#15803d', 'important');
+    el.style.setProperty('font-weight', '700', 'important');
   });
 }
 
@@ -1793,6 +1842,10 @@ async function generarPDFBlob(registro) {
     forceStyle('.novedades li, .rep-sec *', { color: '#111111' });
     forceStyle('.empty', { color: '#666666' });
 
+    // Resaltar DESPUÉS de forceStyle (para que no lo pise)
+    resaltarPalabraEnContenedor(temp, 'operativ');
+    blindarVerde(temp);
+
     await new Promise(resolve => setTimeout(resolve, 800));
 
     const opt = {
@@ -1853,6 +1906,10 @@ async function descargarPDF(registro) {
 async function imprimirPDF(registro) {
   $('panel-select').value = registro.id || '';
   renderPanel(registro, $('panel-body'));
+
+  resaltarPalabraEnContenedor($('panel-body'), 'operativ');
+  blindarVerde($('panel-body'));
+
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.querySelector('.tab[data-view="panel"]').classList.add('active');
