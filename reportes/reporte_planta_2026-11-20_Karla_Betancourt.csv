@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-20
 Responsable,Karla Betancourt
-Creado,2026-11-20T12:00:48.423Z
-Exportado,2026-11-20T12:00:49.412Z
+Creado,2026-11-20T13:03:48.353Z
+Exportado,2026-11-20T13:03:49.426Z
 Archivo,reporte_planta_2026-11-20_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -59,28 +59,29 @@ N,Detalle
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
 Titulo,Unipacks,Open-End
-6.55,4,02
-08,3,03
+"6,55",3,01
+"6,55",3.5,02
 
 Urdido
 Urdidora,Estilo,Lote,Mh,Mph
-01,Bulldenim 11,1004,01,12
+01,Bulldenim 11,1004,4,12
 02,Mantenimiento fin de año,,,
-03,Sin material,,,
-04,Fashion oscuro,4003,11,12
+03,Sin plan,,,
+04,Fashion oscuro,4004,03,12
 
 Tenido
 Tren,Estilo,Lote,Mh,Mph,Observacion
-Beloit 02,Fashion oscuro,402010,10,12,
+Beloit 02,Fashion oscuro,4004,02,12,Cambia en engomado a indigo oscuro
 
 Reurdido
 Estilo,Lote,Mh,Mph
-Sin material,,,
+Fashion oscuro,402010,07,12
 
 Engomado
 Metros engomados del dia anterior,14500
 Engomadora,Estilo,Lote,Mh,Mph,Observacion
-Engomadora 02,Victoria 250,102009,13,16,En espera de reurdido
+Engomadora 01,Bulldenim 11,1004,12,12,En espera de reurdido
+Engomadora 02,Victoria 250,102009,16,16,Paro en Cad#09
 
 Pendientes por Engomar
 Estilo,Lote,Mh,Mph
@@ -89,7 +90,7 @@ Sin material,,,
 Novedades de Engomado
 1,No hay existencia de PVA en planta.
 2,En la Beloitt 01 entra en mantenimiento fin de año.
-3,Engomadora 01 sin material.
+3,Engomaodora 02 parada por corto en el tablero por condensado ( valvula de control de temperatura )
 
 == TEJEDURIA ==
 Concepto,Valor
