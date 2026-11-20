@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-20
 Responsable,Karla Betancourt
-Creado,2026-11-20T13:03:48.353Z
-Exportado,2026-11-20T13:03:49.426Z
+Creado,2026-11-20T13:19:55.012Z
+Exportado,2026-11-20T13:19:56.080Z
 Archivo,reporte_planta_2026-11-20_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -12,11 +12,11 @@ Kgs producidos en Carda,7936
 
 Titulos Open-End
 Open-End,Titulo,Uso
-01,Escurrio mezcla 01,Urdido
+01,"6,55 mezcla 02",Urdido
 02,"6,55  mezcla 02",Urdido
-03,08 mezcla 01,Urdido
+03,08 mezcla 02,Urdido
 04,12 mezcla 02,Ventas
-05,16 mezcla 01,Ventas
+05,16 mezcla 02,Ventas
 
 Puestos Inactivos Open-End
 Open-End,Puestos
