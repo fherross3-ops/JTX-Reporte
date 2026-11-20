@@ -2,14 +2,14 @@
   "id": "mwoxgsk9k6jzt",
   "fecha": "2026-11-20",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-20T13:03:48.353Z",
+  "creado": "2026-11-20T13:19:55.012Z",
   "hilanderia": {
     "kgsOE": 10486.6,
     "kgsCarda": 7936,
     "titulos": [
       {
         "maquina": "01",
-        "titulo": "Escurrio mezcla 01",
+        "titulo": "6,55 mezcla 02",
         "uso": "Urdido"
       },
       {
@@ -19,7 +19,7 @@
       },
       {
         "maquina": "03",
-        "titulo": "08 mezcla 01",
+        "titulo": "08 mezcla 02",
         "uso": "Urdido"
       },
       {
@@ -29,7 +29,7 @@
       },
       {
         "maquina": "05",
-        "titulo": "16 mezcla 01",
+        "titulo": "16 mezcla 02",
         "uso": "Ventas"
       }
     ],
