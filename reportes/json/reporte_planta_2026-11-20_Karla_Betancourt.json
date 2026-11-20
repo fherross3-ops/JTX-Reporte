@@ -2,7 +2,7 @@
   "id": "mwoxgsk9k6jzt",
   "fecha": "2026-11-20",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-20T13:19:55.012Z",
+  "creado": "2026-11-20T13:49:14.631Z",
   "hilanderia": {
     "kgsOE": 10486.6,
     "kgsCarda": 7936,
@@ -45,14 +45,14 @@
     },
     "parados": {
       "inactivos": {
-        "01": 22,
+        "01": 30,
         "02": 16,
         "03": 16,
         "04": 0,
         "05": 12
       },
       "ajustes": {
-        "01": 1,
+        "01": 0,
         "02": 11,
         "03": 67,
         "04": 2,
@@ -100,13 +100,11 @@
   "novedadesPlanta": [
     "CL-R de sala de recuperación ( Máquina  operativa ) en espera de repuestos.",
     "Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda.",
-    "Paradas las cardas por espera de aprobacion de algodon.",
-    "Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación) Sigue novedad.",
-    "Se para carda N#7 para realizar ajuste entre cilindro principal, doffer cilindro de alinentacion y lickeri. Operativa",
-    "Parada carda N4 se para idf para realizar mantenimiento completo y ajuste . Aun Sigue en mantenimiento.",
-    "Open end 01 se recuperan 10 puestos 04 por ajuste",
-    "En la open end 04 se recuperan 07 puestos por ajuste.",
-    "En la open end 01 se cambia manguera 4.6.8 mm de 19 puestos"
+    "Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación ( motor de caja reductora en servicio de reparacion )",
+    "Cambiador lado A parado por Falla electronica.",
+    "Open end 01 se recuperan 15 puestos por ajuste",
+    "En la open end 04 se montan 13 fuentes dejando operativa  11 puestos",
+    "En la open end 01 se cambia manguera 4.6.8 mm de 22 puestos"
   ],
   "humedos": {
     "unipacks": [
@@ -206,14 +204,14 @@
   },
   "tejeduria": {
     "metros": 8656,
-    "rot": 1.3,
-    "cargados": 63,
+    "rot": "",
+    "cargados": 65,
     "operativos": 34,
     "parados": 78,
-    "cadenas": 13,
+    "cadenas": 7,
     "causas": {
-      "mecanica": 1,
-      "electronica": 2,
+      "mecanica": 0,
+      "electronica": 1,
       "electrica": 0,
       "montaje": 0,
       "repuesto": 7,
@@ -221,11 +219,11 @@
     },
     "otros": {
       "presion": 0,
-      "orden": 40,
+      "orden": 42,
       "urdimbre": 26,
-      "urdimbreDet": "09-Bulldenim 07- Arandano dark 04- satin iris black 06- Fashion oscuro 01 Amazonas Xlll",
+      "urdimbreDet": "05-Bulldenim  06- Fashion oscuro 13- indigo oscuro 01- Oxigeno 01- Amazonas Xlll",
       "calidad": 1,
-      "ecu": 1,
+      "ecu": 2,
       "trama": "",
       "otros": "",
       "otrosDet": ""
@@ -236,7 +234,7 @@
     "revision": 23465,
     "corte": 26790,
     "calidad": 80.04,
-    "inventario": 62926,
+    "inventario": 65.114,
     "novedades": [
       "Cibitex:",
       "16 horas de paro por falta de tela cruda",
