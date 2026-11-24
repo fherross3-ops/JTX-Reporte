@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-24
 Responsable,Karla Betancourt
-Creado,2026-11-24T12:53:46.202Z
-Exportado,2026-11-24T12:53:47.325Z
+Creado,2026-11-24T13:11:04.661Z
+Exportado,2026-11-24T13:11:05.911Z
 Archivo,reporte_planta_2026-11-24_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -51,8 +51,9 @@ N,Detalle
 3,"Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación ( motor de caja reductora en servicio de reparacion )"
 4,"Se realiza cambio de rodamiento a BR-COI de sala de recuperancion, de prensa vertical."
 5,Open end 01 se recuperan  15 puestos por cambio de manguera.
-6,En la open end
-7,En la open end 01 se cambia manguera 4.6.8 mm de 22 puestos
+6,En la open end 02 Se cambian 11 fuentes y se Ajustan 02.
+7,En la open end 03 reemplazo de sensor de palanca de apertura de la caja del puesto.
+8,Mantenimiento en la open end 04
 
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
