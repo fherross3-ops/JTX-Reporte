@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-24
 Responsable,Karla Betancourt
-Creado,2026-11-24T13:12:53.315Z
-Exportado,2026-11-24T13:12:54.462Z
+Creado,2026-11-24T13:30:45.133Z
+Exportado,2026-11-24T13:30:46.472Z
 Archivo,reporte_planta_2026-11-24_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -31,10 +31,10 @@ Causa,Reemplazo por fuentes de poder
 
 Puestos Parados por Causa
 Causa,01,02,03,04,05,Total
-Inactivos,30,16,16,0,12,74
-Ajustes,0,11,67,2,5,85
-F.A.,0,52,0,0,0,52
-Total,30,79,83,2,17,211
+Inactivos,30,18,17,1,12,78
+Ajustes,0,28,63,21,6,118
+F.A.,0,64,12,0,0,76
+Total,30,110,92,22,18,272
 
 Puestos Corregidos por Causa
 Causa,01,02,03,04,05,Total
@@ -59,29 +59,28 @@ N,Detalle
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
 Titulo,Unipacks,Open-End
-"6,55",3,01
-"6,55",3.5,02
+"6,55",4,01
 
 Urdido
 Urdidora,Estilo,Lote,Mh,Mph
-01,Bulldenim 11,1004,4,12
+01,Sin material,,,
 02,Mantenimiento fin de año,,,
-03,Sin plan,,,
-04,Fashion oscuro,4004,03,12
+03,Fashion oscuro,3002,03,12
+04,Fashion oscuro,4005,01,12
 
 Tenido
 Tren,Estilo,Lote,Mh,Mph,Observacion
-Beloit 02,Fashion oscuro,4004,02,12,Cambia en engomado a indigo oscuro
+Beloit 02,Fashion oscuro,4004,12,12,"Montaje, calentamiento y arranque"
 
 Reurdido
 Estilo,Lote,Mh,Mph
-Fashion oscuro,402010,07,12
+Sin material,,,
 
 Engomado
 Metros engomados del dia anterior,15864
 Engomadora,Estilo,Lote,Mh,Mph,Observacion
-Engomadora 01,Bulldenim 11,1004,12,12,En espera de reurdido
-Engomadora 02,Victoria 250,102009,16,16,Paro en Cad#09
+Engomadora 01,Bulldenim 11,1004,12,12,"Conteo de peine, y arranque"
+Engomadora 02,Fashion oscuro,402010,12,12,En proceso cadena #06
 
 Pendientes por Engomar
 Estilo,Lote,Mh,Mph
@@ -90,7 +89,7 @@ Sin material,,,
 Novedades de Engomado
 1,No hay existencia de PVA en planta.
 2,En la Beloitt 01 entra en mantenimiento fin de año.
-3,Engomaodora 02 parada por corto en el tablero por condensado ( valvula de control de temperatura )
+3,En la Engomadora 02 presenta problemas de temperatura en la batea.
 
 == TEJEDURIA ==
 Concepto,Valor
