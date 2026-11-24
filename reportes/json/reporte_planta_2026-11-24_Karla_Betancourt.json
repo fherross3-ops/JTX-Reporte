@@ -2,7 +2,7 @@
   "id": "mwunba0w1fa05",
   "fecha": "2026-11-24",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-24T13:12:53.315Z",
+  "creado": "2026-11-24T13:30:45.133Z",
   "hilanderia": {
     "kgsOE": 11065.1,
     "kgsCarda": 7565,
@@ -46,22 +46,22 @@
     "parados": {
       "inactivos": {
         "01": 30,
-        "02": 16,
-        "03": 16,
-        "04": 0,
+        "02": 18,
+        "03": 17,
+        "04": 1,
         "05": 12
       },
       "ajustes": {
         "01": 0,
-        "02": 11,
-        "03": 67,
-        "04": 2,
-        "05": 5
+        "02": 28,
+        "03": 63,
+        "04": 21,
+        "05": 6
       },
       "fa": {
         "01": 0,
-        "02": 52,
-        "03": 0,
+        "02": 64,
+        "03": 12,
         "04": 0,
         "05": 0
       }
@@ -112,22 +112,17 @@
     "unipacks": [
       {
         "titulo": "6,55",
-        "unipacks": "3",
+        "unipacks": "4",
         "openend": "01"
-      },
-      {
-        "titulo": "6,55",
-        "unipacks": "3.5",
-        "openend": "02"
       }
     ],
     "urdido": [
       {
         "urdidora": "01",
-        "estilo": "Bulldenim 11",
-        "lote": "1004",
-        "mh": "4",
-        "mph": "12"
+        "estilo": "Sin material",
+        "lote": "",
+        "mh": "",
+        "mph": ""
       },
       {
         "urdidora": "02",
@@ -138,16 +133,16 @@
       },
       {
         "urdidora": "03",
-        "estilo": "Sin plan",
-        "lote": "",
-        "mh": "",
-        "mph": ""
+        "estilo": "Fashion oscuro",
+        "lote": "3002",
+        "mh": "03",
+        "mph": "12"
       },
       {
         "urdidora": "04",
         "estilo": "Fashion oscuro",
-        "lote": "4004",
-        "mh": "03",
+        "lote": "4005",
+        "mh": "01",
         "mph": "12"
       }
     ],
@@ -156,17 +151,17 @@
         "tren": "Beloit 02",
         "estilo": "Fashion oscuro",
         "lote": "4004",
-        "mh": "02",
+        "mh": "12",
         "mph": "12",
-        "obs": "Cambia en engomado a indigo oscuro"
+        "obs": "Montaje, calentamiento y arranque"
       }
     ],
     "reurdido": [
       {
-        "estilo": "Fashion oscuro",
-        "lote": "402010",
-        "mh": "07",
-        "mph": "12"
+        "estilo": "Sin material",
+        "lote": "",
+        "mh": "",
+        "mph": ""
       }
     ],
     "engomado": {
@@ -178,15 +173,15 @@
           "lote": "1004",
           "mh": "12",
           "mph": "12",
-          "obs": "En espera de reurdido"
+          "obs": "Conteo de peine, y arranque"
         },
         {
           "engomadora": "Engomadora 02",
-          "estilo": "Victoria 250",
-          "lote": "102009",
-          "mh": "16",
-          "mph": "16",
-          "obs": "Paro en Cad#09"
+          "estilo": "Fashion oscuro",
+          "lote": "402010",
+          "mh": "12",
+          "mph": "12",
+          "obs": "En proceso cadena #06"
         }
       ],
       "porEngomar": [
@@ -201,7 +196,7 @@
     "novedades": [
       "No hay existencia de PVA en planta.",
       "En la Beloitt 01 entra en mantenimiento fin de año.",
-      "Engomaodora 02 parada por corto en el tablero por condensado ( valvula de control de temperatura )"
+      "En la Engomadora 02 presenta problemas de temperatura en la batea."
     ]
   },
   "tejeduria": {
