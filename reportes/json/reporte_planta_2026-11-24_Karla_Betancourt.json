@@ -2,7 +2,7 @@
   "id": "mwunba0w1fa05",
   "fecha": "2026-11-24",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-24T12:03:07.521Z",
+  "creado": "2026-11-24T12:53:46.202Z",
   "hilanderia": {
     "kgsOE": 11065.1,
     "kgsCarda": 7565,
@@ -101,9 +101,9 @@
     "CL-R de sala de recuperación ( Máquina  operativa ) en espera de repuestos.",
     "Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda.",
     "Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación ( motor de caja reductora en servicio de reparacion )",
-    "Cambiador lado A parado por Falla electronica.",
-    "Open end 01 se recuperan 15 puestos por ajuste",
-    "En la open end 04 se montan 13 fuentes dejando operativa  11 puestos",
+    "Se realiza cambio de rodamiento a BR-COI de sala de recuperancion, de prensa vertical.",
+    "Open end 01 se recuperan  15 puestos por cambio de manguera.",
+    "En la open end",
     "En la open end 01 se cambia manguera 4.6.8 mm de 22 puestos"
   ],
   "humedos": {
@@ -203,8 +203,8 @@
     ]
   },
   "tejeduria": {
-    "metros": 8656,
-    "rot": "",
+    "metros": 5522,
+    "rot": 1.28,
     "cargados": 60,
     "operativos": 21,
     "parados": 86,
@@ -219,7 +219,7 @@
     },
     "otros": {
       "presion": 0,
-      "orden": 42,
+      "orden": 48,
       "urdimbre": 28,
       "urdimbreDet": "05- Fashion oscuro - 08- indigo oscuro 03- Alexa sky 09- Bulldenim 01 Oxigeno - 02 Amazonas XIII",
       "calidad": "",
@@ -230,22 +230,21 @@
     }
   },
   "acabado": {
-    "sanforizado": 0,
-    "revision": 23465,
-    "corte": 26790,
-    "calidad": 80.04,
-    "inventario": 65.114,
+    "sanforizado": 15940,
+    "revision": 8661,
+    "corte": 7670,
+    "calidad": 80.13,
+    "inventario": 64.85,
     "novedades": [
       "Cibitex:",
-      "16 horas de paro por falta de tela cruda",
-      "08 horas de paro por orden superior",
+      "08 horas de paro por falta de tela cruda",
+      "02 horas de paro por cierre.",
+      "02 horas de paro por cambio de titulo - cambio estilo - ensarte.",
       "Revision:",
-      "01 horas de paro por trabajador colaborar en otra área. ( esmerilado)",
-      "01 hora de paro por comida.",
-      "02 horas de paro por reunión con el personal.",
-      "Corte:",
-      "002 horas de paro por reunión con el personal/ entrenamiento",
-      "01 hora de paro por comida."
+      "14 horas de paro por falta de tela sanforizada.",
+      "02 horas de paro por trabajador colabora en otra área (esperilado)",
+      "Corte :",
+      "16 horas de paro por falta de tela revisada."
     ]
   }
 }
