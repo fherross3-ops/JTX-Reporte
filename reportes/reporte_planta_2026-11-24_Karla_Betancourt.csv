@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-24
 Responsable,Karla Betancourt
-Creado,2026-11-24T13:11:04.661Z
-Exportado,2026-11-24T13:11:05.911Z
+Creado,2026-11-24T13:12:53.315Z
+Exportado,2026-11-24T13:12:54.462Z
 Archivo,reporte_planta_2026-11-24_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -54,6 +54,7 @@ N,Detalle
 6,En la open end 02 Se cambian 11 fuentes y se Ajustan 02.
 7,En la open end 03 reemplazo de sensor de palanca de apertura de la caja del puesto.
 8,Mantenimiento en la open end 04
+9,Mantenimiento en las cardas y en la sala de recuperarcion
 
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
