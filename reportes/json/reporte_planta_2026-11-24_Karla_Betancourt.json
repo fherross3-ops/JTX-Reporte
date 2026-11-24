@@ -1,0 +1,251 @@
+{
+  "id": "mwunba0w1fa05",
+  "fecha": "2026-11-24",
+  "responsable": "Karla Betancourt",
+  "creado": "2026-11-24T12:03:07.521Z",
+  "hilanderia": {
+    "kgsOE": 11065.1,
+    "kgsCarda": 7565,
+    "titulos": [
+      {
+        "maquina": "01",
+        "titulo": "6,55 mezcla 02",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "02",
+        "titulo": "6,55  mezcla 02",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "03",
+        "titulo": "08 mezcla 02",
+        "uso": "Urdido"
+      },
+      {
+        "maquina": "04",
+        "titulo": "12 mezcla 02",
+        "uso": "Ventas"
+      },
+      {
+        "maquina": "05",
+        "titulo": "16 mezcla 02",
+        "uso": "Ventas"
+      }
+    ],
+    "inactivos": {
+      "m": [
+        0,
+        64,
+        14,
+        0,
+        0
+      ],
+      "causa": "Reemplazo por fuentes de poder"
+    },
+    "parados": {
+      "inactivos": {
+        "01": 30,
+        "02": 16,
+        "03": 16,
+        "04": 0,
+        "05": 12
+      },
+      "ajustes": {
+        "01": 0,
+        "02": 11,
+        "03": 67,
+        "04": 2,
+        "05": 5
+      },
+      "fa": {
+        "01": 0,
+        "02": 52,
+        "03": 0,
+        "04": 0,
+        "05": 0
+      }
+    },
+    "corregidos": {
+      "ajustefuga": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fuentes": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "fugas": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      },
+      "amortig": {
+        "01": "",
+        "02": "",
+        "03": "",
+        "04": "",
+        "05": ""
+      }
+    }
+  },
+  "novedadesPlanta": [
+    "CL-R de sala de recuperación ( Máquina  operativa ) en espera de repuestos.",
+    "Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda.",
+    "Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación ( motor de caja reductora en servicio de reparacion )",
+    "Cambiador lado A parado por Falla electronica.",
+    "Open end 01 se recuperan 15 puestos por ajuste",
+    "En la open end 04 se montan 13 fuentes dejando operativa  11 puestos",
+    "En la open end 01 se cambia manguera 4.6.8 mm de 22 puestos"
+  ],
+  "humedos": {
+    "unipacks": [
+      {
+        "titulo": "6,55",
+        "unipacks": "3",
+        "openend": "01"
+      },
+      {
+        "titulo": "6,55",
+        "unipacks": "3.5",
+        "openend": "02"
+      }
+    ],
+    "urdido": [
+      {
+        "urdidora": "01",
+        "estilo": "Bulldenim 11",
+        "lote": "1004",
+        "mh": "4",
+        "mph": "12"
+      },
+      {
+        "urdidora": "02",
+        "estilo": "Mantenimiento fin de año",
+        "lote": "",
+        "mh": "",
+        "mph": ""
+      },
+      {
+        "urdidora": "03",
+        "estilo": "Sin plan",
+        "lote": "",
+        "mh": "",
+        "mph": ""
+      },
+      {
+        "urdidora": "04",
+        "estilo": "Fashion oscuro",
+        "lote": "4004",
+        "mh": "03",
+        "mph": "12"
+      }
+    ],
+    "tenido": [
+      {
+        "tren": "Beloit 02",
+        "estilo": "Fashion oscuro",
+        "lote": "4004",
+        "mh": "02",
+        "mph": "12",
+        "obs": "Cambia en engomado a indigo oscuro"
+      }
+    ],
+    "reurdido": [
+      {
+        "estilo": "Fashion oscuro",
+        "lote": "402010",
+        "mh": "07",
+        "mph": "12"
+      }
+    ],
+    "engomado": {
+      "metros": 15864,
+      "rows": [
+        {
+          "engomadora": "Engomadora 01",
+          "estilo": "Bulldenim 11",
+          "lote": "1004",
+          "mh": "12",
+          "mph": "12",
+          "obs": "En espera de reurdido"
+        },
+        {
+          "engomadora": "Engomadora 02",
+          "estilo": "Victoria 250",
+          "lote": "102009",
+          "mh": "16",
+          "mph": "16",
+          "obs": "Paro en Cad#09"
+        }
+      ],
+      "porEngomar": [
+        {
+          "estilo": "Sin material",
+          "lote": "",
+          "mh": "",
+          "mph": ""
+        }
+      ]
+    },
+    "novedades": [
+      "No hay existencia de PVA en planta.",
+      "En la Beloitt 01 entra en mantenimiento fin de año.",
+      "Engomaodora 02 parada por corto en el tablero por condensado ( valvula de control de temperatura )"
+    ]
+  },
+  "tejeduria": {
+    "metros": 8656,
+    "rot": "",
+    "cargados": 60,
+    "operativos": 21,
+    "parados": 86,
+    "cadenas": 10,
+    "causas": {
+      "mecanica": 1,
+      "electronica": 2,
+      "electrica": 0,
+      "montaje": 0,
+      "repuesto": 7,
+      "repuestoTelares": "5,40,47,73,96,100,108"
+    },
+    "otros": {
+      "presion": 0,
+      "orden": 42,
+      "urdimbre": 28,
+      "urdimbreDet": "05- Fashion oscuro - 08- indigo oscuro 03- Alexa sky 09- Bulldenim 01 Oxigeno - 02 Amazonas XIII",
+      "calidad": "",
+      "ecu": 4,
+      "trama": "",
+      "otros": "",
+      "otrosDet": ""
+    }
+  },
+  "acabado": {
+    "sanforizado": 0,
+    "revision": 23465,
+    "corte": 26790,
+    "calidad": 80.04,
+    "inventario": 65.114,
+    "novedades": [
+      "Cibitex:",
+      "16 horas de paro por falta de tela cruda",
+      "08 horas de paro por orden superior",
+      "Revision:",
+      "01 horas de paro por trabajador colaborar en otra área. ( esmerilado)",
+      "01 hora de paro por comida.",
+      "02 horas de paro por reunión con el personal.",
+      "Corte:",
+      "002 horas de paro por reunión con el personal/ entrenamiento",
+      "01 hora de paro por comida."
+    ]
+  }
+}
