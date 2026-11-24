@@ -1,0 +1,138 @@
+Tipo,Informe Planta - Reporte Diario
+Fecha del informe,2026-11-24
+Responsable,Karla Betancourt
+Creado,2026-11-24T12:03:07.521Z
+Exportado,2026-11-24T12:03:07.547Z
+Archivo,reporte_planta_2026-11-24_Karla_Betancourt.csv
+
+== HILANDERIA ==
+Concepto,Valor
+Kgs producidos en Open-End,11065.1
+Kgs producidos en Carda,7565
+
+Titulos Open-End
+Open-End,Titulo,Uso
+01,"6,55 mezcla 02",Urdido
+02,"6,55  mezcla 02",Urdido
+03,08 mezcla 02,Urdido
+04,12 mezcla 02,Ventas
+05,16 mezcla 02,Ventas
+
+Puestos Inactivos Open-End
+Open-End,Puestos
+01,0
+02,64
+03,14
+04,0
+05,0
+Total,78
+Porcentaje de 1440,5.4%
+Causa,Reemplazo por fuentes de poder
+
+Puestos Parados por Causa
+Causa,01,02,03,04,05,Total
+Inactivos,30,16,16,0,12,74
+Ajustes,0,11,67,2,5,85
+F.A.,0,52,0,0,0,52
+Total,30,79,83,2,17,211
+
+Puestos Corregidos por Causa
+Causa,01,02,03,04,05,Total
+Ajuste-Fuga,,,,,,0
+Fuentes,,,,,,0
+Fugas,,,,,,0
+Amortig/Fuga,,,,,,0
+Total,0,0,0,0,0,0
+
+== NOVEDADES DE PLANTA ==
+N,Detalle
+1,CL-R de sala de recuperación ( Máquina  operativa ) en espera de repuestos.
+2,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda."
+3,"Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación ( motor de caja reductora en servicio de reparacion )"
+4,Cambiador lado A parado por Falla electronica.
+5,Open end 01 se recuperan 15 puestos por ajuste
+6,En la open end 04 se montan 13 fuentes dejando operativa  11 puestos
+7,En la open end 01 se cambia manguera 4.6.8 mm de 22 puestos
+
+== PROCESOS HUMEDOS ==
+Inventario de Unipacks en Urdido
+Titulo,Unipacks,Open-End
+"6,55",3,01
+"6,55",3.5,02
+
+Urdido
+Urdidora,Estilo,Lote,Mh,Mph
+01,Bulldenim 11,1004,4,12
+02,Mantenimiento fin de año,,,
+03,Sin plan,,,
+04,Fashion oscuro,4004,03,12
+
+Tenido
+Tren,Estilo,Lote,Mh,Mph,Observacion
+Beloit 02,Fashion oscuro,4004,02,12,Cambia en engomado a indigo oscuro
+
+Reurdido
+Estilo,Lote,Mh,Mph
+Fashion oscuro,402010,07,12
+
+Engomado
+Metros engomados del dia anterior,15864
+Engomadora,Estilo,Lote,Mh,Mph,Observacion
+Engomadora 01,Bulldenim 11,1004,12,12,En espera de reurdido
+Engomadora 02,Victoria 250,102009,16,16,Paro en Cad#09
+
+Pendientes por Engomar
+Estilo,Lote,Mh,Mph
+Sin material,,,
+
+Novedades de Engomado
+1,No hay existencia de PVA en planta.
+2,En la Beloitt 01 entra en mantenimiento fin de año.
+3,Engomaodora 02 parada por corto en el tablero por condensado ( valvula de control de temperatura )
+
+== TEJEDURIA ==
+Concepto,Valor
+Metros tejidos del dia anterior,8656
+Promedio Rot/hora,
+Telares cargados,60
+Telares operativos,21
+Telares parados,86
+Cadenas inventario,10
+
+Causas de telares parados
+Causa,Cantidad,Detalle
+Mecanica,1,
+Electronica,2,
+Electrica,0,
+Montaje,0,
+Repuesto,7,"5,40,47,73,96,100,108"
+
+Otros paros
+Causa,Cantidad,Detalle
+Presion de aire,0,
+Orden superior,42,
+Falta de urdimbre,28,05- Fashion oscuro - 08- indigo oscuro 03- Alexa sky 09- Bulldenim 01 Oxigeno - 02 Amazonas XIII
+Calidad,,
+E.C.U.,4,
+Falta de trama,,
+Otros,,
+
+== PLANTA ACABADO ==
+Seccion,Metros
+Sanforizado,0
+Revision,23465
+Corte,26790
+General valor primera calidad (%),80.04
+Inventario Tela Cruda (Noria),65.114
+
+Novedades de Acabado
+1,Cibitex:
+2,16 horas de paro por falta de tela cruda
+3,08 horas de paro por orden superior
+4,Revision:
+5,01 horas de paro por trabajador colaborar en otra área. ( esmerilado)
+6,01 hora de paro por comida.
+7,02 horas de paro por reunión con el personal.
+8,Corte:
+9,002 horas de paro por reunión con el personal/ entrenamiento
+10,01 hora de paro por comida.
