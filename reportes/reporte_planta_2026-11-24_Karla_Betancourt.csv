@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-24
 Responsable,Karla Betancourt
-Creado,2026-11-24T12:03:07.521Z
-Exportado,2026-11-24T12:03:07.547Z
+Creado,2026-11-24T12:53:46.202Z
+Exportado,2026-11-24T12:53:47.325Z
 Archivo,reporte_planta_2026-11-24_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -49,9 +49,9 @@ N,Detalle
 1,CL-R de sala de recuperación ( Máquina  operativa ) en espera de repuestos.
 2,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda."
 3,"Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación ( motor de caja reductora en servicio de reparacion )"
-4,Cambiador lado A parado por Falla electronica.
-5,Open end 01 se recuperan 15 puestos por ajuste
-6,En la open end 04 se montan 13 fuentes dejando operativa  11 puestos
+4,"Se realiza cambio de rodamiento a BR-COI de sala de recuperancion, de prensa vertical."
+5,Open end 01 se recuperan  15 puestos por cambio de manguera.
+6,En la open end
 7,En la open end 01 se cambia manguera 4.6.8 mm de 22 puestos
 
 == PROCESOS HUMEDOS ==
@@ -92,8 +92,8 @@ Novedades de Engomado
 
 == TEJEDURIA ==
 Concepto,Valor
-Metros tejidos del dia anterior,8656
-Promedio Rot/hora,
+Metros tejidos del dia anterior,5522
+Promedio Rot/hora,1.28
 Telares cargados,60
 Telares operativos,21
 Telares parados,86
@@ -110,7 +110,7 @@ Repuesto,7,"5,40,47,73,96,100,108"
 Otros paros
 Causa,Cantidad,Detalle
 Presion de aire,0,
-Orden superior,42,
+Orden superior,48,
 Falta de urdimbre,28,05- Fashion oscuro - 08- indigo oscuro 03- Alexa sky 09- Bulldenim 01 Oxigeno - 02 Amazonas XIII
 Calidad,,
 E.C.U.,4,
@@ -119,20 +119,19 @@ Otros,,
 
 == PLANTA ACABADO ==
 Seccion,Metros
-Sanforizado,0
-Revision,23465
-Corte,26790
-General valor primera calidad (%),80.04
-Inventario Tela Cruda (Noria),65.114
+Sanforizado,15940
+Revision,8661
+Corte,7670
+General valor primera calidad (%),80.13
+Inventario Tela Cruda (Noria),64.85
 
 Novedades de Acabado
 1,Cibitex:
-2,16 horas de paro por falta de tela cruda
-3,08 horas de paro por orden superior
-4,Revision:
-5,01 horas de paro por trabajador colaborar en otra área. ( esmerilado)
-6,01 hora de paro por comida.
-7,02 horas de paro por reunión con el personal.
-8,Corte:
-9,002 horas de paro por reunión con el personal/ entrenamiento
-10,01 hora de paro por comida.
+2,08 horas de paro por falta de tela cruda
+3,02 horas de paro por cierre.
+4,02 horas de paro por cambio de titulo - cambio estilo - ensarte.
+5,Revision:
+6,14 horas de paro por falta de tela sanforizada.
+7,02 horas de paro por trabajador colabora en otra área (esperilado)
+8,Corte :
+9,16 horas de paro por falta de tela revisada.
