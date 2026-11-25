@@ -2,7 +2,7 @@
   "id": "mww33i26yx90i",
   "fecha": "2026-11-25",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-25T12:26:53.891Z",
+  "creado": "2026-11-25T13:27:29.732Z",
   "hilanderia": {
     "kgsOE": 9692.1,
     "kgsCarda": 12803,
@@ -53,14 +53,14 @@
       },
       "ajustes": {
         "01": 0,
-        "02": 28,
+        "02": 11,
         "03": 63,
         "04": 21,
         "05": 6
       },
       "fa": {
         "01": 0,
-        "02": 64,
+        "02": 50,
         "03": 12,
         "04": 0,
         "05": 0
@@ -103,10 +103,7 @@
     "Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación ( motor de caja reductora en servicio de reparacion )",
     "Se realiza cambio de rodamiento a BR-COI de sala de recuperancion, de prensa vertical.",
     "Open end 01 se recuperan  15 puestos por cambio de manguera.",
-    "En la open end 02 Se cambian 11 fuentes y se Ajustan 02.",
-    "En la open end 03 reemplazo de sensor de palanca de apertura de la caja del puesto.",
-    "Mantenimiento en la open end 04",
-    "Mantenimiento en las cardas y en la sala de recuperarcion"
+    "En la open end 02 Se cambian fuentes y se Ajustan 02."
   ],
   "humedos": {
     "unipacks": [
