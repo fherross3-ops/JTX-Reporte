@@ -2,7 +2,7 @@
   "id": "mww33i26yx90i",
   "fecha": "2026-11-25",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-25T12:12:46.696Z",
+  "creado": "2026-11-25T12:26:53.891Z",
   "hilanderia": {
     "kgsOE": 9692.1,
     "kgsCarda": 12803,
@@ -234,12 +234,12 @@
     "inventario": 58997,
     "novedades": [
       "Cibitex:",
-      "03 horas de paro por Falla electrica (",
+      "03 horas de paro por Falla electrica (  motor que mueve la torre de secado fuera de servicio)",
       "04 horas de paro por cambio de titulo - cambio estilo - ensarte.",
       "Revision:",
       "15 horas de paro por falta de tela sanforizada.",
       "Corte :",
-      "05 horas de paro por Falla mecanica(",
+      "05 horas de paro por Falla mecanica(mantenimiento correctivo cortadora u embaladora)",
       "02 horas de paro por Falla por instrumentacion."
     ]
   }
