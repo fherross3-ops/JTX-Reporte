@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-25
 Responsable,Karla Betancourt
-Creado,2026-11-25T12:12:46.696Z
-Exportado,2026-11-25T12:12:47.580Z
+Creado,2026-11-25T12:26:53.891Z
+Exportado,2026-11-25T12:26:55.268Z
 Archivo,reporte_planta_2026-11-25_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -128,10 +128,10 @@ Inventario Tela Cruda (Noria),58997
 
 Novedades de Acabado
 1,Cibitex:
-2,03 horas de paro por Falla electrica (
+2,03 horas de paro por Falla electrica (  motor que mueve la torre de secado fuera de servicio)
 3,04 horas de paro por cambio de titulo - cambio estilo - ensarte.
 4,Revision:
 5,15 horas de paro por falta de tela sanforizada.
 6,Corte :
-7,05 horas de paro por Falla mecanica(
+7,05 horas de paro por Falla mecanica(mantenimiento correctivo cortadora u embaladora)
 8,02 horas de paro por Falla por instrumentacion.
