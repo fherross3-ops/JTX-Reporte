@@ -1,8 +1,8 @@
 Tipo,Informe Planta - Reporte Diario
 Fecha del informe,2026-11-25
 Responsable,Karla Betancourt
-Creado,2026-11-25T12:26:53.891Z
-Exportado,2026-11-25T12:26:55.268Z
+Creado,2026-11-25T13:27:29.732Z
+Exportado,2026-11-25T13:27:30.993Z
 Archivo,reporte_planta_2026-11-25_Karla_Betancourt.csv
 
 == HILANDERIA ==
@@ -32,9 +32,9 @@ Causa,Reemplazo por fuentes de poder
 Puestos Parados por Causa
 Causa,01,02,03,04,05,Total
 Inactivos,30,18,17,1,12,78
-Ajustes,0,28,63,21,6,118
-F.A.,0,64,12,0,0,76
-Total,30,110,92,22,18,272
+Ajustes,0,11,63,21,6,101
+F.A.,0,50,12,0,0,62
+Total,30,79,92,22,18,241
 
 Puestos Corregidos por Causa
 Causa,01,02,03,04,05,Total
@@ -51,10 +51,7 @@ N,Detalle
 3,"Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación ( motor de caja reductora en servicio de reparacion )"
 4,"Se realiza cambio de rodamiento a BR-COI de sala de recuperancion, de prensa vertical."
 5,Open end 01 se recuperan  15 puestos por cambio de manguera.
-6,En la open end 02 Se cambian 11 fuentes y se Ajustan 02.
-7,En la open end 03 reemplazo de sensor de palanca de apertura de la caja del puesto.
-8,Mantenimiento en la open end 04
-9,Mantenimiento en las cardas y en la sala de recuperarcion
+6,En la open end 02 Se cambian fuentes y se Ajustan 02.
 
 == PROCESOS HUMEDOS ==
 Inventario de Unipacks en Urdido
