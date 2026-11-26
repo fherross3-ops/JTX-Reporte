@@ -890,7 +890,9 @@ function updateFilenameHint(){
    ========================================================================= */
 const TABLES = {
   titulos: { minRows: 1, cols: [
-    { k:'maquina', t:'Open-End' }, { k:'titulo', t:'Título' },
+    { k:'maquina', t:'Open-End' },
+    { k:'titulo',  t:'Título' },
+    { k:'kilos',   t:'Kilos', type:'number' },   /* 👈 NUEVA COLUMNA */
     { k:'uso', t:'Uso', type:'select', opts:['Urdido','Ventas','Trama'] }
   ]},
   unipacks: { minRows: 1, cols: [
@@ -1275,7 +1277,7 @@ function renderPanel(r, host){
       <div class="kpi"><span>% de 1440 puestos</span><b>${inactPct}%</b></div>
     </div>`;
   html += '<h4>Títulos Open-End</h4>';
-  html += simpleTable(['Open-End','Título','Uso'], h.titulos, x => [x.maquina, x.titulo, x.uso]);
+    html += simpleTable(['Open-End','Título','Kilos','Uso'], h.titulos, x => [x.maquina, x.titulo, x.kilos, x.uso]);
   html += '<h4>Puestos inactivos de la Open-End</h4>';
   html += '<div class="rep-table-wrap"><table class="rep"><thead><tr><th>Open-End</th><th style="text-align:center">Puestos</th></tr></thead><tbody>';
   MAQUINAS.forEach((m, i) => {
@@ -1394,9 +1396,9 @@ function detailedCSV(r){
   P('Kgs producidos en Open-End', nz(h.kgsOE));
   P('Kgs producidos en Carda', nz(h.kgsCarda));
   P();
-  P('Titulos Open-End');
-  P('Open-End', 'Titulo', 'Uso');
-  (h.titulos || []).forEach(x => P(x.maquina, x.titulo, x.uso));
+    P('Titulos Open-End');
+  P('Open-End', 'Titulo', 'Kilos', 'Uso');
+  (h.titulos || []).forEach(x => P(x.maquina, x.titulo, x.kilos, x.uso));
   P();
   P('Puestos Inactivos Open-End');
   P('Open-End', 'Puestos');
