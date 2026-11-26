@@ -2,7 +2,7 @@
   "id": "mwxirzktvg2pr",
   "fecha": "2026-11-26",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-26T13:06:30.091Z",
+  "creado": "2026-11-26T13:47:34.390Z",
   "hilanderia": {
     "kgsOE": 11030.6,
     "kgsCarda": 15206,
@@ -108,26 +108,31 @@
     "unipacks": [
       {
         "titulo": "6,55",
-        "unipacks": "4",
-        "openend": "01"
+        "unipacks": "3",
+        "openend": "4"
       },
       {
         "titulo": "6,55",
-        "unipacks": "5",
-        "openend": "2"
+        "unipacks": "8",
+        "openend": "1"
+      },
+      {
+        "titulo": "10",
+        "unipacks": "2",
+        "openend": "3"
       }
     ],
     "urdido": [
       {
         "urdidora": "01",
-        "estilo": "Sin material",
-        "lote": "",
-        "mh": "",
-        "mph": ""
+        "estilo": "Farina",
+        "lote": "1005",
+        "mh": "01",
+        "mph": "14"
       },
       {
         "urdidora": "02",
-        "estilo": "Mantenimiento fin de año",
+        "estilo": "Sin material",
         "lote": "",
         "mh": "",
         "mph": ""
@@ -135,15 +140,15 @@
       {
         "urdidora": "03",
         "estilo": "Fashion oscuro",
-        "lote": "3002",
-        "mh": "12",
+        "lote": "3003",
+        "mh": "03",
         "mph": "12"
       },
       {
         "urdidora": "04",
         "estilo": "Fashion oscuro",
         "lote": "4005",
-        "mh": "02",
+        "mh": "12",
         "mph": "12"
       }
     ],
@@ -151,17 +156,17 @@
       {
         "tren": "Beloit 02",
         "estilo": "Fashion oscuro",
-        "lote": "302012",
+        "lote": "4005",
         "mh": "11",
         "mph": "12",
-        "obs": "En espera de urdido"
+        "obs": ""
       }
     ],
     "reurdido": [
       {
         "estilo": "Fashion oscuro",
-        "lote": "402011",
-        "mh": "5",
+        "lote": "302012",
+        "mh": "4",
         "mph": "12"
       }
     ],
@@ -172,9 +177,9 @@
           "engomadora": "Engomadora 01",
           "estilo": "Indigo oscuro dark blue",
           "lote": "402011",
-          "mh": "05",
+          "mh": "12",
           "mph": "12",
-          "obs": ""
+          "obs": "En proceso cadena n 8"
         }
       ],
       "porEngomar": [
