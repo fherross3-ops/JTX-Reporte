@@ -2,7 +2,7 @@
   "id": "mwxirzktvg2pr",
   "fecha": "2026-11-26",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-26T13:48:25.209Z",
+  "creado": "2026-11-26T18:10:36.282Z",
   "hilanderia": {
     "kgsOE": 11030.6,
     "kgsCarda": 15206,
@@ -10,26 +10,31 @@
       {
         "maquina": "01",
         "titulo": "6,55 mezcla 02",
+        "kilos": "",
         "uso": "Urdido"
       },
       {
         "maquina": "02",
         "titulo": "Escurriendo",
+        "kilos": "",
         "uso": "Urdido"
       },
       {
         "maquina": "03",
         "titulo": "10 mezcla 03 Americano",
+        "kilos": "",
         "uso": "Urdido"
       },
       {
         "maquina": "04",
         "titulo": "6,55 mezcla 03 Americano",
+        "kilos": "",
         "uso": "Urdido"
       },
       {
         "maquina": "05",
         "titulo": "16 mezcla 02",
+        "kilos": "",
         "uso": "Ventas"
       }
     ],
