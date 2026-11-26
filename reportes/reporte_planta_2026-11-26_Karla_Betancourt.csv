@@ -1,0 +1,133 @@
+Tipo,Informe Planta - Reporte Diario
+Fecha del informe,2026-11-26
+Responsable,Karla Betancourt
+Creado,2026-11-26T12:57:28.009Z
+Exportado,2026-11-26T12:57:29.317Z
+Archivo,reporte_planta_2026-11-26_Karla_Betancourt.csv
+
+== HILANDERIA ==
+Concepto,Valor
+Kgs producidos en Open-End,11030.6
+Kgs producidos en Carda,15206
+
+Titulos Open-End
+Open-End,Titulo,Uso
+01,"6,55 mezcla 02",Urdido
+02,Escurriendo,Urdido
+03,10 mezcla 03 Americano,Urdido
+04,"6,55 mezcla 03 Americano",Urdido
+05,16 mezcla 02,Ventas
+
+Puestos Inactivos Open-End
+Open-End,Puestos
+01,0
+02,64
+03,14
+04,0
+05,0
+Total,78
+Porcentaje de 1440,5.4%
+Causa,Reemplazo por fuentes de poder
+
+Puestos Parados por Causa
+Causa,01,02,03,04,05,Total
+Inactivos,30,18,17,1,12,78
+Ajustes,0,11,63,21,6,101
+F.A.,0,50,12,0,0,62
+Total,30,79,92,22,18,241
+
+Puestos Corregidos por Causa
+Causa,01,02,03,04,05,Total
+Ajuste-Fuga,,,,,,0
+Fuentes,,,,,,0
+Fugas,,,,,,0
+Amortig/Fuga,,,,,,0
+Total,0,0,0,0,0,0
+
+== NOVEDADES DE PLANTA ==
+N,Detalle
+1,CL-R de sala de recuperación ( Máquina  operativa ) en espera de repuestos.
+2,"Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda."
+3,"Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación ( motor de caja reductora en servicio de reparacion )."
+4,Open end 01 se recuperan  18 puestos por cambio de manguera.
+5,En la open end 02 Se recuperan 31 puestos 17 puestos por ajustes y 14 por  fuentes.
+
+== PROCESOS HUMEDOS ==
+Inventario de Unipacks en Urdido
+Titulo,Unipacks,Open-End
+"6,55",4,01
+"6,55",5,2
+
+Urdido
+Urdidora,Estilo,Lote,Mh,Mph
+01,Sin material,,,
+02,Mantenimiento fin de año,,,
+03,Fashion oscuro,3002,12,12
+04,Fashion oscuro,4005,02,12
+
+Tenido
+Tren,Estilo,Lote,Mh,Mph,Observacion
+Beloit 02,Fashion oscuro,302012,11,12,En espera de urdido
+
+Reurdido
+Estilo,Lote,Mh,Mph
+Fashion oscuro,402011,5,12
+
+Engomado
+Metros engomados del dia anterior,12900
+Engomadora,Estilo,Lote,Mh,Mph,Observacion
+Engomadora 01,Indigo oscuro dark blue,402011,05,12,
+
+Pendientes por Engomar
+Estilo,Lote,Mh,Mph
+Sin material,,,
+
+Novedades de Engomado
+1,No hay existencia de PVA en planta.
+2,En la Beloitt 01 entra en mantenimiento fin de año.
+3,En la Engomadora 02 se entrega a mantenimiento fin de año
+
+== TEJEDURIA ==
+Concepto,Valor
+Metros tejidos del dia anterior,10376
+Promedio Rot/hora,1.23
+Telares cargados,78
+Telares operativos,31
+Telares parados,81
+Cadenas inventario,14
+
+Causas de telares parados
+Causa,Cantidad,Detalle
+Mecanica,0,
+Electronica,0,
+Electrica,0,
+Montaje,1,
+Repuesto,7,"5,40,47,73,96,100,108"
+
+Otros paros
+Causa,Cantidad,Detalle
+Presion de aire,0,
+Orden superior,49,
+Falta de urdimbre,12,06-  Fashion oscuro - 04- indigo oscuro -  02 Amazonas XIII
+Calidad,,
+E.C.U.,12,
+Falta de trama,,
+Otros,,
+
+== PLANTA ACABADO ==
+Seccion,Metros
+Sanforizado,22.493
+Revision,25764
+Corte,18510
+General valor primera calidad (%),86.78
+Inventario Tela Cruda (Noria),44049
+
+Novedades de Acabado
+1,Cibitex:
+2,04 horas de paro por Falla mecanica. (
+3,Revision:
+4,04 horas de paro por falta de tela sanforizada.
+5,Corte :
+6,02 horas de paro por otros: (materia prima)
+7,02 horas de paro por Falla de instrumentacion.
+8,01 hora de paro por Falla mecanica(se partio tornilllos de subjeccion del sistema de sellado lateral de la embaladora)
