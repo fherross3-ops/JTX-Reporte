@@ -2,7 +2,7 @@
   "id": "mwxirzktvg2pr",
   "fecha": "2026-11-26",
   "responsable": "Karla Betancourt",
-  "creado": "2026-11-26T12:57:28.009Z",
+  "creado": "2026-11-26T13:06:30.091Z",
   "hilanderia": {
     "kgsOE": 11030.6,
     "kgsCarda": 15206,
@@ -53,14 +53,14 @@
       },
       "ajustes": {
         "01": 0,
-        "02": 11,
+        "02": 4,
         "03": 63,
         "04": 21,
         "05": 6
       },
       "fa": {
         "01": 0,
-        "02": 50,
+        "02": 25,
         "03": 12,
         "04": 0,
         "05": 0
@@ -101,8 +101,8 @@
     "CL-R de sala de recuperación ( Máquina  operativa ) en espera de repuestos.",
     "Se para carda N*3, se presume que guarnición de tambor principal se despega, provocando daños graves en la instructura de la carda.",
     "Se daña motor de caja reductora, compactadora de sala recuperación. (Se realiza desvío para dejar sala en operación ( motor de caja reductora en servicio de reparacion ).",
-    "Open end 01 se recuperan  18 puestos por cambio de manguera.",
-    "En la open end 02 Se recuperan 31 puestos 17 puestos por ajustes y 14 por  fuentes."
+    "Open end 01 se recuperan  19 puestos por cambio de manguera.",
+    "En la open end 02 Se recuperan 32 puestos 07 puestos por ajustes y 25 por  fuentes."
   ],
   "humedos": {
     "unipacks": [
